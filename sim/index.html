@@ -237,6 +237,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" title="必要なファイル" class="md-nav__link">
+    必要なファイル
+  </a>
+  
+</li>
+      
       
       
       
@@ -292,6 +299,13 @@
         <li class="md-nav__item">
   <a href="#_1" title="データの保存場所" class="md-nav__link">
     データの保存場所
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="必要なファイル" class="md-nav__link">
+    必要なファイル
   </a>
   
 </li>
@@ -356,7 +370,26 @@
 <p class="admonition-title">Warning</p>
 <p>OSXの場合、データはパッケージの中身のlogフォルダに保存される。</p>
 </div>
-<p><i class="fa fa-coffee"></i></p>
+<p><img alt="" src="../img/sim005.png" /></p>
+<p>OSXの場合は、データはパッケージの中身のlogフォルダに保存。</p>
+<p><img alt="" src="../img/sim006.png" /></p>
+<p>下記のような画像とJSONデータが保存される。</p>
+<p><img alt="" src="../img/sim007.png" /></p>
+<h2 id="_2">必要なファイル</h2>
+<p><code>meta.json</code></p>
+<p>Simulatorインストール時に保存される。消してしまった場合は、下記内容で作成しておく。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>{&quot;inputs&quot;:[&quot;cam/image_array&quot;,&quot;user/angle&quot;,&quot;user/throttle&quot;,&quot;user/mode&quot;],&quot;types&quot;:[&quot;image_array&quot;,&quot;float&quot;,&quot;float&quot;,&quot;str&quot;]}
+</pre></div>
+</td></tr></table>
+
+<p><code>0_cam-image_array_.jpg</code></p>
+<p><img alt="" src="../img/0_cam-image_array_.jpg" /></p>
+<p><code>record_0.json</code></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>{&quot;cam/image_array&quot;:&quot;0_cam-image_array_.jpg&quot;,&quot;user/throttle&quot;:0.0,&quot;user/angle&quot;:0.0,&quot;user/mode&quot;:&quot;user&quot;}
+</pre></div>
+</td></tr></table>
+
+<p>画像とJSONは、上記の組み合わせ x 作成枚数の数になる。目安で10,000データ・セットの作成を目標とする。</p>
                 
                   
                 
