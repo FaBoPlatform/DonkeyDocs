@@ -36,7 +36,7 @@
     
     
       
-        <title>Donkey Car 学習環境 - FaBo Donkey Docs</title>
+        <title>Donkey Car 学習環境の構築 - FaBo Donkey Docs</title>
       
     
     
@@ -100,7 +100,7 @@
                 FaBo Donkey Docs
               </span>
               <span class="md-header-nav__topic">
-                Donkey Car 学習環境
+                Donkey Car 学習環境の構築
               </span>
             
           
@@ -192,11 +192,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Donkey Car 学習環境
+        Donkey Car 学習環境の構築
       </label>
     
-    <a href="./" title="Donkey Car 学習環境" class="md-nav__link md-nav__link--active">
-      Donkey Car 学習環境
+    <a href="./" title="Donkey Car 学習環境の構築" class="md-nav__link md-nav__link--active">
+      Donkey Car 学習環境の構築
     </a>
     
       
@@ -226,6 +226,20 @@
         <li class="md-nav__item">
   <a href="#conda" title="Conda環境" class="md-nav__link">
     Conda環境
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tensorflow" title="TensorFlowのインストール" class="md-nav__link">
+    TensorFlowのインストール
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="インストール" class="md-nav__link">
+    インストール
   </a>
   
 </li>
@@ -294,6 +308,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#tensorflow" title="TensorFlowのインストール" class="md-nav__link">
+    TensorFlowのインストール
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="インストール" class="md-nav__link">
+    インストール
+  </a>
+  
+</li>
+      
       
       
       
@@ -311,7 +339,7 @@
               
                 
                 
-                <h1 id="donkey-car">Donkey Car 学習環境</h1>
+                <h1 id="donkey-car">Donkey Car 学習環境の構築</h1>
 <div class="admonition summary">
 <p class="admonition-title">Summary</p>
 <p>Donkey Car Simulatorとの連携は、DonkeyCar v2.5.7では廃止。そのため、Donkey Car Simulatorと連携して動作させるためには、Revisionは、<a href="https://github.com/autorope/donkeycar/commit/344127b52dd4eb353f11f7916762b3d1c907b63f">3441227b</a> まで戻す必要がある。</p>
@@ -352,6 +380,15 @@
 
 <p>!!Warining
     condaが実行できない人は、<a href="https://conda.io/miniconda.html">miniconda</a>をインストールしてください。</p>
+<h2 id="tensorflow">TensorFlowのインストール</h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="gp">$</span> pip install <span class="nv">tensorflow</span><span class="o">==</span><span class="m">1</span>.8.0
+</pre></div>
+</td></tr></table>
+
+<h2 id="_2">インストール</h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="gp">$</span> pip install -e .
+</pre></div>
+</td></tr></table>
                 
                   
                 
