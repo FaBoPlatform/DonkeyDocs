@@ -362,6 +362,11 @@
 
 <p><img alt="" src="../img/train001.png" /></p>
 <p>学習済みデータはmypilotに保存されます。</p>
+<p>追加で学習される場合は、--base_modelオプションで学習済みモデルを指定して、続きから学習させる。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">python manage.py train --tub=data/sim/ --model=models/newpilot --base_model=models/mypilot</span>
+</pre></div>
+</td></tr></table>
+
 <h2 id="_3">ソースコード</h2>
 <p><code>~/workspace_donkey/donkeycar/parts/keras.py</code></p>
 <p>Defaultの設定では、下記コードで学習を実施している。</p>
