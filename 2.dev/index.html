@@ -256,6 +256,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" title="プロジェクトの作成" class="md-nav__link">
+    プロジェクトの作成
+  </a>
+  
+</li>
+      
       
       
       
@@ -334,6 +341,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_3" title="プロジェクトの作成" class="md-nav__link">
+    プロジェクトの作成
+  </a>
+  
+</li>
+      
       
       
       
@@ -371,35 +385,48 @@
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> ~/Documents/workspace_donkey
-<span class="gp">$</span> git clone https://github.com/autorope/donkeycar/
-<span class="gp">$</span> <span class="nb">cd</span> donkey
-<span class="gp">$</span> git checkout master
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">cd ~/Documents/workspace_donkey</span>
+<span class="go">git clone https://github.com/autorope/donkeycar/</span>
+<span class="go">cd donkeycar</span>
+<span class="go">git checkout master</span>
 </pre></div>
 </td></tr></table>
 
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>Simulatorと連携したい場合は、git checkout masterではなく、git checkout 3441227b でCheckoutします。</p>
+<p>Simulatorと連携したい場合は、git checkout masterではなく、git checkout 344127b でCheckoutします。</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Proxyを経由する必要がある場合は、<code>git config --global http.proxy http://proxy.aaa.com:8080</code>等でProxyを事前に設定しておく。</p>
 </div>
 <h2 id="conda">Conda環境</h2>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="gp">$</span> conda env create -f install/envs/mac.yml
-<span class="gp">$</span> <span class="nb">source</span> activate donkey
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">conda env create -f install/envs/mac.yml</span>
+<span class="go">source activate donkey</span>
 </pre></div>
 </td></tr></table>
 
+<p>Consoleに(donkey) の文字列ができていれば成功です。</p>
+<p><img alt="" src="../img/dev002.png" /></p>
 <p>!!Warining
     condaが実行できない人は、<a href="https://conda.io/miniconda.html">miniconda</a>をインストールしてください。</p>
 <h2 id="tensorflow">TensorFlowのインストール</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="gp">$</span> pip install <span class="nv">tensorflow</span><span class="o">==</span><span class="m">1</span>.8.0
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">pip install tensorflow==1.8.0</span>
 </pre></div>
 </td></tr></table>
 
 <h2 id="_2">インストール</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="gp">$</span> pip install -e .
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">pip install -e .</span>
 </pre></div>
 </td></tr></table>
+
+<h2 id="_3">プロジェクトの作成</h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">donkey createcar ~/mycar</span>
+</pre></div>
+</td></tr></table>
+
+<p><img alt="" src="../img/dev002.png" /></p>
                 
                   
                 
