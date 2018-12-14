@@ -36,7 +36,7 @@
     
     
       
-        <title>Donkey Car 学習環境の構築 - FaBo Donkey Docs</title>
+        <title>Donkey Car 学習 - FaBo Donkey Docs</title>
       
     
     
@@ -100,7 +100,7 @@
                 FaBo Donkey Docs
               </span>
               <span class="md-header-nav__topic">
-                Donkey Car 学習環境の構築
+                Donkey Car 学習
               </span>
             
           
@@ -193,6 +193,18 @@
       
       
 
+
+  <li class="md-nav__item">
+    <a href="../2.dev/" title="Donkey Car 学習環境の構築" class="md-nav__link">
+      Donkey Car 学習環境の構築
+    </a>
+  </li>
+
+    
+      
+      
+      
+
   
 
 
@@ -204,11 +216,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Donkey Car 学習環境の構築
+        Donkey Car 学習
       </label>
     
-    <a href="./" title="Donkey Car 学習環境の構築" class="md-nav__link md-nav__link--active">
-      Donkey Car 学習環境の構築
+    <a href="./" title="Donkey Car 学習" class="md-nav__link md-nav__link--active">
+      Donkey Car 学習
     </a>
     
       
@@ -264,18 +276,6 @@
   
 </nav>
     
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../3.training/" title="Donkey Car 学習" class="md-nav__link">
-      Donkey Car 学習
-    </a>
   </li>
 
     
@@ -375,12 +375,11 @@
               
                 
                 
-                <h1 id="donkey-car">Donkey Car 学習環境の構築</h1>
+                <h1 id="donkey-car">Donkey Car 学習</h1>
 <div class="admonition summary">
 <p class="admonition-title">Summary</p>
-<p>Donkey Car Simulatorとの連携は、DonkeyCar v2.5.7では廃止。そのため、Donkey Car Simulatorと連携して動作させるためには、Revisionは、<a href="https://github.com/autorope/donkeycar/commit/344127b52dd4eb353f11f7916762b3d1c907b63f">3441227b</a> まで戻す必要がある。</p>
+<p>Donkey Carの学習は、TensorFlow + Kerasを使用しておこないます。</p>
 </div>
-<p>Donkey Carの学習環境を構築します。Donkey Carの学習は、RapPi3側ではなく、PC側でおこないます。一般的なPCで20-30分程度の学習、GPU搭載のPCで数分の学習がおこなわれます。</p>
 <h2 id="_1">参考ドキュメント</h2>
 <p>PC側のインストールは、環境等に大きく依存します。インストール方法は、<a href="https://docs.donkeycar.com/guide/install_software/">Donkey Car 公式ドキュメント</a>も参考にしてください。</p>
 <h2 id="git-clone">Git clone</h2>
@@ -397,7 +396,7 @@
 3
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="gp">$</span> <span class="nb">cd</span> ~/Documents/workspace_donkey
 <span class="gp">$</span> git clone https://github.com/autorope/donkeycar/
-<span class="gp">$</span> <span class="nb">cd</span> donkey
+<span class="gp">$</span> <span class="nb">cd</span> donkeycar
 <span class="gp">$</span> git checkout master
 </pre></div>
 </td></tr></table>
@@ -444,7 +443,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../1.sim/" title="Donkey Car Simulator" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../2.dev/" title="Donkey Car 学習環境の構築" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -453,19 +452,19 @@
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                Donkey Car Simulator
+                Donkey Car 学習環境の構築
               </span>
             </div>
           </a>
         
         
-          <a href="../3.training/" title="Donkey Car 学習" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../dev/" title="Donkey Car 学習環境の構築" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                Donkey Car 学習
+                Donkey Car 学習環境の構築
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
