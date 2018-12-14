@@ -394,6 +394,15 @@
 <p>Donkey Carは、Donkey Car Official Docsのページからダウンロードしてくる。</p>
 <p><a href="https://docs.donkeycar.com/guide/simulator">https://docs.donkeycar.com/guide/simulator/</a></p>
 <h2 id="donkey-car-simulator_3">Donkey Car Simulatorで学習用データの作成</h2>
+<p>データは、logフォルダに保存される。OSXユーザは、donkey_simulatorを/Applicationフォルダに移動し、donkey_simulatorのパッケージ内にlogフォルダを作成し、meta.jsonを作成する。</p>
+<p><a href="../img/sim005.png"></a></p>
+<p>データはパッケージの中にlogフォルダを作成する。</p>
+<p><img alt="" src="../img/sim006.png" /></p>
+<p>logフォルダに、<code>meta.json</code>を作成する。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>{&quot;inputs&quot;:[&quot;cam/image_array&quot;,&quot;user/angle&quot;,&quot;user/throttle&quot;,&quot;user/mode&quot;],&quot;types&quot;:[&quot;image_array&quot;,&quot;float&quot;,&quot;float&quot;,&quot;str&quot;]}
+</pre></div>
+</td></tr></table>
+
 <p>MenuからJoystick/Keyboard w Recを選ぶ。</p>
 <p><img alt="" src="../img/sim002.png" /></p>
 <p>実際のコースを走らせて教師データを作成。</p>
@@ -406,18 +415,10 @@
 <p class="admonition-title">Warning</p>
 <p>OSXの場合、データはパッケージの中身のlogフォルダに保存される。</p>
 </div>
-<p><img alt="" src="../img/sim005.png" /></p>
-<p>OSXの場合は、データはパッケージの中身のlogフォルダに保存。</p>
-<p><img alt="" src="../img/sim006.png" /></p>
+<p>!</p>
 <p>下記のような画像とJSONデータが保存される。</p>
 <p><img alt="" src="../img/sim007.png" /></p>
 <h2 id="_2">必要なファイル</h2>
-<p><code>meta.json</code></p>
-<p>Simulatorインストール時に保存される。消してしまった場合は、下記内容で作成しておく。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>{&quot;inputs&quot;:[&quot;cam/image_array&quot;,&quot;user/angle&quot;,&quot;user/throttle&quot;,&quot;user/mode&quot;],&quot;types&quot;:[&quot;image_array&quot;,&quot;float&quot;,&quot;float&quot;,&quot;str&quot;]}
-</pre></div>
-</td></tr></table>
-
 <p><code>0_cam-image_array_.jpg</code></p>
 <p><img alt="" src="../img/0_cam-image_array_.jpg" /></p>
 <p><code>record_0.json</code></p>
