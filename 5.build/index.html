@@ -36,7 +36,7 @@
     
     
       
-        <title>Donkey Car 学習環境の構築 - FaBo Donkey Docs</title>
+        <title>Donkey Carの組み立て - FaBo Donkey Docs</title>
       
     
     
@@ -100,7 +100,7 @@
                 FaBo Donkey Docs
               </span>
               <span class="md-header-nav__topic">
-                Donkey Car 学習環境の構築
+                Donkey Carの組み立て
               </span>
             
           
@@ -183,8 +183,44 @@
 
 
   <li class="md-nav__item">
-    <a href="../1.sim/" title="Donkey Car Simulator" class="md-nav__link">
+    <a href="../1.dev/" title="Donkey Car 学習環境の構築" class="md-nav__link">
+      Donkey Car 学習環境の構築
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../2.sim/" title="Donkey Car Simulator" class="md-nav__link">
       Donkey Car Simulator
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../3.train_sim/" title="Donkey Car 学習(Simulator)" class="md-nav__link">
+      Donkey Car 学習(Simulator)
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../4.run_sim/" title="Donkey Carでの実行(Simulator)" class="md-nav__link">
+      Donkey Carでの実行(Simulator)
     </a>
   </li>
 
@@ -204,11 +240,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Donkey Car 学習環境の構築
+        Donkey Carの組み立て
       </label>
     
-    <a href="./" title="Donkey Car 学習環境の構築" class="md-nav__link md-nav__link--active">
-      Donkey Car 学習環境の構築
+    <a href="./" title="Donkey Carの組み立て" class="md-nav__link md-nav__link--active">
+      Donkey Carの組み立て
     </a>
     
       
@@ -222,43 +258,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="参考ドキュメント" class="md-nav__link">
-    参考ドキュメント
+  <a href="#donkey-car_1" title="Donkey Carのパーツ一覧" class="md-nav__link">
+    Donkey Carのパーツ一覧
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#git-clone" title="Git clone" class="md-nav__link">
-    Git clone
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conda" title="Conda環境" class="md-nav__link">
-    Conda環境
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tensorflow" title="TensorFlowのインストール" class="md-nav__link">
-    TensorFlowのインストール
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="インストール" class="md-nav__link">
-    インストール
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" title="プロジェクトの作成" class="md-nav__link">
-    プロジェクトの作成
+  <a href="#donkey-car_2" title="Donkey Car組み立て" class="md-nav__link">
+    Donkey Car組み立て
   </a>
   
 </li>
@@ -271,30 +279,6 @@
   
 </nav>
     
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../3.training/" title="Donkey Car 学習" class="md-nav__link">
-      Donkey Car 学習
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../4.run_sim/" title="Donkey Carでの実行(Simulator)" class="md-nav__link">
-      Donkey Carでの実行(Simulator)
-    </a>
   </li>
 
     
@@ -319,43 +303,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="参考ドキュメント" class="md-nav__link">
-    参考ドキュメント
+  <a href="#donkey-car_1" title="Donkey Carのパーツ一覧" class="md-nav__link">
+    Donkey Carのパーツ一覧
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#git-clone" title="Git clone" class="md-nav__link">
-    Git clone
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#conda" title="Conda環境" class="md-nav__link">
-    Conda環境
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tensorflow" title="TensorFlowのインストール" class="md-nav__link">
-    TensorFlowのインストール
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="インストール" class="md-nav__link">
-    インストール
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" title="プロジェクトの作成" class="md-nav__link">
-    プロジェクトの作成
+  <a href="#donkey-car_2" title="Donkey Car組み立て" class="md-nav__link">
+    Donkey Car組み立て
   </a>
   
 </li>
@@ -377,70 +333,59 @@
               
                 
                 
-                <h1 id="donkey-car">Donkey Car 学習環境の構築</h1>
-<div class="admonition summary">
-<p class="admonition-title">Summary</p>
-<p>Donkey Car Simulatorとの連携は、DonkeyCar v2.5.7では廃止。そのため、Donkey Car Simulatorと連携して動作させるためには、Revisionは、<a href="https://github.com/autorope/donkeycar/commit/618b2f78954b4cc7880365d518a1f24fdfe102ef">618b2f7</a> まで戻す必要がある。</p>
-</div>
-<p>Donkey Carの学習環境を構築します。Donkey Carの学習は、RapPi3側ではなく、PC側でおこないます。一般的なPCで20-30分程度の学習、GPU搭載のPCで数分の学習がおこなわれます。</p>
-<h2 id="_1">参考ドキュメント</h2>
-<p>PC側のインストールは、環境等に大きく依存します。インストール方法は、<a href="https://docs.donkeycar.com/guide/install_software/">Donkey Car 公式ドキュメント</a>も参考にしてください。</p>
-<h2 id="git-clone">Git clone</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="gp">$</span> mkdir ~/Documents/workspace_donkey
-</pre></div>
-</td></tr></table>
-
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>本ドキュメントでは、作業フォルダ ~/Documents/workspace_donkey にしています。お使いの環境に合わせて、作業フォルダは任意のフォルダ指定で大丈夫です。</p>
-</div>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">cd ~/Documents/workspace_donkey</span>
-<span class="go">git clone https://github.com/autorope/donkeycar/</span>
-<span class="go">cd donkeycar</span>
-<span class="go">git checkout master</span>
-</pre></div>
-</td></tr></table>
-
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Simulatorと連携したい場合は、上記の作業の後に、<code>git checkout 344127b</code>で 344127bのリビジョンに移動します。</p>
-</div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Proxyを経由する必要がある場合は、<code>git config --global http.proxy http://proxy.aaa.com:8080</code>等でProxyを事前に設定しておく。</p>
-</div>
-<h2 id="conda">Conda環境</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">conda env create -f install/envs/mac.yml</span>
-<span class="go">source activate donkey</span>
-</pre></div>
-</td></tr></table>
-
-<p>Consoleに(donkey) の文字列ができていれば成功です。</p>
-<p><img alt="" src="../img/dev001.png" /></p>
-<div class="admonition warining">
-<p class="admonition-title">Warining</p>
-<p>condaが実行できない人は、<a href="https://conda.io/miniconda.html">miniconda</a>をインストールしてください。</p>
-</div>
-<h2 id="tensorflow">TensorFlowのインストール</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">pip install tensorflow==1.8.0</span>
-</pre></div>
-</td></tr></table>
-
-<h2 id="_2">インストール</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">pip install -e .</span>
-</pre></div>
-</td></tr></table>
-
-<h2 id="_3">プロジェクトの作成</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">donkey createcar ~/mycar</span>
-</pre></div>
-</td></tr></table>
-
-<p><img alt="" src="../img/dev002.png" /></p>
+                <h1 id="donkey-car">Donkey Carの組み立て</h1>
+<h2 id="donkey-car_1">Donkey Carのパーツ一覧</h2>
+<table>
+<thead>
+<tr>
+<th align="left">項目</th>
+<th align="left">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">1</td>
+<td align="left">RCカー本体</td>
+</tr>
+<tr>
+<td align="left">2</td>
+<td align="left">Donkey Carアーム</td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">Donkey Carプレート</td>
+</tr>
+<tr>
+<td align="left">4</td>
+<td align="left">Donkey Board</td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">降圧型変換器内蔵電圧計</td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left">RaspberryPi3</td>
+</tr>
+<tr>
+<td align="left">7</td>
+<td align="left">PiCamera</td>
+</tr>
+<tr>
+<td align="left">8</td>
+<td align="left">SDカード</td>
+</tr>
+<tr>
+<td align="left">9</td>
+<td align="left">USBケーブル</td>
+</tr>
+<tr>
+<td align="left">10</td>
+<td align="left">バッテリー3又ケーブル</td>
+</tr>
+</tbody>
+</table>
+<h2 id="donkey-car_2">Donkey Car組み立て</h2>
                 
                   
                 
@@ -461,7 +406,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../1.sim/" title="Donkey Car Simulator" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../4.run_sim/" title="Donkey Carでの実行(Simulator)" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -470,25 +415,11 @@
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                Donkey Car Simulator
+                Donkey Carでの実行(Simulator)
               </span>
             </div>
           </a>
         
-        
-          <a href="../3.training/" title="Donkey Car 学習" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  次
-                </span>
-                Donkey Car 学習
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
         
       </nav>
     </div>
