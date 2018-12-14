@@ -259,6 +259,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#simulator_2" title="Simulatorとの連携" class="md-nav__link">
+    Simulatorとの連携
+  </a>
+  
+</li>
+      
       
       
       
@@ -304,6 +311,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#simulator_2" title="Simulatorとの連携" class="md-nav__link">
+    Simulatorとの連携
+  </a>
+  
+</li>
+      
       
       
       
@@ -333,6 +347,8 @@
 
 <h2 id="simulator_1">Simulator側の連携</h2>
 <p><img alt="" src="../img/run_sim001.png" /></p>
+<h2 id="simulator_2">Simulatorとの連携</h2>
+<p>通信はWebsocketでおこなわれる。Simulatorから30msに1回、160x120ピクセルの画像データが送られてくるので、<code>~/workspace_donkey/donkeycar/parts/keras.py</code>に渡され、model.predictで、画像データを入力に、SteeringとThrottleの2値を取得し、その値でSimulatorを制御している。</p>
                 
                   
                 
