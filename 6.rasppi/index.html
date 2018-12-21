@@ -446,7 +446,7 @@
 <p>最初にWifiの設定をおこなう。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo chmod <span class="m">606</span> /etc/wpa_supplicant/wpa_supplicant.conf
-$ sudo sh -c <span class="s2">&quot;wpa_passphrase &#39;接続先のSSID&#39; &#39;接続先のパスワード&#39; &gt;&gt; /etc/wpa_supplicant/wpa_supplicant.conf&quot;</span>
+$ wpa_passphrase <span class="s1">&#39;接続先のSSID&#39;</span> <span class="s1">&#39;接続先のパスワード&#39;</span> &gt;&gt; /etc/wpa_supplicant/wpa_supplicant.conf
 </pre></div>
 </td></tr></table>
 
