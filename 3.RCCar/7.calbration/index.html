@@ -36,7 +36,7 @@
     
     
       
-        <title>学習 - FaBo Donkey Docs</title>
+        <title>キャリブレーション - FaBo Donkey Docs</title>
       
     
     
@@ -100,7 +100,7 @@
                 FaBo Donkey Docs
               </span>
               <span class="md-header-nav__topic">
-                学習
+                キャリブレーション
               </span>
             
           
@@ -238,8 +238,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../2.Simulator/2.sim/" title="Simulator" class="md-nav__link">
-      Simulator
+    <a href="../../2.Simulator/2.sim/" title="環境構築" class="md-nav__link">
+      環境構築
     </a>
   </li>
 
@@ -250,8 +250,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../2.Simulator/3.train_sim/" title="学習(Simulator)" class="md-nav__link">
-      学習(Simulator)
+    <a href="../../2.Simulator/3.train_sim/" title="学習" class="md-nav__link">
+      学習
     </a>
   </li>
 
@@ -262,8 +262,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../2.Simulator/4.run_sim/" title="走行(Simulator)" class="md-nav__link">
-      走行(Simulator)
+    <a href="../../2.Simulator/4.run_sim/" title="走行" class="md-nav__link">
+      走行
     </a>
   </li>
 
@@ -333,11 +333,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        学習
+        キャリブレーション
       </label>
     
-    <a href="./" title="学習" class="md-nav__link md-nav__link--active">
-      学習
+    <a href="./" title="キャリブレーション" class="md-nav__link md-nav__link--active">
+      キャリブレーション
     </a>
     
       
@@ -351,29 +351,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="教師データの作成" class="md-nav__link">
-    教師データの作成
+  <a href="#_2" title="キャリブレーション" class="md-nav__link">
+    キャリブレーション
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mac" title="教師データの学習(Mac側)" class="md-nav__link">
-    教師データの学習(Mac側)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#raspberrypi" title="学習済みモデルをRaspberryPiに戻す" class="md-nav__link">
-    学習済みモデルをRaspberryPiに戻す
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#donkey" title="学習済みモデルでDonkeyを動かす" class="md-nav__link">
-    学習済みモデルでDonkeyを動かす
+  <a href="#config" title="Config" class="md-nav__link">
+    Config
   </a>
   
 </li>
@@ -395,8 +381,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../8.calbration/" title="キャリブレーション" class="md-nav__link">
-      キャリブレーション
+    <a href="../9.train_rc/" title="学習" class="md-nav__link">
+      学習
     </a>
   </li>
 
@@ -427,29 +413,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="教師データの作成" class="md-nav__link">
-    教師データの作成
+  <a href="#_2" title="キャリブレーション" class="md-nav__link">
+    キャリブレーション
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mac" title="教師データの学習(Mac側)" class="md-nav__link">
-    教師データの学習(Mac側)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#raspberrypi" title="学習済みモデルをRaspberryPiに戻す" class="md-nav__link">
-    学習済みモデルをRaspberryPiに戻す
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#donkey" title="学習済みモデルでDonkeyを動かす" class="md-nav__link">
-    学習済みモデルでDonkeyを動かす
+  <a href="#config" title="Config" class="md-nav__link">
+    Config
   </a>
   
 </li>
@@ -471,51 +443,23 @@
               
                 
                 
-                <h1 id="_1">学習</h1>
-<h2 id="_2">教師データの作成</h2>
+                <h1 id="_1">キャリブレーション</h1>
+<h2 id="_2">キャリブレーション</h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>donkey calibrate --channel チャンネル番号
+</pre></div>
+</td></tr></table>
+
+<p>例</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> ~/mycar
-$ python manage.py drive
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ donkey calibrate --channel <span class="m">1</span>
+$ donkey calibrate --channel <span class="m">0</span>
 </pre></div>
 </td></tr></table>
 
-<p>トレーニングデータは、~/mycar/data以下に保存される。</p>
-<h2 id="mac">教師データの学習(Mac側)</h2>
-<p>教師データをRaspberryPiから、Macにrsyncする。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ rsync -r pi@&lt;your_ip_address&gt;:~/mycar/data/ ~/mycar/data/
+<h2 id="config">Config</h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>vi ~/mycar/config.py
 </pre></div>
 </td></tr></table>
-
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$  ls data
-tub_01_18-08-27 tub_02_18-08-27
-</pre></div>
-</td></tr></table>
-
-<p>Mac側には、tub_日付のフォルダが教師データ作成の度にふえていく。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ donkey tubclean .
-</pre></div>
-</td></tr></table>
-
-<p>いらないデータを削除する。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ python ~/mycar/manage.py train --tub<span class="o">=</span>~/mycar/data/tub_01_18-08-27 --model<span class="o">=</span>./models/mypilot
-</pre></div>
-</td></tr></table>
-
-<p>これで学習開始。</p>
-<h2 id="raspberrypi">学習済みモデルをRaspberryPiに戻す</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ rsync -r ~/mycar/models/ pi@&lt;your_ip_address&gt;:~/mycar/models/
-</pre></div>
-</td></tr></table>
-
-<h2 id="donkey">学習済みモデルでDonkeyを動かす</h2>
-<p>RaspberryPi側にログイン。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ python manage.py drive --model ~/mycar/models/mypilot
-</pre></div>
-</td></tr></table>
-
-<p>or</p>
-<p>Web画面のmodel &amp; pilotから、autopilotを選ぶ。</p>
                 
                   
                 
@@ -551,13 +495,13 @@ tub_01_18-08-27 tub_02_18-08-27
           </a>
         
         
-          <a href="../8.calbration/" title="キャリブレーション" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../9.train_rc/" title="学習" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                キャリブレーション
+                学習
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

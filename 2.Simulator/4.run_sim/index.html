@@ -36,7 +36,7 @@
     
     
       
-        <title>走行(Simulator) - FaBo Donkey Docs</title>
+        <title>走行 - FaBo Donkey Docs</title>
       
     
     
@@ -74,7 +74,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#simulator" tabindex="1" class="md-skip">
+      <a href="#_1" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -100,7 +100,7 @@
                 FaBo Donkey Docs
               </span>
               <span class="md-header-nav__topic">
-                走行(Simulator)
+                走行
               </span>
             
           
@@ -240,8 +240,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../2.sim/" title="Simulator" class="md-nav__link">
-      Simulator
+    <a href="../2.sim/" title="環境構築" class="md-nav__link">
+      環境構築
     </a>
   </li>
 
@@ -252,8 +252,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../3.train_sim/" title="学習(Simulator)" class="md-nav__link">
-      学習(Simulator)
+    <a href="../3.train_sim/" title="学習" class="md-nav__link">
+      学習
     </a>
   </li>
 
@@ -273,11 +273,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        走行(Simulator)
+        走行
       </label>
     
-    <a href="./" title="走行(Simulator)" class="md-nav__link md-nav__link--active">
-      走行(Simulator)
+    <a href="./" title="走行" class="md-nav__link md-nav__link--active">
+      走行
     </a>
     
       
@@ -291,21 +291,21 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#simulator_1" title="Simulatorでの実行" class="md-nav__link">
+  <a href="#simulator" title="Simulatorでの実行" class="md-nav__link">
     Simulatorでの実行
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#simulator_2" title="Simulator側の連携" class="md-nav__link">
+  <a href="#simulator_1" title="Simulator側の連携" class="md-nav__link">
     Simulator側の連携
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#simulator_3" title="Simulatorとの連携" class="md-nav__link">
+  <a href="#simulator_2" title="Simulatorとの連携" class="md-nav__link">
     Simulatorとの連携
   </a>
   
@@ -376,8 +376,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../3.RCCar/7.train_rc/" title="学習" class="md-nav__link">
-      学習
+    <a href="../../3.RCCar/7.calbration/" title="キャリブレーション" class="md-nav__link">
+      キャリブレーション
     </a>
   </li>
 
@@ -388,8 +388,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../3.RCCar/8.calbration/" title="キャリブレーション" class="md-nav__link">
-      キャリブレーション
+    <a href="../../3.RCCar/9.train_rc/" title="学習" class="md-nav__link">
+      学習
     </a>
   </li>
 
@@ -420,21 +420,21 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#simulator_1" title="Simulatorでの実行" class="md-nav__link">
+  <a href="#simulator" title="Simulatorでの実行" class="md-nav__link">
     Simulatorでの実行
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#simulator_2" title="Simulator側の連携" class="md-nav__link">
+  <a href="#simulator_1" title="Simulator側の連携" class="md-nav__link">
     Simulator側の連携
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#simulator_3" title="Simulatorとの連携" class="md-nav__link">
+  <a href="#simulator_2" title="Simulatorとの連携" class="md-nav__link">
     Simulatorとの連携
   </a>
   
@@ -457,19 +457,19 @@
               
                 
                 
-                <h1 id="simulator">走行(Simulator)</h1>
+                <h1 id="_1">走行</h1>
 <div class="admonition summary">
 <p class="admonition-title">Summary</p>
 <p>Donkey Car Simulatorとの連携は、DonkeyCar v2.5.7では廃止。そのため、Donkey Car Simulatorと連携して動作させるためには、Revisionは、<a href="https://github.com/autorope/donkeycar/commit/618b2f78954b4cc7880365d518a1f24fdfe102ef">618b2f7</a> まで戻す必要がある。</p>
 </div>
-<h2 id="simulator_1">Simulatorでの実行</h2>
+<h2 id="simulator">Simulatorでの実行</h2>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">donkey sim --model=models/mypilot</span>
 </pre></div>
 </td></tr></table>
 
-<h2 id="simulator_2">Simulator側の連携</h2>
+<h2 id="simulator_1">Simulator側の連携</h2>
 <p><img alt="" src="../img/run_sim001.png" /></p>
-<h2 id="simulator_3">Simulatorとの連携</h2>
+<h2 id="simulator_2">Simulatorとの連携</h2>
 <p>通信はWebsocketでおこなわれる。Simulatorから30msに1回、160x120ピクセルの画像データが送られてくるので、<code>~/workspace_donkey/donkeycar/parts/keras.py</code>に渡され、model.predictで、画像データを入力に、SteeringとThrottleの2値を取得し、その値でSimulatorを制御している。</p>
 <p><code>~/workspace_donkey/donkeycar/donkeycar/parts/simulation.py</code></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
@@ -577,7 +577,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../3.train_sim/" title="学習(Simulator)" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../3.train_sim/" title="学習" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -586,7 +586,7 @@
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                学習(Simulator)
+                学習
               </span>
             </div>
           </a>
