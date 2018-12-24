@@ -277,6 +277,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#wifi" title="Wifiの設定" class="md-nav__link">
+    Wifiの設定
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#donkey" title="Donkey関連アプリのインストール" class="md-nav__link">
     Donkey関連アプリのインストール
   </a>
@@ -374,6 +381,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#wifi" title="Wifiの設定" class="md-nav__link">
+    Wifiの設定
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#donkey" title="Donkey関連アプリのインストール" class="md-nav__link">
     Donkey関連アプリのインストール
   </a>
@@ -435,6 +449,29 @@
 <a href="http://docs.fabo.io/fabo/rasppi/dev/pi/install_pixel.html">http://docs.fabo.io/fabo/rasppi/dev/pi/install_pixel.html</a></p>
 <p>Windowsの場合は、Ethcerを使う
 <a href="https://www.balena.io/etcher/">https://www.balena.io/etcher/</a></p>
+<h2 id="wifi">Wifiの設定</h2>
+<p>作成したSDカードをPCで開き、wpa_supplicant.confを作成します。</p>
+<p><img alt="" src="../img/wifi001.png" /></p>
+<p>wpa_supplicant.confに、接続先のssid, password(psk)を記載します。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>country=US
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
+network={
+    ssid=&quot;&lt;your network name&gt;&quot;
+    psk=&quot;&lt;your password&gt;&quot;
+}
+</pre></div>
+</td></tr></table>
+
+<p>RaspberryPi起動時に、wpa_supplicant.confが、/etc/wpa_supplicant/wpa_supplicant.confにコピーされ、Wifiに接続されます。</p>
 <h2 id="donkey">Donkey関連アプリのインストール</h2>
 <p>RaspPi3にHDMIケーブルでDisplayを接続し、RaspberryPiにログインする。</p>
 <table>
@@ -455,35 +492,6 @@
 </tr>
 </tbody>
 </table>
-<p>最初にWifiの設定をおこなう。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo chmod <span class="m">606</span> /etc/wpa_supplicant/wpa_supplicant.conf
-$ wpa_passphrase <span class="s1">&#39;接続先のSSID&#39;</span> <span class="s1">&#39;接続先のパスワード&#39;</span> &gt;&gt; /etc/wpa_supplicant/wpa_supplicant.conf
-</pre></div>
-</td></tr></table>
-
-<p>VIMで開き、パスワードの平文を消しておく。(#pskの行)</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo vim /etc/wpa_supplicant/wpa_supplicant.conf
-</pre></div>
-</td></tr></table>
-
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>network={
-    ssid=&quot;&lt;your network name&gt;&quot;
-    #psk=&quot;&lt;your password&gt;&quot;
-    psk=a7119789798a987a987a98a97a987a98a79a7a987a
-}
-</pre></div>
-</td></tr></table>
-
-<p>Permissionを戻しておく</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo chmod <span class="m">600</span> /etc/wpa_supplicant/wpa_supplicant.conf
-</pre></div>
-</td></tr></table>
-
 <p>同じ名前のHostnameにあらないように、Hostnameを変更する。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo vim /etc/hostname
 </pre></div>
