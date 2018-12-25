@@ -555,25 +555,42 @@ Setting master bd_addr to b8:27:eb:4d:b1:73
 </pre></div>
 </td></tr></table>
 
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>[PLAYSTATION(R)3 Controller]#  agent on
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>[PLAYSTATION(R)3 Controller]#  agent on
 Agent registered
+</pre></div>
+</td></tr></table>
 
-[PLAYSTATION(R)3 Controller]#  devices
+<p>PS3ボタンを押す</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>[PLAYSTATION(R)3 Controller]#  connect B8:27:EB:4D:B1:73
+</pre></div>
+</td></tr></table>
 
-[PLAYSTATION(R)3 Controller]#  trust B8:27:EB:4D:B1:73
+<p>つながるまで繰り返す</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>[PLAYSTATION(R)3 Controller]#  trust B8:27:EB:4D:B1:73
 
 [PLAYSTATION(R)3 Controller]#  default-agent
 
 [PLAYSTATION(R)3 Controller]#  quit
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo reboot
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ls /dev/input/js*
+/dev/input/js0
+</pre></div>
+</td></tr></table>
+
+<p>/dev/input/js0が見えれば成功。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>jstest /dev/input/js0
 </pre></div>
 </td></tr></table>
 
