@@ -607,6 +607,7 @@
 <p>Proxyを経由する必要がある場合は、<code>git config --global http.proxy http://proxy.aaa.com:8080</code>等でProxyを事前に設定しておく。</p>
 </div>
 <h2 id="conda">Conda環境</h2>
+<p><a href="https://conda.io/miniconda.html">miniconda</a>をインストールします。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">conda env create -f install/envs/mac.yml</span>
 <span class="go">source activate donkey</span>
@@ -615,10 +616,6 @@
 
 <p>Consoleに(donkey) の文字列ができていれば成功です。</p>
 <p><img alt="" src="../img/dev001.png" /></p>
-<div class="admonition warining">
-<p class="admonition-title">Warining</p>
-<p>condaが実行できない人は、<a href="https://conda.io/miniconda.html">miniconda</a>をインストールしてください。</p>
-</div>
 <h2 id="tensorflow">TensorFlowのインストール</h2>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">pip install tensorflow==1.8.0</span>
 </pre></div>
