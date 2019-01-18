@@ -586,6 +586,34 @@ tub_01_18-08-27 tub_02_18-08-27
 </pre></div>
 </td></tr></table>
 
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">docopt</span> <span class="kn">import</span> <span class="n">docopt</span>
+
+<span class="kn">import</span> <span class="nn">donkeycar</span> <span class="kn">as</span> <span class="nn">dk</span>
+
+<span class="c1">#import parts</span>
+<span class="kn">from</span> <span class="nn">donkeycar.parts.camera</span> <span class="kn">import</span> <span class="n">PiCamera</span>
+<span class="kn">from</span> <span class="nn">donkeycar.parts.transform</span> <span class="kn">import</span> <span class="n">Lambda</span>
+<span class="c1">#from donkeycar.parts.keras import KerasCategorical</span>
+<span class="kn">from</span> <span class="nn">donkeycar.parts.actuator</span> <span class="kn">import</span> <span class="n">PCA9685</span><span class="p">,</span> <span class="n">PWMSteering</span><span class="p">,</span> <span class="n">PWMThrottle</span>
+<span class="kn">from</span> <span class="nn">donkeycar.parts.datastore</span> <span class="kn">import</span> <span class="n">TubGroup</span><span class="p">,</span> <span class="n">TubWriter</span>
+<span class="c1">#from donkeycar.parts.controller import LocalWebController, JoystickController</span>
+<span class="kn">from</span> <span class="nn">donkeycar.parts.clock</span> <span class="kn">import</span> <span class="n">Timestamp</span>
+</pre></div>
+</td></tr></table>
+
 <p>これで学習開始。</p>
 <h2 id="raspberrypi">学習済みモデルをRaspberryPiに戻す</h2>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ rsync -r ~/mycar/models/ pi@&lt;your_ip_address&gt;:~/mycar/models/
