@@ -36,7 +36,7 @@
     
     
       
-        <title>学習 - FaBo Donkey Docs</title>
+        <title>学習環境の構築 - FaBo Donkey Docs</title>
       
     
     
@@ -100,7 +100,7 @@
                 FaBo Donkey Docs
               </span>
               <span class="md-header-nav__topic">
-                学習
+                学習環境の構築
               </span>
             
           
@@ -181,17 +181,19 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
-      1.環境構築
+      1.学習用PC
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-2">
-        1.環境構築
+        1.学習用PC
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -200,11 +202,84 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../1.環境構築/1.dev/" title="学習環境の構築" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        学習環境の構築
+      </label>
+    
+    <a href="./" title="学習環境の構築" class="md-nav__link md-nav__link--active">
       学習環境の構築
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="参考ドキュメント" class="md-nav__link">
+    参考ドキュメント
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#git-clone" title="Git clone" class="md-nav__link">
+    Git clone
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conda" title="Conda環境" class="md-nav__link">
+    Conda環境
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tensorflow" title="TensorFlowのインストール" class="md-nav__link">
+    TensorFlowのインストール
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="インストール" class="md-nav__link">
+    インストール
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="プロジェクトの作成" class="md-nav__link">
+    プロジェクトの作成
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -277,19 +352,17 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
-      3.RCCar
+      3.RCCar(RaspPi3)
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
-        3.RCCar
+        3.RCCar(RaspPi3)
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -298,70 +371,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        学習
-      </label>
-    
-    <a href="./" title="学習" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../3.RCCar(RaspPi3)/10.train_rc/" title="学習" class="md-nav__link">
       学習
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">目次</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="教師データの作成" class="md-nav__link">
-    教師データの作成
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mac" title="教師データの学習(Mac側)" class="md-nav__link">
-    教師データの学習(Mac側)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#raspberrypi" title="学習済みモデルをRaspberryPiに戻す" class="md-nav__link">
-    学習済みモデルをRaspberryPiに戻す
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#donkey" title="学習済みモデルでDonkeyを動かす" class="md-nav__link">
-    学習済みモデルでDonkeyを動かす
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -371,7 +385,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../5.build/" title="組み立て" class="md-nav__link">
+    <a href="../../3.RCCar(RaspPi3)/5.build/" title="組み立て" class="md-nav__link">
       組み立て
     </a>
   </li>
@@ -383,7 +397,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../6.rasppi/" title="RaspPi3用のイメージ作成" class="md-nav__link">
+    <a href="../../3.RCCar(RaspPi3)/6.rasppi/" title="RaspPi3用のイメージ作成" class="md-nav__link">
       RaspPi3用のイメージ作成
     </a>
   </li>
@@ -395,7 +409,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../7.calbration/" title="キャリブレーション" class="md-nav__link">
+    <a href="../../3.RCCar(RaspPi3)/7.calbration/" title="キャリブレーション" class="md-nav__link">
       キャリブレーション
     </a>
   </li>
@@ -407,7 +421,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../8.bluetooth/" title="Joystick(PS3)" class="md-nav__link">
+    <a href="../../3.RCCar(RaspPi3)/8.bluetooth/" title="Joystick(PS3)" class="md-nav__link">
       Joystick(PS3)
     </a>
   </li>
@@ -419,7 +433,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../9.joystick/" title="Joystick(Wifi Joystick)" class="md-nav__link">
+    <a href="../../3.RCCar(RaspPi3)/9.joystick/" title="Joystick(Wifi Joystick)" class="md-nav__link">
       Joystick(Wifi Joystick)
     </a>
   </li>
@@ -511,29 +525,43 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="教師データの作成" class="md-nav__link">
-    教師データの作成
+  <a href="#_2" title="参考ドキュメント" class="md-nav__link">
+    参考ドキュメント
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mac" title="教師データの学習(Mac側)" class="md-nav__link">
-    教師データの学習(Mac側)
+  <a href="#git-clone" title="Git clone" class="md-nav__link">
+    Git clone
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#raspberrypi" title="学習済みモデルをRaspberryPiに戻す" class="md-nav__link">
-    学習済みモデルをRaspberryPiに戻す
+  <a href="#conda" title="Conda環境" class="md-nav__link">
+    Conda環境
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#donkey" title="学習済みモデルでDonkeyを動かす" class="md-nav__link">
-    学習済みモデルでDonkeyを動かす
+  <a href="#tensorflow" title="TensorFlowのインストール" class="md-nav__link">
+    TensorFlowのインストール
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="インストール" class="md-nav__link">
+    インストール
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="プロジェクトの作成" class="md-nav__link">
+    プロジェクトの作成
   </a>
   
 </li>
@@ -555,79 +583,67 @@
               
                 
                 
-                <h1 id="_1">学習</h1>
-<h2 id="_2">教師データの作成</h2>
+                <h1 id="_1">学習環境の構築</h1>
+<div class="admonition summary">
+<p class="admonition-title">Summary</p>
+<p>Donkey Car Simulatorとの連携は、DonkeyCar v2.5.7では廃止。そのため、Donkey Car Simulatorと連携して動作させるためには、Revisionは、<a href="https://github.com/autorope/donkeycar/commit/618b2f78954b4cc7880365d518a1f24fdfe102ef">618b2f7</a> まで戻す必要がある。</p>
+</div>
+<p>Donkey Carの学習環境を構築します。Donkey Carの学習は、RapPi3側ではなく、PC側でおこないます。一般的なPCで20-30分程度の学習、GPU搭載のPCで数分の学習がおこなわれます。</p>
+<h2 id="_2">参考ドキュメント</h2>
+<p>PC側のインストールは、環境等に大きく依存します。インストール方法は、<a href="https://docs.donkeycar.com/guide/install_software/">Donkey Car 公式ドキュメント</a>も参考にしてください。</p>
+<h2 id="git-clone">Git clone</h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="gp">$</span> mkdir ~/Documents/workspace_donkey
+</pre></div>
+</td></tr></table>
+
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>本ドキュメントでは、作業フォルダ ~/Documents/workspace_donkey にしています。お使いの環境に合わせて、作業フォルダは任意のフォルダ指定で大丈夫です。</p>
+</div>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> ~/mycar
-$ python manage.py drive
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">cd ~/Documents/workspace_donkey</span>
+<span class="go">git clone https://github.com/autorope/donkeycar/</span>
+<span class="go">cd donkeycar</span>
+<span class="go">git checkout master</span>
 </pre></div>
 </td></tr></table>
 
-<p>トレーニングデータは、~/mycar/data以下に保存される。</p>
-<h2 id="mac">教師データの学習(Mac側)</h2>
-<p>教師データをRaspberryPiから、Macにrsyncする。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ rsync -r pi@&lt;your_ip_address&gt;:~/mycar/data/ ~/mycar/data/
-</pre></div>
-</td></tr></table>
-
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Simulatorと連携したい場合は、上記の作業の後に、<code>git checkout 344127b</code>で 344127bのリビジョンに移動します。</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Proxyを経由する必要がある場合は、<code>git config --global http.proxy http://proxy.aaa.com:8080</code>等でProxyを事前に設定しておく。</p>
+</div>
+<h2 id="conda">Conda環境</h2>
+<p><a href="https://conda.io/miniconda.html">miniconda</a>をインストールします。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$  ls data
-tub_01_18-08-27 tub_02_18-08-27
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">conda env create -f install/envs/mac.yml</span>
+<span class="go">source activate donkey</span>
 </pre></div>
 </td></tr></table>
 
-<p>Mac側には、tub_日付のフォルダが教師データ作成の度にふえていく。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ donkey tubclean .
+<p>Consoleに(donkey) の文字列ができていれば成功です。</p>
+<p><img alt="" src="../img/dev001.png" /></p>
+<h2 id="tensorflow">TensorFlowのインストール</h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">pip install tensorflow==1.8.0</span>
 </pre></div>
 </td></tr></table>
 
-<p>いらないデータを削除する。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ python ~/mycar/manage.py train --tub<span class="o">=</span>~/mycar/data/tub_01_18-08-27 --model<span class="o">=</span>./models/mypilot
+<h2 id="_3">インストール</h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">pip install -e .</span>
 </pre></div>
 </td></tr></table>
 
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">docopt</span> <span class="kn">import</span> <span class="n">docopt</span>
-
-<span class="kn">import</span> <span class="nn">donkeycar</span> <span class="kn">as</span> <span class="nn">dk</span>
-
-<span class="c1">#import parts</span>
-<span class="kn">from</span> <span class="nn">donkeycar.parts.camera</span> <span class="kn">import</span> <span class="n">PiCamera</span>
-<span class="kn">from</span> <span class="nn">donkeycar.parts.transform</span> <span class="kn">import</span> <span class="n">Lambda</span>
-<span class="c1">#from donkeycar.parts.keras import KerasCategorical</span>
-<span class="kn">from</span> <span class="nn">donkeycar.parts.actuator</span> <span class="kn">import</span> <span class="n">PCA9685</span><span class="p">,</span> <span class="n">PWMSteering</span><span class="p">,</span> <span class="n">PWMThrottle</span>
-<span class="kn">from</span> <span class="nn">donkeycar.parts.datastore</span> <span class="kn">import</span> <span class="n">TubGroup</span><span class="p">,</span> <span class="n">TubWriter</span>
-<span class="c1">#from donkeycar.parts.controller import LocalWebController, JoystickController</span>
-<span class="kn">from</span> <span class="nn">donkeycar.parts.clock</span> <span class="kn">import</span> <span class="n">Timestamp</span>
+<h2 id="_4">プロジェクトの作成</h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">donkey createcar ~/mycar</span>
 </pre></div>
 </td></tr></table>
 
-<p>これで学習開始。</p>
-<h2 id="raspberrypi">学習済みモデルをRaspberryPiに戻す</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ rsync -r ~/mycar/models/ pi@&lt;your_ip_address&gt;:~/mycar/models/
-</pre></div>
-</td></tr></table>
-
-<h2 id="donkey">学習済みモデルでDonkeyを動かす</h2>
-<p>RaspberryPi側にログイン。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ python manage.py drive --model ~/mycar/models/mypilot
-</pre></div>
-</td></tr></table>
-
-<p>or</p>
-<p>Web画面のmodel &amp; pilotから、autopilotを選ぶ。</p>
+<p><img alt="" src="../img/dev002.png" /></p>
                 
                   
                 
@@ -648,7 +664,7 @@ tub_01_18-08-27 tub_02_18-08-27
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../../2.Simulator/4.run_sim/" title="走行" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../.." title="FaBo DonkeyCar Docs" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -657,19 +673,19 @@ tub_01_18-08-27 tub_02_18-08-27
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                走行
+                FaBo DonkeyCar Docs
               </span>
             </div>
           </a>
         
         
-          <a href="../5.build/" title="組み立て" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../2.Simulator/2.sim/" title="環境構築" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                組み立て
+                環境構築
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
