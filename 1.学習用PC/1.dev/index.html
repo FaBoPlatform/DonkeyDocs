@@ -252,13 +252,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tensorflow" title="TensorFlowのインストール" class="md-nav__link">
-    TensorFlowのインストール
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_2" title="インストール" class="md-nav__link">
     インストール
   </a>
@@ -546,13 +539,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tensorflow" title="TensorFlowのインストール" class="md-nav__link">
-    TensorFlowのインストール
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#_2" title="インストール" class="md-nav__link">
     インストール
   </a>
@@ -630,18 +616,94 @@
 </pre></div>
 </td></tr></table>
 
-<p>Consoleに(donkey) の文字列ができていれば成功です。</p>
-<p><img alt="" src="../img/dev001.png" /></p>
-<h2 id="tensorflow">TensorFlowのインストール</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">pip install tensorflow==1.8.0</span>
+<p><code>install/envs/mac.yml</code></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">name</span><span class="o">:</span> <span class="n">donkey</span>
+<span class="n">channels</span><span class="o">:</span>
+<span class="o">-</span> <span class="n">defaults</span>
+<span class="n">dependencies</span><span class="o">:</span>
+<span class="o">-</span> <span class="n">mkl</span><span class="o">=</span><span class="mf">2017.0</span><span class="o">.</span><span class="mi">3</span><span class="o">=</span><span class="mi">0</span>
+<span class="o">-</span> <span class="n">numpy</span><span class="o">=</span><span class="mf">1.13</span><span class="o">.</span><span class="mi">1</span><span class="o">=</span><span class="n">py36_0</span>
+<span class="o">-</span> <span class="n">openssl</span><span class="o">=</span><span class="mf">1.0</span><span class="o">.</span><span class="mi">2</span><span class="n">l</span><span class="o">=</span><span class="mi">0</span>
+<span class="o">-</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.6</span><span class="o">.</span><span class="mi">2</span><span class="o">=</span><span class="mi">0</span>
+<span class="o">-</span> <span class="n">readline</span><span class="o">=</span><span class="mf">6.2</span><span class="o">=</span><span class="mi">2</span>
+<span class="o">-</span> <span class="n">setuptools</span><span class="o">=</span><span class="mf">27.2</span><span class="o">.</span><span class="mi">0</span><span class="o">=</span><span class="n">py36_0</span>
+<span class="o">-</span> <span class="n">sqlite</span><span class="o">=</span><span class="mf">3.13</span><span class="o">.</span><span class="mi">0</span><span class="o">=</span><span class="mi">0</span>
+<span class="o">-</span> <span class="n">tk</span><span class="o">=</span><span class="mf">8.5</span><span class="o">.</span><span class="mi">18</span><span class="o">=</span><span class="mi">0</span>
+<span class="o">-</span> <span class="n">wheel</span><span class="o">=</span><span class="mf">0.29</span><span class="o">.</span><span class="mi">0</span><span class="o">=</span><span class="n">py36_0</span>
+<span class="o">-</span> <span class="n">xz</span><span class="o">=</span><span class="mf">5.2</span><span class="o">.</span><span class="mi">3</span><span class="o">=</span><span class="mi">0</span>
+<span class="o">-</span> <span class="n">zlib</span><span class="o">=</span><span class="mf">1.2</span><span class="o">.</span><span class="mi">11</span><span class="o">=</span><span class="mi">0</span>
+<span class="o">-</span> <span class="n">pip</span><span class="o">:</span>
+  <span class="o">-</span> <span class="n">bleach</span><span class="o">==</span><span class="mf">1.5</span><span class="o">.</span><span class="mi">0</span>
+  <span class="o">-</span> <span class="n">certifi</span><span class="o">==</span><span class="mf">2017.7</span><span class="o">.</span><span class="mf">27.1</span>
+  <span class="o">-</span> <span class="n">chardet</span><span class="o">==</span><span class="mf">3.0</span><span class="o">.</span><span class="mi">4</span>
+  <span class="o">-</span> <span class="n">docopt</span><span class="o">==</span><span class="mf">0.6</span><span class="o">.</span><span class="mi">2</span>
+  <span class="o">-</span> <span class="n">h5py</span><span class="o">==</span><span class="mf">2.7</span><span class="o">.</span><span class="mi">1</span>
+  <span class="o">-</span> <span class="n">html5lib</span><span class="o">==</span><span class="mf">0.9999999</span>
+  <span class="o">-</span> <span class="n">idna</span><span class="o">==</span><span class="mf">2.6</span>
+  <span class="o">-</span> <span class="n">markdown</span><span class="o">==</span><span class="mf">2.6</span><span class="o">.</span><span class="mi">9</span>
+  <span class="o">-</span> <span class="n">olefile</span><span class="o">==</span><span class="mf">0.44</span>
+  <span class="o">-</span> <span class="n">pillow</span><span class="o">==</span><span class="mf">4.2</span><span class="o">.</span><span class="mi">1</span>
+  <span class="o">-</span> <span class="n">pyyaml</span><span class="o">==</span><span class="mf">3.12</span>
+  <span class="o">-</span> <span class="n">requests</span><span class="o">==</span><span class="mf">2.18</span><span class="o">.</span><span class="mi">4</span>
+  <span class="o">-</span> <span class="n">scipy</span><span class="o">==</span><span class="mf">0.19</span><span class="o">.</span><span class="mi">1</span>
+  <span class="o">-</span> <span class="n">six</span><span class="o">==</span><span class="mf">1.10</span><span class="o">.</span><span class="mi">0</span>
+  <span class="o">-</span> <span class="n">tornado</span><span class="o">==</span><span class="mf">4.5</span><span class="o">.</span><span class="mi">1</span>
+  <span class="o">-</span> <span class="n">urllib3</span><span class="o">==</span><span class="mf">1.22</span>
+  <span class="o">-</span> <span class="n">werkzeug</span><span class="o">==</span><span class="mf">0.12</span><span class="o">.</span><span class="mi">2</span>
+  <span class="o">-</span> <span class="n">tensorflow</span><span class="o">==</span><span class="mf">1.12</span><span class="o">.</span><span class="mi">0</span>
+  <span class="o">-</span> <span class="n">numpy</span><span class="o">==</span><span class="mf">1.15</span><span class="o">.</span><span class="mi">4</span>
+  <span class="o">-</span> <span class="n">protobuf</span><span class="o">==</span><span class="mf">3.6</span><span class="o">.</span><span class="mi">1</span>
+  <span class="o">-</span> <span class="n">keras</span><span class="o">==</span><span class="mf">2.2</span><span class="o">.</span><span class="mi">4</span>
 </pre></div>
 </td></tr></table>
 
+<p>Consoleに(donkey) の文字列ができていれば成功です。</p>
+<p><img alt="" src="../img/dev001.png" /></p>
 <h2 id="_2">インストール</h2>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">pip install -e .</span>
 </pre></div>
 </td></tr></table>
 
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Macの場合、<code>~/miniconda3/envs/donkey</code> に構築される。</p>
+</div>
 <h2 id="_3">プロジェクトの作成</h2>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">donkey createcar ~/mycar</span>
 </pre></div>
