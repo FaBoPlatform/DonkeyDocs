@@ -610,13 +610,38 @@
 </div>
 <h2 id="conda">Conda環境</h2>
 <p><a href="https://conda.io/miniconda.html">miniconda</a>をインストールします。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">conda env create -f install/envs/mac.yml</span>
-<span class="go">source activate donkey</span>
-</pre></div>
-</td></tr></table>
-
-<p><code>install/envs/mac.yml</code></p>
+<p><code>install/envs/mac.yml</code> のtensorflowのVersionを1.12.0に書き換えます。</p>
+<table>
+<thead>
+<tr>
+<th align="left">Package</th>
+<th align="left">Version</th>
+<th align="left">記述例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">tensorflow</td>
+<td align="left">1.12.0</td>
+<td align="left">tensorflow==1.12.0</td>
+</tr>
+<tr>
+<td align="left">numpy</td>
+<td align="left">1.15.4</td>
+<td align="left">numpy==1.15.4</td>
+</tr>
+<tr>
+<td align="left">protobuf</td>
+<td align="left">3.6.1</td>
+<td align="left">protobuf==3.6.1</td>
+</tr>
+<tr>
+<td align="left">keras</td>
+<td align="left">2.2.4</td>
+<td align="left">keras==2.2.4</td>
+</tr>
+</tbody>
+</table>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -690,6 +715,12 @@
   <span class="o">-</span> <span class="n">numpy</span><span class="o">==</span><span class="mf">1.15</span><span class="o">.</span><span class="mi">4</span>
   <span class="o">-</span> <span class="n">protobuf</span><span class="o">==</span><span class="mf">3.6</span><span class="o">.</span><span class="mi">1</span>
   <span class="o">-</span> <span class="n">keras</span><span class="o">==</span><span class="mf">2.2</span><span class="o">.</span><span class="mi">4</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">conda env create -f install/envs/mac.yml</span>
+<span class="go">source activate donkey</span>
 </pre></div>
 </td></tr></table>
 
