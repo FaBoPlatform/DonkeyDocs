@@ -36,7 +36,7 @@
     
     
       
-        <title>キャリブレーション - FaBo Donkey Docs</title>
+        <title>学習 - FaBo Donkey Docs</title>
       
     
     
@@ -100,7 +100,7 @@
                 FaBo Donkey Docs
               </span>
               <span class="md-header-nav__topic">
-                キャリブレーション
+                学習
               </span>
             
           
@@ -223,11 +223,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
     
     <label class="md-nav__link" for="nav-3">
-      2.Simulator
+      2.RCCar(RaspPi3)
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-3">
-        2.Simulator
+        2.RCCar(RaspPi3)
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -238,8 +238,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../2.Simulator/2.sim/" title="環境構築" class="md-nav__link">
-      環境構築
+    <a href="../../2.RCCar(RaspPi3)/01.build/" title="組み立て" class="md-nav__link">
+      組み立て
     </a>
   </li>
 
@@ -250,20 +250,56 @@
 
 
   <li class="md-nav__item">
-    <a href="../../2.Simulator/3.train_sim/" title="学習" class="md-nav__link">
+    <a href="../../2.RCCar(RaspPi3)/02.rasppi/" title="RaspPi3用のイメージ作成" class="md-nav__link">
+      RaspPi3用のイメージ作成
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../2.RCCar(RaspPi3)/03.manage/" title="Projectの作成" class="md-nav__link">
+      Projectの作成
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../2.RCCar(RaspPi3)/07.calbration/" title="キャリブレーション" class="md-nav__link">
+      キャリブレーション
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../2.RCCar(RaspPi3)/09.joystick/" title="Joystick(Wifi Joystick)" class="md-nav__link">
+      Joystick(Wifi Joystick)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../2.RCCar(RaspPi3)/10.train_rc/" title="学習" class="md-nav__link">
       学習
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../2.Simulator/4.run_sim/" title="走行" class="md-nav__link">
-      走行
     </a>
   </li>
 
@@ -285,11 +321,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
-      3.RCCar(RaspPi3)
+      3.Simulator
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
-        3.RCCar(RaspPi3)
+        3.Simulator
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -300,32 +336,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../01.build/" title="組み立て" class="md-nav__link">
-      組み立て
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../02.rasppi/" title="RaspPi3用のイメージ作成" class="md-nav__link">
-      RaspPi3用のイメージ作成
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../03.manage/" title="Projectの作成" class="md-nav__link">
-      Projectの作成
+    <a href="../2.sim/" title="環境構築" class="md-nav__link">
+      環境構築
     </a>
   </li>
 
@@ -345,11 +357,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        キャリブレーション
+        学習
       </label>
     
-    <a href="./" title="キャリブレーション" class="md-nav__link md-nav__link--active">
-      キャリブレーション
+    <a href="./" title="学習" class="md-nav__link md-nav__link--active">
+      学習
     </a>
     
       
@@ -363,15 +375,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="キャリブレーション" class="md-nav__link">
-    キャリブレーション
+  <a href="#_2" title="学習用データの準備" class="md-nav__link">
+    学習用データの準備
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#config" title="Config" class="md-nav__link">
-    Config
+  <a href="#_3" title="学習" class="md-nav__link">
+    学習
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="ソースコード" class="md-nav__link">
+    ソースコード
   </a>
   
 </li>
@@ -393,20 +412,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../09.joystick/" title="Joystick(Wifi Joystick)" class="md-nav__link">
-      Joystick(Wifi Joystick)
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../10.train_rc/" title="学習" class="md-nav__link">
-      学習
+    <a href="../4.run_sim/" title="走行" class="md-nav__link">
+      走行
     </a>
   </li>
 
@@ -509,15 +516,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="キャリブレーション" class="md-nav__link">
-    キャリブレーション
+  <a href="#_2" title="学習用データの準備" class="md-nav__link">
+    学習用データの準備
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#config" title="Config" class="md-nav__link">
-    Config
+  <a href="#_3" title="学習" class="md-nav__link">
+    学習
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="ソースコード" class="md-nav__link">
+    ソースコード
   </a>
   
 </li>
@@ -539,44 +553,35 @@
               
                 
                 
-                <h1 id="_1">キャリブレーション</h1>
-<table>
-<thead>
-<tr>
-<th align="left">ch</th>
-<th align="left">pwm</th>
-<th align="left">操作</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">0</td>
-<td align="left">pwm0</td>
-<td align="left">モーターの制御</td>
-</tr>
-<tr>
-<td align="left">1</td>
-<td align="left">pwm1</td>
-<td align="left">サーボの制御</td>
-</tr>
-</tbody>
-</table>
-<h2 id="_2">キャリブレーション</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>donkey calibrate --channel チャンネル番号
-</pre></div>
-</td></tr></table>
-
-<p>例</p>
+                <h1 id="_1">学習</h1>
+<p>Donkey Carの学習環境を構築します。Donkey Carの学習は、RapPi3側ではなく、PC側でおこないます。一般的なPCで20-30分程度の学習、GPU搭載のPCで数分の学習がおこなわれます。</p>
+<h2 id="_2">学習用データの準備</h2>
+<p>Donkey SimulatorもしくはDonkey Carで作成した教師データのデータ・セットを、プロジェクトにコピーします。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ donkey calibrate --channel <span class="m">1</span>
-$ donkey calibrate --channel <span class="m">0</span>
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>mkdir ~/mycar/data/sim
+cp -r /Application/donkey_sim.app/log/ ~/mycar/data/sim/
 </pre></div>
 </td></tr></table>
 
-<h2 id="config">Config</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>vi ~/mycar/config.py
+<div class="admonition warining">
+<p class="admonition-title">Warining</p>
+<p><code>cp</code>実行時に-rオプションをつける。ファイル毎にコピーするとargument list too long でエラーが発生。</p>
+</div>
+<h2 id="_3">学習</h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cd ~/mycar
+python manage.py train --tub=data/sim/ --model=models/mypilot
 </pre></div>
 </td></tr></table>
+
+<p>学習済みデータはmypilotに保存されます。</p>
+<p>追加で学習される場合は、--base_modelオプションで学習済みモデルを指定して、続きから学習させる。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>python manage.py train --tub=data/sim/ --model=models/newpilot --base_model=models/mypilot
+</pre></div>
+</td></tr></table>
+
+<h2 id="_4">ソースコード</h2>
+<p><code>~/workspace_donkey/donkeycar/donkeycar/parts/keras.py</code></p>
                 
                   
                 
@@ -597,7 +602,7 @@ $ donkey calibrate --channel <span class="m">0</span>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../03.manage/" title="Projectの作成" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../2.sim/" title="環境構築" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -606,19 +611,19 @@ $ donkey calibrate --channel <span class="m">0</span>
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                Projectの作成
+                環境構築
               </span>
             </div>
           </a>
         
         
-          <a href="../09.joystick/" title="Joystick(Wifi Joystick)" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../4.run_sim/" title="走行" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                Joystick(Wifi Joystick)
+                走行
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
