@@ -393,10 +393,30 @@
     ソースの修正
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#f710" title="F710に対応する場合" class="md-nav__link">
+    F710に対応する場合
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elecom" title="Elecom" class="md-nav__link">
+    Elecom
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#f710" title="F710" class="md-nav__link">
+  <a href="#f710_1" title="F710" class="md-nav__link">
     F710
   </a>
   
@@ -418,7 +438,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#elecom" title="Elecom" class="md-nav__link">
+  <a href="#elecom_1" title="Elecom" class="md-nav__link">
     Elecom
   </a>
   
@@ -582,10 +602,30 @@
     ソースの修正
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#f710" title="F710に対応する場合" class="md-nav__link">
+    F710に対応する場合
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elecom" title="Elecom" class="md-nav__link">
+    Elecom
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#f710" title="F710" class="md-nav__link">
+  <a href="#f710_1" title="F710" class="md-nav__link">
     F710
   </a>
   
@@ -607,7 +647,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#elecom" title="Elecom" class="md-nav__link">
+  <a href="#elecom_1" title="Elecom" class="md-nav__link">
     Elecom
   </a>
   
@@ -664,7 +704,12 @@ vi manage.py
 </pre></div>
 </td></tr></table>
 
-<p>F710に対応する場合</p>
+<h3 id="f710">F710に対応する場合</h3>
+<p>F710JoystickControllerをimportします。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">donkeypart_ps3_controller</span> <span class="kn">import</span> <span class="n">F710JoystickController</span>
+</pre></div>
+</td></tr></table>
+
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -676,24 +721,54 @@ vi manage.py
  9
 10
 11
-12
-13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">donkeypart_ps3_controller</span> <span class="kn">import</span> <span class="n">F710JoystickController</span>
-<span class="o">...</span>
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">docopt</span> <span class="kn">import</span> <span class="n">docopt</span>
 
-<span class="n">ctr</span> <span class="o">=</span> <span class="n">F710JoystickController</span><span class="p">(</span>
-   <span class="n">throttle_scale</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">JOYSTICK_MAX_THROTTLE</span><span class="p">,</span>
-   <span class="n">steering_scale</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">JOYSTICK_STEERING_SCALE</span><span class="p">,</span>
-   <span class="n">auto_record_on_throttle</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">AUTO_RECORD_ON_THROTTLE</span>
-<span class="p">)</span>
-<span class="o">...</span>
-<span class="n">V</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">ctr</span><span class="p">,</span>
-      <span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;cam/image_array&#39;</span><span class="p">],</span>
-      <span class="n">outputs</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;user/angle&#39;</span><span class="p">,</span> <span class="s1">&#39;user/throttle&#39;</span><span class="p">,</span> <span class="s1">&#39;user/mode&#39;</span><span class="p">,</span> <span class="s1">&#39;recording&#39;</span><span class="p">],</span>
-      <span class="n">threaded</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">donkeycar</span> <span class="kn">as</span> <span class="nn">dk</span>
+<span class="kn">from</span> <span class="nn">donkeypart_ps3_controller</span> <span class="kn">import</span> <span class="n">F710JoystickController</span>
+<span class="kn">from</span> <span class="nn">donkeycar.parts.camera</span> <span class="kn">import</span> <span class="n">PiCamera</span>
+<span class="kn">from</span> <span class="nn">donkeycar.parts.transform</span> <span class="kn">import</span> <span class="n">Lambda</span>
+<span class="kn">from</span> <span class="nn">donkeycar.parts.keras</span> <span class="kn">import</span> <span class="n">KerasLinear</span>
+<span class="kn">from</span> <span class="nn">donkeycar.parts.actuator</span> <span class="kn">import</span> <span class="n">PCA9685</span><span class="p">,</span> <span class="n">PWMSteering</span><span class="p">,</span> <span class="n">PWMThrottle</span>
+<span class="kn">from</span> <span class="nn">donkeycar.parts.datastore</span> <span class="kn">import</span> <span class="n">TubGroup</span><span class="p">,</span> <span class="n">TubWriter</span>
+<span class="kn">from</span> <span class="nn">donkeycar.parts.web_controller</span> <span class="kn">import</span> <span class="n">LocalWebController</span>
+<span class="kn">from</span> <span class="nn">donkeycar.parts.clock</span> <span class="kn">import</span> <span class="n">Timestamp</span>
 </pre></div>
 </td></tr></table>
 
-<p>Elecomに対応する場合</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">if</span> <span class="n">user_joystick</span> <span class="ow">or</span> <span class="n">cfg</span><span class="o">.</span><span class="n">USE_JOYSTICK_AS_DEFAULT</span><span class="p">:</span>
+    <span class="n">ctr</span> <span class="o">=</span> <span class="n">F710JoystickController</span><span class="p">(</span>
+        <span class="n">throttle_scale</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">JOYSTICK_MAX_THROTTLE</span><span class="p">,</span>
+        <span class="n">steering_scale</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">JOYSTICK_STEERING_SCALE</span><span class="p">,</span>
+        <span class="n">auto_record_on_throttle</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">AUTO_RECORD_ON_THROTTLE</span>
+    <span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<p><code>~/mycar/config.py</code>でJoystickを有効にします。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>#JOYSTICK
+USE_JOYSTICK_AS_DEFAULT = True
+JOYSTICK_MAX_THROTTLE = 0.25
+JOYSTICK_STEERING_SCALE = 1.0
+AUTO_RECORD_ON_THROTTLE = True
+</pre></div>
+</td></tr></table>
+
+<h3 id="elecom">Elecom</h3>
+<p>ElecomJoystickControllerをimportします。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">donkeypart_ps3_controller</span> <span class="kn">import</span> <span class="n">ElecomJoystickController</span>
+</pre></div>
+</td></tr></table>
+
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -705,24 +780,49 @@ vi manage.py
  9
 10
 11
-12
-13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">donkeypart_ps3_controller</span> <span class="kn">import</span> <span class="n">ElecomJoystickController</span>
-<span class="o">...</span>
+12</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">docopt</span> <span class="kn">import</span> <span class="n">docopt</span>
 
-<span class="n">ctr</span> <span class="o">=</span> <span class="n">ElecomJoystickController</span><span class="p">(</span>
-   <span class="n">throttle_scale</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">JOYSTICK_MAX_THROTTLE</span><span class="p">,</span>
-   <span class="n">steering_scale</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">JOYSTICK_STEERING_SCALE</span><span class="p">,</span>
-   <span class="n">auto_record_on_throttle</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">AUTO_RECORD_ON_THROTTLE</span>
-<span class="p">)</span>
-<span class="o">...</span>
-<span class="n">V</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">ctr</span><span class="p">,</span>
-      <span class="n">inputs</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;cam/image_array&#39;</span><span class="p">],</span>
-      <span class="n">outputs</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;user/angle&#39;</span><span class="p">,</span> <span class="s1">&#39;user/throttle&#39;</span><span class="p">,</span> <span class="s1">&#39;user/mode&#39;</span><span class="p">,</span> <span class="s1">&#39;recording&#39;</span><span class="p">],</span>
-      <span class="n">threaded</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">donkeycar</span> <span class="kn">as</span> <span class="nn">dk</span>
+<span class="kn">from</span> <span class="nn">donkeypart_ps3_controller</span> <span class="kn">import</span> <span class="n">ElecomJoystickController</span>
+<span class="kn">from</span> <span class="nn">donkeycar.parts.camera</span> <span class="kn">import</span> <span class="n">PiCamera</span>
+<span class="kn">from</span> <span class="nn">donkeycar.parts.transform</span> <span class="kn">import</span> <span class="n">Lambda</span>
+<span class="kn">from</span> <span class="nn">donkeycar.parts.keras</span> <span class="kn">import</span> <span class="n">KerasLinear</span>
+<span class="kn">from</span> <span class="nn">donkeycar.parts.actuator</span> <span class="kn">import</span> <span class="n">PCA9685</span><span class="p">,</span> <span class="n">PWMSteering</span><span class="p">,</span> <span class="n">PWMThrottle</span>
+<span class="kn">from</span> <span class="nn">donkeycar.parts.datastore</span> <span class="kn">import</span> <span class="n">TubGroup</span><span class="p">,</span> <span class="n">TubWriter</span>
+<span class="kn">from</span> <span class="nn">donkeycar.parts.web_controller</span> <span class="kn">import</span> <span class="n">LocalWebController</span>
+<span class="kn">from</span> <span class="nn">donkeycar.parts.clock</span> <span class="kn">import</span> <span class="n">Timestamp</span>
 </pre></div>
 </td></tr></table>
 
-<h2 id="f710">F710</h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">if</span> <span class="n">user_joystick</span> <span class="ow">or</span> <span class="n">cfg</span><span class="o">.</span><span class="n">USE_JOYSTICK_AS_DEFAULT</span><span class="p">:</span>
+    <span class="n">ctr</span> <span class="o">=</span> <span class="n">ElecomJoystickController</span><span class="p">(</span>
+        <span class="n">throttle_scale</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">JOYSTICK_MAX_THROTTLE</span><span class="p">,</span>
+        <span class="n">steering_scale</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">JOYSTICK_STEERING_SCALE</span><span class="p">,</span>
+        <span class="n">auto_record_on_throttle</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">AUTO_RECORD_ON_THROTTLE</span>
+    <span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<p><code>~/mycar/config.py</code>でJoystickを有効にします。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>#JOYSTICK
+USE_JOYSTICK_AS_DEFAULT = True
+JOYSTICK_MAX_THROTTLE = 0.25
+JOYSTICK_STEERING_SCALE = 1.0
+AUTO_RECORD_ON_THROTTLE = True
+</pre></div>
+</td></tr></table>
+
+<h2 id="f710_1">F710</h2>
 <p>F710。</p>
 <table>
 <thead>
@@ -988,7 +1088,7 @@ vi manage.py
 </pre></div>
 </td></tr></table>
 
-<h3 id="elecom">Elecom</h3>
+<h3 id="elecom_1">Elecom</h3>
 <p>Elecom Wireless Joystick。</p>
 <table>
 <thead>
