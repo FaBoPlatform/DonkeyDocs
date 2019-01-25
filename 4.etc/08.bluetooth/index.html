@@ -277,12 +277,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
     
     <label class="md-nav__link" for="nav-4">
       3.RCCar(RaspPi3)
@@ -300,7 +298,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../05.build/" title="組み立て" class="md-nav__link">
+    <a href="../../3.RCCar(RaspPi3)/01.build/" title="組み立て" class="md-nav__link">
       組み立て
     </a>
   </li>
@@ -312,7 +310,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../06.rasppi/" title="RaspPi3用のイメージ作成" class="md-nav__link">
+    <a href="../../3.RCCar(RaspPi3)/02.rasppi/" title="RaspPi3用のイメージ作成" class="md-nav__link">
       RaspPi3用のイメージ作成
     </a>
   </li>
@@ -324,11 +322,73 @@
 
 
   <li class="md-nav__item">
-    <a href="../07.calbration/" title="キャリブレーション" class="md-nav__link">
+    <a href="../../3.RCCar(RaspPi3)/03.manage/" title="Projectの作成" class="md-nav__link">
+      Projectの作成
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3.RCCar(RaspPi3)/07.calbration/" title="キャリブレーション" class="md-nav__link">
       キャリブレーション
     </a>
   </li>
 
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3.RCCar(RaspPi3)/09.joystick/" title="Joystick(Wifi Joystick)" class="md-nav__link">
+      Joystick(Wifi Joystick)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../3.RCCar(RaspPi3)/10.train_rc/" title="学習" class="md-nav__link">
+      学習
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      4.etc
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        4.etc
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
         
           
           
@@ -400,55 +460,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../09.joystick/" title="Joystick(Wifi Joystick)" class="md-nav__link">
-      Joystick(Wifi Joystick)
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../10.train_rc/" title="学習" class="md-nav__link">
-      学習
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
-    
-    <label class="md-nav__link" for="nav-5">
-      4.etc
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-5">
-        4.etc
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../4.etc/1.wifi/" title="そのほか" class="md-nav__link">
+    <a href="../1.wifi/" title="そのほか" class="md-nav__link">
       そのほか
     </a>
   </li>
@@ -460,7 +472,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../4.etc/2.debug/" title="Debug" class="md-nav__link">
+    <a href="../2.debug/" title="Debug" class="md-nav__link">
       Debug
     </a>
   </li>
@@ -472,7 +484,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../4.etc/3.joystick/" title="Joystickハック" class="md-nav__link">
+    <a href="../3.joystick/" title="Joystickハック" class="md-nav__link">
       Joystickハック
     </a>
   </li>
@@ -563,7 +575,7 @@ gcc -o sixpair sixpair.c -lusb
 </td></tr></table>
 
 <p>PS3 JoystickをDonkeyCarにUSBで接続し、PS3ボタンを押します。</p>
-<p><img alt="" src="../img/ps001.png" /></p>
+<p><img alt="" src="./img/ps001.png" /></p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo ./sixpair
@@ -702,7 +714,7 @@ vim manage.py
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../07.calbration/" title="キャリブレーション" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../3.RCCar(RaspPi3)/10.train_rc/" title="学習" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -711,19 +723,19 @@ vim manage.py
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                キャリブレーション
+                学習
               </span>
             </div>
           </a>
         
         
-          <a href="../09.joystick/" title="Joystick(Wifi Joystick)" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../1.wifi/" title="そのほか" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                Joystick(Wifi Joystick)
+                そのほか
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
