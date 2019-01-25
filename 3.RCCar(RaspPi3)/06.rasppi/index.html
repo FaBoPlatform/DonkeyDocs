@@ -547,7 +547,7 @@ network={
 <p>RaspberryPi起動時に、wpa_supplicant.confが、/etc/wpa_supplicant/wpa_supplicant.confにコピーされ、Wifiに接続されます。</p>
 <h2 id="ip">IPアドレスの検索</h2>
 <p>初期のイメージでは、RaspberryPiのHost名は、<code>donkeypi</code>になっています。PCとRaspberryPiが同一ネットワーク内に存在するのなら、Host名で接続することが可能です。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">ssh pi@donkeypi.local</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ssh pi@donkeypi.local
 </pre></div>
 </td></tr></table>
 
@@ -571,16 +571,16 @@ network={
 </tbody>
 </table>
 <p>自分のDonkeyCarが、他人と同じHost名にならないように、Host名を変更します。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">sudo vi /etc/hostname</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo vi /etc/hostname
 </pre></div>
 </td></tr></table>
 
 <p>/etc/hostname</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">donkeypi-akira</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>donkeypi-akira
 </pre></div>
 </td></tr></table>
 
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">sudo vi /etc/hosts</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo vi /etc/hosts
 </pre></div>
 </td></tr></table>
 
@@ -590,29 +590,29 @@ network={
 3
 4
 5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">127.0.0.1       localhost</span>
-<span class="go">::1             localhost ip6-localhost ip6-loopback</span>
-<span class="go">ff02::1         ip6-allnodes</span>
-<span class="go">ff02::2         ip6-allrouters</span>
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>127.0.0.1       localhost
+::1             localhost ip6-localhost ip6-loopback
+ff02::1         ip6-allnodes
+ff02::2         ip6-allrouters
 
-<span class="go">127.0.1.1       donkeypi-akira</span>
+127.0.1.1       donkeypi-akira
 </pre></div>
 </td></tr></table>
 
 <p>Host名を変更したらRaspberryPi3をRebootします。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">sudo reboot</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo reboot
 </pre></div>
 </td></tr></table>
 
 <p>再起動後、変更したHost名である<code>donkeypi-akira</code>で発見できるようになります。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">ssh pi@donkeypi-akira.local</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ssh pi@donkeypi-akira.local
 </pre></div>
 </td></tr></table>
 
 <p>Host名は、名前をかぶらないように気をつけてください。</p>
 <h1 id="donkeycar">DonkeyCarのインストール</h1>
 <h2 id="sd">SDカード容量を増やす</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">sudo raspi-config</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo raspi-config
 </pre></div>
 </td></tr></table>
 
@@ -628,16 +628,16 @@ network={
  7
  8
  9
-10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">df</span>
-<span class="go">Filesystem     1K-blocks    Used Available Use% Mounted on</span>
-<span class="go">/dev/root       29712700 1968580  26519276   7% /</span>
-<span class="go">devtmpfs          443728       0    443728   0% /dev</span>
-<span class="go">tmpfs             448336       0    448336   0% /dev/shm</span>
-<span class="go">tmpfs             448336   11596    436740   3% /run</span>
-<span class="go">tmpfs               5120       4      5116   1% /run/lock</span>
-<span class="go">tmpfs             448336       0    448336   0% /sys/fs/cgroup</span>
-<span class="go">/dev/mmcblk0p1     43436   22141     21295  51% /boot</span>
-<span class="go">tmpfs              89664       0     89664   0% /run/user/1000</span>
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>df
+Filesystem     1K-blocks    Used Available Use% Mounted on
+/dev/root       29712700 1968580  26519276   7% /
+devtmpfs          443728       0    443728   0% /dev
+tmpfs             448336       0    448336   0% /dev/shm
+tmpfs             448336   11596    436740   3% /run
+tmpfs               5120       4      5116   1% /run/lock
+tmpfs             448336       0    448336   0% /sys/fs/cgroup
+/dev/mmcblk0p1     43436   22141     21295  51% /boot
+tmpfs              89664       0     89664   0% /run/user/1000
 </pre></div>
 </td></tr></table>
 
@@ -646,10 +646,10 @@ network={
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">pip install donkeycar[pi]</span>
-<span class="go">python -c &quot;import donkeycar as dk; print(dk.__version__)&quot;</span>
-<span class="go">using donkey v2.5.8 ...</span>
-<span class="go">2.5.8</span>
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">donkeycar</span><span class="p">[</span><span class="n">pi</span><span class="p">]</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;import donkeycar as dk; print(dk.__version__)&quot;</span>
+<span class="n">using</span> <span class="n">donkey</span> <span class="n">v2</span><span class="o">.</span><span class="mf">5.8</span> <span class="o">...</span>
+<span class="mf">2.5</span><span class="o">.</span><span class="mi">8</span>
 </pre></div>
 </td></tr></table>
 
@@ -668,22 +668,32 @@ network={
 <td align="left">1.12.0</td>
 </tr>
 <tr>
-<td align="left">Keras</td>
-<td align="left">2.2.4</td>
+<td align="left">Keras-Applications</td>
+<td align="left">1.0.6</td>
+</tr>
+<tr>
+<td align="left">Keras-Preprocessing</td>
+<td align="left">1.0.5</td>
 </tr>
 </tbody>
 </table>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">pip install https://github.com/lhelontra/tensorflow-on-arm/releases/download/v1.12.0/tensorflow-1.12.0-cp35-none-linux_armv7l.whl</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pip install https://github.com/lhelontra/tensorflow-on-arm/releases/download/v1.12.0/tensorflow-1.12.0-cp35-none-linux_armv7l.whl
 </pre></div>
 </td></tr></table>
 
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">pip list | grep -i -e keras -e tensorflow</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pip list | grep -i -e keras -e tensorflow
+Keras-Applications  1.0.6    
+Keras-Preprocessing 1.0.5    
+tensorflow          1.12.0
 </pre></div>
 </td></tr></table>
 
 <h1 id="project">Project</h1>
 <h2 id="project_1">Projectフォルダの作成</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">donkey createcar ~/mycar</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>donkey createcar ~/mycar
 </pre></div>
 </td></tr></table>
 
