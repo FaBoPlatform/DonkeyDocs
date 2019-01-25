@@ -345,48 +345,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#wifi" title="Wifiの設定" class="md-nav__link">
-    Wifiの設定
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#donkey" title="Donkey関連アプリのインストール" class="md-nav__link">
-    Donkey関連アプリのインストール
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#donkeycar" title="DonkeyCarのインストール" class="md-nav__link">
-    DonkeyCarのインストール
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#project" title="Projectフォルダの作成" class="md-nav__link">
-    Projectフォルダの作成
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="起動" class="md-nav__link">
-    起動
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pc" title="PCから接続" class="md-nav__link">
-    PCから接続
-  </a>
-  
-</li>
-      
       
       
       
@@ -538,48 +496,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#wifi" title="Wifiの設定" class="md-nav__link">
-    Wifiの設定
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#donkey" title="Donkey関連アプリのインストール" class="md-nav__link">
-    Donkey関連アプリのインストール
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#donkeycar" title="DonkeyCarのインストール" class="md-nav__link">
-    DonkeyCarのインストール
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#project" title="Projectフォルダの作成" class="md-nav__link">
-    Projectフォルダの作成
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="起動" class="md-nav__link">
-    起動
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pc" title="PCから接続" class="md-nav__link">
-    PCから接続
-  </a>
-  
-</li>
-      
       
       
       
@@ -606,7 +522,7 @@
 <p>焼き込みには、Etcherを使う。
 <a href="https://www.balena.io/etcher/">https://www.balena.io/etcher/</a></p>
 <p><img alt="" src="../img/et001.png" /></p>
-<h2 id="wifi">Wifiの設定</h2>
+<h1 id="wifi">Wifiの設定</h1>
 <p>作成したSDカードをPCで開き、wpa_supplicant.confを作成します。</p>
 <p><img alt="" src="../img/wifi001.png" /></p>
 <p>wpa_supplicant.confに、接続先のssid, password(psk)を記載します。</p>
@@ -629,8 +545,13 @@ network={
 </td></tr></table>
 
 <p>RaspberryPi起動時に、wpa_supplicant.confが、/etc/wpa_supplicant/wpa_supplicant.confにコピーされ、Wifiに接続されます。</p>
-<h2 id="donkey">Donkey関連アプリのインストール</h2>
-<p>RaspPi3にHDMIケーブルでDisplayを接続し、RaspberryPiにログインする。</p>
+<h2 id="ip">IPアドレスの検索</h2>
+<p>初期のイメージでは、RaspberryPiのHost名は、<code>donkeypi</code>になっています。PCとRaspberryPiが同一ネットワーク内に存在するのなら、Host名で接続することが可能です。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">ssh pi@donkeypi.local</span>
+</pre></div>
+</td></tr></table>
+
+<p>passwordは、<code>raspberry</code>でログインできます。</p>
 <table>
 <thead>
 <tr>
@@ -649,57 +570,127 @@ network={
 </tr>
 </tbody>
 </table>
-<p>同じ名前のHostnameにあらないように、Hostnameを変更する。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo vi /etc/hostname
+<p>自分のDonkeyCarが、他人と同じHost名にならないように、Host名を変更します。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">sudo vi /etc/hostname</span>
 </pre></div>
 </td></tr></table>
 
 <p>/etc/hostname</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>donkeypi-akira
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">donkeypi-akira</span>
 </pre></div>
 </td></tr></table>
 
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo vi /etc/hosts
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">sudo vi /etc/hosts</span>
 </pre></div>
 </td></tr></table>
 
 <p>/etc/hosts</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>donkeypi-akira
-</pre></div>
-</td></tr></table>
-
-<p>ここまででいったん、Rebootする</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ sudo reboot
-</pre></div>
-</td></tr></table>
-
-<p>これで、先程つけたHostnameであるdonkeypi-akiraで発見できるようになる。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ ssh pi@donkeypi-akira.local
-</pre></div>
-</td></tr></table>
-
-<p>Host名は、名前をかぶらないように気をつける。</p>
-<h2 id="donkeycar">DonkeyCarのインストール</h2>
-<p>RaspberryPiにログインする。</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">$</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">donkeycar</span><span class="p">[</span><span class="n">pi</span><span class="p">]</span>
-<span class="err">$</span> <span class="n">python</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;import donkeycar as dk; print(dk.__version__)&quot;</span>
-<span class="n">using</span> <span class="n">donkey</span> <span class="n">v2</span><span class="o">.</span><span class="mf">5.8</span> <span class="o">...</span>
-<span class="mf">2.5</span><span class="o">.</span><span class="mi">8</span>
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">127.0.0.1       localhost</span>
+<span class="go">::1             localhost ip6-localhost ip6-loopback</span>
+<span class="go">ff02::1         ip6-allnodes</span>
+<span class="go">ff02::2         ip6-allrouters</span>
+
+<span class="go">127.0.1.1       donkeypi-akira</span>
 </pre></div>
 </td></tr></table>
 
-<h2 id="project">Projectフォルダの作成</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ donkey createcar ~/mycar
+<p>Host名を変更したらRaspberryPi3をRebootします。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">sudo reboot</span>
+</pre></div>
+</td></tr></table>
+
+<p>再起動後、変更したHost名である<code>donkeypi-akira</code>で発見できるようになります。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">ssh pi@donkeypi-akira.local</span>
+</pre></div>
+</td></tr></table>
+
+<p>Host名は、名前をかぶらないように気をつけてください。</p>
+<h1 id="donkeycar">DonkeyCarのインストール</h1>
+<h2 id="sd">SDカード容量を増やす</h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">sudo raspi-config</span>
+</pre></div>
+</td></tr></table>
+
+<p><img alt="" src="../img/conf001.png" /></p>
+<p><img alt="" src="../img/conf002.png" /></p>
+<p><img alt="" src="../img/conf003.png" /></p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">df</span>
+<span class="go">Filesystem     1K-blocks    Used Available Use% Mounted on</span>
+<span class="go">/dev/root       29712700 1968580  26519276   7% /</span>
+<span class="go">devtmpfs          443728       0    443728   0% /dev</span>
+<span class="go">tmpfs             448336       0    448336   0% /dev/shm</span>
+<span class="go">tmpfs             448336   11596    436740   3% /run</span>
+<span class="go">tmpfs               5120       4      5116   1% /run/lock</span>
+<span class="go">tmpfs             448336       0    448336   0% /sys/fs/cgroup</span>
+<span class="go">/dev/mmcblk0p1     43436   22141     21295  51% /boot</span>
+<span class="go">tmpfs              89664       0     89664   0% /run/user/1000</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="donkeycarupdate">DonkeyCarのUpdate</h2>
+<p>DonkeyCarをUpdadeします。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">pip install donkeycar[pi]</span>
+<span class="go">python -c &quot;import donkeycar as dk; print(dk.__version__)&quot;</span>
+<span class="go">using donkey v2.5.8 ...</span>
+<span class="go">2.5.8</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="tensorflowupdate">TensorFlowのUpdate</h2>
+<p>Google Colabでの学習に対応するために、RaspberryPi側も、TensorFlow 1.12.0, Keras 2.2.4にUpdateします。</p>
+<table>
+<thead>
+<tr>
+<th align="left">Package</th>
+<th align="left">Version</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">TensorFlow</td>
+<td align="left">1.12.0</td>
+</tr>
+<tr>
+<td align="left">Keras</td>
+<td align="left">2.2.4</td>
+</tr>
+</tbody>
+</table>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">pip install https://github.com/lhelontra/tensorflow-on-arm/releases/download/v1.12.0/tensorflow-1.12.0-cp35-none-linux_armv7l.whl</span>
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">pip list | grep -i -e keras -e tensorflow</span>
+</pre></div>
+</td></tr></table>
+
+<h1 id="project">Project</h1>
+<h2 id="project_1">Projectフォルダの作成</h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">donkey createcar ~/mycar</span>
 </pre></div>
 </td></tr></table>
 
 <h2 id="_1">起動</h2>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> ~/mycar
-$ python manage.py drive
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cd ~/mycar
+python manage.py drive
 </pre></div>
 </td></tr></table>
 
