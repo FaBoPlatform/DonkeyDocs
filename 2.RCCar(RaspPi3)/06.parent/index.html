@@ -385,8 +385,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../08.train_rc/" title="学習" class="md-nav__link">
-      学習
+    <a href="../08.train_rc/" title="PCでの学習" class="md-nav__link">
+      PCでの学習
     </a>
   </li>
 
@@ -618,9 +618,15 @@
 </pre></div></td></tr></table></p>
 <h2 id="_2">教師データの作成</h2>
 <p>DonkeyCarを起動します。</p>
+<p>WebController</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
-2</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd ~/mycar
-python manage.py drive
+2</pre></div></td><td class=code><div class=codehilite><pre><span></span>$ <span class=nb>cd</span> ~/mycar
+$ python manage.py drive
+</pre></div></td></tr></table></p>
+<p>JoyStick</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2</pre></div></td><td class=code><div class=codehilite><pre><span></span>$ <span class=nb>cd</span> ~/mycar
+$ python manage.py drive --js
 </pre></div></td></tr></table></p>
 <p>教師データは、<code>~/mycar/dara</code>以下に保存されます。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1

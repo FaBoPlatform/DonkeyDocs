@@ -36,7 +36,7 @@
     
     
       
-        <title>学習 - FaBo DonkeyCar Docs</title>
+        <title>PCでの学習 - FaBo DonkeyCar Docs</title>
       
     
     
@@ -76,7 +76,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#_1" tabindex="1" class="md-skip">
+      <a href="#pc" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -102,7 +102,7 @@
                 FaBo DonkeyCar Docs
               </span>
               <span class="md-header-nav__topic">
-                学習
+                PCでの学習
               </span>
             
           
@@ -335,11 +335,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        学習
+        PCでの学習
       </label>
     
-    <a href="./" title="学習" class="md-nav__link md-nav__link--active">
-      学習
+    <a href="./" title="PCでの学習" class="md-nav__link md-nav__link--active">
+      PCでの学習
     </a>
     
       
@@ -353,7 +353,7 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="教師データの作成" class="md-nav__link">
+  <a href="#_1" title="教師データの作成" class="md-nav__link">
     教師データの作成
   </a>
   
@@ -362,6 +362,13 @@
         <li class="md-nav__item">
   <a href="#mac" title="教師データの学習(Mac側)" class="md-nav__link">
     教師データの学習(Mac側)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="学習" class="md-nav__link">
+    学習
   </a>
   
 </li>
@@ -549,7 +556,7 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="教師データの作成" class="md-nav__link">
+  <a href="#_1" title="教師データの作成" class="md-nav__link">
     教師データの作成
   </a>
   
@@ -558,6 +565,13 @@
         <li class="md-nav__item">
   <a href="#mac" title="教師データの学習(Mac側)" class="md-nav__link">
     教師データの学習(Mac側)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="学習" class="md-nav__link">
+    学習
   </a>
   
 </li>
@@ -593,53 +607,43 @@
               
                 
                 
-                <h1 id="_1">学習</h1>
-<h2 id="_2">教師データの作成</h2>
+                <h1 id="pc">PCでの学習</h1>
+<h2 id="_1">教師データの作成</h2>
+<p>DonkeyCarを起動します。</p>
+<p>WebController</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2</pre></div></td><td class=code><div class=codehilite><pre><span></span>$ <span class=nb>cd</span> ~/mycar
 $ python manage.py drive
 </pre></div></td></tr></table></p>
-<p>トレーニングデータは、~/mycar/data以下に保存される。</p>
+<p>JoyStick</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2</pre></div></td><td class=code><div class=codehilite><pre><span></span>$ <span class=nb>cd</span> ~/mycar
+$ python manage.py drive --js
+</pre></div></td></tr></table></p>
+<p>教師データは、<code>~/mycar/dara</code>以下に保存されます。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2
+3</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd ~/mycar/data
+ls
+tub_01_19-01-26
+</pre></div></td></tr></table></p>
 <h2 id="mac">教師データの学習(Mac側)</h2>
 <p>教師データをRaspberryPiから、Macにrsyncする。</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_2za3csjavqh4zmn checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_2za3csjavqh4zmn-panel role=tab><label for=tab-group-1-0_2za3csjavqh4zmn class=code-tab-label data-lang id=tab-group-1-0_2za3csjavqh4zmn-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_2za3csjavqh4zmn-panel aria-labelledby=tab-group-1-0_2za3csjavqh4zmn-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>$ rsync -r pi@&lt;your_ip_address&gt;:~/mycar/data/ ~/mycar/data/
-</pre></div></td></tr></table></div><input name=tab-group-1 type=radio id=tab-group-1-1_gomhtsnnv9m2bmf class=code-tab data-lang aria-controls=tab-group-1-1_gomhtsnnv9m2bmf-panel role=tab><label for=tab-group-1-1_gomhtsnnv9m2bmf class=code-tab-label data-lang id=tab-group-1-1_gomhtsnnv9m2bmf-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_gomhtsnnv9m2bmf-panel aria-labelledby=tab-group-1-1_gomhtsnnv9m2bmf-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
-2</pre></div></td><td class=code><div class=codehilite><pre><span></span>$  ls data
-tub_01_18-08-27 tub_02_18-08-27
-</pre></div></td></tr></table></div></div>
-
-<p>Mac側には、tub_日付のフォルダが教師データ作成の度にふえていく。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>$ donkey tubclean .
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>$ rsync -r pi@&lt;your_ip_address&gt;:~/mycar/data/ ~/mycar/data/
 </pre></div></td></tr></table></p>
-<p>いらないデータを削除する。</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-3><input name=tab-group-3 type=radio id=tab-group-3-0_egkh3752xyvqw3m checked=checked class=code-tab data-lang aria-controls=tab-group-3-0_egkh3752xyvqw3m-panel role=tab><label for=tab-group-3-0_egkh3752xyvqw3m class=code-tab-label data-lang id=tab-group-3-0_egkh3752xyvqw3m-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-0_egkh3752xyvqw3m-panel aria-labelledby=tab-group-3-0_egkh3752xyvqw3m-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>$ python ~/mycar/manage.py train --tub<span class=o>=</span>~/mycar/data/tub_01_18-08-27 --model<span class=o>=</span>./models/mypilot
-</pre></div></td></tr></table></div><input name=tab-group-3 type=radio id=tab-group-3-1_python class=code-tab data-lang=python aria-controls=tab-group-3-1_python-panel role=tab><label for=tab-group-3-1_python class=code-tab-label data-lang=python id=tab-group-3-1_python-label>Python</label><div class=code-tabpanel role=tabpanel data-lang=python id=tab-group-3-1_python-panel aria-labelledby=tab-group-3-1_python-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kn>import</span> <span class=nn>os</span>
-<span class=kn>from</span> <span class=nn>docopt</span> <span class=kn>import</span> <span class=n>docopt</span>
-
-<span class=kn>import</span> <span class=nn>donkeycar</span> <span class=kn>as</span> <span class=nn>dk</span>
-
-<span class=c1>#import parts</span>
-<span class=kn>from</span> <span class=nn>donkeycar.parts.camera</span> <span class=kn>import</span> <span class=n>PiCamera</span>
-<span class=kn>from</span> <span class=nn>donkeycar.parts.transform</span> <span class=kn>import</span> <span class=n>Lambda</span>
-<span class=c1>#from donkeycar.parts.keras import KerasCategorical</span>
-<span class=kn>from</span> <span class=nn>donkeycar.parts.actuator</span> <span class=kn>import</span> <span class=n>PCA9685</span><span class=p>,</span> <span class=n>PWMSteering</span><span class=p>,</span> <span class=n>PWMThrottle</span>
-<span class=kn>from</span> <span class=nn>donkeycar.parts.datastore</span> <span class=kn>import</span> <span class=n>TubGroup</span><span class=p>,</span> <span class=n>TubWriter</span>
-<span class=c1>#from donkeycar.parts.controller import LocalWebController, JoystickController</span>
-<span class=kn>from</span> <span class=nn>donkeycar.parts.clock</span> <span class=kn>import</span> <span class=n>Timestamp</span>
-</pre></div></td></tr></table></div></div>
-
+<p>PC側の~/mycar/dataに同期される。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2</pre></div></td><td class=code><div class=codehilite><pre><span></span>$  ls data
+tub_01_19-01-26
+</pre></div></td></tr></table></p>
+<p>Mac側には、tub_日付のフォルダが教師データ作成の度にふえていく。</p>
+<p>donkey tubecleanコマンドで、いらないデータを削除する。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>$ donkey tubclean ~/mycar/data
+</pre></div></td></tr></table></p>
+<h2 id="_2">学習</h2>
+<p>学習を開始する</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>$ python ~/mycar/manage.py train --tub<span class=o>=</span>~/mycar/data/tub_01_18-08-27 --model<span class=o>=</span>./models/mypilot
+</pre></div></td></tr></table></p>
 <p>これで学習開始。</p>
 <h2 id="raspberrypi">学習済みモデルをRaspberryPiに戻す</h2>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>$ rsync -r ~/mycar/models/ pi@&lt;your_ip_address&gt;:~/mycar/models/
@@ -648,7 +652,6 @@ tub_01_18-08-27 tub_02_18-08-27
 <p>RaspberryPi側にログイン。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>$ python manage.py drive --model ~/mycar/models/mypilot
 </pre></div></td></tr></table></p>
-<p>or</p>
 <p>Web画面のmodel &amp; pilotから、autopilotを選ぶ。</p>
                 
                   
