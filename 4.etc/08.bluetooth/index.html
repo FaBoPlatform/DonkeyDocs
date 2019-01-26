@@ -36,7 +36,7 @@
     
     
       
-        <title>Joystick(PS3) - FaBo Donkey Docs</title>
+        <title>Joystick(PS3) - FaBo DonkeyCar Docs</title>
       
     
     
@@ -58,6 +58,8 @@
     
     
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
     
   </head>
@@ -83,7 +85,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="FaBo Donkey Docs" class="md-header-nav__button md-logo">
+        <a href="../.." title="FaBo DonkeyCar Docs" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -97,7 +99,7 @@
           
             
               <span class="md-header-nav__topic">
-                FaBo Donkey Docs
+                FaBo DonkeyCar Docs
               </span>
               <span class="md-header-nav__topic">
                 Joystick(PS3)
@@ -155,12 +157,12 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../.." title="FaBo Donkey Docs" class="md-nav__button md-logo">
+    <a href="../.." title="FaBo DonkeyCar Docs" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
     </a>
-    FaBo Donkey Docs
+    FaBo DonkeyCar Docs
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -584,100 +586,70 @@
 <p>PS3 Joystickは、Thirdparty製は認識しない。</p>
 </div>
 <h2 id="ps3-joystick">PS3 Joystickの認識</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_46t1f0zm4nr4mf2 checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_46t1f0zm4nr4mf2-panel role=tab><label for=tab-group-0-0_46t1f0zm4nr4mf2 class=code-tab-label data-lang id=tab-group-0-0_46t1f0zm4nr4mf2-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_46t1f0zm4nr4mf2-panel aria-labelledby=tab-group-0-0_46t1f0zm4nr4mf2-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get install bluetooth libbluetooth3 libusb-dev
+3</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo apt-get install bluetooth libbluetooth3 libusb-dev
 sudo systemctl enable bluetooth.service
 sudo usermod -G bluetooth -a pi
-</pre></div>
-</td></tr></table>
-
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>wget http://www.pabr.org/sixlinux/sixpair.c
+</pre></div></td></tr></table></div><input name=tab-group-0 type=radio id=tab-group-0-1_dvl8auzwag1bqvl class=code-tab data-lang aria-controls=tab-group-0-1_dvl8auzwag1bqvl-panel role=tab><label for=tab-group-0-1_dvl8auzwag1bqvl class=code-tab-label data-lang id=tab-group-0-1_dvl8auzwag1bqvl-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_dvl8auzwag1bqvl-panel aria-labelledby=tab-group-0-1_dvl8auzwag1bqvl-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2</pre></div></td><td class=code><div class=codehilite><pre><span></span>wget http://www.pabr.org/sixlinux/sixpair.c
 gcc -o sixpair sixpair.c -lusb
-</pre></div>
-</td></tr></table>
+</pre></div></td></tr></table></div></div>
 
 <p>PS3 JoystickをDonkeyCarにUSBで接続し、PS3ボタンを押します。</p>
 <p><img alt="" src="../img/ps001.png" /></p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo ./sixpair
+3</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo ./sixpair
 Current Bluetooth master: b8:27:eb:4d:b1:73
 Setting master bd_addr to b8:27:eb:4d:b1:73
-</pre></div>
-</td></tr></table>
-
+</pre></div></td></tr></table></p>
 <p>Bluetoothデバイスアドレスがでてくれば、成功。PS3 JoystickをDonkeyCarから切り離します。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>bluetoothctl
+<div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_rf75p4qtkrct535 checked=checked class=code-tab data-lang aria-controls=tab-group-2-0_rf75p4qtkrct535-panel role=tab><label for=tab-group-2-0_rf75p4qtkrct535 class=code-tab-label data-lang id=tab-group-2-0_rf75p4qtkrct535-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-0_rf75p4qtkrct535-panel aria-labelledby=tab-group-2-0_rf75p4qtkrct535-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2</pre></div></td><td class=code><div class=codehilite><pre><span></span>bluetoothctl
 [NEW] Controller B8:27:EB:4D:B1:73 donkeypi [default]
-</pre></div>
-</td></tr></table>
-
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>[PLAYSTATION(R)3 Controller]#  agent on
+</pre></div></td></tr></table></div><input name=tab-group-2 type=radio id=tab-group-2-1_ypb2qla8v9un2fr class=code-tab data-lang aria-controls=tab-group-2-1_ypb2qla8v9un2fr-panel role=tab><label for=tab-group-2-1_ypb2qla8v9un2fr class=code-tab-label data-lang id=tab-group-2-1_ypb2qla8v9un2fr-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-1_ypb2qla8v9un2fr-panel aria-labelledby=tab-group-2-1_ypb2qla8v9un2fr-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2</pre></div></td><td class=code><div class=codehilite><pre><span></span>[PLAYSTATION(R)3 Controller]#  agent on
 Agent registered
-</pre></div>
-</td></tr></table>
+</pre></div></td></tr></table></div></div>
 
 <p>PS3ボタンを押す</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>[PLAYSTATION(R)3 Controller]#  connect B8:27:EB:4D:B1:73
-</pre></div>
-</td></tr></table>
-
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>[PLAYSTATION(R)3 Controller]#  connect B8:27:EB:4D:B1:73
+</pre></div></td></tr></table></p>
 <p>つながるまで繰り返す</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<div class=md-fenced-code-tabs id=tab-tab-group-4><input name=tab-group-4 type=radio id=tab-group-4-0_p4fnxodwewj0iwk checked=checked class=code-tab data-lang aria-controls=tab-group-4-0_p4fnxodwewj0iwk-panel role=tab><label for=tab-group-4-0_p4fnxodwewj0iwk class=code-tab-label data-lang id=tab-group-4-0_p4fnxodwewj0iwk-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-4-0_p4fnxodwewj0iwk-panel aria-labelledby=tab-group-4-0_p4fnxodwewj0iwk-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
 3
 4
-5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>[PLAYSTATION(R)3 Controller]#  trust B8:27:EB:4D:B1:73
+5</pre></div></td><td class=code><div class=codehilite><pre><span></span>[PLAYSTATION(R)3 Controller]#  trust B8:27:EB:4D:B1:73
 
 [PLAYSTATION(R)3 Controller]#  default-agent
 
 [PLAYSTATION(R)3 Controller]#  quit
-</pre></div>
-</td></tr></table>
-
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo reboot
-</pre></div>
-</td></tr></table>
-
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ls /dev/input/js*
+</pre></div></td></tr></table></div><input name=tab-group-4 type=radio id=tab-group-4-1_9kt6602p7m0j4e5 class=code-tab data-lang aria-controls=tab-group-4-1_9kt6602p7m0j4e5-panel role=tab><label for=tab-group-4-1_9kt6602p7m0j4e5 class=code-tab-label data-lang id=tab-group-4-1_9kt6602p7m0j4e5-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-4-1_9kt6602p7m0j4e5-panel aria-labelledby=tab-group-4-1_9kt6602p7m0j4e5-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo reboot
+</pre></div></td></tr></table></div><input name=tab-group-4 type=radio id=tab-group-4-2_rpyp23r83aidmo4 class=code-tab data-lang aria-controls=tab-group-4-2_rpyp23r83aidmo4-panel role=tab><label for=tab-group-4-2_rpyp23r83aidmo4 class=code-tab-label data-lang id=tab-group-4-2_rpyp23r83aidmo4-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-4-2_rpyp23r83aidmo4-panel aria-labelledby=tab-group-4-2_rpyp23r83aidmo4-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2</pre></div></td><td class=code><div class=codehilite><pre><span></span>ls /dev/input/js*
 /dev/input/js0
-</pre></div>
-</td></tr></table>
+</pre></div></td></tr></table></div></div>
 
 <p>/dev/input/js0が見えれば成功。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>jstest /dev/input/js0
-</pre></div>
-</td></tr></table>
-
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>jstest /dev/input/js0
+</pre></div></td></tr></table></p>
 <h2 id="_1">必要なパッケージの拡張</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pip install git+https://github.com/autorope/donkeypart_ps3_controller.git
-</pre></div>
-</td></tr></table>
-
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>pip install git+https://github.com/autorope/donkeypart_ps3_controller.git
+</pre></div></td></tr></table></p>
 <h2 id="_2">調整</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cd /home/pi/env/lib/python3.5/site-packages/donkeypart_ps3_controller
+<div class=md-fenced-code-tabs id=tab-tab-group-7><input name=tab-group-7 type=radio id=tab-group-7-0_hr0jl8t873u7s3a checked=checked class=code-tab data-lang aria-controls=tab-group-7-0_hr0jl8t873u7s3a-panel role=tab><label for=tab-group-7-0_hr0jl8t873u7s3a class=code-tab-label data-lang id=tab-group-7-0_hr0jl8t873u7s3a-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-7-0_hr0jl8t873u7s3a-panel aria-labelledby=tab-group-7-0_hr0jl8t873u7s3a-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd /home/pi/env/lib/python3.5/site-packages/donkeypart_ps3_controller
 vi __init__.py
-</pre></div>
-</td></tr></table>
-
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">.part</span> <span class="kn">import</span> <span class="n">PS3JoystickController</span>
-</pre></div>
-</td></tr></table>
+</pre></div></td></tr></table></div><input name=tab-group-7 type=radio id=tab-group-7-1_o2hfmbfem7syh8a class=code-tab data-lang aria-controls=tab-group-7-1_o2hfmbfem7syh8a-panel role=tab><label for=tab-group-7-1_o2hfmbfem7syh8a class=code-tab-label data-lang id=tab-group-7-1_o2hfmbfem7syh8a-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-7-1_o2hfmbfem7syh8a-panel aria-labelledby=tab-group-7-1_o2hfmbfem7syh8a-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kn>from</span> <span class=nn>.part</span> <span class=kn>import</span> <span class=n>PS3JoystickController</span>
+</pre></div></td></tr></table></div></div>
 
 <p>に書き直す。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cd ~/mycar
+<div class=md-fenced-code-tabs id=tab-tab-group-8><input name=tab-group-8 type=radio id=tab-group-8-0_joxqvyp82uutxmv checked=checked class=code-tab data-lang aria-controls=tab-group-8-0_joxqvyp82uutxmv-panel role=tab><label for=tab-group-8-0_joxqvyp82uutxmv class=code-tab-label data-lang id=tab-group-8-0_joxqvyp82uutxmv-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-8-0_joxqvyp82uutxmv-panel aria-labelledby=tab-group-8-0_joxqvyp82uutxmv-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd ~/mycar
 vim manage.py
-</pre></div>
-</td></tr></table>
-
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+</pre></div></td></tr></table></div><input name=tab-group-8 type=radio id=tab-group-8-1_uunfx823a52vyd7 class=code-tab data-lang aria-controls=tab-group-8-1_uunfx823a52vyd7-panel role=tab><label for=tab-group-8-1_uunfx823a52vyd7 class=code-tab-label data-lang id=tab-group-8-1_uunfx823a52vyd7-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-8-1_uunfx823a52vyd7-panel aria-labelledby=tab-group-8-1_uunfx823a52vyd7-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
  2
  3
  4
@@ -696,7 +668,7 @@ vim manage.py
 17
 18
 19
-20</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>if use_joystick or cfg.USE_JOYSTICK_AS_DEFAULT:
+20</pre></div></td><td class=code><div class=codehilite><pre><span></span>if use_joystick or cfg.USE_JOYSTICK_AS_DEFAULT:
         print(&quot;Using joystick: &quot;)
         print(&quot;    throttle_scale=&quot; + str(cfg.JOYSTICK_MAX_THROTTLE))
         print(&quot;    steering_scale=&quot; + str(cfg.JOYSTICK_STEERING_SCALE))
@@ -716,8 +688,7 @@ vim manage.py
         # This web controller will create a web server that is capable
         # of managing steering, throttle, and modes, and more.
         ctr = LocalWebController(use_chaos=use_chaos)
-</pre></div>
-</td></tr></table>
+</pre></div></td></tr></table></div></div>
                 
                   
                 

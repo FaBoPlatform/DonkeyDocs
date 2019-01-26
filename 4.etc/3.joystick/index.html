@@ -36,7 +36,7 @@
     
     
       
-        <title>Joystickハック - FaBo Donkey Docs</title>
+        <title>Joystickハック - FaBo DonkeyCar Docs</title>
       
     
     
@@ -58,6 +58,8 @@
     
     
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
     
   </head>
@@ -83,7 +85,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="FaBo Donkey Docs" class="md-header-nav__button md-logo">
+        <a href="../.." title="FaBo DonkeyCar Docs" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -97,7 +99,7 @@
           
             
               <span class="md-header-nav__topic">
-                FaBo Donkey Docs
+                FaBo DonkeyCar Docs
               </span>
               <span class="md-header-nav__topic">
                 Joystickハック
@@ -155,12 +157,12 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../.." title="FaBo Donkey Docs" class="md-nav__button md-logo">
+    <a href="../.." title="FaBo DonkeyCar Docs" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
     </a>
-    FaBo Donkey Docs
+    FaBo DonkeyCar Docs
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -743,7 +745,7 @@
 </tr>
 </tbody>
 </table>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
  2
  3
  4
@@ -819,86 +821,84 @@
 74
 75
 76
-77</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kr">class</span> <span class="nx">F710Joystick</span><span class="p">(</span><span class="nx">Joystick</span><span class="p">)</span><span class="o">:</span>
-    <span class="s1">&#39;&#39;&#39;</span>
-<span class="s1">    An interface to a physical PS3 joystick available at /dev/input/js0</span>
-<span class="s1">    Contains mapping that work for Raspian Stretch drivers</span>
-<span class="s1">    &#39;&#39;&#39;</span>
+77</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kr>class</span> <span class=nx>F710Joystick</span><span class=p>(</span><span class=nx>Joystick</span><span class=p>)</span><span class=o>:</span>
+    <span class=s1>&#39;&#39;&#39;</span>
+<span class=s1>    An interface to a physical PS3 joystick available at /dev/input/js0</span>
+<span class=s1>    Contains mapping that work for Raspian Stretch drivers</span>
+<span class=s1>    &#39;&#39;&#39;</span>
 
-    <span class="nx">def</span> <span class="nx">__init__</span><span class="p">(</span><span class="nx">self</span><span class="p">,</span> <span class="o">*</span><span class="nx">args</span><span class="p">,</span> <span class="o">**</span><span class="nx">kwargs</span><span class="p">)</span><span class="o">:</span>
-        <span class="kr">super</span><span class="p">(</span><span class="nx">F710Joystick</span><span class="p">,</span> <span class="nx">self</span><span class="p">).</span><span class="nx">__init__</span><span class="p">(</span><span class="o">*</span><span class="nx">args</span><span class="p">,</span> <span class="o">**</span><span class="nx">kwargs</span><span class="p">)</span>
+    <span class=nx>def</span> <span class=nx>__init__</span><span class=p>(</span><span class=nx>self</span><span class=p>,</span> <span class=o>*</span><span class=nx>args</span><span class=p>,</span> <span class=o>**</span><span class=nx>kwargs</span><span class=p>)</span><span class=o>:</span>
+        <span class=kr>super</span><span class=p>(</span><span class=nx>F710Joystick</span><span class=p>,</span> <span class=nx>self</span><span class=p>).</span><span class=nx>__init__</span><span class=p>(</span><span class=o>*</span><span class=nx>args</span><span class=p>,</span> <span class=o>**</span><span class=nx>kwargs</span><span class=p>)</span>
 
-        <span class="nx">self</span><span class="p">.</span><span class="nx">axis_names</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="mh">0x00</span><span class="o">:</span> <span class="s1">&#39;left_stick_horz&#39;</span><span class="p">,</span>
-            <span class="mh">0x01</span><span class="o">:</span> <span class="s1">&#39;left_stick_vert&#39;</span><span class="p">,</span>
-            <span class="mh">0x02</span><span class="o">:</span> <span class="s1">&#39;right_stick_horz&#39;</span><span class="p">,</span>
-            <span class="mh">0x05</span><span class="o">:</span> <span class="s1">&#39;right_stick_vert&#39;</span><span class="p">,</span>
-        <span class="p">}</span>
+        <span class=nx>self</span><span class=p>.</span><span class=nx>axis_names</span> <span class=o>=</span> <span class=p>{</span>
+            <span class=mh>0x00</span><span class=o>:</span> <span class=s1>&#39;left_stick_horz&#39;</span><span class=p>,</span>
+            <span class=mh>0x01</span><span class=o>:</span> <span class=s1>&#39;left_stick_vert&#39;</span><span class=p>,</span>
+            <span class=mh>0x02</span><span class=o>:</span> <span class=s1>&#39;right_stick_horz&#39;</span><span class=p>,</span>
+            <span class=mh>0x05</span><span class=o>:</span> <span class=s1>&#39;right_stick_vert&#39;</span><span class=p>,</span>
+        <span class=p>}</span>
 
-        <span class="nx">self</span><span class="p">.</span><span class="nx">button_names</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="mh">0x138</span><span class="o">:</span> <span class="s1">&#39;select&#39;</span><span class="p">,</span>  <span class="err">#</span> <span class="mi">8</span> <span class="mi">312</span>
-            <span class="mh">0x139</span><span class="o">:</span> <span class="s1">&#39;start&#39;</span><span class="p">,</span>  <span class="err">#</span> <span class="mi">9</span> <span class="mi">313</span>
+        <span class=nx>self</span><span class=p>.</span><span class=nx>button_names</span> <span class=o>=</span> <span class=p>{</span>
+            <span class=mh>0x138</span><span class=o>:</span> <span class=s1>&#39;select&#39;</span><span class=p>,</span>  <span class=err>#</span> <span class=mi>8</span> <span class=mi>312</span>
+            <span class=mh>0x139</span><span class=o>:</span> <span class=s1>&#39;start&#39;</span><span class=p>,</span>  <span class=err>#</span> <span class=mi>9</span> <span class=mi>313</span>
 
-            <span class="mh">0x134</span><span class="o">:</span> <span class="s1">&#39;L1&#39;</span><span class="p">,</span>  <span class="err">#</span> <span class="mi">4</span> <span class="mi">308</span>
-            <span class="mh">0x135</span><span class="o">:</span> <span class="s1">&#39;R1&#39;</span><span class="p">,</span>  <span class="err">#</span> <span class="mi">5</span> <span class="mi">309</span>
-            <span class="mh">0x136</span><span class="o">:</span> <span class="s1">&#39;L2&#39;</span><span class="p">,</span>  <span class="err">#</span> <span class="mi">6</span> <span class="mi">310</span>
-            <span class="mh">0x137</span><span class="o">:</span> <span class="s1">&#39;R2&#39;</span><span class="p">,</span>  <span class="err">#</span> <span class="mi">7</span> <span class="mi">311</span>
-            <span class="mh">0x13a</span><span class="o">:</span> <span class="s1">&#39;L3&#39;</span><span class="p">,</span>  <span class="err">#</span> <span class="nx">a</span> <span class="mi">314</span>
-            <span class="mh">0x13b</span><span class="o">:</span> <span class="s1">&#39;R3&#39;</span><span class="p">,</span>  <span class="err">#</span> <span class="nx">b</span> <span class="mi">315</span>
+            <span class=mh>0x134</span><span class=o>:</span> <span class=s1>&#39;L1&#39;</span><span class=p>,</span>  <span class=err>#</span> <span class=mi>4</span> <span class=mi>308</span>
+            <span class=mh>0x135</span><span class=o>:</span> <span class=s1>&#39;R1&#39;</span><span class=p>,</span>  <span class=err>#</span> <span class=mi>5</span> <span class=mi>309</span>
+            <span class=mh>0x136</span><span class=o>:</span> <span class=s1>&#39;L2&#39;</span><span class=p>,</span>  <span class=err>#</span> <span class=mi>6</span> <span class=mi>310</span>
+            <span class=mh>0x137</span><span class=o>:</span> <span class=s1>&#39;R2&#39;</span><span class=p>,</span>  <span class=err>#</span> <span class=mi>7</span> <span class=mi>311</span>
+            <span class=mh>0x13a</span><span class=o>:</span> <span class=s1>&#39;L3&#39;</span><span class=p>,</span>  <span class=err>#</span> <span class=nx>a</span> <span class=mi>314</span>
+            <span class=mh>0x13b</span><span class=o>:</span> <span class=s1>&#39;R3&#39;</span><span class=p>,</span>  <span class=err>#</span> <span class=nx>b</span> <span class=mi>315</span>
 
-            <span class="mh">0x130</span><span class="o">:</span> <span class="s2">&quot;square&quot;</span><span class="p">,</span>  <span class="err">#</span> <span class="mi">0</span> <span class="mi">304</span>
-            <span class="mh">0x131</span><span class="o">:</span> <span class="s2">&quot;cross&quot;</span><span class="p">,</span>  <span class="err">#</span> <span class="mi">1</span> <span class="mi">305</span>
-            <span class="mh">0x132</span><span class="o">:</span> <span class="s2">&quot;circle&quot;</span><span class="p">,</span>  <span class="err">#</span> <span class="mi">2</span> <span class="mi">306</span>
-            <span class="mh">0x133</span><span class="o">:</span> <span class="s1">&#39;triangle&#39;</span><span class="p">,</span>  <span class="err">#</span> <span class="mi">3</span> <span class="mi">307</span>
-        <span class="p">}</span>
+            <span class=mh>0x130</span><span class=o>:</span> <span class=s2>&quot;square&quot;</span><span class=p>,</span>  <span class=err>#</span> <span class=mi>0</span> <span class=mi>304</span>
+            <span class=mh>0x131</span><span class=o>:</span> <span class=s2>&quot;cross&quot;</span><span class=p>,</span>  <span class=err>#</span> <span class=mi>1</span> <span class=mi>305</span>
+            <span class=mh>0x132</span><span class=o>:</span> <span class=s2>&quot;circle&quot;</span><span class=p>,</span>  <span class=err>#</span> <span class=mi>2</span> <span class=mi>306</span>
+            <span class=mh>0x133</span><span class=o>:</span> <span class=s1>&#39;triangle&#39;</span><span class=p>,</span>  <span class=err>#</span> <span class=mi>3</span> <span class=mi>307</span>
+        <span class=p>}</span>
 
-<span class="kr">class</span> <span class="nx">F710JoystickController</span><span class="p">(</span><span class="nx">JoystickController</span><span class="p">)</span><span class="o">:</span>
-    <span class="s1">&#39;&#39;&#39;</span>
-<span class="s1">    A Controller object that maps inputs to actions</span>
-<span class="s1">    &#39;&#39;&#39;</span>
-    <span class="nx">def</span> <span class="nx">__init__</span><span class="p">(</span><span class="nx">self</span><span class="p">,</span> <span class="o">*</span><span class="nx">args</span><span class="p">,</span> <span class="o">**</span><span class="nx">kwargs</span><span class="p">)</span><span class="o">:</span>
-        <span class="kr">super</span><span class="p">(</span><span class="nx">F710JoystickController</span><span class="p">,</span> <span class="nx">self</span><span class="p">).</span><span class="nx">__init__</span><span class="p">(</span><span class="o">*</span><span class="nx">args</span><span class="p">,</span> <span class="o">**</span><span class="nx">kwargs</span><span class="p">)</span>
+<span class=kr>class</span> <span class=nx>F710JoystickController</span><span class=p>(</span><span class=nx>JoystickController</span><span class=p>)</span><span class=o>:</span>
+    <span class=s1>&#39;&#39;&#39;</span>
+<span class=s1>    A Controller object that maps inputs to actions</span>
+<span class=s1>    &#39;&#39;&#39;</span>
+    <span class=nx>def</span> <span class=nx>__init__</span><span class=p>(</span><span class=nx>self</span><span class=p>,</span> <span class=o>*</span><span class=nx>args</span><span class=p>,</span> <span class=o>**</span><span class=nx>kwargs</span><span class=p>)</span><span class=o>:</span>
+        <span class=kr>super</span><span class=p>(</span><span class=nx>F710JoystickController</span><span class=p>,</span> <span class=nx>self</span><span class=p>).</span><span class=nx>__init__</span><span class=p>(</span><span class=o>*</span><span class=nx>args</span><span class=p>,</span> <span class=o>**</span><span class=nx>kwargs</span><span class=p>)</span>
 
-    <span class="nx">def</span> <span class="nx">init_js</span><span class="p">(</span><span class="nx">self</span><span class="p">)</span><span class="o">:</span>
-        <span class="s1">&#39;&#39;&#39;</span>
-<span class="s1">        attempt to init joystick</span>
-<span class="s1">        &#39;&#39;&#39;</span>
-        <span class="k">try</span><span class="o">:</span>
-            <span class="nx">self</span><span class="p">.</span><span class="nx">js</span> <span class="o">=</span> <span class="nx">F710Joystick</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">dev_fn</span><span class="p">)</span>
-            <span class="nx">self</span><span class="p">.</span><span class="nx">js</span><span class="p">.</span><span class="nx">init</span><span class="p">()</span>
-        <span class="nx">except</span> <span class="nx">FileNotFoundError</span>:
-            <span class="kt">print</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">dev_fn</span><span class="p">,</span> <span class="s2">&quot;not found.&quot;</span><span class="p">)</span>
-            <span class="nx">self</span><span class="p">.</span><span class="nx">js</span> <span class="o">=</span> <span class="nx">None</span>
-        <span class="k">return</span> <span class="nx">self</span><span class="p">.</span><span class="nx">js</span> <span class="nx">is</span> <span class="nx">not</span> <span class="nx">None</span>
+    <span class=nx>def</span> <span class=nx>init_js</span><span class=p>(</span><span class=nx>self</span><span class=p>)</span><span class=o>:</span>
+        <span class=s1>&#39;&#39;&#39;</span>
+<span class=s1>        attempt to init joystick</span>
+<span class=s1>        &#39;&#39;&#39;</span>
+        <span class=k>try</span><span class=o>:</span>
+            <span class=nx>self</span><span class=p>.</span><span class=nx>js</span> <span class=o>=</span> <span class=nx>F710Joystick</span><span class=p>(</span><span class=nx>self</span><span class=p>.</span><span class=nx>dev_fn</span><span class=p>)</span>
+            <span class=nx>self</span><span class=p>.</span><span class=nx>js</span><span class=p>.</span><span class=nx>init</span><span class=p>()</span>
+        <span class=nx>except</span> <span class=nx>FileNotFoundError</span>:
+            <span class=kt>print</span><span class=p>(</span><span class=nx>self</span><span class=p>.</span><span class=nx>dev_fn</span><span class=p>,</span> <span class=s2>&quot;not found.&quot;</span><span class=p>)</span>
+            <span class=nx>self</span><span class=p>.</span><span class=nx>js</span> <span class=o>=</span> <span class=nx>None</span>
+        <span class=k>return</span> <span class=nx>self</span><span class=p>.</span><span class=nx>js</span> <span class=nx>is</span> <span class=nx>not</span> <span class=nx>None</span>
 
-    <span class="nx">def</span> <span class="nx">init_trigger_maps</span><span class="p">(</span><span class="nx">self</span><span class="p">)</span><span class="o">:</span>
-        <span class="s1">&#39;&#39;&#39;</span>
-<span class="s1">        init set of mapping from buttons to function calls</span>
-<span class="s1">        &#39;&#39;&#39;</span>
-        <span class="nx">self</span><span class="p">.</span><span class="nx">button_down_trigger_map</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s1">&#39;select&#39;</span><span class="o">:</span> <span class="nx">self</span><span class="p">.</span><span class="nx">toggle_mode</span><span class="p">,</span>
-            <span class="s1">&#39;circle&#39;</span><span class="o">:</span> <span class="nx">self</span><span class="p">.</span><span class="nx">toggle_manual_recording</span><span class="p">,</span>
-            <span class="s1">&#39;triangle&#39;</span><span class="o">:</span> <span class="nx">self</span><span class="p">.</span><span class="nx">erase_last_N_records</span><span class="p">,</span>
-            <span class="s1">&#39;cross&#39;</span><span class="o">:</span> <span class="nx">self</span><span class="p">.</span><span class="nx">emergency_stop</span><span class="p">,</span>
-            <span class="s1">&#39;R2&#39;</span><span class="o">:</span> <span class="nx">self</span><span class="p">.</span><span class="nx">increase_max_throttle</span><span class="p">,</span>
-            <span class="s1">&#39;L2&#39;</span><span class="o">:</span> <span class="nx">self</span><span class="p">.</span><span class="nx">decrease_max_throttle</span><span class="p">,</span>
-            <span class="s1">&#39;start&#39;</span><span class="o">:</span> <span class="nx">self</span><span class="p">.</span><span class="nx">toggle_constant_throttle</span><span class="p">,</span>
-            <span class="s2">&quot;R1&quot;</span><span class="o">:</span> <span class="nx">self</span><span class="p">.</span><span class="nx">chaos_monkey_on_right</span><span class="p">,</span>
-            <span class="s2">&quot;L1&quot;</span><span class="o">:</span> <span class="nx">self</span><span class="p">.</span><span class="nx">chaos_monkey_on_left</span><span class="p">,</span>
-        <span class="p">}</span>
+    <span class=nx>def</span> <span class=nx>init_trigger_maps</span><span class=p>(</span><span class=nx>self</span><span class=p>)</span><span class=o>:</span>
+        <span class=s1>&#39;&#39;&#39;</span>
+<span class=s1>        init set of mapping from buttons to function calls</span>
+<span class=s1>        &#39;&#39;&#39;</span>
+        <span class=nx>self</span><span class=p>.</span><span class=nx>button_down_trigger_map</span> <span class=o>=</span> <span class=p>{</span>
+            <span class=s1>&#39;select&#39;</span><span class=o>:</span> <span class=nx>self</span><span class=p>.</span><span class=nx>toggle_mode</span><span class=p>,</span>
+            <span class=s1>&#39;circle&#39;</span><span class=o>:</span> <span class=nx>self</span><span class=p>.</span><span class=nx>toggle_manual_recording</span><span class=p>,</span>
+            <span class=s1>&#39;triangle&#39;</span><span class=o>:</span> <span class=nx>self</span><span class=p>.</span><span class=nx>erase_last_N_records</span><span class=p>,</span>
+            <span class=s1>&#39;cross&#39;</span><span class=o>:</span> <span class=nx>self</span><span class=p>.</span><span class=nx>emergency_stop</span><span class=p>,</span>
+            <span class=s1>&#39;R2&#39;</span><span class=o>:</span> <span class=nx>self</span><span class=p>.</span><span class=nx>increase_max_throttle</span><span class=p>,</span>
+            <span class=s1>&#39;L2&#39;</span><span class=o>:</span> <span class=nx>self</span><span class=p>.</span><span class=nx>decrease_max_throttle</span><span class=p>,</span>
+            <span class=s1>&#39;start&#39;</span><span class=o>:</span> <span class=nx>self</span><span class=p>.</span><span class=nx>toggle_constant_throttle</span><span class=p>,</span>
+            <span class=s2>&quot;R1&quot;</span><span class=o>:</span> <span class=nx>self</span><span class=p>.</span><span class=nx>chaos_monkey_on_right</span><span class=p>,</span>
+            <span class=s2>&quot;L1&quot;</span><span class=o>:</span> <span class=nx>self</span><span class=p>.</span><span class=nx>chaos_monkey_on_left</span><span class=p>,</span>
+        <span class=p>}</span>
 
-        <span class="nx">self</span><span class="p">.</span><span class="nx">button_up_trigger_map</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s2">&quot;R1&quot;</span><span class="o">:</span> <span class="nx">self</span><span class="p">.</span><span class="nx">chaos_monkey_off</span><span class="p">,</span>
-            <span class="s2">&quot;L1&quot;</span><span class="o">:</span> <span class="nx">self</span><span class="p">.</span><span class="nx">chaos_monkey_off</span><span class="p">,</span>
-        <span class="p">}</span>
+        <span class=nx>self</span><span class=p>.</span><span class=nx>button_up_trigger_map</span> <span class=o>=</span> <span class=p>{</span>
+            <span class=s2>&quot;R1&quot;</span><span class=o>:</span> <span class=nx>self</span><span class=p>.</span><span class=nx>chaos_monkey_off</span><span class=p>,</span>
+            <span class=s2>&quot;L1&quot;</span><span class=o>:</span> <span class=nx>self</span><span class=p>.</span><span class=nx>chaos_monkey_off</span><span class=p>,</span>
+        <span class=p>}</span>
 
-        <span class="nx">self</span><span class="p">.</span><span class="nx">axis_trigger_map</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s1">&#39;left_stick_horz&#39;</span><span class="o">:</span> <span class="nx">self</span><span class="p">.</span><span class="nx">set_steering</span><span class="p">,</span>
-            <span class="s1">&#39;right_stick_vert&#39;</span><span class="o">:</span> <span class="nx">self</span><span class="p">.</span><span class="nx">set_throttle</span><span class="p">,</span>
-        <span class="p">}</span>
-</pre></div>
-</td></tr></table>
-
+        <span class=nx>self</span><span class=p>.</span><span class=nx>axis_trigger_map</span> <span class=o>=</span> <span class=p>{</span>
+            <span class=s1>&#39;left_stick_horz&#39;</span><span class=o>:</span> <span class=nx>self</span><span class=p>.</span><span class=nx>set_steering</span><span class=p>,</span>
+            <span class=s1>&#39;right_stick_vert&#39;</span><span class=o>:</span> <span class=nx>self</span><span class=p>.</span><span class=nx>set_throttle</span><span class=p>,</span>
+        <span class=p>}</span>
+</pre></div></td></tr></table></p>
 <h3 id="elecom">Elecom</h3>
 <p>Elecom Wireless Joystick。</p>
 <table>
@@ -1001,7 +1001,7 @@
 </tr>
 </tbody>
 </table>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
  2
  3
  4
@@ -1075,83 +1075,82 @@
 72
 73
 74
-75</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kr">class</span> <span class="nx">ElecomJoystick</span><span class="p">(</span><span class="nx">Joystick</span><span class="p">)</span><span class="o">:</span>
-    <span class="s1">&#39;&#39;&#39;</span>
-<span class="s1">    An interface to a physical PS3 joystick available at /dev/input/js0</span>
-<span class="s1">    Contains mapping that work for Raspian Stretch drivers</span>
-<span class="s1">    &#39;&#39;&#39;</span>
+75</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kr>class</span> <span class=nx>ElecomJoystick</span><span class=p>(</span><span class=nx>Joystick</span><span class=p>)</span><span class=o>:</span>
+    <span class=s1>&#39;&#39;&#39;</span>
+<span class=s1>    An interface to a physical PS3 joystick available at /dev/input/js0</span>
+<span class=s1>    Contains mapping that work for Raspian Stretch drivers</span>
+<span class=s1>    &#39;&#39;&#39;</span>
 
-    <span class="nx">def</span> <span class="nx">__init__</span><span class="p">(</span><span class="nx">self</span><span class="p">,</span> <span class="o">*</span><span class="nx">args</span><span class="p">,</span> <span class="o">**</span><span class="nx">kwargs</span><span class="p">)</span><span class="o">:</span>
-        <span class="kr">super</span><span class="p">(</span><span class="nx">ElecomJoystick</span><span class="p">,</span> <span class="nx">self</span><span class="p">).</span><span class="nx">__init__</span><span class="p">(</span><span class="o">*</span><span class="nx">args</span><span class="p">,</span> <span class="o">**</span><span class="nx">kwargs</span><span class="p">)</span>
+    <span class=nx>def</span> <span class=nx>__init__</span><span class=p>(</span><span class=nx>self</span><span class=p>,</span> <span class=o>*</span><span class=nx>args</span><span class=p>,</span> <span class=o>**</span><span class=nx>kwargs</span><span class=p>)</span><span class=o>:</span>
+        <span class=kr>super</span><span class=p>(</span><span class=nx>ElecomJoystick</span><span class=p>,</span> <span class=nx>self</span><span class=p>).</span><span class=nx>__init__</span><span class=p>(</span><span class=o>*</span><span class=nx>args</span><span class=p>,</span> <span class=o>**</span><span class=nx>kwargs</span><span class=p>)</span>
 
-        <span class="nx">self</span><span class="p">.</span><span class="nx">axis_names</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="mh">0x00</span><span class="o">:</span> <span class="s1">&#39;left_stick_horz&#39;</span><span class="p">,</span>
-            <span class="mh">0x01</span><span class="o">:</span> <span class="s1">&#39;left_stick_vert&#39;</span><span class="p">,</span>
-            <span class="mh">0x02</span><span class="o">:</span> <span class="s1">&#39;right_stick_horz&#39;</span><span class="p">,</span>
-            <span class="mh">0x05</span><span class="o">:</span> <span class="s1">&#39;right_stick_vert&#39;</span><span class="p">,</span>
-        <span class="p">}</span>
+        <span class=nx>self</span><span class=p>.</span><span class=nx>axis_names</span> <span class=o>=</span> <span class=p>{</span>
+            <span class=mh>0x00</span><span class=o>:</span> <span class=s1>&#39;left_stick_horz&#39;</span><span class=p>,</span>
+            <span class=mh>0x01</span><span class=o>:</span> <span class=s1>&#39;left_stick_vert&#39;</span><span class=p>,</span>
+            <span class=mh>0x02</span><span class=o>:</span> <span class=s1>&#39;right_stick_horz&#39;</span><span class=p>,</span>
+            <span class=mh>0x05</span><span class=o>:</span> <span class=s1>&#39;right_stick_vert&#39;</span><span class=p>,</span>
+        <span class=p>}</span>
 
-        <span class="nx">self</span><span class="p">.</span><span class="nx">button_names</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="mh">0x13a</span><span class="o">:</span> <span class="s1">&#39;select&#39;</span><span class="p">,</span>  <span class="err">#</span> <span class="nx">a</span> <span class="mi">314</span>
-            <span class="mh">0x13b</span><span class="o">:</span> <span class="s1">&#39;start&#39;</span><span class="p">,</span>  <span class="err">#</span> <span class="nx">b</span> <span class="mi">315</span>
+        <span class=nx>self</span><span class=p>.</span><span class=nx>button_names</span> <span class=o>=</span> <span class=p>{</span>
+            <span class=mh>0x13a</span><span class=o>:</span> <span class=s1>&#39;select&#39;</span><span class=p>,</span>  <span class=err>#</span> <span class=nx>a</span> <span class=mi>314</span>
+            <span class=mh>0x13b</span><span class=o>:</span> <span class=s1>&#39;start&#39;</span><span class=p>,</span>  <span class=err>#</span> <span class=nx>b</span> <span class=mi>315</span>
 
-            <span class="mh">0x134</span><span class="o">:</span> <span class="s1">&#39;L1&#39;</span><span class="p">,</span>  <span class="err">#</span> <span class="mi">4</span> <span class="mi">310</span>
-            <span class="mh">0x135</span><span class="o">:</span> <span class="s1">&#39;R1&#39;</span><span class="p">,</span>  <span class="err">#</span> <span class="mi">5</span> <span class="mi">311</span>
-            <span class="mh">0x136</span><span class="o">:</span> <span class="s1">&#39;L2&#39;</span><span class="p">,</span>  <span class="err">#</span> <span class="mi">6</span> <span class="mi">312</span>
-            <span class="mh">0x137</span><span class="o">:</span> <span class="s1">&#39;R2&#39;</span><span class="p">,</span>  <span class="err">#</span> <span class="mi">7</span> <span class="mi">313</span>
+            <span class=mh>0x134</span><span class=o>:</span> <span class=s1>&#39;L1&#39;</span><span class=p>,</span>  <span class=err>#</span> <span class=mi>4</span> <span class=mi>310</span>
+            <span class=mh>0x135</span><span class=o>:</span> <span class=s1>&#39;R1&#39;</span><span class=p>,</span>  <span class=err>#</span> <span class=mi>5</span> <span class=mi>311</span>
+            <span class=mh>0x136</span><span class=o>:</span> <span class=s1>&#39;L2&#39;</span><span class=p>,</span>  <span class=err>#</span> <span class=mi>6</span> <span class=mi>312</span>
+            <span class=mh>0x137</span><span class=o>:</span> <span class=s1>&#39;R2&#39;</span><span class=p>,</span>  <span class=err>#</span> <span class=mi>7</span> <span class=mi>313</span>
 
-            <span class="mh">0x130</span><span class="o">:</span> <span class="s2">&quot;square&quot;</span><span class="p">,</span>  <span class="err">#</span> <span class="mi">0</span> <span class="mi">307</span>
-            <span class="mh">0x132</span><span class="o">:</span> <span class="s2">&quot;cross&quot;</span><span class="p">,</span>  <span class="err">#</span> <span class="mi">2</span> <span class="mi">305</span>
-            <span class="mh">0x133</span><span class="o">:</span> <span class="s2">&quot;circle&quot;</span><span class="p">,</span>  <span class="err">#</span> <span class="mi">3</span> <span class="mi">304</span>
-            <span class="mh">0x131</span><span class="o">:</span> <span class="s1">&#39;triangle&#39;</span><span class="p">,</span>  <span class="err">#</span> <span class="mi">1</span> <span class="mi">308</span>
-        <span class="p">}</span>
+            <span class=mh>0x130</span><span class=o>:</span> <span class=s2>&quot;square&quot;</span><span class=p>,</span>  <span class=err>#</span> <span class=mi>0</span> <span class=mi>307</span>
+            <span class=mh>0x132</span><span class=o>:</span> <span class=s2>&quot;cross&quot;</span><span class=p>,</span>  <span class=err>#</span> <span class=mi>2</span> <span class=mi>305</span>
+            <span class=mh>0x133</span><span class=o>:</span> <span class=s2>&quot;circle&quot;</span><span class=p>,</span>  <span class=err>#</span> <span class=mi>3</span> <span class=mi>304</span>
+            <span class=mh>0x131</span><span class=o>:</span> <span class=s1>&#39;triangle&#39;</span><span class=p>,</span>  <span class=err>#</span> <span class=mi>1</span> <span class=mi>308</span>
+        <span class=p>}</span>
 
-<span class="kr">class</span> <span class="nx">ElecomJoystickController</span><span class="p">(</span><span class="nx">JoystickController</span><span class="p">)</span><span class="o">:</span>
-    <span class="s1">&#39;&#39;&#39;</span>
-<span class="s1">    A Controller object that maps inputs to actions</span>
-<span class="s1">    &#39;&#39;&#39;</span>
-    <span class="nx">def</span> <span class="nx">__init__</span><span class="p">(</span><span class="nx">self</span><span class="p">,</span> <span class="o">*</span><span class="nx">args</span><span class="p">,</span> <span class="o">**</span><span class="nx">kwargs</span><span class="p">)</span><span class="o">:</span>
-        <span class="kr">super</span><span class="p">(</span><span class="nx">ElecomJoystickController</span><span class="p">,</span> <span class="nx">self</span><span class="p">).</span><span class="nx">__init__</span><span class="p">(</span><span class="o">*</span><span class="nx">args</span><span class="p">,</span> <span class="o">**</span><span class="nx">kwargs</span><span class="p">)</span>
+<span class=kr>class</span> <span class=nx>ElecomJoystickController</span><span class=p>(</span><span class=nx>JoystickController</span><span class=p>)</span><span class=o>:</span>
+    <span class=s1>&#39;&#39;&#39;</span>
+<span class=s1>    A Controller object that maps inputs to actions</span>
+<span class=s1>    &#39;&#39;&#39;</span>
+    <span class=nx>def</span> <span class=nx>__init__</span><span class=p>(</span><span class=nx>self</span><span class=p>,</span> <span class=o>*</span><span class=nx>args</span><span class=p>,</span> <span class=o>**</span><span class=nx>kwargs</span><span class=p>)</span><span class=o>:</span>
+        <span class=kr>super</span><span class=p>(</span><span class=nx>ElecomJoystickController</span><span class=p>,</span> <span class=nx>self</span><span class=p>).</span><span class=nx>__init__</span><span class=p>(</span><span class=o>*</span><span class=nx>args</span><span class=p>,</span> <span class=o>**</span><span class=nx>kwargs</span><span class=p>)</span>
 
-    <span class="nx">def</span> <span class="nx">init_js</span><span class="p">(</span><span class="nx">self</span><span class="p">)</span><span class="o">:</span>
-        <span class="s1">&#39;&#39;&#39;</span>
-<span class="s1">        attempt to init joystick</span>
-<span class="s1">        &#39;&#39;&#39;</span>
-        <span class="k">try</span><span class="o">:</span>
-            <span class="nx">self</span><span class="p">.</span><span class="nx">js</span> <span class="o">=</span> <span class="nx">ElecomJoystick</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">dev_fn</span><span class="p">)</span>
-            <span class="nx">self</span><span class="p">.</span><span class="nx">js</span><span class="p">.</span><span class="nx">init</span><span class="p">()</span>
-        <span class="nx">except</span> <span class="nx">FileNotFoundError</span>:
-            <span class="kt">print</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">dev_fn</span><span class="p">,</span> <span class="s2">&quot;not found.&quot;</span><span class="p">)</span>
-            <span class="nx">self</span><span class="p">.</span><span class="nx">js</span> <span class="o">=</span> <span class="nx">None</span>
-        <span class="k">return</span> <span class="nx">self</span><span class="p">.</span><span class="nx">js</span> <span class="nx">is</span> <span class="nx">not</span> <span class="nx">None</span>
+    <span class=nx>def</span> <span class=nx>init_js</span><span class=p>(</span><span class=nx>self</span><span class=p>)</span><span class=o>:</span>
+        <span class=s1>&#39;&#39;&#39;</span>
+<span class=s1>        attempt to init joystick</span>
+<span class=s1>        &#39;&#39;&#39;</span>
+        <span class=k>try</span><span class=o>:</span>
+            <span class=nx>self</span><span class=p>.</span><span class=nx>js</span> <span class=o>=</span> <span class=nx>ElecomJoystick</span><span class=p>(</span><span class=nx>self</span><span class=p>.</span><span class=nx>dev_fn</span><span class=p>)</span>
+            <span class=nx>self</span><span class=p>.</span><span class=nx>js</span><span class=p>.</span><span class=nx>init</span><span class=p>()</span>
+        <span class=nx>except</span> <span class=nx>FileNotFoundError</span>:
+            <span class=kt>print</span><span class=p>(</span><span class=nx>self</span><span class=p>.</span><span class=nx>dev_fn</span><span class=p>,</span> <span class=s2>&quot;not found.&quot;</span><span class=p>)</span>
+            <span class=nx>self</span><span class=p>.</span><span class=nx>js</span> <span class=o>=</span> <span class=nx>None</span>
+        <span class=k>return</span> <span class=nx>self</span><span class=p>.</span><span class=nx>js</span> <span class=nx>is</span> <span class=nx>not</span> <span class=nx>None</span>
 
-    <span class="nx">def</span> <span class="nx">init_trigger_maps</span><span class="p">(</span><span class="nx">self</span><span class="p">)</span><span class="o">:</span>
-        <span class="s1">&#39;&#39;&#39;</span>
-<span class="s1">        init set of mapping from buttons to function calls</span>
-<span class="s1">        &#39;&#39;&#39;</span>
-        <span class="nx">self</span><span class="p">.</span><span class="nx">button_down_trigger_map</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s1">&#39;select&#39;</span><span class="o">:</span> <span class="nx">self</span><span class="p">.</span><span class="nx">toggle_mode</span><span class="p">,</span>
-            <span class="s1">&#39;circle&#39;</span><span class="o">:</span> <span class="nx">self</span><span class="p">.</span><span class="nx">toggle_manual_recording</span><span class="p">,</span>
-            <span class="s1">&#39;triangle&#39;</span><span class="o">:</span> <span class="nx">self</span><span class="p">.</span><span class="nx">erase_last_N_records</span><span class="p">,</span>
-            <span class="s1">&#39;cross&#39;</span><span class="o">:</span> <span class="nx">self</span><span class="p">.</span><span class="nx">emergency_stop</span><span class="p">,</span>
-            <span class="s1">&#39;R2&#39;</span><span class="o">:</span> <span class="nx">self</span><span class="p">.</span><span class="nx">increase_max_throttle</span><span class="p">,</span>
-            <span class="s1">&#39;L2&#39;</span><span class="o">:</span> <span class="nx">self</span><span class="p">.</span><span class="nx">decrease_max_throttle</span><span class="p">,</span>
-            <span class="s1">&#39;start&#39;</span><span class="o">:</span> <span class="nx">self</span><span class="p">.</span><span class="nx">toggle_constant_throttle</span><span class="p">,</span>
-            <span class="s2">&quot;R1&quot;</span><span class="o">:</span> <span class="nx">self</span><span class="p">.</span><span class="nx">chaos_monkey_on_right</span><span class="p">,</span>
-            <span class="s2">&quot;L1&quot;</span><span class="o">:</span> <span class="nx">self</span><span class="p">.</span><span class="nx">chaos_monkey_on_left</span><span class="p">,</span>
-        <span class="p">}</span>
+    <span class=nx>def</span> <span class=nx>init_trigger_maps</span><span class=p>(</span><span class=nx>self</span><span class=p>)</span><span class=o>:</span>
+        <span class=s1>&#39;&#39;&#39;</span>
+<span class=s1>        init set of mapping from buttons to function calls</span>
+<span class=s1>        &#39;&#39;&#39;</span>
+        <span class=nx>self</span><span class=p>.</span><span class=nx>button_down_trigger_map</span> <span class=o>=</span> <span class=p>{</span>
+            <span class=s1>&#39;select&#39;</span><span class=o>:</span> <span class=nx>self</span><span class=p>.</span><span class=nx>toggle_mode</span><span class=p>,</span>
+            <span class=s1>&#39;circle&#39;</span><span class=o>:</span> <span class=nx>self</span><span class=p>.</span><span class=nx>toggle_manual_recording</span><span class=p>,</span>
+            <span class=s1>&#39;triangle&#39;</span><span class=o>:</span> <span class=nx>self</span><span class=p>.</span><span class=nx>erase_last_N_records</span><span class=p>,</span>
+            <span class=s1>&#39;cross&#39;</span><span class=o>:</span> <span class=nx>self</span><span class=p>.</span><span class=nx>emergency_stop</span><span class=p>,</span>
+            <span class=s1>&#39;R2&#39;</span><span class=o>:</span> <span class=nx>self</span><span class=p>.</span><span class=nx>increase_max_throttle</span><span class=p>,</span>
+            <span class=s1>&#39;L2&#39;</span><span class=o>:</span> <span class=nx>self</span><span class=p>.</span><span class=nx>decrease_max_throttle</span><span class=p>,</span>
+            <span class=s1>&#39;start&#39;</span><span class=o>:</span> <span class=nx>self</span><span class=p>.</span><span class=nx>toggle_constant_throttle</span><span class=p>,</span>
+            <span class=s2>&quot;R1&quot;</span><span class=o>:</span> <span class=nx>self</span><span class=p>.</span><span class=nx>chaos_monkey_on_right</span><span class=p>,</span>
+            <span class=s2>&quot;L1&quot;</span><span class=o>:</span> <span class=nx>self</span><span class=p>.</span><span class=nx>chaos_monkey_on_left</span><span class=p>,</span>
+        <span class=p>}</span>
 
-        <span class="nx">self</span><span class="p">.</span><span class="nx">button_up_trigger_map</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s2">&quot;R1&quot;</span><span class="o">:</span> <span class="nx">self</span><span class="p">.</span><span class="nx">chaos_monkey_off</span><span class="p">,</span>
-            <span class="s2">&quot;L1&quot;</span><span class="o">:</span> <span class="nx">self</span><span class="p">.</span><span class="nx">chaos_monkey_off</span><span class="p">,</span>
-        <span class="p">}</span>
+        <span class=nx>self</span><span class=p>.</span><span class=nx>button_up_trigger_map</span> <span class=o>=</span> <span class=p>{</span>
+            <span class=s2>&quot;R1&quot;</span><span class=o>:</span> <span class=nx>self</span><span class=p>.</span><span class=nx>chaos_monkey_off</span><span class=p>,</span>
+            <span class=s2>&quot;L1&quot;</span><span class=o>:</span> <span class=nx>self</span><span class=p>.</span><span class=nx>chaos_monkey_off</span><span class=p>,</span>
+        <span class=p>}</span>
 
-        <span class="nx">self</span><span class="p">.</span><span class="nx">axis_trigger_map</span> <span class="o">=</span> <span class="p">{</span>
-            <span class="s1">&#39;left_stick_horz&#39;</span><span class="o">:</span> <span class="nx">self</span><span class="p">.</span><span class="nx">set_steering</span><span class="p">,</span>
-            <span class="s1">&#39;right_stick_vert&#39;</span><span class="o">:</span> <span class="nx">self</span><span class="p">.</span><span class="nx">set_throttle</span><span class="p">,</span>
-        <span class="p">}</span>
-</pre></div>
-</td></tr></table>
+        <span class=nx>self</span><span class=p>.</span><span class=nx>axis_trigger_map</span> <span class=o>=</span> <span class=p>{</span>
+            <span class=s1>&#39;left_stick_horz&#39;</span><span class=o>:</span> <span class=nx>self</span><span class=p>.</span><span class=nx>set_steering</span><span class=p>,</span>
+            <span class=s1>&#39;right_stick_vert&#39;</span><span class=o>:</span> <span class=nx>self</span><span class=p>.</span><span class=nx>set_throttle</span><span class=p>,</span>
+        <span class=p>}</span>
+</pre></div></td></tr></table></p>
                 
                   
                 

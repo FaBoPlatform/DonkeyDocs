@@ -36,7 +36,7 @@
     
     
       
-        <title>学習環境の構築(Mac) - FaBo Donkey Docs</title>
+        <title>学習環境の構築(Mac) - FaBo DonkeyCar Docs</title>
       
     
     
@@ -58,6 +58,8 @@
     
     
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
     
   </head>
@@ -83,7 +85,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="FaBo Donkey Docs" class="md-header-nav__button md-logo">
+        <a href="../.." title="FaBo DonkeyCar Docs" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -97,7 +99,7 @@
           
             
               <span class="md-header-nav__topic">
-                FaBo Donkey Docs
+                FaBo DonkeyCar Docs
               </span>
               <span class="md-header-nav__topic">
                 学習環境の構築(Mac)
@@ -155,12 +157,12 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../.." title="FaBo Donkey Docs" class="md-nav__button md-logo">
+    <a href="../.." title="FaBo DonkeyCar Docs" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
     </a>
-    FaBo Donkey Docs
+    FaBo DonkeyCar Docs
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -610,24 +612,20 @@
 <h2 id="_1">参考ドキュメント</h2>
 <p>PC側のインストールは、環境等に大きく依存します。インストール方法は、<a href="https://docs.donkeycar.com/guide/install_software/">Donkey Car 公式ドキュメント</a>も参考にしてください。</p>
 <h2 id="git-clone">Git clone</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">mkdir ~/Documents/workspace_donkey</span>
-</pre></div>
-</td></tr></table>
-
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=go>mkdir ~/Documents/workspace_donkey</span>
+</pre></div></td></tr></table></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>本ドキュメントでは、作業フォルダ ~/Documents/workspace_donkey にしています。お使いの環境に合わせて、作業フォルダは任意のフォルダ指定で大丈夫です。</p>
 </div>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">cd ~/Documents/workspace_donkey</span>
-<span class="go">git clone https://github.com/autorope/donkeycar/</span>
-<span class="go">cd donkeycar</span>
-<span class="go">git checkout dev</span>
-</pre></div>
-</td></tr></table>
-
+4</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=go>cd ~/Documents/workspace_donkey</span>
+<span class=go>git clone https://github.com/autorope/donkeycar/</span>
+<span class=go>cd donkeycar</span>
+<span class=go>git checkout dev</span>
+</pre></div></td></tr></table></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>本ドキュメントは、dev branchのRev <a href="https://github.com/autorope/donkeycar/commit/0d6e013d16b0485febb171f407f253a5849fac96">0d6e013</a> で動作確認をおこなっています。</p>
@@ -666,7 +664,7 @@
 </tr>
 </tbody>
 </table>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_wvu8vfyvnfmv3s9 checked=checked class=code-tab data-lang aria-controls=tab-group-2-0_wvu8vfyvnfmv3s9-panel role=tab><label for=tab-group-2-0_wvu8vfyvnfmv3s9 class=code-tab-label data-lang id=tab-group-2-0_wvu8vfyvnfmv3s9-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-0_wvu8vfyvnfmv3s9-panel aria-labelledby=tab-group-2-0_wvu8vfyvnfmv3s9-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
  2
  3
  4
@@ -702,68 +700,60 @@
 34
 35
 36
-37</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">name</span><span class="o">:</span> <span class="n">donkey</span>
-<span class="n">channels</span><span class="o">:</span>
-<span class="o">-</span> <span class="n">defaults</span>
-<span class="n">dependencies</span><span class="o">:</span>
-<span class="o">-</span> <span class="n">mkl</span><span class="o">=</span><span class="mf">2017.0</span><span class="o">.</span><span class="mi">3</span><span class="o">=</span><span class="mi">0</span>
-<span class="o">-</span> <span class="n">numpy</span><span class="o">=</span><span class="mf">1.13</span><span class="o">.</span><span class="mi">1</span><span class="o">=</span><span class="n">py36_0</span>
-<span class="o">-</span> <span class="n">openssl</span><span class="o">=</span><span class="mf">1.0</span><span class="o">.</span><span class="mi">2</span><span class="n">l</span><span class="o">=</span><span class="mi">0</span>
-<span class="o">-</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.6</span><span class="o">.</span><span class="mi">2</span><span class="o">=</span><span class="mi">0</span>
-<span class="o">-</span> <span class="n">readline</span><span class="o">=</span><span class="mf">6.2</span><span class="o">=</span><span class="mi">2</span>
-<span class="o">-</span> <span class="n">setuptools</span><span class="o">=</span><span class="mf">27.2</span><span class="o">.</span><span class="mi">0</span><span class="o">=</span><span class="n">py36_0</span>
-<span class="o">-</span> <span class="n">sqlite</span><span class="o">=</span><span class="mf">3.13</span><span class="o">.</span><span class="mi">0</span><span class="o">=</span><span class="mi">0</span>
-<span class="o">-</span> <span class="n">tk</span><span class="o">=</span><span class="mf">8.5</span><span class="o">.</span><span class="mi">18</span><span class="o">=</span><span class="mi">0</span>
-<span class="o">-</span> <span class="n">wheel</span><span class="o">=</span><span class="mf">0.29</span><span class="o">.</span><span class="mi">0</span><span class="o">=</span><span class="n">py36_0</span>
-<span class="o">-</span> <span class="n">xz</span><span class="o">=</span><span class="mf">5.2</span><span class="o">.</span><span class="mi">3</span><span class="o">=</span><span class="mi">0</span>
-<span class="o">-</span> <span class="n">zlib</span><span class="o">=</span><span class="mf">1.2</span><span class="o">.</span><span class="mi">11</span><span class="o">=</span><span class="mi">0</span>
-<span class="o">-</span> <span class="n">pip</span><span class="o">:</span>
-  <span class="o">-</span> <span class="n">bleach</span><span class="o">==</span><span class="mf">1.5</span><span class="o">.</span><span class="mi">0</span>
-  <span class="o">-</span> <span class="n">certifi</span><span class="o">==</span><span class="mf">2017.7</span><span class="o">.</span><span class="mf">27.1</span>
-  <span class="o">-</span> <span class="n">chardet</span><span class="o">==</span><span class="mf">3.0</span><span class="o">.</span><span class="mi">4</span>
-  <span class="o">-</span> <span class="n">docopt</span><span class="o">==</span><span class="mf">0.6</span><span class="o">.</span><span class="mi">2</span>
-  <span class="o">-</span> <span class="n">h5py</span><span class="o">==</span><span class="mf">2.7</span><span class="o">.</span><span class="mi">1</span>
-  <span class="o">-</span> <span class="n">html5lib</span><span class="o">==</span><span class="mf">0.9999999</span>
-  <span class="o">-</span> <span class="n">idna</span><span class="o">==</span><span class="mf">2.6</span>
-  <span class="o">-</span> <span class="n">markdown</span><span class="o">==</span><span class="mf">2.6</span><span class="o">.</span><span class="mi">9</span>
-  <span class="o">-</span> <span class="n">olefile</span><span class="o">==</span><span class="mf">0.44</span>
-  <span class="o">-</span> <span class="n">pillow</span><span class="o">==</span><span class="mf">4.2</span><span class="o">.</span><span class="mi">1</span>
-  <span class="o">-</span> <span class="n">pyyaml</span><span class="o">==</span><span class="mf">3.12</span>
-  <span class="o">-</span> <span class="n">requests</span><span class="o">==</span><span class="mf">2.18</span><span class="o">.</span><span class="mi">4</span>
-  <span class="o">-</span> <span class="n">scipy</span><span class="o">==</span><span class="mf">0.19</span><span class="o">.</span><span class="mi">1</span>
-  <span class="o">-</span> <span class="n">six</span><span class="o">==</span><span class="mf">1.10</span><span class="o">.</span><span class="mi">0</span>
-  <span class="o">-</span> <span class="n">tornado</span><span class="o">==</span><span class="mf">4.5</span><span class="o">.</span><span class="mi">1</span>
-  <span class="o">-</span> <span class="n">urllib3</span><span class="o">==</span><span class="mf">1.22</span>
-  <span class="o">-</span> <span class="n">werkzeug</span><span class="o">==</span><span class="mf">0.12</span><span class="o">.</span><span class="mi">2</span>
-  <span class="o">-</span> <span class="n">tensorflow</span><span class="o">==</span><span class="mf">1.12</span><span class="o">.</span><span class="mi">0</span>
-  <span class="o">-</span> <span class="n">numpy</span><span class="o">==</span><span class="mf">1.15</span><span class="o">.</span><span class="mi">4</span>
-  <span class="o">-</span> <span class="n">protobuf</span><span class="o">==</span><span class="mf">3.6</span><span class="o">.</span><span class="mi">1</span>
-  <span class="o">-</span> <span class="n">keras</span><span class="o">==</span><span class="mf">2.2</span><span class="o">.</span><span class="mi">4</span>
-</pre></div>
-</td></tr></table>
-
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">conda env create -f install/envs/mac.yml</span>
-<span class="go">source activate donkey</span>
-</pre></div>
-</td></tr></table>
+37</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=n>name</span><span class=o>:</span> <span class=n>donkey</span>
+<span class=n>channels</span><span class=o>:</span>
+<span class=o>-</span> <span class=n>defaults</span>
+<span class=n>dependencies</span><span class=o>:</span>
+<span class=o>-</span> <span class=n>mkl</span><span class=o>=</span><span class=mf>2017.0</span><span class=o>.</span><span class=mi>3</span><span class=o>=</span><span class=mi>0</span>
+<span class=o>-</span> <span class=n>numpy</span><span class=o>=</span><span class=mf>1.13</span><span class=o>.</span><span class=mi>1</span><span class=o>=</span><span class=n>py36_0</span>
+<span class=o>-</span> <span class=n>openssl</span><span class=o>=</span><span class=mf>1.0</span><span class=o>.</span><span class=mi>2</span><span class=n>l</span><span class=o>=</span><span class=mi>0</span>
+<span class=o>-</span> <span class=n>python</span><span class=o>=</span><span class=mf>3.6</span><span class=o>.</span><span class=mi>2</span><span class=o>=</span><span class=mi>0</span>
+<span class=o>-</span> <span class=n>readline</span><span class=o>=</span><span class=mf>6.2</span><span class=o>=</span><span class=mi>2</span>
+<span class=o>-</span> <span class=n>setuptools</span><span class=o>=</span><span class=mf>27.2</span><span class=o>.</span><span class=mi>0</span><span class=o>=</span><span class=n>py36_0</span>
+<span class=o>-</span> <span class=n>sqlite</span><span class=o>=</span><span class=mf>3.13</span><span class=o>.</span><span class=mi>0</span><span class=o>=</span><span class=mi>0</span>
+<span class=o>-</span> <span class=n>tk</span><span class=o>=</span><span class=mf>8.5</span><span class=o>.</span><span class=mi>18</span><span class=o>=</span><span class=mi>0</span>
+<span class=o>-</span> <span class=n>wheel</span><span class=o>=</span><span class=mf>0.29</span><span class=o>.</span><span class=mi>0</span><span class=o>=</span><span class=n>py36_0</span>
+<span class=o>-</span> <span class=n>xz</span><span class=o>=</span><span class=mf>5.2</span><span class=o>.</span><span class=mi>3</span><span class=o>=</span><span class=mi>0</span>
+<span class=o>-</span> <span class=n>zlib</span><span class=o>=</span><span class=mf>1.2</span><span class=o>.</span><span class=mi>11</span><span class=o>=</span><span class=mi>0</span>
+<span class=o>-</span> <span class=n>pip</span><span class=o>:</span>
+  <span class=o>-</span> <span class=n>bleach</span><span class=o>==</span><span class=mf>1.5</span><span class=o>.</span><span class=mi>0</span>
+  <span class=o>-</span> <span class=n>certifi</span><span class=o>==</span><span class=mf>2017.7</span><span class=o>.</span><span class=mf>27.1</span>
+  <span class=o>-</span> <span class=n>chardet</span><span class=o>==</span><span class=mf>3.0</span><span class=o>.</span><span class=mi>4</span>
+  <span class=o>-</span> <span class=n>docopt</span><span class=o>==</span><span class=mf>0.6</span><span class=o>.</span><span class=mi>2</span>
+  <span class=o>-</span> <span class=n>h5py</span><span class=o>==</span><span class=mf>2.7</span><span class=o>.</span><span class=mi>1</span>
+  <span class=o>-</span> <span class=n>html5lib</span><span class=o>==</span><span class=mf>0.9999999</span>
+  <span class=o>-</span> <span class=n>idna</span><span class=o>==</span><span class=mf>2.6</span>
+  <span class=o>-</span> <span class=n>markdown</span><span class=o>==</span><span class=mf>2.6</span><span class=o>.</span><span class=mi>9</span>
+  <span class=o>-</span> <span class=n>olefile</span><span class=o>==</span><span class=mf>0.44</span>
+  <span class=o>-</span> <span class=n>pillow</span><span class=o>==</span><span class=mf>4.2</span><span class=o>.</span><span class=mi>1</span>
+  <span class=o>-</span> <span class=n>pyyaml</span><span class=o>==</span><span class=mf>3.12</span>
+  <span class=o>-</span> <span class=n>requests</span><span class=o>==</span><span class=mf>2.18</span><span class=o>.</span><span class=mi>4</span>
+  <span class=o>-</span> <span class=n>scipy</span><span class=o>==</span><span class=mf>0.19</span><span class=o>.</span><span class=mi>1</span>
+  <span class=o>-</span> <span class=n>six</span><span class=o>==</span><span class=mf>1.10</span><span class=o>.</span><span class=mi>0</span>
+  <span class=o>-</span> <span class=n>tornado</span><span class=o>==</span><span class=mf>4.5</span><span class=o>.</span><span class=mi>1</span>
+  <span class=o>-</span> <span class=n>urllib3</span><span class=o>==</span><span class=mf>1.22</span>
+  <span class=o>-</span> <span class=n>werkzeug</span><span class=o>==</span><span class=mf>0.12</span><span class=o>.</span><span class=mi>2</span>
+  <span class=o>-</span> <span class=n>tensorflow</span><span class=o>==</span><span class=mf>1.12</span><span class=o>.</span><span class=mi>0</span>
+  <span class=o>-</span> <span class=n>numpy</span><span class=o>==</span><span class=mf>1.15</span><span class=o>.</span><span class=mi>4</span>
+  <span class=o>-</span> <span class=n>protobuf</span><span class=o>==</span><span class=mf>3.6</span><span class=o>.</span><span class=mi>1</span>
+  <span class=o>-</span> <span class=n>keras</span><span class=o>==</span><span class=mf>2.2</span><span class=o>.</span><span class=mi>4</span>
+</pre></div></td></tr></table></div><input name=tab-group-2 type=radio id=tab-group-2-1_console class=code-tab data-lang=console aria-controls=tab-group-2-1_console-panel role=tab><label for=tab-group-2-1_console class=code-tab-label data-lang=console id=tab-group-2-1_console-label>Console</label><div class=code-tabpanel role=tabpanel data-lang=console id=tab-group-2-1_console-panel aria-labelledby=tab-group-2-1_console-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=go>conda env create -f install/envs/mac.yml</span>
+<span class=go>source activate donkey</span>
+</pre></div></td></tr></table></div></div>
 
 <p>Consoleに(donkey) の文字列ができていれば成功です。</p>
 <p><img alt="" src="../img/dev001.png" /></p>
 <h2 id="_2">インストール</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">pip install -e .</span>
-</pre></div>
-</td></tr></table>
-
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=go>pip install -e .</span>
+</pre></div></td></tr></table></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Macの場合、<code>~/miniconda3/envs/donkey</code> に構築される。</p>
 </div>
 <h2 id="_3">プロジェクトの作成</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="go">donkey createcar ~/mycar</span>
-</pre></div>
-</td></tr></table>
-
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=go>donkey createcar ~/mycar</span>
+</pre></div></td></tr></table></p>
 <p><img alt="" src="../img/dev002.png" /></p>
                 
                   

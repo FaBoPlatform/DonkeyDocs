@@ -36,7 +36,7 @@
     
     
       
-        <title>教師データの作成 - FaBo Donkey Docs</title>
+        <title>教師データの作成 - FaBo DonkeyCar Docs</title>
       
     
     
@@ -58,6 +58,8 @@
     
     
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
     
   </head>
@@ -83,7 +85,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="FaBo Donkey Docs" class="md-header-nav__button md-logo">
+        <a href="../.." title="FaBo DonkeyCar Docs" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -97,7 +99,7 @@
           
             
               <span class="md-header-nav__topic">
-                FaBo Donkey Docs
+                FaBo DonkeyCar Docs
               </span>
               <span class="md-header-nav__topic">
                 教師データの作成
@@ -155,12 +157,12 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../.." title="FaBo Donkey Docs" class="md-nav__button md-logo">
+    <a href="../.." title="FaBo DonkeyCar Docs" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
     </a>
-    FaBo Donkey Docs
+    FaBo DonkeyCar Docs
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -597,55 +599,43 @@
 <p>RaspberryPi側の<code>manager.py</code>を修正します。</p>
 <p>multiple tubsの部分のコメントを外し、single tubの部分を無効にします。</p>
 <p>~/mycar/manage.py</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">donkeycar.parts.datastore</span> <span class="kn">import</span> <span class="n">TubGroup</span><span class="p">,</span> <span class="n">TubWriter</span><span class="p">,</span> <span class="n">TubHandler</span>
-</pre></div>
-</td></tr></table>
-
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_gi0zsb0uoceasml checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_gi0zsb0uoceasml-panel role=tab><label for=tab-group-0-0_gi0zsb0uoceasml class=code-tab-label data-lang id=tab-group-0-0_gi0zsb0uoceasml-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_gi0zsb0uoceasml-panel aria-labelledby=tab-group-0-0_gi0zsb0uoceasml-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kn>from</span> <span class=nn>donkeycar.parts.datastore</span> <span class=kn>import</span> <span class=n>TubGroup</span><span class=p>,</span> <span class=n>TubWriter</span><span class=p>,</span> <span class=n>TubHandler</span>
+</pre></div></td></tr></table></div><input name=tab-group-0 type=radio id=tab-group-0-1_r5ljw32wl8k9fj4 class=code-tab data-lang aria-controls=tab-group-0-1_r5ljw32wl8k9fj4-panel role=tab><label for=tab-group-0-1_r5ljw32wl8k9fj4 class=code-tab-label data-lang id=tab-group-0-1_r5ljw32wl8k9fj4-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_r5ljw32wl8k9fj4-panel aria-labelledby=tab-group-0-1_r5ljw32wl8k9fj4-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
 3
 4
 5
 6
-7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    #multiple tubs
+7</pre></div></td><td class=code><div class=codehilite><pre><span></span>    #multiple tubs
     th = TubHandler(path=cfg.DATA_PATH)
     tub = th.new_tub_writer(inputs=inputs, types=types)
 
     # single tub
     #tub = TubWriter(path=cfg.TUB_PATH, inputs=inputs, types=types)
     V.add(tub, inputs=inputs, run_condition=&#39;recording&#39;)
-</pre></div>
-</td></tr></table>
+</pre></div></td></tr></table></div></div>
 
 <h2 id="_2">教師データの作成</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cd ~/mycar
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd ~/mycar
 python manage.py drive
-</pre></div>
-</td></tr></table>
-
+</pre></div></td></tr></table></p>
 <p>教師データは、<code>~/mycar/dara</code>以下に保存されます。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cd ~/mycar/data
+3</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd ~/mycar/data
 ls
 tub_01_19-01-26
-</pre></div>
-</td></tr></table>
-
-<p>++"CTRL"+"x"++で終了します。</p>
+</pre></div></td></tr></table></p>
+<p><span class="keys"><kbd>CTRL</kbd><span>+</span><kbd>x</kbd></span>で終了します。</p>
 <h2 id="_3">教師データの圧縮</h2>
 <p>データを圧縮し、1つのファイル(ZIP形式)にしてPCに転送します。</p>
 <p>RaspberryPi3にZIPをインストールします。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get install zip
-</pre></div>
-</td></tr></table>
-
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cd ~/mycar/data
+<div class=md-fenced-code-tabs id=tab-tab-group-3><input name=tab-group-3 type=radio id=tab-group-3-0_ffamky511uo4zs2 checked=checked class=code-tab data-lang aria-controls=tab-group-3-0_ffamky511uo4zs2-panel role=tab><label for=tab-group-3-0_ffamky511uo4zs2 class=code-tab-label data-lang id=tab-group-3-0_ffamky511uo4zs2-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-0_ffamky511uo4zs2-panel aria-labelledby=tab-group-3-0_ffamky511uo4zs2-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo apt-get install zip
+</pre></div></td></tr></table></div><input name=tab-group-3 type=radio id=tab-group-3-1_nwkqzf2ft3tafmt class=code-tab data-lang aria-controls=tab-group-3-1_nwkqzf2ft3tafmt-panel role=tab><label for=tab-group-3-1_nwkqzf2ft3tafmt class=code-tab-label data-lang id=tab-group-3-1_nwkqzf2ft3tafmt-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-1_nwkqzf2ft3tafmt-panel aria-labelledby=tab-group-3-1_nwkqzf2ft3tafmt-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd ~/mycar/data
 zip -r datas.zip tub_01_19-01-26
-</pre></div>
-</td></tr></table>
+</pre></div></td></tr></table></div></div>
 
 <h2 id="_4">データの転送</h2>
 <p>データの転送には、SFTPに対応した<a href="https://filezilla-project.org/">FileZilla</a>を使用します。</p>

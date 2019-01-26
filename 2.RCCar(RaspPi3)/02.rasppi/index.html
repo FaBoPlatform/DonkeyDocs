@@ -36,7 +36,7 @@
     
     
       
-        <title>RaspPi3用のイメージ作成 - FaBo Donkey Docs</title>
+        <title>RaspPi3用のイメージ作成 - FaBo DonkeyCar Docs</title>
       
     
     
@@ -58,6 +58,8 @@
     
     
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
     
   </head>
@@ -83,7 +85,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="FaBo Donkey Docs" class="md-header-nav__button md-logo">
+        <a href="../.." title="FaBo DonkeyCar Docs" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -97,7 +99,7 @@
           
             
               <span class="md-header-nav__topic">
-                FaBo Donkey Docs
+                FaBo DonkeyCar Docs
               </span>
               <span class="md-header-nav__topic">
                 RaspPi3用のイメージ作成
@@ -155,12 +157,12 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../.." title="FaBo Donkey Docs" class="md-nav__button md-logo">
+    <a href="../.." title="FaBo DonkeyCar Docs" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
     </a>
-    FaBo Donkey Docs
+    FaBo DonkeyCar Docs
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -562,14 +564,14 @@
 <p>作成したSDカードをPCで開き、wpa_supplicant.confを作成します。</p>
 <p><img alt="" src="../img/wifi001.png" /></p>
 <p>wpa_supplicant.confに、接続先のssid, password(psk)を記載します。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
 3
 4
 5
 6
 7
-8</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>country=US
+8</pre></div></td><td class=code><div class=codehilite><pre><span></span>country=US
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
 
@@ -577,16 +579,12 @@ network={
     ssid=&quot;&lt;your network name&gt;&quot;
     psk=&quot;&lt;your password&gt;&quot;
 }
-</pre></div>
-</td></tr></table>
-
+</pre></div></td></tr></table></p>
 <p>RaspberryPi起動時に、wpa_supplicant.confが、/etc/wpa_supplicant/wpa_supplicant.confにコピーされ、Wifiに接続されます。</p>
 <h2 id="ip">IPアドレスの検索</h2>
 <p>初期のイメージでは、RaspberryPiのHost名は、<code>donkeypi</code>になっています。PCとRaspberryPiが同一ネットワーク内に存在するのなら、Host名で接続することが可能です。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ssh pi@donkeypi.local
-</pre></div>
-</td></tr></table>
-
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>ssh pi@donkeypi.local
+</pre></div></td></tr></table></p>
 <p>passwordは、<code>raspberry</code>でログインできます。</p>
 <table>
 <thead>
@@ -607,55 +605,41 @@ network={
 </tbody>
 </table>
 <p>自分のDonkeyCarが、他人と同じHost名にならないように、Host名を変更します。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo vi /etc/hostname
-</pre></div>
-</td></tr></table>
-
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo vi /etc/hostname
+</pre></div></td></tr></table></p>
 <p>/etc/hostname</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>donkeypi-akira
-</pre></div>
-</td></tr></table>
-
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo vi /etc/hosts
-</pre></div>
-</td></tr></table>
+<div class=md-fenced-code-tabs id=tab-tab-group-3><input name=tab-group-3 type=radio id=tab-group-3-0_4a794x7drrwsn83 checked=checked class=code-tab data-lang aria-controls=tab-group-3-0_4a794x7drrwsn83-panel role=tab><label for=tab-group-3-0_4a794x7drrwsn83 class=code-tab-label data-lang id=tab-group-3-0_4a794x7drrwsn83-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-0_4a794x7drrwsn83-panel aria-labelledby=tab-group-3-0_4a794x7drrwsn83-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkeypi-akira
+</pre></div></td></tr></table></div><input name=tab-group-3 type=radio id=tab-group-3-1_3pmwst0fdqrtnqj class=code-tab data-lang aria-controls=tab-group-3-1_3pmwst0fdqrtnqj-panel role=tab><label for=tab-group-3-1_3pmwst0fdqrtnqj class=code-tab-label data-lang id=tab-group-3-1_3pmwst0fdqrtnqj-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-1_3pmwst0fdqrtnqj-panel aria-labelledby=tab-group-3-1_3pmwst0fdqrtnqj-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo vi /etc/hosts
+</pre></div></td></tr></table></div></div>
 
 <p>/etc/hosts</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
 3
 4
 5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>127.0.0.1       localhost
+6</pre></div></td><td class=code><div class=codehilite><pre><span></span>127.0.0.1       localhost
 ::1             localhost ip6-localhost ip6-loopback
 ff02::1         ip6-allnodes
 ff02::2         ip6-allrouters
 
 127.0.1.1       donkeypi-akira
-</pre></div>
-</td></tr></table>
-
+</pre></div></td></tr></table></p>
 <p>Host名を変更したらRaspberryPi3をRebootします。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo reboot
-</pre></div>
-</td></tr></table>
-
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo reboot
+</pre></div></td></tr></table></p>
 <p>再起動後、変更したHost名である<code>donkeypi-akira</code>で発見できるようになります。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>ssh pi@donkeypi-akira.local
-</pre></div>
-</td></tr></table>
-
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>ssh pi@donkeypi-akira.local
+</pre></div></td></tr></table></p>
 <p>Host名は、名前をかぶらないように気をつけてください。</p>
 <h1 id="donkeycar">DonkeyCarのインストール</h1>
 <h2 id="sd">SDカード容量を増やす</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo raspi-config
-</pre></div>
-</td></tr></table>
-
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo raspi-config
+</pre></div></td></tr></table></p>
 <p><img alt="" src="../img/conf001.png" /></p>
 <p><img alt="" src="../img/conf002.png" /></p>
 <p><img alt="" src="../img/conf003.png" /></p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
  2
  3
  4
@@ -664,7 +648,7 @@ ff02::2         ip6-allrouters
  7
  8
  9
-10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>df
+10</pre></div></td><td class=code><div class=codehilite><pre><span></span>df
 Filesystem     1K-blocks    Used Available Use% Mounted on
 /dev/root       29712700 1968580  26519276   7% /
 devtmpfs          443728       0    443728   0% /dev
@@ -674,21 +658,17 @@ tmpfs               5120       4      5116   1% /run/lock
 tmpfs             448336       0    448336   0% /sys/fs/cgroup
 /dev/mmcblk0p1     43436   22141     21295  51% /boot
 tmpfs              89664       0     89664   0% /run/user/1000
-</pre></div>
-</td></tr></table>
-
+</pre></div></td></tr></table></p>
 <h2 id="donkeycarupdate">DonkeyCarのUpdate</h2>
 <p>DonkeyCarをUpdadeします。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">donkeycar</span><span class="p">[</span><span class="n">pi</span><span class="p">]</span>
-<span class="n">python</span> <span class="o">-</span><span class="n">c</span> <span class="s2">&quot;import donkeycar as dk; print(dk.__version__)&quot;</span>
-<span class="n">using</span> <span class="n">donkey</span> <span class="n">v2</span><span class="o">.</span><span class="mf">5.8</span> <span class="o">...</span>
-<span class="mf">2.5</span><span class="o">.</span><span class="mi">8</span>
-</pre></div>
-</td></tr></table>
-
+4</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=n>pip</span> <span class=n>install</span> <span class=n>donkeycar</span><span class=p>[</span><span class=n>pi</span><span class=p>]</span>
+<span class=n>python</span> <span class=o>-</span><span class=n>c</span> <span class=s2>&quot;import donkeycar as dk; print(dk.__version__)&quot;</span>
+<span class=n>using</span> <span class=n>donkey</span> <span class=n>v2</span><span class=o>.</span><span class=mf>5.8</span> <span class=o>...</span>
+<span class=mf>2.5</span><span class=o>.</span><span class=mi>8</span>
+</pre></div></td></tr></table></p>
 <h2 id="tensorflowupdate">TensorFlowのUpdate</h2>
 <p>Google Colabでの学習に対応するために、RaspberryPi側も、TensorFlow 1.12.0, Keras 2.2.4にUpdateします。</p>
 <table>
@@ -713,34 +693,25 @@ tmpfs              89664       0     89664   0% /run/user/1000
 </tr>
 </tbody>
 </table>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pip install https://github.com/lhelontra/tensorflow-on-arm/releases/download/v1.12.0/tensorflow-1.12.0-cp35-none-linux_armv7l.whl
-</pre></div>
-</td></tr></table>
-
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+<div class=md-fenced-code-tabs id=tab-tab-group-10><input name=tab-group-10 type=radio id=tab-group-10-0_ks6ocofibfnjapl checked=checked class=code-tab data-lang aria-controls=tab-group-10-0_ks6ocofibfnjapl-panel role=tab><label for=tab-group-10-0_ks6ocofibfnjapl class=code-tab-label data-lang id=tab-group-10-0_ks6ocofibfnjapl-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-10-0_ks6ocofibfnjapl-panel aria-labelledby=tab-group-10-0_ks6ocofibfnjapl-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>pip install https://github.com/lhelontra/tensorflow-on-arm/releases/download/v1.12.0/tensorflow-1.12.0-cp35-none-linux_armv7l.whl
+</pre></div></td></tr></table></div><input name=tab-group-10 type=radio id=tab-group-10-1_3fce1ibm3sfinz6 class=code-tab data-lang aria-controls=tab-group-10-1_3fce1ibm3sfinz6-panel role=tab><label for=tab-group-10-1_3fce1ibm3sfinz6 class=code-tab-label data-lang id=tab-group-10-1_3fce1ibm3sfinz6-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-10-1_3fce1ibm3sfinz6-panel aria-labelledby=tab-group-10-1_3fce1ibm3sfinz6-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>pip list | grep -i -e keras -e tensorflow
+4</pre></div></td><td class=code><div class=codehilite><pre><span></span>pip list | grep -i -e keras -e tensorflow
 Keras-Applications  1.0.6    
 Keras-Preprocessing 1.0.5    
 tensorflow          1.12.0
-</pre></div>
-</td></tr></table>
+</pre></div></td></tr></table></div></div>
 
 <h1 id="project">Project</h1>
 <h2 id="project_1">Projectフォルダの作成</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>donkey createcar ~/mycar
-</pre></div>
-</td></tr></table>
-
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkey createcar ~/mycar
+</pre></div></td></tr></table></p>
 <h2 id="_1">起動</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cd ~/mycar
+<div class=md-fenced-code-tabs id=tab-tab-group-12><input name=tab-group-12 type=radio id=tab-group-12-0_kvd8f6b7zrbrrod checked=checked class=code-tab data-lang aria-controls=tab-group-12-0_kvd8f6b7zrbrrod-panel role=tab><label for=tab-group-12-0_kvd8f6b7zrbrrod class=code-tab-label data-lang id=tab-group-12-0_kvd8f6b7zrbrrod-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-12-0_kvd8f6b7zrbrrod-panel aria-labelledby=tab-group-12-0_kvd8f6b7zrbrrod-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd ~/mycar
 python manage.py drive
-</pre></div>
-</td></tr></table>
-
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+</pre></div></td></tr></table></div><input name=tab-group-12 type=radio id=tab-group-12-1_q2pkxf7nz7s9p6f class=code-tab data-lang aria-controls=tab-group-12-1_q2pkxf7nz7s9p6f-panel role=tab><label for=tab-group-12-1_q2pkxf7nz7s9p6f class=code-tab-label data-lang id=tab-group-12-1_q2pkxf7nz7s9p6f-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-12-1_q2pkxf7nz7s9p6f-panel aria-labelledby=tab-group-12-1_q2pkxf7nz7s9p6f-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
  2
  3
  4
@@ -749,24 +720,21 @@ python manage.py drive
  7
  8
  9
-10</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">using</span> <span class="n">donkey</span> <span class="n">v2</span><span class="o">.</span><span class="mf">5.8</span> <span class="o">...</span>
-<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">h5py</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">34</span><span class="p">:</span> <span class="ne">FutureWarning</span><span class="p">:</span> <span class="n">Conversion</span> <span class="n">of</span> <span class="n">the</span> <span class="n">second</span> <span class="n">argument</span> <span class="n">of</span> <span class="n">issubdtype</span> <span class="kn">from</span> <span class="sb">`float`</span> <span class="n">to</span> <span class="sb">`np.floating`</span> <span class="ow">is</span> <span class="n">deprecated</span><span class="o">.</span> <span class="n">In</span> <span class="n">future</span><span class="p">,</span> <span class="n">it</span> <span class="n">will</span> <span class="n">be</span> <span class="n">treated</span> <span class="k">as</span> <span class="sb">`np.float64 == np.dtype(float).type`</span><span class="o">.</span>
-  <span class="kn">from</span> <span class="nn">._conv</span> <span class="kn">import</span> <span class="n">register_converters</span> <span class="k">as</span> <span class="n">_register_converters</span>
-<span class="n">loading</span> <span class="n">config</span> <span class="nb">file</span><span class="p">:</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">pi</span><span class="o">/</span><span class="n">mycar</span><span class="o">/</span><span class="n">config</span><span class="o">.</span><span class="n">py</span>
-<span class="n">config</span> <span class="n">loaded</span>
-<span class="n">PiCamera</span> <span class="n">loaded</span><span class="o">..</span> <span class="o">.</span><span class="n">warming</span> <span class="n">camera</span>
-<span class="n">Starting</span> <span class="n">Donkey</span> <span class="n">Server</span><span class="o">...</span>
-<span class="n">You</span> <span class="n">can</span> <span class="n">now</span> <span class="n">go</span> <span class="n">to</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">192.168</span><span class="o">.</span><span class="mf">86.41</span><span class="p">:</span><span class="mi">8887</span> <span class="n">to</span> <span class="n">drive</span> <span class="n">your</span> <span class="n">car</span><span class="o">.</span>
-<span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">pi</span><span class="o">/</span><span class="n">env</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="o">.</span><span class="mi">5</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">picamera</span><span class="o">/</span><span class="n">encoders</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">544</span><span class="p">:</span> <span class="n">PiCameraResolutionRounded</span><span class="p">:</span> <span class="n">frame</span> <span class="n">size</span> <span class="n">rounded</span> <span class="n">up</span> <span class="kn">from</span> <span class="mi">160</span><span class="n">x120</span> <span class="n">to</span> <span class="mi">160</span><span class="n">x128</span>
-  <span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="n">fwidth</span><span class="p">,</span> <span class="n">fheight</span><span class="p">)))</span>
-</pre></div>
-</td></tr></table>
+10</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=n>using</span> <span class=n>donkey</span> <span class=n>v2</span><span class=o>.</span><span class=mf>5.8</span> <span class=o>...</span>
+<span class=o>/</span><span class=n>usr</span><span class=o>/</span><span class=n>lib</span><span class=o>/</span><span class=n>python3</span><span class=o>/</span><span class=n>dist</span><span class=o>-</span><span class=n>packages</span><span class=o>/</span><span class=n>h5py</span><span class=o>/</span><span class=fm>__init__</span><span class=o>.</span><span class=n>py</span><span class=p>:</span><span class=mi>34</span><span class=p>:</span> <span class=ne>FutureWarning</span><span class=p>:</span> <span class=n>Conversion</span> <span class=n>of</span> <span class=n>the</span> <span class=n>second</span> <span class=n>argument</span> <span class=n>of</span> <span class=n>issubdtype</span> <span class=kn>from</span> <span class=sb>`float`</span> <span class=n>to</span> <span class=sb>`np.floating`</span> <span class=ow>is</span> <span class=n>deprecated</span><span class=o>.</span> <span class=n>In</span> <span class=n>future</span><span class=p>,</span> <span class=n>it</span> <span class=n>will</span> <span class=n>be</span> <span class=n>treated</span> <span class=k>as</span> <span class=sb>`np.float64 == np.dtype(float).type`</span><span class=o>.</span>
+  <span class=kn>from</span> <span class=nn>._conv</span> <span class=kn>import</span> <span class=n>register_converters</span> <span class=k>as</span> <span class=n>_register_converters</span>
+<span class=n>loading</span> <span class=n>config</span> <span class=nb>file</span><span class=p>:</span> <span class=o>/</span><span class=n>home</span><span class=o>/</span><span class=n>pi</span><span class=o>/</span><span class=n>mycar</span><span class=o>/</span><span class=n>config</span><span class=o>.</span><span class=n>py</span>
+<span class=n>config</span> <span class=n>loaded</span>
+<span class=n>PiCamera</span> <span class=n>loaded</span><span class=o>..</span> <span class=o>.</span><span class=n>warming</span> <span class=n>camera</span>
+<span class=n>Starting</span> <span class=n>Donkey</span> <span class=n>Server</span><span class=o>...</span>
+<span class=n>You</span> <span class=n>can</span> <span class=n>now</span> <span class=n>go</span> <span class=n>to</span> <span class=n>http</span><span class=p>:</span><span class=o>//</span><span class=mf>192.168</span><span class=o>.</span><span class=mf>86.41</span><span class=p>:</span><span class=mi>8887</span> <span class=n>to</span> <span class=n>drive</span> <span class=n>your</span> <span class=n>car</span><span class=o>.</span>
+<span class=o>/</span><span class=n>home</span><span class=o>/</span><span class=n>pi</span><span class=o>/</span><span class=n>env</span><span class=o>/</span><span class=n>lib</span><span class=o>/</span><span class=n>python3</span><span class=o>.</span><span class=mi>5</span><span class=o>/</span><span class=n>site</span><span class=o>-</span><span class=n>packages</span><span class=o>/</span><span class=n>picamera</span><span class=o>/</span><span class=n>encoders</span><span class=o>.</span><span class=n>py</span><span class=p>:</span><span class=mi>544</span><span class=p>:</span> <span class=n>PiCameraResolutionRounded</span><span class=p>:</span> <span class=n>frame</span> <span class=n>size</span> <span class=n>rounded</span> <span class=n>up</span> <span class=kn>from</span> <span class=mi>160</span><span class=n>x120</span> <span class=n>to</span> <span class=mi>160</span><span class=n>x128</span>
+  <span class=n>width</span><span class=p>,</span> <span class=n>height</span><span class=p>,</span> <span class=n>fwidth</span><span class=p>,</span> <span class=n>fheight</span><span class=p>)))</span>
+</pre></div></td></tr></table></div></div>
 
 <h2 id="pc">PCから接続</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>http://RaspberryPiのIPアドレス:8887
-</pre></div>
-</td></tr></table>
-
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>http://RaspberryPiのIPアドレス:8887
+</pre></div></td></tr></table></p>
 <p>で接続。</p>
                 
                   

@@ -36,7 +36,7 @@
     
     
       
-        <title>環境構築 - FaBo Donkey Docs</title>
+        <title>環境構築 - FaBo DonkeyCar Docs</title>
       
     
     
@@ -58,6 +58,8 @@
     
     
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
     
   </head>
@@ -83,7 +85,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="FaBo Donkey Docs" class="md-header-nav__button md-logo">
+        <a href="../.." title="FaBo DonkeyCar Docs" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -97,7 +99,7 @@
           
             
               <span class="md-header-nav__topic">
-                FaBo Donkey Docs
+                FaBo DonkeyCar Docs
               </span>
               <span class="md-header-nav__topic">
                 環境構築
@@ -155,12 +157,12 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../.." title="FaBo Donkey Docs" class="md-nav__button md-logo">
+    <a href="../.." title="FaBo DonkeyCar Docs" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
     </a>
-    FaBo Donkey Docs
+    FaBo DonkeyCar Docs
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -637,10 +639,8 @@
 <p>データはパッケージの中にlogフォルダを作成する。</p>
 <p><img alt="" src="../img/sim006.png" /></p>
 <p>logフォルダに、<code>meta.json</code>を作成する。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>{&quot;inputs&quot;:[&quot;cam/image_array&quot;,&quot;user/angle&quot;,&quot;user/throttle&quot;,&quot;user/mode&quot;],&quot;types&quot;:[&quot;image_array&quot;,&quot;float&quot;,&quot;float&quot;,&quot;str&quot;]}
-</pre></div>
-</td></tr></table>
-
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>{&quot;inputs&quot;:[&quot;cam/image_array&quot;,&quot;user/angle&quot;,&quot;user/throttle&quot;,&quot;user/mode&quot;],&quot;types&quot;:[&quot;image_array&quot;,&quot;float&quot;,&quot;float&quot;,&quot;str&quot;]}
+</pre></div></td></tr></table></p>
 <p>MenuからJoystick/Keyboard w Recを選ぶ。</p>
 <p><img alt="" src="../img/sim002.png" /></p>
 <p>実際のコースを走らせて教師データを作成。</p>
@@ -660,10 +660,8 @@
 <p><code>0_cam-image_array_.jpg</code></p>
 <p><img alt="" src="../img/0_cam-image_array_.jpg" /></p>
 <p><code>record_0.json</code></p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>{&quot;cam/image_array&quot;:&quot;0_cam-image_array_.jpg&quot;,&quot;user/throttle&quot;:0.0,&quot;user/angle&quot;:0.0,&quot;user/mode&quot;:&quot;user&quot;}
-</pre></div>
-</td></tr></table>
-
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>{&quot;cam/image_array&quot;:&quot;0_cam-image_array_.jpg&quot;,&quot;user/throttle&quot;:0.0,&quot;user/angle&quot;:0.0,&quot;user/mode&quot;:&quot;user&quot;}
+</pre></div></td></tr></table></p>
 <p>画像とJSONは、上記の組み合わせ x 作成枚数の数になる。目安で10,000データ・セットの作成を目標とする。</p>
                 
                   

@@ -36,7 +36,7 @@
     
     
       
-        <title>走行 - FaBo Donkey Docs</title>
+        <title>走行 - FaBo DonkeyCar Docs</title>
       
     
     
@@ -58,6 +58,8 @@
     
     
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
     
   </head>
@@ -83,7 +85,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../.." title="FaBo Donkey Docs" class="md-header-nav__button md-logo">
+        <a href="../.." title="FaBo DonkeyCar Docs" class="md-header-nav__button md-logo">
           
             <i class="md-icon"></i>
           
@@ -97,7 +99,7 @@
           
             
               <span class="md-header-nav__topic">
-                FaBo Donkey Docs
+                FaBo DonkeyCar Docs
               </span>
               <span class="md-header-nav__topic">
                 走行
@@ -155,12 +157,12 @@
                   <div class="md-sidebar__inner">
                     <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../.." title="FaBo Donkey Docs" class="md-nav__button md-logo">
+    <a href="../.." title="FaBo DonkeyCar Docs" class="md-nav__button md-logo">
       
         <i class="md-icon"></i>
       
     </a>
-    FaBo Donkey Docs
+    FaBo DonkeyCar Docs
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -594,22 +596,18 @@
                 <h1 id="_1">走行</h1>
 <p>最新版のDonkeyでは、Simlatorとの連携ができなくなっています。旧<code>simulation.py</code>をコピーして、実行します。</p>
 <h2 id="simulatorpy">Simulator.pyのコピー</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>git clone https://github.com/autorope/donkeyparts.git
-</pre></div>
-</td></tr></table>
-
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>git clone https://github.com/autorope/donkeyparts.git
+</pre></div></td></tr></table></p>
 <p><code>donkeyparts/donkeyparts/simulation.py</code>を<code>wokspace_donkey/donkeycar/donkeycar/parts/</code>に上書きコピーします。</p>
 <h2 id="simulator">Simulatorでの実行</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>donkey sim --model=models/mypilot
-</pre></div>
-</td></tr></table>
-
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkey sim --model=models/mypilot
+</pre></div></td></tr></table></p>
 <h2 id="simulator_1">Simulator側の連携</h2>
 <p><img alt="" src="../img/run_sim001.png" /></p>
 <h2 id="simulator_2">Simulatorとの連携</h2>
 <p>通信はWebsocketでおこなわれる。Simulatorから30msに1回、160x120ピクセルの画像データが送られてくるので、<code>~/workspace_donkey/donkeycar/parts/keras.py</code>に渡され、model.predictで、画像データを入力に、SteeringとThrottleの2値を取得し、その値でSimulatorを制御している。</p>
 <p><code>~/workspace_donkey/donkeycar/donkeycar/parts/simulation.py</code></p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
  2
  3
  4
@@ -650,50 +648,49 @@
 39
 40
 41
-42</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">telemetry</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sid</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Callback when we get new data from Unity simulator.</span>
-<span class="sd">        We use it to process the image, do a forward inference,</span>
-<span class="sd">        then send controls back to client.</span>
-<span class="sd">        Takes sid (?) and data, a dictionary of json elements.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">data</span><span class="p">:</span>
-            <span class="c1"># The current steering angle of the car</span>
-            <span class="n">last_steering</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;steering_angle&quot;</span><span class="p">])</span>
+42</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=k>def</span> <span class=nf>telemetry</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>sid</span><span class=p>,</span> <span class=n>data</span><span class=p>):</span>
+        <span class=sd>&quot;&quot;&quot;</span>
+<span class=sd>        Callback when we get new data from Unity simulator.</span>
+<span class=sd>        We use it to process the image, do a forward inference,</span>
+<span class=sd>        then send controls back to client.</span>
+<span class=sd>        Takes sid (?) and data, a dictionary of json elements.</span>
+<span class=sd>        &quot;&quot;&quot;</span>
+        <span class=k>if</span> <span class=n>data</span><span class=p>:</span>
+            <span class=c1># The current steering angle of the car</span>
+            <span class=n>last_steering</span> <span class=o>=</span> <span class=nb>float</span><span class=p>(</span><span class=n>data</span><span class=p>[</span><span class=s2>&quot;steering_angle&quot;</span><span class=p>])</span>
 
-            <span class="c1"># The current throttle of the car</span>
-            <span class="n">last_throttle</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;throttle&quot;</span><span class="p">])</span>
+            <span class=c1># The current throttle of the car</span>
+            <span class=n>last_throttle</span> <span class=o>=</span> <span class=nb>float</span><span class=p>(</span><span class=n>data</span><span class=p>[</span><span class=s2>&quot;throttle&quot;</span><span class=p>])</span>
 
-            <span class="c1"># The current speed of the car</span>
-            <span class="n">speed</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;speed&quot;</span><span class="p">])</span>
+            <span class=c1># The current speed of the car</span>
+            <span class=n>speed</span> <span class=o>=</span> <span class=nb>float</span><span class=p>(</span><span class=n>data</span><span class=p>[</span><span class=s2>&quot;speed&quot;</span><span class=p>])</span>
 
-            <span class="c1"># The current image from the center camera of the car</span>
-            <span class="n">imgString</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;image&quot;</span><span class="p">]</span>
+            <span class=c1># The current image from the center camera of the car</span>
+            <span class=n>imgString</span> <span class=o>=</span> <span class=n>data</span><span class=p>[</span><span class=s2>&quot;image&quot;</span><span class=p>]</span>
 
-            <span class="c1"># decode string based data into bytes, then to Image</span>
-            <span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">BytesIO</span><span class="p">(</span><span class="n">base64</span><span class="o">.</span><span class="n">b64decode</span><span class="p">(</span><span class="n">imgString</span><span class="p">)))</span>
+            <span class=c1># decode string based data into bytes, then to Image</span>
+            <span class=n>image</span> <span class=o>=</span> <span class=n>Image</span><span class=o>.</span><span class=n>open</span><span class=p>(</span><span class=n>BytesIO</span><span class=p>(</span><span class=n>base64</span><span class=o>.</span><span class=n>b64decode</span><span class=p>(</span><span class=n>imgString</span><span class=p>)))</span>
 
-            <span class="c1"># then as numpy array</span>
-            <span class="n">image_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+            <span class=c1># then as numpy array</span>
+            <span class=n>image_array</span> <span class=o>=</span> <span class=n>np</span><span class=o>.</span><span class=n>asarray</span><span class=p>(</span><span class=n>image</span><span class=p>)</span>
 
-            <span class="c1"># optional change to pre-preocess image before NN sees it</span>
-            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">image_part</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
-                <span class="n">image_array</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">image_part</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">image_array</span><span class="p">)</span>
+            <span class=c1># optional change to pre-preocess image before NN sees it</span>
+            <span class=k>if</span> <span class=bp>self</span><span class=o>.</span><span class=n>image_part</span> <span class=ow>is</span> <span class=ow>not</span> <span class=bp>None</span><span class=p>:</span>
+                <span class=n>image_array</span> <span class=o>=</span> <span class=bp>self</span><span class=o>.</span><span class=n>image_part</span><span class=o>.</span><span class=n>run</span><span class=p>(</span><span class=n>image_array</span><span class=p>)</span>
 
-            <span class="c1"># forward pass - inference</span>
-            <span class="n">steering</span><span class="p">,</span> <span class="n">throttle</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">kpart</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">image_array</span><span class="p">)</span>
+            <span class=c1># forward pass - inference</span>
+            <span class=n>steering</span><span class=p>,</span> <span class=n>throttle</span> <span class=o>=</span> <span class=bp>self</span><span class=o>.</span><span class=n>kpart</span><span class=o>.</span><span class=n>run</span><span class=p>(</span><span class=n>image_array</span><span class=p>)</span>
 
-            <span class="c1"># filter throttle here, as our NN doesn&#39;t always do a greate job</span>
-            <span class="n">throttle</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">throttle_control</span><span class="p">(</span><span class="n">last_steering</span><span class="p">,</span> <span class="n">last_throttle</span><span class="p">,</span> <span class="n">speed</span><span class="p">,</span> <span class="n">throttle</span><span class="p">)</span>
+            <span class=c1># filter throttle here, as our NN doesn&#39;t always do a greate job</span>
+            <span class=n>throttle</span> <span class=o>=</span> <span class=bp>self</span><span class=o>.</span><span class=n>throttle_control</span><span class=p>(</span><span class=n>last_steering</span><span class=p>,</span> <span class=n>last_throttle</span><span class=p>,</span> <span class=n>speed</span><span class=p>,</span> <span class=n>throttle</span><span class=p>)</span>
 
-            <span class="c1"># simulator will scale our steering based on it&#39;s angle based input.</span>
-            <span class="c1"># but we have an opportunity for more adjustment here.</span>
-            <span class="n">steering</span> <span class="o">*=</span> <span class="bp">self</span><span class="o">.</span><span class="n">steering_scale</span>
-            <span class="c1">#steering *= 1</span>
-            <span class="c1"># send command back to Unity simulator</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">send_control</span><span class="p">(</span><span class="n">steering</span><span class="p">,</span> <span class="n">throttle</span><span class="p">)</span>
-</pre></div>
-</td></tr></table>
+            <span class=c1># simulator will scale our steering based on it&#39;s angle based input.</span>
+            <span class=c1># but we have an opportunity for more adjustment here.</span>
+            <span class=n>steering</span> <span class=o>*=</span> <span class=bp>self</span><span class=o>.</span><span class=n>steering_scale</span>
+            <span class=c1>#steering *= 1</span>
+            <span class=c1># send command back to Unity simulator</span>
+            <span class=bp>self</span><span class=o>.</span><span class=n>send_control</span><span class=p>(</span><span class=n>steering</span><span class=p>,</span> <span class=n>throttle</span><span class=p>)</span>
+</pre></div></td></tr></table></p>
                 
                   
                 
