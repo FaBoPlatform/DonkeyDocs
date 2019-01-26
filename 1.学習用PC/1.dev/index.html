@@ -664,8 +664,8 @@
 </tr>
 </tbody>
 </table>
-<p>install/envs/mac.yml の修正</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_b3he6w7urodks4u checked=checked class=code-tab data-lang aria-controls=tab-group-2-0_b3he6w7urodks4u-panel role=tab><label for=tab-group-2-0_b3he6w7urodks4u class=code-tab-label data-lang id=tab-group-2-0_b3he6w7urodks4u-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-0_b3he6w7urodks4u-panel aria-labelledby=tab-group-2-0_b3he6w7urodks4u-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+<p><code>install/envs/mac.yml</code></p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
  2
  3
  4
@@ -738,11 +738,12 @@
   <span class=o>-</span> <span class=n>numpy</span><span class=o>==</span><span class=mf>1.15</span><span class=o>.</span><span class=mi>4</span>
   <span class=o>-</span> <span class=n>protobuf</span><span class=o>==</span><span class=mf>3.6</span><span class=o>.</span><span class=mi>1</span>
   <span class=o>-</span> <span class=n>keras</span><span class=o>==</span><span class=mf>2.2</span><span class=o>.</span><span class=mi>4</span>
-</pre></div></td></tr></table></div><input name=tab-group-2 type=radio id=tab-group-2-1_console class=code-tab data-lang=console aria-controls=tab-group-2-1_console-panel role=tab><label for=tab-group-2-1_console class=code-tab-label data-lang=console id=tab-group-2-1_console-label>Console</label><div class=code-tabpanel role=tabpanel data-lang=console id=tab-group-2-1_console-panel aria-labelledby=tab-group-2-1_console-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
-2</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=go>conda env create -f install/envs/mac.yml</span>
-<span class=go>source activate donkey</span>
-</pre></div></td></tr></table></div></div>
-
+</pre></div></td></tr></table></p>
+<p>Condaに環境を構築</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2</pre></div></td><td class=code><div class=codehilite><pre><span></span>conda env create -f install/envs/mac.yml
+source activate donkey
+</pre></div></td></tr></table></p>
 <p>Consoleに(donkey) の文字列ができていれば成功です。</p>
 <p><img alt="" src="../img/dev001.png" /></p>
 <h2 id="_2">インストール</h2>
