@@ -341,22 +341,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mac" title="教師データの学習(Mac側)" class="md-nav__link">
-    教師データの学習(Mac側)
+  <a href="#_3" title="教師データの圧縮" class="md-nav__link">
+    教師データの圧縮
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#raspberrypi" title="学習済みモデルをRaspberryPiに戻す" class="md-nav__link">
-    学習済みモデルをRaspberryPiに戻す
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#donkey" title="学習済みモデルでDonkeyを動かす" class="md-nav__link">
-    学習済みモデルでDonkeyを動かす
+  <a href="#_4" title="データの転送" class="md-nav__link">
+    データの転送
   </a>
   
 </li>
@@ -556,22 +549,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mac" title="教師データの学習(Mac側)" class="md-nav__link">
-    教師データの学習(Mac側)
+  <a href="#_3" title="教師データの圧縮" class="md-nav__link">
+    教師データの圧縮
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#raspberrypi" title="学習済みモデルをRaspberryPiに戻す" class="md-nav__link">
-    学習済みモデルをRaspberryPiに戻す
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#donkey" title="学習済みモデルでDonkeyを動かす" class="md-nav__link">
-    学習済みモデルでDonkeyを動かす
+  <a href="#_4" title="データの転送" class="md-nav__link">
+    データの転送
   </a>
   
 </li>
@@ -599,6 +585,10 @@
 <p>RaspberryPi側の<code>manager.py</code>を修正します。</p>
 <p>multiple tubsの部分のコメントを外し、single tubの部分を無効にします。</p>
 <p>~/mycar/manage.py</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">donkeycar.parts.datastore</span> <span class="kn">import</span> <span class="n">TubGroup</span><span class="p">,</span> <span class="n">TubWriter</span><span class="p">,</span> <span class="n">TubHandler</span>
+</pre></div>
+</td></tr></table>
+
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
@@ -617,76 +607,43 @@
 
 <h2 id="_2">教師データの作成</h2>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> ~/mycar
-$ python manage.py drive
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cd ~/mycar
+python manage.py drive
 </pre></div>
 </td></tr></table>
 
-<p>教師データは、~/mycar/以下に保存される。</p>
-<h2 id="mac">教師データの学習(Mac側)</h2>
-<p>教師データをRaspberryPiから、Macにrsyncする。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ rsync -r pi@&lt;your_ip_address&gt;:~/mycar/data/ ~/mycar/data/
+<p>教師データは、<code>~/mycar/dara</code>以下に保存されます。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cd ~/mycar/data
+ls
+tub_01_19-01-26
+</pre></div>
+</td></tr></table>
+
+<p>++"CTRL"+"x"++で終了します。</p>
+<h2 id="_3">教師データの圧縮</h2>
+<p>データを圧縮し、1つのファイル(ZIP形式)にしてPCに転送します。</p>
+<p>RaspberryPi3にZIPをインストールします。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>sudo apt-get install zip
 </pre></div>
 </td></tr></table>
 
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$  ls data
-tub_01_18-08-27 tub_02_18-08-27
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>cd ~/mycar/data
+zip -r datas.zip tub_01_19-01-26
 </pre></div>
 </td></tr></table>
 
-<p>Mac側には、tub_日付のフォルダが教師データ作成の度にふえていく。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ donkey tubclean .
-</pre></div>
-</td></tr></table>
-
-<p>いらないデータを削除する。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ python ~/mycar/manage.py train --tub<span class="o">=</span>~/mycar/data/tub_01_18-08-27 --model<span class="o">=</span>./models/mypilot
-</pre></div>
-</td></tr></table>
-
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">docopt</span> <span class="kn">import</span> <span class="n">docopt</span>
-
-<span class="kn">import</span> <span class="nn">donkeycar</span> <span class="kn">as</span> <span class="nn">dk</span>
-
-<span class="c1">#import parts</span>
-<span class="kn">from</span> <span class="nn">donkeycar.parts.camera</span> <span class="kn">import</span> <span class="n">PiCamera</span>
-<span class="kn">from</span> <span class="nn">donkeycar.parts.transform</span> <span class="kn">import</span> <span class="n">Lambda</span>
-<span class="c1">#from donkeycar.parts.keras import KerasCategorical</span>
-<span class="kn">from</span> <span class="nn">donkeycar.parts.actuator</span> <span class="kn">import</span> <span class="n">PCA9685</span><span class="p">,</span> <span class="n">PWMSteering</span><span class="p">,</span> <span class="n">PWMThrottle</span>
-<span class="kn">from</span> <span class="nn">donkeycar.parts.datastore</span> <span class="kn">import</span> <span class="n">TubGroup</span><span class="p">,</span> <span class="n">TubWriter</span>
-<span class="c1">#from donkeycar.parts.controller import LocalWebController, JoystickController</span>
-<span class="kn">from</span> <span class="nn">donkeycar.parts.clock</span> <span class="kn">import</span> <span class="n">Timestamp</span>
-</pre></div>
-</td></tr></table>
-
-<p>これで学習開始。</p>
-<h2 id="raspberrypi">学習済みモデルをRaspberryPiに戻す</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ rsync -r ~/mycar/models/ pi@&lt;your_ip_address&gt;:~/mycar/models/
-</pre></div>
-</td></tr></table>
-
-<h2 id="donkey">学習済みモデルでDonkeyを動かす</h2>
-<p>RaspberryPi側にログイン。</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ python manage.py drive --model ~/mycar/models/mypilot
-</pre></div>
-</td></tr></table>
-
-<p>or</p>
-<p>Web画面のmodel &amp; pilotから、autopilotを選ぶ。</p>
+<h2 id="_4">データの転送</h2>
+<p>データの転送には、SFTPに対応した<a href="https://filezilla-project.org/">FileZilla</a>を使用します。</p>
+<p>PCに<a href="https://filezilla-project.org/">FileZilla</a>をインストールし、実行します。</p>
+<p><img alt="" src="../img/fz001.png" /></p>
+<p><img alt="" src="../img/fz002.png" /></p>
+<p><img alt="" src="../img/fz003.png" /></p>
+<p><img alt="" src="../img/fz004.png" /></p>
+<p><img alt="" src="../img/fz005.png" /></p>
+<p>RaspberryPi3からPCに、datas.zipを転送します。</p>
                 
                   
                 
