@@ -604,14 +604,17 @@ network={
 </tr>
 </tbody>
 </table>
+<h3 id="etchostname">/etc/hostnameの修正</h3>
 <p>自分のDonkeyCarが、他人と同じHost名にならないように、Host名を変更します。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo vi /etc/hostname
 </pre></div></td></tr></table></p>
 <p>/etc/hostname</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-3><input name=tab-group-3 type=radio id=tab-group-3-0_4a794x7drrwsn83 checked=checked class=code-tab data-lang aria-controls=tab-group-3-0_4a794x7drrwsn83-panel role=tab><label for=tab-group-3-0_4a794x7drrwsn83 class=code-tab-label data-lang id=tab-group-3-0_4a794x7drrwsn83-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-0_4a794x7drrwsn83-panel aria-labelledby=tab-group-3-0_4a794x7drrwsn83-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkeypi-akira
-</pre></div></td></tr></table></div><input name=tab-group-3 type=radio id=tab-group-3-1_3pmwst0fdqrtnqj class=code-tab data-lang aria-controls=tab-group-3-1_3pmwst0fdqrtnqj-panel role=tab><label for=tab-group-3-1_3pmwst0fdqrtnqj class=code-tab-label data-lang id=tab-group-3-1_3pmwst0fdqrtnqj-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-1_3pmwst0fdqrtnqj-panel aria-labelledby=tab-group-3-1_3pmwst0fdqrtnqj-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo vi /etc/hosts
-</pre></div></td></tr></table></div></div>
-
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkeypi-akira
+</pre></div></td></tr></table></p>
+<h3 id="etchosts">/etc/hostsの修正</h3>
+<p>自分のDonkeyCarが、他人と同じHost名にならないように、Host名を変更します。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo vi /etc/hosts
+</pre></div></td></tr></table></p>
 <p>/etc/hosts</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
@@ -634,11 +637,13 @@ ff02::2         ip6-allrouters
 <p>Host名は、名前をかぶらないように気をつけてください。</p>
 <h1 id="donkeycar">DonkeyCarのインストール</h1>
 <h2 id="sd">SDカード容量を増やす</h2>
+<p>RaspberryPi3のConfigを起動します。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo raspi-config
 </pre></div></td></tr></table></p>
 <p><img alt="" src="../img/conf001.png" /></p>
 <p><img alt="" src="../img/conf002.png" /></p>
 <p><img alt="" src="../img/conf003.png" /></p>
+<p>dfコマンドでファイルの空き容量を確認します。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
  2
  3
@@ -693,25 +698,31 @@ tmpfs              89664       0     89664   0% /run/user/1000
 </tr>
 </tbody>
 </table>
-<div class=md-fenced-code-tabs id=tab-tab-group-10><input name=tab-group-10 type=radio id=tab-group-10-0_ks6ocofibfnjapl checked=checked class=code-tab data-lang aria-controls=tab-group-10-0_ks6ocofibfnjapl-panel role=tab><label for=tab-group-10-0_ks6ocofibfnjapl class=code-tab-label data-lang id=tab-group-10-0_ks6ocofibfnjapl-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-10-0_ks6ocofibfnjapl-panel aria-labelledby=tab-group-10-0_ks6ocofibfnjapl-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>pip install https://github.com/lhelontra/tensorflow-on-arm/releases/download/v1.12.0/tensorflow-1.12.0-cp35-none-linux_armv7l.whl
-</pre></div></td></tr></table></div><input name=tab-group-10 type=radio id=tab-group-10-1_3fce1ibm3sfinz6 class=code-tab data-lang aria-controls=tab-group-10-1_3fce1ibm3sfinz6-panel role=tab><label for=tab-group-10-1_3fce1ibm3sfinz6 class=code-tab-label data-lang id=tab-group-10-1_3fce1ibm3sfinz6-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-10-1_3fce1ibm3sfinz6-panel aria-labelledby=tab-group-10-1_3fce1ibm3sfinz6-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+<p>TensorFlow 1.12.0をインストールします。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>pip install https://github.com/lhelontra/tensorflow-on-arm/releases/download/v1.12.0/tensorflow-1.12.0-cp35-none-linux_armv7l.whl
+</pre></div></td></tr></table></p>
+<p>pip listでインストールしたVersionを確認します。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
 3
 4</pre></div></td><td class=code><div class=codehilite><pre><span></span>pip list | grep -i -e keras -e tensorflow
 Keras-Applications  1.0.6    
 Keras-Preprocessing 1.0.5    
 tensorflow          1.12.0
-</pre></div></td></tr></table></div></div>
-
+</pre></div></td></tr></table></p>
 <h1 id="project">Project</h1>
 <h2 id="project_1">Projectフォルダの作成</h2>
+<p>mycarという名前のプロジェクトを作成します。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkey createcar ~/mycar
 </pre></div></td></tr></table></p>
 <h2 id="_1">起動</h2>
-<div class=md-fenced-code-tabs id=tab-tab-group-12><input name=tab-group-12 type=radio id=tab-group-12-0_kvd8f6b7zrbrrod checked=checked class=code-tab data-lang aria-controls=tab-group-12-0_kvd8f6b7zrbrrod-panel role=tab><label for=tab-group-12-0_kvd8f6b7zrbrrod class=code-tab-label data-lang id=tab-group-12-0_kvd8f6b7zrbrrod-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-12-0_kvd8f6b7zrbrrod-panel aria-labelledby=tab-group-12-0_kvd8f6b7zrbrrod-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+<p>起動します。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd ~/mycar
 python manage.py drive
-</pre></div></td></tr></table></div><input name=tab-group-12 type=radio id=tab-group-12-1_q2pkxf7nz7s9p6f class=code-tab data-lang aria-controls=tab-group-12-1_q2pkxf7nz7s9p6f-panel role=tab><label for=tab-group-12-1_q2pkxf7nz7s9p6f class=code-tab-label data-lang id=tab-group-12-1_q2pkxf7nz7s9p6f-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-12-1_q2pkxf7nz7s9p6f-panel aria-labelledby=tab-group-12-1_q2pkxf7nz7s9p6f-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+</pre></div></td></tr></table></p>
+<p>実行結果</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
  2
  3
  4
@@ -730,8 +741,7 @@ python manage.py drive
 <span class=n>You</span> <span class=n>can</span> <span class=n>now</span> <span class=n>go</span> <span class=n>to</span> <span class=n>http</span><span class=p>:</span><span class=o>//</span><span class=mf>192.168</span><span class=o>.</span><span class=mf>86.41</span><span class=p>:</span><span class=mi>8887</span> <span class=n>to</span> <span class=n>drive</span> <span class=n>your</span> <span class=n>car</span><span class=o>.</span>
 <span class=o>/</span><span class=n>home</span><span class=o>/</span><span class=n>pi</span><span class=o>/</span><span class=n>env</span><span class=o>/</span><span class=n>lib</span><span class=o>/</span><span class=n>python3</span><span class=o>.</span><span class=mi>5</span><span class=o>/</span><span class=n>site</span><span class=o>-</span><span class=n>packages</span><span class=o>/</span><span class=n>picamera</span><span class=o>/</span><span class=n>encoders</span><span class=o>.</span><span class=n>py</span><span class=p>:</span><span class=mi>544</span><span class=p>:</span> <span class=n>PiCameraResolutionRounded</span><span class=p>:</span> <span class=n>frame</span> <span class=n>size</span> <span class=n>rounded</span> <span class=n>up</span> <span class=kn>from</span> <span class=mi>160</span><span class=n>x120</span> <span class=n>to</span> <span class=mi>160</span><span class=n>x128</span>
   <span class=n>width</span><span class=p>,</span> <span class=n>height</span><span class=p>,</span> <span class=n>fwidth</span><span class=p>,</span> <span class=n>fheight</span><span class=p>)))</span>
-</pre></div></td></tr></table></div></div>
-
+</pre></div></td></tr></table></p>
 <h2 id="pc">PCから接続</h2>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>http://RaspberryPiのIPアドレス:8887
 </pre></div></td></tr></table></p>
