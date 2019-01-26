@@ -761,7 +761,7 @@ vi manage.py
 3
 4
 5
-6</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=k>if</span> <span class=n>user_joystick</span> <span class=ow>or</span> <span class=n>cfg</span><span class=o>.</span><span class=n>USE_JOYSTICK_AS_DEFAULT</span><span class=p>:</span>
+6</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=k>if</span> <span class=n>use_joystick</span> <span class=ow>or</span> <span class=n>cfg</span><span class=o>.</span><span class=n>USE_JOYSTICK_AS_DEFAULT</span><span class=p>:</span>
     <span class=n>ctr</span> <span class=o>=</span> <span class=n>F710JoystickController</span><span class=p>(</span>
         <span class=n>throttle_scale</span><span class=o>=</span><span class=n>cfg</span><span class=o>.</span><span class=n>JOYSTICK_MAX_THROTTLE</span><span class=p>,</span>
         <span class=n>steering_scale</span><span class=o>=</span><span class=n>cfg</span><span class=o>.</span><span class=n>JOYSTICK_STEERING_SCALE</span><span class=p>,</span>
@@ -814,7 +814,7 @@ AUTO_RECORD_ON_THROTTLE = True
 3
 4
 5
-6</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=k>if</span> <span class=n>user_joystick</span> <span class=ow>or</span> <span class=n>cfg</span><span class=o>.</span><span class=n>USE_JOYSTICK_AS_DEFAULT</span><span class=p>:</span>
+6</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=k>if</span> <span class=n>use_joystick</span> <span class=ow>or</span> <span class=n>cfg</span><span class=o>.</span><span class=n>USE_JOYSTICK_AS_DEFAULT</span><span class=p>:</span>
     <span class=n>ctr</span> <span class=o>=</span> <span class=n>ElecomJoystickController</span><span class=p>(</span>
         <span class=n>throttle_scale</span><span class=o>=</span><span class=n>cfg</span><span class=o>.</span><span class=n>JOYSTICK_MAX_THROTTLE</span><span class=p>,</span>
         <span class=n>steering_scale</span><span class=o>=</span><span class=n>cfg</span><span class=o>.</span><span class=n>JOYSTICK_STEERING_SCALE</span><span class=p>,</span>
