@@ -36,7 +36,7 @@
     
     
       
-        <title>キャリブレーション - FaBo Donkey Docs</title>
+        <title>学習 - FaBo Donkey Docs</title>
       
     
     
@@ -100,7 +100,7 @@
                 FaBo Donkey Docs
               </span>
               <span class="md-header-nav__topic">
-                キャリブレーション
+                学習
               </span>
             
           
@@ -274,6 +274,30 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../04.calbration/" title="キャリブレーション" class="md-nav__link">
+      キャリブレーション
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05.joystick/" title="Joystick(Wifi Joystick)" class="md-nav__link">
+      Joystick(Wifi Joystick)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -285,11 +309,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        キャリブレーション
+        学習
       </label>
     
-    <a href="./" title="キャリブレーション" class="md-nav__link md-nav__link--active">
-      キャリブレーション
+    <a href="./" title="学習" class="md-nav__link md-nav__link--active">
+      学習
     </a>
     
       
@@ -303,15 +327,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="キャリブレーション" class="md-nav__link">
-    キャリブレーション
+  <a href="#tub" title="マルチTub化" class="md-nav__link">
+    マルチTub化
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#config" title="Config" class="md-nav__link">
-    Config
+  <a href="#_2" title="教師データの作成" class="md-nav__link">
+    教師データの作成
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mac" title="教師データの学習(Mac側)" class="md-nav__link">
+    教師データの学習(Mac側)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raspberrypi" title="学習済みモデルをRaspberryPiに戻す" class="md-nav__link">
+    学習済みモデルをRaspberryPiに戻す
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#donkey" title="学習済みモデルでDonkeyを動かす" class="md-nav__link">
+    学習済みモデルでDonkeyを動かす
   </a>
   
 </li>
@@ -333,19 +378,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../09.joystick/" title="Joystick(Wifi Joystick)" class="md-nav__link">
-      Joystick(Wifi Joystick)
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../10.train_rc/" title="学習" class="md-nav__link">
+    <a href="../07.train_rc/" title="学習" class="md-nav__link">
       学習
     </a>
   </li>
@@ -509,15 +542,36 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="キャリブレーション" class="md-nav__link">
-    キャリブレーション
+  <a href="#tub" title="マルチTub化" class="md-nav__link">
+    マルチTub化
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#config" title="Config" class="md-nav__link">
-    Config
+  <a href="#_2" title="教師データの作成" class="md-nav__link">
+    教師データの作成
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mac" title="教師データの学習(Mac側)" class="md-nav__link">
+    教師データの学習(Mac側)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raspberrypi" title="学習済みモデルをRaspberryPiに戻す" class="md-nav__link">
+    学習済みモデルをRaspberryPiに戻す
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#donkey" title="学習済みモデルでDonkeyを動かす" class="md-nav__link">
+    学習済みモデルでDonkeyを動かす
   </a>
   
 </li>
@@ -539,44 +593,100 @@
               
                 
                 
-                <h1 id="_1">キャリブレーション</h1>
-<table>
-<thead>
-<tr>
-<th align="left">ch</th>
-<th align="left">pwm</th>
-<th align="left">操作</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">0</td>
-<td align="left">pwm0</td>
-<td align="left">モーターの制御</td>
-</tr>
-<tr>
-<td align="left">1</td>
-<td align="left">pwm1</td>
-<td align="left">サーボの制御</td>
-</tr>
-</tbody>
-</table>
-<h2 id="_2">キャリブレーション</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>donkey calibrate --channel チャンネル番号
-</pre></div>
-</td></tr></table>
-
-<p>例</p>
+                <h1 id="_1">学習</h1>
+<h2 id="tub">マルチTub化</h2>
+<p>MultiTub化することで、保存データをフォルダわけすることが可能です。</p>
+<p>RaspberryPi側の<code>manager.py</code>を修正します。</p>
+<p>multiple tubsの部分のコメントを外し、single tubの部分を無効にします。</p>
+<p>~/mycar/manage.py</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ donkey calibrate --channel <span class="m">1</span>
-$ donkey calibrate --channel <span class="m">0</span>
+2
+3
+4
+5
+6
+7</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>    #multiple tubs
+    th = TubHandler(path=cfg.DATA_PATH)
+    tub = th.new_tub_writer(inputs=inputs, types=types)
+
+    # single tub
+    #tub = TubWriter(path=cfg.TUB_PATH, inputs=inputs, types=types)
+    V.add(tub, inputs=inputs, run_condition=&#39;recording&#39;)
 </pre></div>
 </td></tr></table>
 
-<h2 id="config">Config</h2>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>vi ~/mycar/config.py
+<h2 id="_2">教師データの作成</h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ <span class="nb">cd</span> ~/mycar
+$ python manage.py drive
 </pre></div>
 </td></tr></table>
+
+<p>教師データは、~/mycar/以下に保存される。</p>
+<h2 id="mac">教師データの学習(Mac側)</h2>
+<p>教師データをRaspberryPiから、Macにrsyncする。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ rsync -r pi@&lt;your_ip_address&gt;:~/mycar/data/ ~/mycar/data/
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$  ls data
+tub_01_18-08-27 tub_02_18-08-27
+</pre></div>
+</td></tr></table>
+
+<p>Mac側には、tub_日付のフォルダが教師データ作成の度にふえていく。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ donkey tubclean .
+</pre></div>
+</td></tr></table>
+
+<p>いらないデータを削除する。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ python ~/mycar/manage.py train --tub<span class="o">=</span>~/mycar/data/tub_01_18-08-27 --model<span class="o">=</span>./models/mypilot
+</pre></div>
+</td></tr></table>
+
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">docopt</span> <span class="kn">import</span> <span class="n">docopt</span>
+
+<span class="kn">import</span> <span class="nn">donkeycar</span> <span class="kn">as</span> <span class="nn">dk</span>
+
+<span class="c1">#import parts</span>
+<span class="kn">from</span> <span class="nn">donkeycar.parts.camera</span> <span class="kn">import</span> <span class="n">PiCamera</span>
+<span class="kn">from</span> <span class="nn">donkeycar.parts.transform</span> <span class="kn">import</span> <span class="n">Lambda</span>
+<span class="c1">#from donkeycar.parts.keras import KerasCategorical</span>
+<span class="kn">from</span> <span class="nn">donkeycar.parts.actuator</span> <span class="kn">import</span> <span class="n">PCA9685</span><span class="p">,</span> <span class="n">PWMSteering</span><span class="p">,</span> <span class="n">PWMThrottle</span>
+<span class="kn">from</span> <span class="nn">donkeycar.parts.datastore</span> <span class="kn">import</span> <span class="n">TubGroup</span><span class="p">,</span> <span class="n">TubWriter</span>
+<span class="c1">#from donkeycar.parts.controller import LocalWebController, JoystickController</span>
+<span class="kn">from</span> <span class="nn">donkeycar.parts.clock</span> <span class="kn">import</span> <span class="n">Timestamp</span>
+</pre></div>
+</td></tr></table>
+
+<p>これで学習開始。</p>
+<h2 id="raspberrypi">学習済みモデルをRaspberryPiに戻す</h2>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ rsync -r ~/mycar/models/ pi@&lt;your_ip_address&gt;:~/mycar/models/
+</pre></div>
+</td></tr></table>
+
+<h2 id="donkey">学習済みモデルでDonkeyを動かす</h2>
+<p>RaspberryPi側にログイン。</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>$ python manage.py drive --model ~/mycar/models/mypilot
+</pre></div>
+</td></tr></table>
+
+<p>or</p>
+<p>Web画面のmodel &amp; pilotから、autopilotを選ぶ。</p>
                 
                   
                 
@@ -597,7 +707,7 @@ $ donkey calibrate --channel <span class="m">0</span>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../03.manage/" title="Projectの作成" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../05.joystick/" title="Joystick(Wifi Joystick)" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -606,19 +716,19 @@ $ donkey calibrate --channel <span class="m">0</span>
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                Projectの作成
+                Joystick(Wifi Joystick)
               </span>
             </div>
           </a>
         
         
-          <a href="../09.joystick/" title="Joystick(Wifi Joystick)" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../07.train_rc/" title="学習" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                Joystick(Wifi Joystick)
+                学習
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
