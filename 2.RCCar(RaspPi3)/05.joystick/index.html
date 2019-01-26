@@ -728,8 +728,10 @@ vi manage.py
 </pre></div></td></tr></table></p>
 <h3 id="f710">F710に対応する場合</h3>
 <p>F710JoystickControllerをimportします。</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_python checked=checked class=code-tab data-lang=python aria-controls=tab-group-2-0_python-panel role=tab><label for=tab-group-2-0_python class=code-tab-label data-lang=python id=tab-group-2-0_python-label>Python</label><div class=code-tabpanel role=tabpanel data-lang=python id=tab-group-2-0_python-panel aria-labelledby=tab-group-2-0_python-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kn>from</span> <span class=nn>donkeypart_ps3_controller</span> <span class=kn>import</span> <span class=n>F710JoystickController</span>
-</pre></div></td></tr></table></div><input name=tab-group-2 type=radio id=tab-group-2-1_python class=code-tab data-lang=python aria-controls=tab-group-2-1_python-panel role=tab><label for=tab-group-2-1_python class=code-tab-label data-lang=python id=tab-group-2-1_python-label>Python</label><div class=code-tabpanel role=tabpanel data-lang=python id=tab-group-2-1_python-panel aria-labelledby=tab-group-2-1_python-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kn>from</span> <span class=nn>donkeypart_ps3_controller</span> <span class=kn>import</span> <span class=n>F710JoystickController</span>
+</pre></div></td></tr></table></p>
+<p>manage.py</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
  2
  3
  4
@@ -752,7 +754,9 @@ vi manage.py
 <span class=kn>from</span> <span class=nn>donkeycar.parts.datastore</span> <span class=kn>import</span> <span class=n>TubGroup</span><span class=p>,</span> <span class=n>TubWriter</span>
 <span class=kn>from</span> <span class=nn>donkeycar.parts.web_controller</span> <span class=kn>import</span> <span class=n>LocalWebController</span>
 <span class=kn>from</span> <span class=nn>donkeycar.parts.clock</span> <span class=kn>import</span> <span class=n>Timestamp</span>
-</pre></div></td></tr></table></div><input name=tab-group-2 type=radio id=tab-group-2-2_python class=code-tab data-lang=python aria-controls=tab-group-2-2_python-panel role=tab><label for=tab-group-2-2_python class=code-tab-label data-lang=python id=tab-group-2-2_python-label>Python</label><div class=code-tabpanel role=tabpanel data-lang=python id=tab-group-2-2_python-panel aria-labelledby=tab-group-2-2_python-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+</pre></div></td></tr></table></p>
+<p>manage.py</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
 3
 4
@@ -763,8 +767,7 @@ vi manage.py
         <span class=n>steering_scale</span><span class=o>=</span><span class=n>cfg</span><span class=o>.</span><span class=n>JOYSTICK_STEERING_SCALE</span><span class=p>,</span>
         <span class=n>auto_record_on_throttle</span><span class=o>=</span><span class=n>cfg</span><span class=o>.</span><span class=n>AUTO_RECORD_ON_THROTTLE</span>
     <span class=p>)</span>
-</pre></div></td></tr></table></div></div>
-
+</pre></div></td></tr></table></p>
 <p><code>~/mycar/config.py</code>でJoystickを有効にします。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
@@ -778,8 +781,10 @@ AUTO_RECORD_ON_THROTTLE = True
 </pre></div></td></tr></table></p>
 <h3 id="elecom">Elecom</h3>
 <p>ElecomJoystickControllerをimportします。</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-4><input name=tab-group-4 type=radio id=tab-group-4-0_python checked=checked class=code-tab data-lang=python aria-controls=tab-group-4-0_python-panel role=tab><label for=tab-group-4-0_python class=code-tab-label data-lang=python id=tab-group-4-0_python-label>Python</label><div class=code-tabpanel role=tabpanel data-lang=python id=tab-group-4-0_python-panel aria-labelledby=tab-group-4-0_python-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kn>from</span> <span class=nn>donkeypart_ps3_controller</span> <span class=kn>import</span> <span class=n>ElecomJoystickController</span>
-</pre></div></td></tr></table></div><input name=tab-group-4 type=radio id=tab-group-4-1_python class=code-tab data-lang=python aria-controls=tab-group-4-1_python-panel role=tab><label for=tab-group-4-1_python class=code-tab-label data-lang=python id=tab-group-4-1_python-label>Python</label><div class=code-tabpanel role=tabpanel data-lang=python id=tab-group-4-1_python-panel aria-labelledby=tab-group-4-1_python-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kn>from</span> <span class=nn>donkeypart_ps3_controller</span> <span class=kn>import</span> <span class=n>ElecomJoystickController</span>
+</pre></div></td></tr></table></p>
+<p>manage.py</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
  2
  3
  4
@@ -802,7 +807,9 @@ AUTO_RECORD_ON_THROTTLE = True
 <span class=kn>from</span> <span class=nn>donkeycar.parts.datastore</span> <span class=kn>import</span> <span class=n>TubGroup</span><span class=p>,</span> <span class=n>TubWriter</span>
 <span class=kn>from</span> <span class=nn>donkeycar.parts.web_controller</span> <span class=kn>import</span> <span class=n>LocalWebController</span>
 <span class=kn>from</span> <span class=nn>donkeycar.parts.clock</span> <span class=kn>import</span> <span class=n>Timestamp</span>
-</pre></div></td></tr></table></div><input name=tab-group-4 type=radio id=tab-group-4-2_python class=code-tab data-lang=python aria-controls=tab-group-4-2_python-panel role=tab><label for=tab-group-4-2_python class=code-tab-label data-lang=python id=tab-group-4-2_python-label>Python</label><div class=code-tabpanel role=tabpanel data-lang=python id=tab-group-4-2_python-panel aria-labelledby=tab-group-4-2_python-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+</pre></div></td></tr></table></p>
+<p>manage.py</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
 3
 4
@@ -813,8 +820,7 @@ AUTO_RECORD_ON_THROTTLE = True
         <span class=n>steering_scale</span><span class=o>=</span><span class=n>cfg</span><span class=o>.</span><span class=n>JOYSTICK_STEERING_SCALE</span><span class=p>,</span>
         <span class=n>auto_record_on_throttle</span><span class=o>=</span><span class=n>cfg</span><span class=o>.</span><span class=n>AUTO_RECORD_ON_THROTTLE</span>
     <span class=p>)</span>
-</pre></div></td></tr></table></div></div>
-
+</pre></div></td></tr></table></p>
 <p><code>~/mycar/config.py</code>でJoystickを有効にします。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
