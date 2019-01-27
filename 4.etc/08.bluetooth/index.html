@@ -467,6 +467,26 @@
     調整
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initpy" title="init.pyの修正" class="md-nav__link">
+    init.pyの修正
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managerpy" title="manager.pyの修正" class="md-nav__link">
+    manager.pyの修正
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -560,6 +580,26 @@
     調整
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#initpy" title="init.pyの修正" class="md-nav__link">
+    init.pyの修正
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#managerpy" title="manager.pyの修正" class="md-nav__link">
+    manager.pyの修正
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -586,12 +626,12 @@
 <p>PS3 Joystickは、Thirdparty製は認識しない。</p>
 </div>
 <h2 id="ps3-joystick">PS3 Joystickの認識</h2>
-<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_i25s5w2w04y3w12 checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_i25s5w2w04y3w12-panel role=tab><label for=tab-group-0-0_i25s5w2w04y3w12 class=code-tab-label data-lang id=tab-group-0-0_i25s5w2w04y3w12-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_i25s5w2w04y3w12-panel aria-labelledby=tab-group-0-0_i25s5w2w04y3w12-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_pjmcu5teqqtwlde checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_pjmcu5teqqtwlde-panel role=tab><label for=tab-group-0-0_pjmcu5teqqtwlde class=code-tab-label data-lang id=tab-group-0-0_pjmcu5teqqtwlde-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_pjmcu5teqqtwlde-panel aria-labelledby=tab-group-0-0_pjmcu5teqqtwlde-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
 3</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo apt-get install bluetooth libbluetooth3 libusb-dev
 sudo systemctl enable bluetooth.service
 sudo usermod -G bluetooth -a pi
-</pre></div></td></tr></table></div><input name=tab-group-0 type=radio id=tab-group-0-1_7qxpqzi4dowh1bl class=code-tab data-lang aria-controls=tab-group-0-1_7qxpqzi4dowh1bl-panel role=tab><label for=tab-group-0-1_7qxpqzi4dowh1bl class=code-tab-label data-lang id=tab-group-0-1_7qxpqzi4dowh1bl-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_7qxpqzi4dowh1bl-panel aria-labelledby=tab-group-0-1_7qxpqzi4dowh1bl-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+</pre></div></td></tr></table></div><input name=tab-group-0 type=radio id=tab-group-0-1_spkhljl9b8fob6l class=code-tab data-lang aria-controls=tab-group-0-1_spkhljl9b8fob6l-panel role=tab><label for=tab-group-0-1_spkhljl9b8fob6l class=code-tab-label data-lang id=tab-group-0-1_spkhljl9b8fob6l-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_spkhljl9b8fob6l-panel aria-labelledby=tab-group-0-1_spkhljl9b8fob6l-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2</pre></div></td><td class=code><div class=codehilite><pre><span></span>wget http://www.pabr.org/sixlinux/sixpair.c
 gcc -o sixpair sixpair.c -lusb
 </pre></div></td></tr></table></div></div>
@@ -605,10 +645,14 @@ Current Bluetooth master: b8:27:eb:4d:b1:73
 Setting master bd_addr to b8:27:eb:4d:b1:73
 </pre></div></td></tr></table></p>
 <p>Bluetoothデバイスアドレスがでてくれば、成功。PS3 JoystickをDonkeyCarから切り離します。</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_bpbxlk42bgaqdk4 checked=checked class=code-tab data-lang aria-controls=tab-group-2-0_bpbxlk42bgaqdk4-panel role=tab><label for=tab-group-2-0_bpbxlk42bgaqdk4 class=code-tab-label data-lang id=tab-group-2-0_bpbxlk42bgaqdk4-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-0_bpbxlk42bgaqdk4-panel aria-labelledby=tab-group-2-0_bpbxlk42bgaqdk4-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>うまくいかない場合は、コントローラの裏にリセットボタンがありますので、リセットします。</p>
+</div>
+<div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_3eldljtg32psw9i checked=checked class=code-tab data-lang aria-controls=tab-group-2-0_3eldljtg32psw9i-panel role=tab><label for=tab-group-2-0_3eldljtg32psw9i class=code-tab-label data-lang id=tab-group-2-0_3eldljtg32psw9i-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-0_3eldljtg32psw9i-panel aria-labelledby=tab-group-2-0_3eldljtg32psw9i-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2</pre></div></td><td class=code><div class=codehilite><pre><span></span>bluetoothctl
 [NEW] Controller B8:27:EB:4D:B1:73 donkeypi [default]
-</pre></div></td></tr></table></div><input name=tab-group-2 type=radio id=tab-group-2-1_uo2xuufxjt4h5yn class=code-tab data-lang aria-controls=tab-group-2-1_uo2xuufxjt4h5yn-panel role=tab><label for=tab-group-2-1_uo2xuufxjt4h5yn class=code-tab-label data-lang id=tab-group-2-1_uo2xuufxjt4h5yn-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-1_uo2xuufxjt4h5yn-panel aria-labelledby=tab-group-2-1_uo2xuufxjt4h5yn-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+</pre></div></td></tr></table></div><input name=tab-group-2 type=radio id=tab-group-2-1_zdybku373zs81eo class=code-tab data-lang aria-controls=tab-group-2-1_zdybku373zs81eo-panel role=tab><label for=tab-group-2-1_zdybku373zs81eo class=code-tab-label data-lang id=tab-group-2-1_zdybku373zs81eo-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-1_zdybku373zs81eo-panel aria-labelledby=tab-group-2-1_zdybku373zs81eo-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2</pre></div></td><td class=code><div class=codehilite><pre><span></span>[PLAYSTATION(R)3 Controller]#  agent on
 Agent registered
 </pre></div></td></tr></table></div></div>
@@ -617,7 +661,7 @@ Agent registered
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>[PLAYSTATION(R)3 Controller]#  connect B8:27:EB:4D:B1:73
 </pre></div></td></tr></table></p>
 <p>つながるまで繰り返す</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-4><input name=tab-group-4 type=radio id=tab-group-4-0_s03s4dpb7kiffey checked=checked class=code-tab data-lang aria-controls=tab-group-4-0_s03s4dpb7kiffey-panel role=tab><label for=tab-group-4-0_s03s4dpb7kiffey class=code-tab-label data-lang id=tab-group-4-0_s03s4dpb7kiffey-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-4-0_s03s4dpb7kiffey-panel aria-labelledby=tab-group-4-0_s03s4dpb7kiffey-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+<div class=md-fenced-code-tabs id=tab-tab-group-4><input name=tab-group-4 type=radio id=tab-group-4-0_w1i9z29uadyn13s checked=checked class=code-tab data-lang aria-controls=tab-group-4-0_w1i9z29uadyn13s-panel role=tab><label for=tab-group-4-0_w1i9z29uadyn13s class=code-tab-label data-lang id=tab-group-4-0_w1i9z29uadyn13s-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-4-0_w1i9z29uadyn13s-panel aria-labelledby=tab-group-4-0_w1i9z29uadyn13s-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
 3
 4
@@ -626,8 +670,8 @@ Agent registered
 [PLAYSTATION(R)3 Controller]#  default-agent
 
 [PLAYSTATION(R)3 Controller]#  quit
-</pre></div></td></tr></table></div><input name=tab-group-4 type=radio id=tab-group-4-1_iqvzd7skcn2dvhj class=code-tab data-lang aria-controls=tab-group-4-1_iqvzd7skcn2dvhj-panel role=tab><label for=tab-group-4-1_iqvzd7skcn2dvhj class=code-tab-label data-lang id=tab-group-4-1_iqvzd7skcn2dvhj-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-4-1_iqvzd7skcn2dvhj-panel aria-labelledby=tab-group-4-1_iqvzd7skcn2dvhj-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo reboot
-</pre></div></td></tr></table></div><input name=tab-group-4 type=radio id=tab-group-4-2_b8jrd88s604ni98 class=code-tab data-lang aria-controls=tab-group-4-2_b8jrd88s604ni98-panel role=tab><label for=tab-group-4-2_b8jrd88s604ni98 class=code-tab-label data-lang id=tab-group-4-2_b8jrd88s604ni98-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-4-2_b8jrd88s604ni98-panel aria-labelledby=tab-group-4-2_b8jrd88s604ni98-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+</pre></div></td></tr></table></div><input name=tab-group-4 type=radio id=tab-group-4-1_beu6oxzz0dk6cde class=code-tab data-lang aria-controls=tab-group-4-1_beu6oxzz0dk6cde-panel role=tab><label for=tab-group-4-1_beu6oxzz0dk6cde class=code-tab-label data-lang id=tab-group-4-1_beu6oxzz0dk6cde-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-4-1_beu6oxzz0dk6cde-panel aria-labelledby=tab-group-4-1_beu6oxzz0dk6cde-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo reboot
+</pre></div></td></tr></table></div><input name=tab-group-4 type=radio id=tab-group-4-2_z19m0to2mk93tpn class=code-tab data-lang aria-controls=tab-group-4-2_z19m0to2mk93tpn-panel role=tab><label for=tab-group-4-2_z19m0to2mk93tpn class=code-tab-label data-lang id=tab-group-4-2_z19m0to2mk93tpn-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-4-2_z19m0to2mk93tpn-panel aria-labelledby=tab-group-4-2_z19m0to2mk93tpn-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2</pre></div></td><td class=code><div class=codehilite><pre><span></span>ls /dev/input/js*
 /dev/input/js0
 </pre></div></td></tr></table></div></div>
@@ -639,17 +683,22 @@ Agent registered
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>pip install git+https://github.com/autorope/donkeypart_ps3_controller.git
 </pre></div></td></tr></table></p>
 <h2 id="_2">調整</h2>
-<div class=md-fenced-code-tabs id=tab-tab-group-7><input name=tab-group-7 type=radio id=tab-group-7-0_sdvof1is39pnig7 checked=checked class=code-tab data-lang aria-controls=tab-group-7-0_sdvof1is39pnig7-panel role=tab><label for=tab-group-7-0_sdvof1is39pnig7 class=code-tab-label data-lang id=tab-group-7-0_sdvof1is39pnig7-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-7-0_sdvof1is39pnig7-panel aria-labelledby=tab-group-7-0_sdvof1is39pnig7-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+<h3 id="initpy"><strong>init</strong>.pyの修正</h3>
+<p>コントローラの裏にリセットボタン
+manage.py に 下記のimport 分を追加</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd /home/pi/env/lib/python3.5/site-packages/donkeypart_ps3_controller
 vi __init__.py
-</pre></div></td></tr></table></div><input name=tab-group-7 type=radio id=tab-group-7-1_ptz8obxr5jj6kp2 class=code-tab data-lang aria-controls=tab-group-7-1_ptz8obxr5jj6kp2-panel role=tab><label for=tab-group-7-1_ptz8obxr5jj6kp2 class=code-tab-label data-lang id=tab-group-7-1_ptz8obxr5jj6kp2-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-7-1_ptz8obxr5jj6kp2-panel aria-labelledby=tab-group-7-1_ptz8obxr5jj6kp2-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kn>from</span> <span class=nn>.part</span> <span class=kn>import</span> <span class=n>PS3JoystickController</span>
-</pre></div></td></tr></table></div></div>
-
-<p>に書き直す。</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-8><input name=tab-group-8 type=radio id=tab-group-8-0_uonfrkqifmtgl5v checked=checked class=code-tab data-lang aria-controls=tab-group-8-0_uonfrkqifmtgl5v-panel role=tab><label for=tab-group-8-0_uonfrkqifmtgl5v class=code-tab-label data-lang id=tab-group-8-0_uonfrkqifmtgl5v-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-8-0_uonfrkqifmtgl5v-panel aria-labelledby=tab-group-8-0_uonfrkqifmtgl5v-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+</pre></div></td></tr></table></p>
+<p><code>/home/pi/env/lib/python3.5/site-packages/donkeypart_ps3_controller/__init__.py</code></p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kn>from</span> <span class=nn>.part</span> <span class=kn>import</span> <span class=n>PS3JoystickController</span>
+</pre></div></td></tr></table></p>
+<h3 id="managerpy">manager.pyの修正</h3>
+<div class=md-fenced-code-tabs id=tab-tab-group-9><input name=tab-group-9 type=radio id=tab-group-9-0_88juk43ge2s19af checked=checked class=code-tab data-lang aria-controls=tab-group-9-0_88juk43ge2s19af-panel role=tab><label for=tab-group-9-0_88juk43ge2s19af class=code-tab-label data-lang id=tab-group-9-0_88juk43ge2s19af-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-9-0_88juk43ge2s19af-panel aria-labelledby=tab-group-9-0_88juk43ge2s19af-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd ~/mycar
 vim manage.py
-</pre></div></td></tr></table></div><input name=tab-group-8 type=radio id=tab-group-8-1_u0so71stt25w9le class=code-tab data-lang aria-controls=tab-group-8-1_u0so71stt25w9le-panel role=tab><label for=tab-group-8-1_u0so71stt25w9le class=code-tab-label data-lang id=tab-group-8-1_u0so71stt25w9le-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-8-1_u0so71stt25w9le-panel aria-labelledby=tab-group-8-1_u0so71stt25w9le-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+</pre></div></td></tr></table></div><input name=tab-group-9 type=radio id=tab-group-9-1_5tsg3rf3970f3nx class=code-tab data-lang aria-controls=tab-group-9-1_5tsg3rf3970f3nx-panel role=tab><label for=tab-group-9-1_5tsg3rf3970f3nx class=code-tab-label data-lang id=tab-group-9-1_5tsg3rf3970f3nx-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-9-1_5tsg3rf3970f3nx-panel aria-labelledby=tab-group-9-1_5tsg3rf3970f3nx-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kn>from</span> <span class=nn>donkeypart_ps3_controller</span> <span class=kn>import</span> <span class=n>PS3JoystickController</span>
+</pre></div></td></tr></table></div><input name=tab-group-9 type=radio id=tab-group-9-2_u314c0p7et6r5sr class=code-tab data-lang aria-controls=tab-group-9-2_u314c0p7et6r5sr-panel role=tab><label for=tab-group-9-2_u314c0p7et6r5sr class=code-tab-label data-lang id=tab-group-9-2_u314c0p7et6r5sr-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-9-2_u314c0p7et6r5sr-panel aria-labelledby=tab-group-9-2_u314c0p7et6r5sr-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
  2
  3
  4
@@ -659,25 +708,7 @@ vim manage.py
  8
  9
 10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20</pre></div></td><td class=code><div class=codehilite><pre><span></span>if use_joystick or cfg.USE_JOYSTICK_AS_DEFAULT:
-        print(&quot;Using joystick: &quot;)
-        print(&quot;    throttle_scale=&quot; + str(cfg.JOYSTICK_MAX_THROTTLE))
-        print(&quot;    steering_scale=&quot; + str(cfg.JOYSTICK_STEERING_SCALE))
-        #print(&quot;    throttle_axis=&quot; + str(cfg.JOYSTICK_THROTTLE_AXIS))
-        print(&quot;    auto_record_on_throttle=&quot; + str(cfg.AUTO_RECORD_ON_THROTTLE))
-        #ctr = JoystickController(max_throttle=cfg.JOYSTICK_MAX_THROTTLE,
-        #                         steering_scale=cfg.JOYSTICK_STEERING_SCALE,
-        #                         throttle_axis=cfg.JOYSTICK_THROTTLE_AXIS,
-        #                         auto_record_on_throttle=cfg.AUTO_RECORD_ON_THROTTLE)
+11</pre></div></td><td class=code><div class=codehilite><pre><span></span>if use_joystick or cfg.USE_JOYSTICK_AS_DEFAULT:
         ctr = PS3JoystickController(
             throttle_scale=cfg.JOYSTICK_MAX_THROTTLE,
             steering_scale=cfg.JOYSTICK_STEERING_SCALE,
