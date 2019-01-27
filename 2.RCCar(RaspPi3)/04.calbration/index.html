@@ -359,8 +359,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../07.train_colab/" title="Colabでの学習" class="md-nav__link">
-      Colabでの学習
+    <a href="../07.train_colab/" title="Colabでの学習(GPU)" class="md-nav__link">
+      Colabでの学習(GPU)
     </a>
   </li>
 
@@ -595,6 +595,10 @@
 2</pre></div></td><td class=code><div class=codehilite><pre><span></span>$ donkey calibrate --channel <span class=m>1</span>
 $ donkey calibrate --channel <span class=m>0</span>
 </pre></div></td></tr></table></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>PWMで信号を発信中にRCカー本体の電源をONにすると、そのPWM値が初期値として登録される。例えば、donkey calibrate --channel 0 で600を入力中に、電源をOnした場合、600が中央値になる。中央値がずれた場合は、donkey calibrate --channel 0 で、360程度の値で電源をOnにし、360を中央値に設定し直す。</p>
+</div>
 <h2 id="config">Config</h2>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>vi ~/mycar/config.py
 </pre></div></td></tr></table></p>
