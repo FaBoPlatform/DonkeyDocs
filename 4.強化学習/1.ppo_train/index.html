@@ -36,7 +36,7 @@
     
     
       
-        <title>そのほか - FaBo DonkeyCar Docs</title>
+        <title>PPO Train - FaBo DonkeyCar Docs</title>
       
     
     
@@ -76,7 +76,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#_1" tabindex="1" class="md-skip">
+      <a href="#ppo-train" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -102,7 +102,7 @@
                 FaBo DonkeyCar Docs
               </span>
               <span class="md-header-nav__topic">
-                そのほか
+                PPO Train
               </span>
             
           
@@ -407,26 +407,14 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
     
     <label class="md-nav__link" for="nav-5">
-      4.etc
+      4.強化学習
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-5">
-        4.etc
+        4.強化学習
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../08.bluetooth/" title="Joystick(PS3)" class="md-nav__link">
-      Joystick(PS3)
-    </a>
-  </li>
-
         
           
           
@@ -442,38 +430,9 @@
       
     
     
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        そのほか
-      </label>
-    
-    <a href="./" title="そのほか" class="md-nav__link md-nav__link--active">
-      そのほか
+    <a href="./" title="PPO Train" class="md-nav__link md-nav__link--active">
+      PPO Train
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">目次</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#wifi-router" title="Wifi Router" class="md-nav__link">
-    Wifi Router
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
     
   </li>
 
@@ -484,7 +443,67 @@
 
 
   <li class="md-nav__item">
-    <a href="../2.debug/" title="Debug" class="md-nav__link">
+    <a href="../2.DeepQNET/" title="DeepQNET" class="md-nav__link">
+      DeepQNET
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      5.etc
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        5.etc
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../5.etc/08.bluetooth/" title="Joystick(PS3)" class="md-nav__link">
+      Joystick(PS3)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../5.etc/1.wifi/" title="そのほか" class="md-nav__link">
+      そのほか
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../5.etc/2.debug/" title="Debug" class="md-nav__link">
       Debug
     </a>
   </li>
@@ -496,7 +515,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../3.joystick/" title="Joystickハック" class="md-nav__link">
+    <a href="../../5.etc/3.joystick/" title="Joystickハック" class="md-nav__link">
       Joystickハック
     </a>
   </li>
@@ -524,22 +543,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">目次</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#wifi-router" title="Wifi Router" class="md-nav__link">
-    Wifi Router
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -551,29 +554,12 @@
               
                 
                 
-                <h1 id="_1">そのほか</h1>
-<h2 id="wifi-router">Wifi Router</h2>
-<p><img alt="" src="../img/wifi001.png" /></p>
-<p><img alt="" src="../img/wifi002.png" /></p>
-<table>
-<thead>
-<tr>
-<th align="left">デバイス</th>
-<th align="left">IP</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">WR-583RD2-2</td>
-<td align="left">192.168.2.1</td>
-</tr>
-<tr>
-<td align="left">RaspberryPI</td>
-<td align="left">192.168.2.100</td>
-</tr>
-</tbody>
-</table>
-<p>/home/pi/env/lib/python3.5/site-packages/donkeycar/parts/web_controller/</p>
+                <h1 id="ppo-train">PPO Train</h1>
+<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_s5uj79bvkjfn4py checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_s5uj79bvkjfn4py-panel role=tab><label for=tab-group-0-0_s5uj79bvkjfn4py class=code-tab-label data-lang id=tab-group-0-0_s5uj79bvkjfn4py-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_s5uj79bvkjfn4py-panel aria-labelledby=tab-group-0-0_s5uj79bvkjfn4py-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2</pre></div></td><td class=code><div class=codehilite><pre><span></span>brew install cmake openmpi
+pip install stable-baselines
+</pre></div></td></tr></table></div><input name=tab-group-0 type=radio id=tab-group-0-1_6u1vtqzdxj7utu7 class=code-tab data-lang aria-controls=tab-group-0-1_6u1vtqzdxj7utu7-panel role=tab><label for=tab-group-0-1_6u1vtqzdxj7utu7 class=code-tab-label data-lang id=tab-group-0-1_6u1vtqzdxj7utu7-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_6u1vtqzdxj7utu7-panel aria-labelledby=tab-group-0-1_6u1vtqzdxj7utu7-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>python donkey_gym/examples/reinforcement_learning/ppo_train.py
+</pre></div></td></tr></table></div></div>
                 
                   
                 
@@ -594,7 +580,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../08.bluetooth/" title="Joystick(PS3)" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../3.Simulator/4.run_sim/" title="走行" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -603,19 +589,19 @@
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                Joystick(PS3)
+                走行
               </span>
             </div>
           </a>
         
         
-          <a href="../2.debug/" title="Debug" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../2.DeepQNET/" title="DeepQNET" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                Debug
+                DeepQNET
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
