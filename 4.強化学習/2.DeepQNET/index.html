@@ -442,9 +442,66 @@
       
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        DeepQNET
+      </label>
+    
     <a href="./" title="DeepQNET" class="md-nav__link md-nav__link--active">
       DeepQNET
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#git-clone" title="Git clone" class="md-nav__link">
+    Git clone
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openmpi" title="OpenMPIのインストール" class="md-nav__link">
+    OpenMPIのインストール
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matplotlibrc" title="Matplotlibrcの修正" class="md-nav__link">
+    Matplotlibrcの修正
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="実行" class="md-nav__link">
+    実行
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="エミュレータを実行" class="md-nav__link">
+    エミュレータを実行
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -481,6 +538,18 @@
   <li class="md-nav__item">
     <a href="../../5.Benchmark/01.tensorflow/" title="TensorFlowの処理" class="md-nav__link">
       TensorFlowの処理
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../5.Benchmark/02.colab/" title="Colab" class="md-nav__link">
+      Colab
     </a>
   </li>
 
@@ -579,6 +648,50 @@
     
   
   
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#git-clone" title="Git clone" class="md-nav__link">
+    Git clone
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#openmpi" title="OpenMPIのインストール" class="md-nav__link">
+    OpenMPIのインストール
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#matplotlibrc" title="Matplotlibrcの修正" class="md-nav__link">
+    Matplotlibrcの修正
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="実行" class="md-nav__link">
+    実行
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="エミュレータを実行" class="md-nav__link">
+    エミュレータを実行
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -591,15 +704,29 @@
                 
                 
                 <h1 id="deepqnet">DeepQNET</h1>
-<div class=md-fenced-code-tabs id=tab-tab-group-0><input name=tab-group-0 type=radio id=tab-group-0-0_861dzfkanxblox2 checked=checked class=code-tab data-lang aria-controls=tab-group-0-0_861dzfkanxblox2-panel role=tab><label for=tab-group-0-0_861dzfkanxblox2 class=code-tab-label data-lang id=tab-group-0-0_861dzfkanxblox2-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-0_861dzfkanxblox2-panel aria-labelledby=tab-group-0-0_861dzfkanxblox2-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>pip install scikit-image
-</pre></div></td></tr></table></div><input name=tab-group-0 type=radio id=tab-group-0-1_x9tkkce9bzjoxrh class=code-tab data-lang aria-controls=tab-group-0-1_x9tkkce9bzjoxrh-panel role=tab><label for=tab-group-0-1_x9tkkce9bzjoxrh class=code-tab-label data-lang id=tab-group-0-1_x9tkkce9bzjoxrh-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-1_x9tkkce9bzjoxrh-panel aria-labelledby=tab-group-0-1_x9tkkce9bzjoxrh-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>python donkey_gym/examples/reinforcement_learning/ddqn.py
-</pre></div></td></tr></table></div><input name=tab-group-0 type=radio id=tab-group-0-2_v0oz4trw1dd9d9p class=code-tab data-lang aria-controls=tab-group-0-2_v0oz4trw1dd9d9p-panel role=tab><label for=tab-group-0-2_v0oz4trw1dd9d9p class=code-tab-label data-lang id=tab-group-0-2_v0oz4trw1dd9d9p-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-0-2_v0oz4trw1dd9d9p-panel aria-labelledby=tab-group-0-2_v0oz4trw1dd9d9p-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=n>python</span> <span class=o>-</span><span class=n>c</span> <span class=s2>&quot;import matplotlib;print(matplotlib.matplotlib_fname())&quot;</span>
-</pre></div></td></tr></table></div></div>
-
+<h2 id="git-clone">Git clone</h2>
+<p>Git clone</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>git clone https://github.com/autorope/donkey_gym
+</pre></div></td></tr></table></p>
+<h2 id="openmpi">OpenMPIのインストール</h2>
+<p>OpenMPIをインストール</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2</pre></div></td><td class=code><div class=codehilite><pre><span></span>brew install cmake openmpi
+pip install stable-baselines
+</pre></div></td></tr></table></p>
+<p>Scikit Imafeをインストール</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>pip install scikit-image
+</pre></div></td></tr></table></p>
+<h2 id="matplotlibrc">Matplotlibrcの修正</h2>
+<p>matplotlibrcの場所の確認</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=n>python</span> <span class=o>-</span><span class=n>c</span> <span class=s2>&quot;import matplotlib;print(matplotlib.matplotlib_fname())&quot;</span>
+</pre></div></td></tr></table></p>
 <p><code>matplotlibrc</code>の<code>backend: macosx</code>を<code>backend: Tkagg</code>に書き換える</p>
+<h2 id="_1">実行</h2>
+<p>実行</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>python donkey_gym/examples/reinforcement_learning/ddqn.py
 </pre></div></td></tr></table></p>
-<p>pip install stable-baselines</p>
+<h2 id="_2">エミュレータを実行</h2>
                 
                   
                 

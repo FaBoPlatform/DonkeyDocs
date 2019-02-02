@@ -514,6 +514,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02.colab/" title="Colab" class="md-nav__link">
+      Colab
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -690,7 +702,7 @@
             <span class=bp>self</span><span class=o>.</span><span class=n>model</span> <span class=o>=</span> <span class=n>default_linear</span><span class=p>()</span>
 
     <span class=k>def</span> <span class=nf>run</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>img_arr</span><span class=p>):</span>
-        <span class=n>begin_time</span> <span class=o>=</span> <span class=n>time</span><span class=o>.</span><span class=n>perf_counter</span><span class=p>()</span>
+        <span class=n>start_time</span> <span class=o>=</span> <span class=n>time</span><span class=o>.</span><span class=n>perf_counter</span><span class=p>()</span>
         <span class=n>img_arr</span> <span class=o>=</span> <span class=n>img_arr</span><span class=o>.</span><span class=n>reshape</span><span class=p>((</span><span class=mi>1</span><span class=p>,)</span> <span class=o>+</span> <span class=n>img_arr</span><span class=o>.</span><span class=n>shape</span><span class=p>)</span>
         <span class=n>outputs</span> <span class=o>=</span> <span class=bp>self</span><span class=o>.</span><span class=n>model</span><span class=o>.</span><span class=n>predict</span><span class=p>(</span><span class=n>img_arr</span><span class=p>)</span>
         <span class=k>print</span><span class=p>(</span><span class=s2>&quot;FPS: &quot;</span><span class=p>,</span> <span class=mf>1.0</span> <span class=o>/</span> <span class=p>(</span><span class=n>time</span><span class=o>.</span><span class=n>perf_counter</span><span class=p>()</span> <span class=o>-</span> <span class=n>start_time</span><span class=p>))</span>
@@ -734,13 +746,13 @@
           </a>
         
         
-          <a href="../../6.etc/08.bluetooth/" title="Joystick(PS3)" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../02.colab/" title="Colab" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                Joystick(PS3)
+                Colab
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
