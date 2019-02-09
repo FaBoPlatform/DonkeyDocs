@@ -834,10 +834,10 @@
         <span class=n>env</span><span class=o>.</span><span class=n>unwrapped</span><span class=o>.</span><span class=n>close</span><span class=p>()</span>
         <span class=n>sys</span><span class=o>.</span><span class=n>exit</span><span class=p>(</span><span class=mi>0</span><span class=p>)</span>
 
-<span class=hll>    <span class=c1># Get size of state and action from environment</span>
-</span><span class=hll>    <span class=n>state_size</span> <span class=o>=</span> <span class=p>(</span><span class=n>img_rows</span><span class=p>,</span> <span class=n>img_cols</span><span class=p>,</span> <span class=n>img_channels</span><span class=p>)</span>
-</span>    <span class=n>action_space</span> <span class=o>=</span> <span class=n>env</span><span class=o>.</span><span class=n>action_space</span> <span class=c1># Steering and Throttle</span>
-</pre></div></td></tr></table></p>
+    <span class=c1># Get size of state and action from environment</span>
+<span class=hll>    <span class=n>state_size</span> <span class=o>=</span> <span class=p>(</span><span class=n>img_rows</span><span class=p>,</span> <span class=n>img_cols</span><span class=p>,</span> <span class=n>img_channels</span><span class=p>)</span>
+</span><span class=hll>    <span class=n>action_space</span> <span class=o>=</span> <span class=n>env</span><span class=o>.</span><span class=n>action_space</span> <span class=c1># Steering and Throttle</span>
+</span></pre></div></td></tr></table></p>
 <p>Line244-Line269</p>
 <p>throttoleは、Defaltで0.3に固定。env.reset()でEmulatorをReset。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
@@ -880,10 +880,10 @@
             <span class=k>print</span><span class=p>(</span><span class=s2>&quot;Episode: &quot;</span><span class=p>,</span> <span class=n>e</span><span class=p>)</span>
 
             <span class=n>done</span> <span class=o>=</span> <span class=bp>False</span>
-            <span class=n>obs</span> <span class=o>=</span> <span class=n>env</span><span class=o>.</span><span class=n>reset</span><span class=p>()</span>
-
-<span class=hll>            <span class=n>episode_len</span> <span class=o>=</span> <span class=mi>0</span>
+<span class=hll>            <span class=n>obs</span> <span class=o>=</span> <span class=n>env</span><span class=o>.</span><span class=n>reset</span><span class=p>()</span>
 </span>
+            <span class=n>episode_len</span> <span class=o>=</span> <span class=mi>0</span>
+
             <span class=n>x_t</span> <span class=o>=</span> <span class=n>agent</span><span class=o>.</span><span class=n>process_image</span><span class=p>(</span><span class=n>obs</span><span class=p>)</span>
 
             <span class=n>s_t</span> <span class=o>=</span> <span class=n>np</span><span class=o>.</span><span class=n>stack</span><span class=p>((</span><span class=n>x_t</span><span class=p>,</span><span class=n>x_t</span><span class=p>,</span><span class=n>x_t</span><span class=p>,</span><span class=n>x_t</span><span class=p>),</span><span class=n>axis</span><span class=o>=</span><span class=mi>2</span><span class=p>)</span>
