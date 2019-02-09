@@ -839,7 +839,7 @@
 </span><span class=hll>    <span class=n>action_space</span> <span class=o>=</span> <span class=n>env</span><span class=o>.</span><span class=n>action_space</span> <span class=c1># Steering and Throttle</span>
 </span></pre></div></td></tr></table></p>
 <p>Line244-Line269</p>
-<p>throttoleは、Defaltで0.3に固定。env.reset()でEmulatorをReset。</p>
+<p>throttoleは、Defaltで0.3に固定。env.reset()でEmulatorをReset。agent.process_image(obs)で、グレースケールの80x80の画像に変換。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
  2
  3
@@ -884,8 +884,8 @@
 </span>
             <span class=n>episode_len</span> <span class=o>=</span> <span class=mi>0</span>
 
-            <span class=n>x_t</span> <span class=o>=</span> <span class=n>agent</span><span class=o>.</span><span class=n>process_image</span><span class=p>(</span><span class=n>obs</span><span class=p>)</span>
-
+<span class=hll>            <span class=n>x_t</span> <span class=o>=</span> <span class=n>agent</span><span class=o>.</span><span class=n>process_image</span><span class=p>(</span><span class=n>obs</span><span class=p>)</span>
+</span>
             <span class=n>s_t</span> <span class=o>=</span> <span class=n>np</span><span class=o>.</span><span class=n>stack</span><span class=p>((</span><span class=n>x_t</span><span class=p>,</span><span class=n>x_t</span><span class=p>,</span><span class=n>x_t</span><span class=p>,</span><span class=n>x_t</span><span class=p>),</span><span class=n>axis</span><span class=o>=</span><span class=mi>2</span><span class=p>)</span>
             <span class=c1># In Keras, need to reshape</span>
             <span class=n>s_t</span> <span class=o>=</span> <span class=n>s_t</span><span class=o>.</span><span class=n>reshape</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=n>s_t</span><span class=o>.</span><span class=n>shape</span><span class=p>[</span><span class=mi>0</span><span class=p>],</span> <span class=n>s_t</span><span class=o>.</span><span class=n>shape</span><span class=p>[</span><span class=mi>1</span><span class=p>],</span> <span class=n>s_t</span><span class=o>.</span><span class=n>shape</span><span class=p>[</span><span class=mi>2</span><span class=p>])</span> <span class=c1>#1*80*80*4       </span>
