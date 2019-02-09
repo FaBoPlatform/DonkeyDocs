@@ -473,8 +473,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#sourcecode" title="SourceCode" class="md-nav__link">
+    SourceCode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data" title="Data" class="md-nav__link">
+    Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#model" title="Model" class="md-nav__link">
     Model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gym" title="Gym" class="md-nav__link">
+    Gym
   </a>
   
 </li>
@@ -636,8 +657,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#sourcecode" title="SourceCode" class="md-nav__link">
+    SourceCode
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data" title="Data" class="md-nav__link">
+    Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#model" title="Model" class="md-nav__link">
     Model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gym" title="Gym" class="md-nav__link">
+    Gym
   </a>
   
 </li>
@@ -660,19 +702,193 @@
                 
                 
                 <h1 id="double-deep-q-learning">Double Deep Q-Learning解説</h1>
-<h2 id="model">Model</h2>
-<p><img alt="" src="../img/model.png" /></p>
+<h2 id="sourcecode">SourceCode</h2>
+<p><a href="https://github.com/autorope/donkey_gym/blob/master/examples/reinforcement_learning/ddqn.py">https://github.com/autorope/donkey_gym/blob/master/examples/reinforcement_learning/ddqn.py</a></p>
+<h2 id="data">Data</h2>
+<p>連続する80x80ピクセルの画像を4枚使用する。</p>
+<p>Line37-Line39</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
-3
-4
-5
-6</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=sd>&quot;&quot;&quot; Bubble sort &quot;&quot;&quot;</span>
-<span class=k>def</span> <span class=nf>bubble_sort</span><span class=p>(</span><span class=n>items</span><span class=p>):</span>
-<span class=hll>    <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=nb>len</span><span class=p>(</span><span class=n>items</span><span class=p>)):</span>
-</span><span class=hll>        <span class=k>for</span> <span class=n>j</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=nb>len</span><span class=p>(</span><span class=n>items</span><span class=p>)</span> <span class=o>-</span> <span class=mi>1</span> <span class=o>-</span> <span class=n>i</span><span class=p>):</span>
-</span>            <span class=k>if</span> <span class=n>items</span><span class=p>[</span><span class=n>j</span><span class=p>]</span> <span class=o>&gt;</span> <span class=n>items</span><span class=p>[</span><span class=n>j</span> <span class=o>+</span> <span class=mi>1</span><span class=p>]:</span>
-                <span class=n>items</span><span class=p>[</span><span class=n>j</span><span class=p>],</span> <span class=n>items</span><span class=p>[</span><span class=n>j</span> <span class=o>+</span> <span class=mi>1</span><span class=p>]</span> <span class=o>=</span> <span class=n>items</span><span class=p>[</span><span class=n>j</span> <span class=o>+</span> <span class=mi>1</span><span class=p>],</span> <span class=n>items</span><span class=p>[</span><span class=n>j</span><span class=p>]</span>
+3</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=n>img_rows</span><span class=p>,</span> <span class=n>img_cols</span> <span class=o>=</span> <span class=mi>80</span><span class=p>,</span> <span class=mi>80</span>
+<span class=c1># Convert image into Black and white</span>
+<span class=n>img_channels</span> <span class=o>=</span> <span class=mi>4</span> <span class=c1># We stack 4 frames</span>
+</pre></div></td></tr></table></p>
+<h2 id="model">Model</h2>
+<p><img alt="" src="../img/model.png" /></p>
+<p>Line79-Line101</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23</pre></div></td><td class=code><div class=codehilite><pre><span></span>    <span class=k>def</span> <span class=nf>build_model</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=n>model</span> <span class=o>=</span> <span class=n>Sequential</span><span class=p>()</span>
+        <span class=n>model</span><span class=o>.</span><span class=n>add</span><span class=p>(</span><span class=n>Conv2D</span><span class=p>(</span><span class=mi>24</span><span class=p>,</span> <span class=p>(</span><span class=mi>5</span><span class=p>,</span> <span class=mi>5</span><span class=p>),</span> <span class=n>strides</span><span class=o>=</span><span class=p>(</span><span class=mi>2</span><span class=p>,</span> <span class=mi>2</span><span class=p>),</span> <span class=n>padding</span><span class=o>=</span><span class=s2>&quot;same&quot;</span><span class=p>,</span><span class=n>input_shape</span><span class=o>=</span><span class=p>(</span><span class=n>img_rows</span><span class=p>,</span><span class=n>img_cols</span><span class=p>,</span><span class=n>img_channels</span><span class=p>)))</span>  <span class=c1>#80*80*4</span>
+        <span class=n>model</span><span class=o>.</span><span class=n>add</span><span class=p>(</span><span class=n>Activation</span><span class=p>(</span><span class=s1>&#39;relu&#39;</span><span class=p>))</span>
+        <span class=n>model</span><span class=o>.</span><span class=n>add</span><span class=p>(</span><span class=n>Conv2D</span><span class=p>(</span><span class=mi>32</span><span class=p>,</span> <span class=p>(</span><span class=mi>5</span><span class=p>,</span> <span class=mi>5</span><span class=p>),</span> <span class=n>strides</span><span class=o>=</span><span class=p>(</span><span class=mi>2</span><span class=p>,</span> <span class=mi>2</span><span class=p>),</span> <span class=n>padding</span><span class=o>=</span><span class=s2>&quot;same&quot;</span><span class=p>))</span>
+        <span class=n>model</span><span class=o>.</span><span class=n>add</span><span class=p>(</span><span class=n>Activation</span><span class=p>(</span><span class=s1>&#39;relu&#39;</span><span class=p>))</span>
+        <span class=n>model</span><span class=o>.</span><span class=n>add</span><span class=p>(</span><span class=n>Conv2D</span><span class=p>(</span><span class=mi>64</span><span class=p>,</span> <span class=p>(</span><span class=mi>5</span><span class=p>,</span> <span class=mi>5</span><span class=p>),</span> <span class=n>strides</span><span class=o>=</span><span class=p>(</span><span class=mi>2</span><span class=p>,</span> <span class=mi>2</span><span class=p>),</span> <span class=n>padding</span><span class=o>=</span><span class=s2>&quot;same&quot;</span><span class=p>))</span>
+        <span class=n>model</span><span class=o>.</span><span class=n>add</span><span class=p>(</span><span class=n>Activation</span><span class=p>(</span><span class=s1>&#39;relu&#39;</span><span class=p>))</span>
+        <span class=n>model</span><span class=o>.</span><span class=n>add</span><span class=p>(</span><span class=n>Conv2D</span><span class=p>(</span><span class=mi>64</span><span class=p>,</span> <span class=p>(</span><span class=mi>3</span><span class=p>,</span> <span class=mi>3</span><span class=p>),</span> <span class=n>strides</span><span class=o>=</span><span class=p>(</span><span class=mi>2</span><span class=p>,</span> <span class=mi>2</span><span class=p>),</span> <span class=n>padding</span><span class=o>=</span><span class=s2>&quot;same&quot;</span><span class=p>))</span>
+        <span class=n>model</span><span class=o>.</span><span class=n>add</span><span class=p>(</span><span class=n>Activation</span><span class=p>(</span><span class=s1>&#39;relu&#39;</span><span class=p>))</span>
+        <span class=n>model</span><span class=o>.</span><span class=n>add</span><span class=p>(</span><span class=n>Conv2D</span><span class=p>(</span><span class=mi>64</span><span class=p>,</span> <span class=p>(</span><span class=mi>3</span><span class=p>,</span> <span class=mi>3</span><span class=p>),</span> <span class=n>strides</span><span class=o>=</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=mi>1</span><span class=p>),</span> <span class=n>padding</span><span class=o>=</span><span class=s2>&quot;same&quot;</span><span class=p>))</span>
+        <span class=n>model</span><span class=o>.</span><span class=n>add</span><span class=p>(</span><span class=n>Activation</span><span class=p>(</span><span class=s1>&#39;relu&#39;</span><span class=p>))</span>
+        <span class=n>model</span><span class=o>.</span><span class=n>add</span><span class=p>(</span><span class=n>Flatten</span><span class=p>())</span>
+        <span class=n>model</span><span class=o>.</span><span class=n>add</span><span class=p>(</span><span class=n>Dense</span><span class=p>(</span><span class=mi>512</span><span class=p>))</span>
+        <span class=n>model</span><span class=o>.</span><span class=n>add</span><span class=p>(</span><span class=n>Activation</span><span class=p>(</span><span class=s1>&#39;relu&#39;</span><span class=p>))</span>
+
+        <span class=c1># 15 categorical bins for Steering angles</span>
+        <span class=n>model</span><span class=o>.</span><span class=n>add</span><span class=p>(</span><span class=n>Dense</span><span class=p>(</span><span class=mi>15</span><span class=p>,</span> <span class=n>activation</span><span class=o>=</span><span class=s2>&quot;linear&quot;</span><span class=p>))</span> 
+
+        <span class=n>adam</span> <span class=o>=</span> <span class=n>Adam</span><span class=p>(</span><span class=n>lr</span><span class=o>=</span><span class=bp>self</span><span class=o>.</span><span class=n>learning_rate</span><span class=p>)</span>
+        <span class=n>model</span><span class=o>.</span><span class=n>compile</span><span class=p>(</span><span class=n>loss</span><span class=o>=</span><span class=s1>&#39;mse&#39;</span><span class=p>,</span><span class=n>optimizer</span><span class=o>=</span><span class=n>adam</span><span class=p>)</span>
+
+        <span class=k>return</span> <span class=n>model</span>
+</pre></div></td></tr></table></p>
+<h2 id="gym">Gym</h2>
+<table>
+<thead>
+<tr>
+<th align="left">項目</th>
+<th align="left">コード</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">gym</td>
+<td align="left">gym.make(args.env_name)</td>
+</tr>
+<tr>
+<td align="left">state_size</td>
+<td align="left">(img_rows, img_cols, img_channels)</td>
+</tr>
+<tr>
+<td align="left">action_space</td>
+<td align="left">env.action_space</td>
+</tr>
+</tbody>
+</table>
+<p>Line213-Line241</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=k>def</span> <span class=nf>run_ddqn</span><span class=p>(</span><span class=n>args</span><span class=p>):</span>
+    <span class=sd>&#39;&#39;&#39;</span>
+<span class=sd>    run a DDQN training session, or test it&#39;s result, with the donkey simulator</span>
+<span class=sd>    &#39;&#39;&#39;</span>
+
+    <span class=n>config</span> <span class=o>=</span> <span class=n>tf</span><span class=o>.</span><span class=n>ConfigProto</span><span class=p>()</span>
+    <span class=n>config</span><span class=o>.</span><span class=n>gpu_options</span><span class=o>.</span><span class=n>allow_growth</span> <span class=o>=</span> <span class=bp>True</span>
+    <span class=n>sess</span> <span class=o>=</span> <span class=n>tf</span><span class=o>.</span><span class=n>Session</span><span class=p>(</span><span class=n>config</span><span class=o>=</span><span class=n>config</span><span class=p>)</span>
+    <span class=n>K</span><span class=o>.</span><span class=n>set_session</span><span class=p>(</span><span class=n>sess</span><span class=p>)</span>
+
+    <span class=c1>#we pass arguments to the donkey_gym init via these</span>
+    <span class=n>os</span><span class=o>.</span><span class=n>environ</span><span class=p>[</span><span class=s1>&#39;DONKEY_SIM_PATH&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=n>args</span><span class=o>.</span><span class=n>sim</span>
+    <span class=n>os</span><span class=o>.</span><span class=n>environ</span><span class=p>[</span><span class=s1>&#39;DONKEY_SIM_PORT&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=nb>str</span><span class=p>(</span><span class=n>args</span><span class=o>.</span><span class=n>port</span><span class=p>)</span>
+    <span class=n>os</span><span class=o>.</span><span class=n>environ</span><span class=p>[</span><span class=s1>&#39;DONKEY_SIM_HEADLESS&#39;</span><span class=p>]</span> <span class=o>=</span> <span class=nb>str</span><span class=p>(</span><span class=n>args</span><span class=o>.</span><span class=n>headless</span><span class=p>)</span>
+
+<span class=hll>    <span class=n>env</span> <span class=o>=</span> <span class=n>gym</span><span class=o>.</span><span class=n>make</span><span class=p>(</span><span class=n>args</span><span class=o>.</span><span class=n>env_name</span><span class=p>)</span>
+</span>
+    <span class=c1>#not working on windows...</span>
+    <span class=k>def</span> <span class=nf>signal_handler</span><span class=p>(</span><span class=n>signal</span><span class=p>,</span> <span class=n>frame</span><span class=p>):</span>
+        <span class=k>print</span><span class=p>(</span><span class=s2>&quot;catching ctrl+c&quot;</span><span class=p>)</span>
+        <span class=n>env</span><span class=o>.</span><span class=n>unwrapped</span><span class=o>.</span><span class=n>close</span><span class=p>()</span>
+        <span class=n>sys</span><span class=o>.</span><span class=n>exit</span><span class=p>(</span><span class=mi>0</span><span class=p>)</span>
+
+<span class=hll>    <span class=c1># Get size of state and action from environment</span>
+</span><span class=hll>    <span class=n>state_size</span> <span class=o>=</span> <span class=p>(</span><span class=n>img_rows</span><span class=p>,</span> <span class=n>img_cols</span><span class=p>,</span> <span class=n>img_channels</span><span class=p>)</span>
+</span>    <span class=n>action_space</span> <span class=o>=</span> <span class=n>env</span><span class=o>.</span><span class=n>action_space</span> <span class=c1># Steering and Throttle</span>
+</pre></div></td></tr></table></p>
+<p>Line244-Line269</p>
+<p>throttoleは、Defaltで0.3に固定。env.reset()でEmulatorをReset。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25</pre></div></td><td class=code><div class=codehilite><pre><span></span>    <span class=k>try</span><span class=p>:</span>
+<span class=hll>        <span class=n>agent</span> <span class=o>=</span> <span class=n>DQNAgent</span><span class=p>(</span><span class=n>state_size</span><span class=p>,</span> <span class=n>action_space</span><span class=p>,</span> <span class=n>train</span><span class=o>=</span><span class=ow>not</span> <span class=n>args</span><span class=o>.</span><span class=n>test</span><span class=p>)</span>
+</span>
+<span class=hll>        <span class=n>throttle</span> <span class=o>=</span> <span class=n>args</span><span class=o>.</span><span class=n>throttle</span> <span class=c1># Set throttle as constant value</span>
+</span>
+        <span class=n>episodes</span> <span class=o>=</span> <span class=p>[]</span>
+
+        <span class=k>if</span> <span class=n>os</span><span class=o>.</span><span class=n>path</span><span class=o>.</span><span class=n>exists</span><span class=p>(</span><span class=n>args</span><span class=o>.</span><span class=n>model</span><span class=p>):</span>
+            <span class=k>print</span><span class=p>(</span><span class=s2>&quot;load the saved model&quot;</span><span class=p>)</span>
+            <span class=n>agent</span><span class=o>.</span><span class=n>load_model</span><span class=p>(</span><span class=n>args</span><span class=o>.</span><span class=n>model</span><span class=p>)</span>
+
+        <span class=k>for</span> <span class=n>e</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=n>EPISODES</span><span class=p>):</span>
+
+            <span class=k>print</span><span class=p>(</span><span class=s2>&quot;Episode: &quot;</span><span class=p>,</span> <span class=n>e</span><span class=p>)</span>
+
+            <span class=n>done</span> <span class=o>=</span> <span class=bp>False</span>
+            <span class=n>obs</span> <span class=o>=</span> <span class=n>env</span><span class=o>.</span><span class=n>reset</span><span class=p>()</span>
+
+<span class=hll>            <span class=n>episode_len</span> <span class=o>=</span> <span class=mi>0</span>
+</span>
+            <span class=n>x_t</span> <span class=o>=</span> <span class=n>agent</span><span class=o>.</span><span class=n>process_image</span><span class=p>(</span><span class=n>obs</span><span class=p>)</span>
+
+            <span class=n>s_t</span> <span class=o>=</span> <span class=n>np</span><span class=o>.</span><span class=n>stack</span><span class=p>((</span><span class=n>x_t</span><span class=p>,</span><span class=n>x_t</span><span class=p>,</span><span class=n>x_t</span><span class=p>,</span><span class=n>x_t</span><span class=p>),</span><span class=n>axis</span><span class=o>=</span><span class=mi>2</span><span class=p>)</span>
+            <span class=c1># In Keras, need to reshape</span>
+            <span class=n>s_t</span> <span class=o>=</span> <span class=n>s_t</span><span class=o>.</span><span class=n>reshape</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=n>s_t</span><span class=o>.</span><span class=n>shape</span><span class=p>[</span><span class=mi>0</span><span class=p>],</span> <span class=n>s_t</span><span class=o>.</span><span class=n>shape</span><span class=p>[</span><span class=mi>1</span><span class=p>],</span> <span class=n>s_t</span><span class=o>.</span><span class=n>shape</span><span class=p>[</span><span class=mi>2</span><span class=p>])</span> <span class=c1>#1*80*80*4       </span>
 </pre></div></td></tr></table></p>
                 
                   
