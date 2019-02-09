@@ -662,13 +662,18 @@
                 <h1 id="double-deep-q-learning">Double Deep Q-Learning解説</h1>
 <h2 id="model">Model</h2>
 <p><img alt="" src="../img/model.png" /></p>
-<p><code>python hl_lines=3 4
-""" Bubble sort """
-def bubble_sort(items):
-    for i in range(len(items)):
-        for j in range(len(items) - 1 - i):
-            if items[j] &gt; items[j + 1]:
-                items[j], items[j + 1] = items[j + 1], items[j]</code></p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=sd>&quot;&quot;&quot; Bubble sort &quot;&quot;&quot;</span>
+<span class=k>def</span> <span class=nf>bubble_sort</span><span class=p>(</span><span class=n>items</span><span class=p>):</span>
+<span class=hll>    <span class=k>for</span> <span class=n>i</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=nb>len</span><span class=p>(</span><span class=n>items</span><span class=p>)):</span>
+</span><span class=hll>        <span class=k>for</span> <span class=n>j</span> <span class=ow>in</span> <span class=nb>range</span><span class=p>(</span><span class=nb>len</span><span class=p>(</span><span class=n>items</span><span class=p>)</span> <span class=o>-</span> <span class=mi>1</span> <span class=o>-</span> <span class=n>i</span><span class=p>):</span>
+</span>            <span class=k>if</span> <span class=n>items</span><span class=p>[</span><span class=n>j</span><span class=p>]</span> <span class=o>&gt;</span> <span class=n>items</span><span class=p>[</span><span class=n>j</span> <span class=o>+</span> <span class=mi>1</span><span class=p>]:</span>
+                <span class=n>items</span><span class=p>[</span><span class=n>j</span><span class=p>],</span> <span class=n>items</span><span class=p>[</span><span class=n>j</span> <span class=o>+</span> <span class=mi>1</span><span class=p>]</span> <span class=o>=</span> <span class=n>items</span><span class=p>[</span><span class=n>j</span> <span class=o>+</span> <span class=mi>1</span><span class=p>],</span> <span class=n>items</span><span class=p>[</span><span class=n>j</span><span class=p>]</span>
+</pre></div></td></tr></table></p>
                 
                   
                 
