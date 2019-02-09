@@ -890,6 +890,116 @@
             <span class=c1># In Keras, need to reshape</span>
             <span class=n>s_t</span> <span class=o>=</span> <span class=n>s_t</span><span class=o>.</span><span class=n>reshape</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=n>s_t</span><span class=o>.</span><span class=n>shape</span><span class=p>[</span><span class=mi>0</span><span class=p>],</span> <span class=n>s_t</span><span class=o>.</span><span class=n>shape</span><span class=p>[</span><span class=mi>1</span><span class=p>],</span> <span class=n>s_t</span><span class=o>.</span><span class=n>shape</span><span class=p>[</span><span class=mi>2</span><span class=p>])</span> <span class=c1>#1*80*80*4       </span>
 </pre></div></td></tr></table></p>
+<p>Whileループは、Emulatorから車が脱線するとTrueの値が帰ってくるので、その間動き続ける。　</p>
+<table>
+<thead>
+<tr>
+<th align="left">コード</th>
+<th align="left">意味</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">steering = agent.get_action(s_t)</td>
+<td align="left">steeringの値(ハンドル)</td>
+</tr>
+<tr>
+<td align="left">next_obs, reward, done, info = env.step(action)</td>
+<td align="left">エミュレータに[Steering,Throttle]を渡すと、その値で車が移動する、その結果のnext_obs(画像), reward(黄色線との距離), done(離脱していなければfalse), infoが返ってくる</td>
+</tr>
+<tr>
+<td align="left">agent.process_image(next_obs)</td>
+<td align="left">取得した画像を80x80グレースケールに変換する</td>
+</tr>
+<tr>
+<td align="left">agent.replay_memory(s_t, np.argmax(linear_bin(steering)), reward, s_t1, done)</td>
+<td align="left">st_1(1つ前の4枚の連続する画像), ハンドルの角度のレンジ, reward(報酬), s_t1(新しい画像をいれた4枚の連続する画像) を渡す</td>
+</tr>
+<tr>
+<td align="left">agent.update_target_model()</td>
+<td align="left">車が離脱したら<code>self.target_model.set_weights(self.model.get_weights())</code>でweightを更新する。</td>
+</tr>
+</tbody>
+</table>
+<p>Line270-Line308</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=hll>            <span class=k>while</span> <span class=ow>not</span> <span class=n>done</span><span class=p>:</span>
+</span>
+<span class=hll>                <span class=c1># Get action for the current state and go one step in environment</span>
+</span>                <span class=n>steering</span> <span class=o>=</span> <span class=n>agent</span><span class=o>.</span><span class=n>get_action</span><span class=p>(</span><span class=n>s_t</span><span class=p>)</span>
+<span class=hll>                <span class=n>action</span> <span class=o>=</span> <span class=p>[</span><span class=n>steering</span><span class=p>,</span> <span class=n>throttle</span><span class=p>]</span>
+</span>                <span class=n>next_obs</span><span class=p>,</span> <span class=n>reward</span><span class=p>,</span> <span class=n>done</span><span class=p>,</span> <span class=n>info</span> <span class=o>=</span> <span class=n>env</span><span class=o>.</span><span class=n>step</span><span class=p>(</span><span class=n>action</span><span class=p>)</span>
+<span class=hll>
+</span>                <span class=n>x_t1</span> <span class=o>=</span> <span class=n>agent</span><span class=o>.</span><span class=n>process_image</span><span class=p>(</span><span class=n>next_obs</span><span class=p>)</span>
+
+                <span class=n>x_t1</span> <span class=o>=</span> <span class=n>x_t1</span><span class=o>.</span><span class=n>reshape</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=n>x_t1</span><span class=o>.</span><span class=n>shape</span><span class=p>[</span><span class=mi>0</span><span class=p>],</span> <span class=n>x_t1</span><span class=o>.</span><span class=n>shape</span><span class=p>[</span><span class=mi>1</span><span class=p>],</span> <span class=mi>1</span><span class=p>)</span> <span class=c1>#1x80x80x1</span>
+                <span class=n>s_t1</span> <span class=o>=</span> <span class=n>np</span><span class=o>.</span><span class=n>append</span><span class=p>(</span><span class=n>x_t1</span><span class=p>,</span> <span class=n>s_t</span><span class=p>[:,</span> <span class=p>:,</span> <span class=p>:,</span> <span class=p>:</span><span class=mi>3</span><span class=p>],</span> <span class=n>axis</span><span class=o>=</span><span class=mi>3</span><span class=p>)</span> <span class=c1>#1x80x80x4</span>
+
+<span class=hll>                <span class=c1># Save the sample &lt;s, a, r, s&#39;&gt; to the replay memory</span>
+</span>                <span class=n>agent</span><span class=o>.</span><span class=n>replay_memory</span><span class=p>(</span><span class=n>s_t</span><span class=p>,</span> <span class=n>np</span><span class=o>.</span><span class=n>argmax</span><span class=p>(</span><span class=n>linear_bin</span><span class=p>(</span><span class=n>steering</span><span class=p>)),</span> <span class=n>reward</span><span class=p>,</span> <span class=n>s_t1</span><span class=p>,</span> <span class=n>done</span><span class=p>)</span>
+                <span class=n>agent</span><span class=o>.</span><span class=n>update_epsilon</span><span class=p>()</span>
+
+                <span class=k>if</span> <span class=n>agent</span><span class=o>.</span><span class=n>train</span><span class=p>:</span>
+                    <span class=n>agent</span><span class=o>.</span><span class=n>train_replay</span><span class=p>()</span>
+
+                <span class=n>s_t</span> <span class=o>=</span> <span class=n>s_t1</span>
+                <span class=n>agent</span><span class=o>.</span><span class=n>t</span> <span class=o>=</span> <span class=n>agent</span><span class=o>.</span><span class=n>t</span> <span class=o>+</span> <span class=mi>1</span>
+                <span class=n>episode_len</span> <span class=o>=</span> <span class=n>episode_len</span> <span class=o>+</span> <span class=mi>1</span>
+                <span class=k>if</span> <span class=n>agent</span><span class=o>.</span><span class=n>t</span> <span class=o>%</span> <span class=mi>30</span> <span class=o>==</span> <span class=mi>0</span><span class=p>:</span>
+                    <span class=k>print</span><span class=p>(</span><span class=s2>&quot;EPISODE&quot;</span><span class=p>,</span>  <span class=n>e</span><span class=p>,</span> <span class=s2>&quot;TIMESTEP&quot;</span><span class=p>,</span> <span class=n>agent</span><span class=o>.</span><span class=n>t</span><span class=p>,</span><span class=s2>&quot;/ ACTION&quot;</span><span class=p>,</span> <span class=n>action</span><span class=p>,</span> <span class=s2>&quot;/ REWARD&quot;</span><span class=p>,</span> <span class=n>reward</span><span class=p>,</span> <span class=s2>&quot;/ EPISODE LENGTH&quot;</span><span class=p>,</span> <span class=n>episode_len</span><span class=p>,</span> <span class=s2>&quot;/ Q_MAX &quot;</span> <span class=p>,</span> <span class=n>agent</span><span class=o>.</span><span class=n>max_Q</span><span class=p>)</span>
+
+                <span class=k>if</span> <span class=n>done</span><span class=p>:</span>
+
+<span class=hll>                    <span class=c1># Every episode update the target model to be same with model</span>
+</span>                    <span class=n>agent</span><span class=o>.</span><span class=n>update_target_model</span><span class=p>()</span>
+
+                    <span class=n>episodes</span><span class=o>.</span><span class=n>append</span><span class=p>(</span><span class=n>e</span><span class=p>)</span>
+
+
+                    <span class=c1># Save model for each episode</span>
+                    <span class=k>if</span> <span class=n>agent</span><span class=o>.</span><span class=n>train</span><span class=p>:</span>
+                        <span class=n>agent</span><span class=o>.</span><span class=n>save_model</span><span class=p>(</span><span class=n>args</span><span class=o>.</span><span class=n>model</span><span class=p>)</span>
+
+                    <span class=k>print</span><span class=p>(</span><span class=s2>&quot;episode:&quot;</span><span class=p>,</span> <span class=n>e</span><span class=p>,</span> <span class=s2>&quot;  memory length:&quot;</span><span class=p>,</span> <span class=nb>len</span><span class=p>(</span><span class=n>agent</span><span class=o>.</span><span class=n>memory</span><span class=p>),</span>
+                        <span class=s2>&quot;  epsilon:&quot;</span><span class=p>,</span> <span class=n>agent</span><span class=o>.</span><span class=n>epsilon</span><span class=p>,</span> <span class=s2>&quot; episode length:&quot;</span><span class=p>,</span> <span class=n>episode_len</span><span class=p>)</span>
+</pre></div></td></tr></table></p>
                 
                   
                 
