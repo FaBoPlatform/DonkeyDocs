@@ -972,9 +972,9 @@
                 <span class=n>x_t1</span> <span class=o>=</span> <span class=n>x_t1</span><span class=o>.</span><span class=n>reshape</span><span class=p>(</span><span class=mi>1</span><span class=p>,</span> <span class=n>x_t1</span><span class=o>.</span><span class=n>shape</span><span class=p>[</span><span class=mi>0</span><span class=p>],</span> <span class=n>x_t1</span><span class=o>.</span><span class=n>shape</span><span class=p>[</span><span class=mi>1</span><span class=p>],</span> <span class=mi>1</span><span class=p>)</span> <span class=c1>#1x80x80x1</span>
                 <span class=n>s_t1</span> <span class=o>=</span> <span class=n>np</span><span class=o>.</span><span class=n>append</span><span class=p>(</span><span class=n>x_t1</span><span class=p>,</span> <span class=n>s_t</span><span class=p>[:,</span> <span class=p>:,</span> <span class=p>:,</span> <span class=p>:</span><span class=mi>3</span><span class=p>],</span> <span class=n>axis</span><span class=o>=</span><span class=mi>3</span><span class=p>)</span> <span class=c1>#1x80x80x4</span>
 
-<span class=hll>                <span class=c1># Save the sample &lt;s, a, r, s&#39;&gt; to the replay memory</span>
-</span>                <span class=n>agent</span><span class=o>.</span><span class=n>replay_memory</span><span class=p>(</span><span class=n>s_t</span><span class=p>,</span> <span class=n>np</span><span class=o>.</span><span class=n>argmax</span><span class=p>(</span><span class=n>linear_bin</span><span class=p>(</span><span class=n>steering</span><span class=p>)),</span> <span class=n>reward</span><span class=p>,</span> <span class=n>s_t1</span><span class=p>,</span> <span class=n>done</span><span class=p>)</span>
-                <span class=n>agent</span><span class=o>.</span><span class=n>update_epsilon</span><span class=p>()</span>
+                <span class=c1># Save the sample &lt;s, a, r, s&#39;&gt; to the replay memory</span>
+<span class=hll>                <span class=n>agent</span><span class=o>.</span><span class=n>replay_memory</span><span class=p>(</span><span class=n>s_t</span><span class=p>,</span> <span class=n>np</span><span class=o>.</span><span class=n>argmax</span><span class=p>(</span><span class=n>linear_bin</span><span class=p>(</span><span class=n>steering</span><span class=p>)),</span> <span class=n>reward</span><span class=p>,</span> <span class=n>s_t1</span><span class=p>,</span> <span class=n>done</span><span class=p>)</span>
+</span>                <span class=n>agent</span><span class=o>.</span><span class=n>update_epsilon</span><span class=p>()</span>
 
                 <span class=k>if</span> <span class=n>agent</span><span class=o>.</span><span class=n>train</span><span class=p>:</span>
                     <span class=n>agent</span><span class=o>.</span><span class=n>train_replay</span><span class=p>()</span>
@@ -987,9 +987,9 @@
 
                 <span class=k>if</span> <span class=n>done</span><span class=p>:</span>
 
-<span class=hll>                    <span class=c1># Every episode update the target model to be same with model</span>
-</span>                    <span class=n>agent</span><span class=o>.</span><span class=n>update_target_model</span><span class=p>()</span>
-
+                    <span class=c1># Every episode update the target model to be same with model</span>
+<span class=hll>                    <span class=n>agent</span><span class=o>.</span><span class=n>update_target_model</span><span class=p>()</span>
+</span>
                     <span class=n>episodes</span><span class=o>.</span><span class=n>append</span><span class=p>(</span><span class=n>e</span><span class=p>)</span>
 
 
