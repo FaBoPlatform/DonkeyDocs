@@ -803,8 +803,9 @@ joblib
 tqdm
 </pre></div></td></tr></table></p>
 <h2 id="_2">環境構築</h2>
-<p>mac.yml</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_xf55d7opzqvvdvb checked=checked class=code-tab data-lang aria-controls=tab-group-2-0_xf55d7opzqvvdvb-panel role=tab><label for=tab-group-2-0_xf55d7opzqvvdvb class=code-tab-label data-lang id=tab-group-2-0_xf55d7opzqvvdvb-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-0_xf55d7opzqvvdvb-panel aria-labelledby=tab-group-2-0_xf55d7opzqvvdvb-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+<p>mac.ymlを新規で作成する</p>
+<p><code>mac.yml</code></p>
+<div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_6k91v9cuwnp6dui checked=checked class=code-tab data-lang aria-controls=tab-group-2-0_6k91v9cuwnp6dui-panel role=tab><label for=tab-group-2-0_6k91v9cuwnp6dui class=code-tab-label data-lang id=tab-group-2-0_6k91v9cuwnp6dui-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-0_6k91v9cuwnp6dui-panel aria-labelledby=tab-group-2-0_6k91v9cuwnp6dui-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
  2
  3
  4
@@ -887,7 +888,7 @@ tqdm
   <span class=o>-</span> <span class=n>pygame</span><span class=o>==</span><span class=mf>1.9</span><span class=o>.</span><span class=mi>4</span>
   <span class=o>-</span> <span class=n>cloudpickle</span><span class=o>==</span><span class=mf>0.7</span><span class=o>.</span><span class=mi>0</span>
   <span class=o>-</span> <span class=n>joblib</span><span class=o>==</span><span class=mf>0.13</span><span class=o>.</span><span class=mi>1</span> 
-</pre></div></td></tr></table></div><input name=tab-group-2 type=radio id=tab-group-2-1_ctavvasb08kutpn class=code-tab data-lang aria-controls=tab-group-2-1_ctavvasb08kutpn-panel role=tab><label for=tab-group-2-1_ctavvasb08kutpn class=code-tab-label data-lang id=tab-group-2-1_ctavvasb08kutpn-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-1_ctavvasb08kutpn-panel aria-labelledby=tab-group-2-1_ctavvasb08kutpn-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+</pre></div></td></tr></table></div><input name=tab-group-2 type=radio id=tab-group-2-1_jsijmv5yjntbzdw class=code-tab data-lang aria-controls=tab-group-2-1_jsijmv5yjntbzdw-panel role=tab><label for=tab-group-2-1_jsijmv5yjntbzdw class=code-tab-label data-lang id=tab-group-2-1_jsijmv5yjntbzdw-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-1_jsijmv5yjntbzdw-panel aria-labelledby=tab-group-2-1_jsijmv5yjntbzdw-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2</pre></div></td><td class=code><div class=codehilite><pre><span></span>conda env create --file mac.yml
 source activate donkey-rl
 </pre></div></td></tr></table></div></div>
@@ -905,11 +906,14 @@ source activate donkey-rl
 </pre></div></td></tr></table></p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-</div>
 <p>python-opencvがあるとうまく起動しない</p>
+</div>
 <h2 id="misc_utilpy">misc_util.py を修正</h2>
-<div class=md-fenced-code-tabs id=tab-tab-group-5><input name=tab-group-5 type=radio id=tab-group-5-0_1bvi6gsttagdg13 checked=checked class=code-tab data-lang aria-controls=tab-group-5-0_1bvi6gsttagdg13-panel role=tab><label for=tab-group-5-0_1bvi6gsttagdg13 class=code-tab-label data-lang id=tab-group-5-0_1bvi6gsttagdg13-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-5-0_1bvi6gsttagdg13-panel aria-labelledby=tab-group-5-0_1bvi6gsttagdg13-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>vi /Users/akira/miniconda3/envs/donkey-rl/lib/python3.6/site-packages/stable_baselines/common/misc_util.py
-</pre></div></td></tr></table></div><input name=tab-group-5 type=radio id=tab-group-5-1_python class=code-tab data-lang=python aria-controls=tab-group-5-1_python-panel role=tab><label for=tab-group-5-1_python class=code-tab-label data-lang=python id=tab-group-5-1_python-label>Python</label><div class=code-tabpanel role=tabpanel data-lang=python id=tab-group-5-1_python-panel aria-labelledby=tab-group-5-1_python-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+<p>viで開く</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>vi /Users/akira/miniconda3/envs/donkey-rl/lib/python3.6/site-packages/stable_baselines/common/misc_util.py
+</pre></div></td></tr></table></p>
+<p>gym.spaces.prng.seedが存在しないので、一時的にコメントアウト</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
  2
  3
  4
@@ -928,8 +932,7 @@ source activate donkey-rl
     <span class=n>np</span><span class=o>.</span><span class=n>random</span><span class=o>.</span><span class=n>seed</span><span class=p>(</span><span class=n>seed</span><span class=p>)</span>
     <span class=n>random</span><span class=o>.</span><span class=n>seed</span><span class=p>(</span><span class=n>seed</span><span class=p>)</span>
 <span class=hll>    <span class=c1>#gym.spaces.prng.seed(seed)</span>
-</span></pre></div></td></tr></table></div></div>
-
+</span></pre></div></td></tr></table></p>
 <h2 id="soft-actor-criticsac">Soft Actor-Critic(SAC)</h2>
 <p>SACを使用して8000ステップで学習</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>python train.py --algo sac -n 8000 -vae vae64.pkl
