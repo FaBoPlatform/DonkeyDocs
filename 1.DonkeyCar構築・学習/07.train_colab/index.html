@@ -326,15 +326,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#joystickraspi3" title="Joystickを無効(RasPi3)" class="md-nav__link">
-    Joystickを無効(RasPi3)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#donkeyraspi3" title="学習済みモデルでDonkeyを動かす(RasPi3)" class="md-nav__link">
-    学習済みモデルでDonkeyを動かす(RasPi3)
+  <a href="#donkeycarraspi3" title="学習済みモデルでDonkeyCarを動かす(RasPi3)" class="md-nav__link">
+    学習済みモデルでDonkeyCarを動かす(RasPi3)
   </a>
   
 </li>
@@ -685,15 +678,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#joystickraspi3" title="Joystickを無効(RasPi3)" class="md-nav__link">
-    Joystickを無効(RasPi3)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#donkeyraspi3" title="学習済みモデルでDonkeyを動かす(RasPi3)" class="md-nav__link">
-    学習済みモデルでDonkeyを動かす(RasPi3)
+  <a href="#donkeycarraspi3" title="学習済みモデルでDonkeyCarを動かす(RasPi3)" class="md-nav__link">
+    学習済みモデルでDonkeyCarを動かす(RasPi3)
   </a>
   
 </li>
@@ -716,6 +702,10 @@
                 
                 
                 <h1 id="colabgpu">Colabでの学習(GPU)</h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Colabのサンプルは、かならずChormeで実施してください。他のブラウザを用いる場合は、ファイルのアップロードに失敗します。</p>
+</div>
 <h2 id="colab">学習にはColabを用います。</h2>
 <p><a href="https://colab.research.google.com/">https://colab.research.google.com/</a></p>
 <h2 id="colabdonkeycar">ColabへのDonkeyCarの取り込み</h2>
@@ -740,19 +730,7 @@
 <h2 id="donwloadraspberrypi3">学習済みデータをDonwloadしてRaspberryPi3へ</h2>
 <p><img alt="" src="../img/colab003.png" /></p>
 <p><img alt="" src="../img/colab004.png" /></p>
-<h2 id="joystickraspi3">Joystickを無効(RasPi3)</h2>
-<p><code>~/mycar/config.py</code>でJoystickを無効にします。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
-2
-3
-4
-5</pre></div></td><td class=code><div class=codehilite><pre><span></span>#JOYSTICK
-USE_JOYSTICK_AS_DEFAULT = False
-JOYSTICK_MAX_THROTTLE = 0.25
-JOYSTICK_STEERING_SCALE = 1.0
-AUTO_RECORD_ON_THROTTLE = True
-</pre></div></td></tr></table></p>
-<h2 id="donkeyraspi3">学習済みモデルでDonkeyを動かす(RasPi3)</h2>
+<h2 id="donkeycarraspi3">学習済みモデルでDonkeyCarを動かす(RasPi3)</h2>
 <p>RaspberryPi側にログイン。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>$ python manage.py drive --model ~/mycar/models/mypilot
 </pre></div></td></tr></table></p>
