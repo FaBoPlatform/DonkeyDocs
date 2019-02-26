@@ -740,20 +740,20 @@
 10
 11
 12
-13</pre></div></td><td class=code><div class=codehilite><pre><span></span>    V.add(steering, inputs=[&#39;angle&#39;])
-    V.add(throttle, inputs=[&#39;throttle&#39;])
+13</pre></div></td><td class=code><div class=codehilite><pre><span></span>    <span class=n>V</span><span class=o>.</span><span class=n>add</span><span class=p>(</span><span class=n>steering</span><span class=p>,</span> <span class=n>inputs</span><span class=o>=</span><span class=p>[</span><span class=s1>&#39;angle&#39;</span><span class=p>])</span>
+    <span class=n>V</span><span class=o>.</span><span class=n>add</span><span class=p>(</span><span class=n>throttle</span><span class=p>,</span> <span class=n>inputs</span><span class=o>=</span><span class=p>[</span><span class=s1>&#39;throttle&#39;</span><span class=p>])</span>
 
-    # add tub to save data
-    inputs = [&#39;cam/image_array&#39;, &#39;user/angle&#39;, &#39;user/throttle&#39;, &#39;user/mode&#39;, &#39;t$
-    types = [&#39;image_array&#39;, &#39;float&#39;, &#39;float&#39;,  &#39;str&#39;, &#39;str&#39;]
+    <span class=c1># add tub to save data</span>
+    <span class=n>inputs</span> <span class=o>=</span> <span class=p>[</span><span class=s1>&#39;cam/image_array&#39;</span><span class=p>,</span> <span class=s1>&#39;user/angle&#39;</span><span class=p>,</span> <span class=s1>&#39;user/throttle&#39;</span><span class=p>,</span> <span class=s1>&#39;user/mode&#39;</span><span class=p>,</span> <span class=s1>&#39;t$</span>
+    <span class=n>types</span> <span class=o>=</span> <span class=p>[</span><span class=s1>&#39;image_array&#39;</span><span class=p>,</span> <span class=s1>&#39;float&#39;</span><span class=p>,</span> <span class=s1>&#39;float&#39;</span><span class=p>,</span>  <span class=s1>&#39;str&#39;</span><span class=p>,</span> <span class=s1>&#39;str&#39;</span><span class=p>]</span>
 
-<span class=hll>    # multiple tubs
-</span>    th = TubHandler(path=cfg.DATA_PATH)
-    tub = th.new_tub_writer(inputs=inputs, types=types)
-
-    # single tub
-    #tub = TubWriter(path=cfg.TUB_PATH, inputs=inputs, types=types)
-</pre></div></td></tr></table></p>
+    <span class=c1># multiple tubs</span>
+<span class=hll>    <span class=n>th</span> <span class=o>=</span> <span class=n>TubHandler</span><span class=p>(</span><span class=n>path</span><span class=o>=</span><span class=n>cfg</span><span class=o>.</span><span class=n>DATA_PATH</span><span class=p>)</span>
+</span><span class=hll>    <span class=n>tub</span> <span class=o>=</span> <span class=n>th</span><span class=o>.</span><span class=n>new_tub_writer</span><span class=p>(</span><span class=n>inputs</span><span class=o>=</span><span class=n>inputs</span><span class=p>,</span> <span class=n>types</span><span class=o>=</span><span class=n>types</span><span class=p>)</span>
+</span>
+    <span class=c1># single tub</span>
+<span class=hll>    <span class=c1>#tub = TubWriter(path=cfg.TUB_PATH, inputs=inputs, types=types)</span>
+</span></pre></div></td></tr></table></p>
 <h2 id="_2">教師データの作成</h2>
 <p>DonkeyCarを起動します。</p>
 <p>JoyStick</p>
