@@ -282,6 +282,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_4" title="モーターの制御" class="md-nav__link">
+    モーターの制御
+  </a>
+  
+</li>
+      
       
       
       
@@ -644,6 +651,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_4" title="モーターの制御" class="md-nav__link">
+    モーターの制御
+  </a>
+  
+</li>
+      
       
       
       
@@ -695,49 +709,41 @@
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>vi ~/mycar/config.py
 </pre></div></td></tr></table></p>
 <p><code>config.py</code></p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11</pre></div></td><td class=code><div class=codehilite><pre><span></span>#STEERING
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2
+3
+4</pre></div></td><td class=code><div class=codehilite><pre><span></span>#STEERING
 STEERING_CHANNEL = 1
 STEERING_LEFT_PWM = 410
 STEERING_RIGHT_PWM = 310
-````
-
-## モーターの制御
-
-モーターの制御は、PWM0でおこないます。
-
-例
 </pre></div></td></tr></table></p>
-<p>donkey calibrate --channel 0</p>
+<h2 id="_4">モーターの制御</h2>
+<p>モーターの制御は、PWM0でおこないます。</p>
+<p>例</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkey calibrate --channel 0
+</pre></div></td></tr></table></p>
+<p>まず、DonkeyCarの電源をOffにし、ESCの初期化処理をおこないます。</p>
+<p>初期化は、360の値でおこないます。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
-3</pre></div></td><td class=code><div class=codehilite><pre><span></span>まず、DonkeyCarの電源をOffにし、ESCの初期化処理をおこないます。
-
-初期化は、360の値でおこないます。
-</pre></div></td></tr></table></p>
-<p>donkey calibrate --channel 0
-using donkey version: 2.5.8 ...
-Enter a PWM setting to test(0-1500)360</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>この状態で、DonkeyCarの電源をOnにします。「ピィ・ピィーー」と音がなります。これで初期化設定です。
-</pre></div></td></tr></table></p>
-<p>donkey calibrate --channel 0
+3</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkey calibrate --channel 0
 using donkey version: 2.5.8 ...
 Enter a PWM setting to test(0-1500)360
-Enter a PWM setting to test(0-1500)400</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>前後にタイヤが回る範囲を見つけ出し、config.pyに反映します。
 </pre></div></td></tr></table></p>
-<p>vi ~/mycar/config.py</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>`config.py`
+<p>この状態で、DonkeyCarの電源をOnにします。「ピィ・ピィーー」と音がなります。これで初期化設定です。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2
+3
+4</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkey calibrate --channel 0
+using donkey version: 2.5.8 ...
+Enter a PWM setting to test(0-1500)360
+Enter a PWM setting to test(0-1500)400
 </pre></div></td></tr></table></p>
+<p>前後にタイヤが回る範囲を見つけ出し、config.pyに反映します。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>vi ~/mycar/config.py
+</pre></div></td></tr></table></p>
+<p><code>config.py</code>
+```</p>
 <h1 id="throttle">THROTTLE</h1>
 <p>THROTTLE_CHANNEL = 0
 THROTTLE_FORWARD_PWM = 400
