@@ -707,22 +707,52 @@
 <p>RaspberryPi側の<code>manager.py</code>を修正します。</p>
 <p>multiple tubsの部分のコメントを外し、single tubの部分を無効にします。</p>
 <p>~/mycar/manage.py</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kn>from</span> <span class=nn>donkeycar.parts.datastore</span> <span class=kn>import</span> <span class=n>TubGroup</span><span class=p>,</span> <span class=n>TubWriter</span><span class=p>,</span> <span class=n>TubHandler</span>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kn>import</span> <span class=nn>os</span>
+<span class=kn>from</span> <span class=nn>docopt</span> <span class=kn>import</span> <span class=n>docopt</span>
+
+<span class=kn>import</span> <span class=nn>donkeycar</span> <span class=kn>as</span> <span class=nn>dk</span>
+<span class=hll><span class=kn>from</span> <span class=nn>donkeycar.parts.datastore</span> <span class=kn>import</span> <span class=n>TubGroup</span><span class=p>,</span> <span class=n>TubWriter</span><span class=p>,</span> <span class=n>TubHandler</span>
+</span><span class=kn>from</span> <span class=nn>donkeypart_ps3_controller</span> <span class=kn>import</span> <span class=n>F710JoystickController</span>
+<span class=kn>from</span> <span class=nn>donkeycar.parts.camera</span> <span class=kn>import</span> <span class=n>PiCamera</span>
+<span class=kn>from</span> <span class=nn>donkeycar.parts.transform</span> <span class=kn>import</span> <span class=n>Lambda</span>
+<span class=kn>from</span> <span class=nn>donkeycar.parts.keras</span> <span class=kn>import</span> <span class=n>KerasLinear</span>
+<span class=kn>from</span> <span class=nn>donkeycar.parts.actuator</span> <span class=kn>import</span> <span class=n>PCA9685</span><span class=p>,</span> <span class=n>PWMSteering</span><span class=p>,</span> <span class=n>PWMThrottle</span>
 </pre></div></td></tr></table></p>
-<p>~/mycar/manage.py</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class=code><div class=codehilite><pre><span></span>    #multiple tubs
-    th = TubHandler(path=cfg.DATA_PATH)
+<p>...</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class=code><div class=codehilite><pre><span></span>    V.add(steering, inputs=[&#39;angle&#39;])
+    V.add(throttle, inputs=[&#39;throttle&#39;])
+
+    # add tub to save data
+    inputs = [&#39;cam/image_array&#39;, &#39;user/angle&#39;, &#39;user/throttle&#39;, &#39;user/mode&#39;, &#39;t$
+    types = [&#39;image_array&#39;, &#39;float&#39;, &#39;float&#39;,  &#39;str&#39;, &#39;str&#39;]
+
+<span class=hll>    # multiple tubs
+</span>    th = TubHandler(path=cfg.DATA_PATH)
     tub = th.new_tub_writer(inputs=inputs, types=types)
 
     # single tub
     #tub = TubWriter(path=cfg.TUB_PATH, inputs=inputs, types=types)
-    V.add(tub, inputs=inputs, run_condition=&#39;recording&#39;)
 </pre></div></td></tr></table></p>
 <h2 id="_2">教師データの作成</h2>
 <p>DonkeyCarを起動します。</p>
