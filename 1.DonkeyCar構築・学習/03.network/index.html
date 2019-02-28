@@ -736,9 +736,9 @@
                 
                 <h1 id="wifi">Wifiの設定</h1>
 <p>作成したSDカードをPCで開き、wpa_supplicant.confを作成します。</p>
-<p><a href="https://faboplatform.github.io/DonkeyDocs/1.DonkeyCar%E6%A7%8B%E7%AF%89%E3%83%BB%E5%AD%A6%E7%BF%92/wpa_supplicant.conf" download>wpa_supplicant.confをdownload</a></p>
+<p><a href="https://faboplatform.github.io/DonkeyDocs/1.DonkeyCar%E6%A7%8B%E7%AF%89%E3%83%BB%E5%AD%A6%E7%BF%92/wpa_supplicant.conf" download>wpa_supplicant.confをdownload</a>
+し、PCでSDカードを開き、wpa_supplicant.confを置きます。</p>
 <p><img alt="" src="../img/wifi001.png" /></p>
-<p>wpa_supplicant.zipを解凍し、wpa_supplicant.confを編集します。</p>
 <p>ssidに接続先のssid, pskにpasswordを記載します。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
@@ -758,7 +758,7 @@ network={
     psk=&quot;&lt;your password&gt;&quot;
 }
 </pre></div></td></tr></table></p>
-<p>RaspberryPi3起動時に、wpa_supplicant.confが、/etc/wpa_supplicant/wpa_supplicant.confにコピーされ、Wifiに接続されます。</p>
+<p>RaspberryPi3起動時に、wpa_supplicant.confが、/etc/wpa_supplicant/wpa_supplicant.confにコピーされ、ssidで指定したnetworkへの接続を試みます。</p>
 <h2 id="iposx">IPアドレスの検索(OSXのみ対応)</h2>
 <p>初期のイメージでは、RaspberryPiのHost名は、<code>donkeypi</code>になっています。PCとRaspberryPiが同一ネットワーク内に存在するのなら、Host名で接続することが可能です。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>ssh pi@donkeypi.local
