@@ -36,7 +36,7 @@
     
     
       
-        <title>キャリブレーション - FaBo DonkeyCar Docs</title>
+        <title>教師データの作成 - FaBo DonkeyCar Docs</title>
       
     
     
@@ -102,7 +102,7 @@
                 FaBo DonkeyCar Docs
               </span>
               <span class="md-header-nav__topic">
-                キャリブレーション
+                教師データの作成
               </span>
             
           
@@ -252,6 +252,30 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../05.calbration/" title="キャリブレーション" class="md-nav__link">
+      キャリブレーション
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06.joystick/" title="F710 Joystick(Wireless Joystick)" class="md-nav__link">
+      F710 Joystick(Wireless Joystick)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -263,11 +287,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        キャリブレーション
+        教師データの作成
       </label>
     
-    <a href="./" title="キャリブレーション" class="md-nav__link md-nav__link--active">
-      キャリブレーション
+    <a href="./" title="教師データの作成" class="md-nav__link md-nav__link--active">
+      教師データの作成
     </a>
     
       
@@ -281,22 +305,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="キャリブレーション" class="md-nav__link">
-    キャリブレーション
+  <a href="#tub" title="マルチTub化" class="md-nav__link">
+    マルチTub化
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="サーボの制御" class="md-nav__link">
-    サーボの制御
+  <a href="#_2" title="教師データの作成" class="md-nav__link">
+    教師データの作成
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" title="モーターの制御" class="md-nav__link">
-    モーターの制御
+  <a href="#_3" title="教師データの圧縮" class="md-nav__link">
+    教師データの圧縮
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="データの転送" class="md-nav__link">
+    データの転送
   </a>
   
 </li>
@@ -318,31 +349,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../07.joystick/" title="F710 Joystick(Wireless Joystick)" class="md-nav__link">
-      F710 Joystick(Wireless Joystick)
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../08.parent/" title="教師データの作成" class="md-nav__link">
-      教師データの作成
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../09.train_colab/" title="Colabでの学習(GPU)" class="md-nav__link">
+    <a href="../08.train_colab/" title="Colabでの学習(GPU)" class="md-nav__link">
       Colabでの学習(GPU)
     </a>
   </li>
@@ -354,7 +361,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../10.train_rc/" title="PCでの学習" class="md-nav__link">
+    <a href="../09.train_rc/" title="PCでの学習" class="md-nav__link">
       PCでの学習
     </a>
   </li>
@@ -710,22 +717,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="キャリブレーション" class="md-nav__link">
-    キャリブレーション
+  <a href="#tub" title="マルチTub化" class="md-nav__link">
+    マルチTub化
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="サーボの制御" class="md-nav__link">
-    サーボの制御
+  <a href="#_2" title="教師データの作成" class="md-nav__link">
+    教師データの作成
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" title="モーターの制御" class="md-nav__link">
-    モーターの制御
+  <a href="#_3" title="教師データの圧縮" class="md-nav__link">
+    教師データの圧縮
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" title="データの転送" class="md-nav__link">
+    データの転送
   </a>
   
 </li>
@@ -747,93 +761,93 @@
               
                 
                 
-                <h1 id="_1">キャリブレーション</h1>
-<table>
-<thead>
-<tr>
-<th align="left">ch</th>
-<th align="left">pwm</th>
-<th align="left">操作</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">0</td>
-<td align="left">pwm0</td>
-<td align="left">モーターの制御</td>
-</tr>
-<tr>
-<td align="left">1</td>
-<td align="left">pwm1</td>
-<td align="left">サーボの制御</td>
-</tr>
-</tbody>
-</table>
-<h2 id="_2">キャリブレーション</h2>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkey calibrate --channel チャンネル番号
+                <h1 id="_1">教師データの作成</h1>
+<h2 id="tub">マルチTub化</h2>
+<p>MultiTub化することで、保存データをフォルダわけすることが可能です。</p>
+<p>RaspberryPi側の<code>manager.py</code>を修正します。</p>
+<p>multiple tubsの部分のコメントを外し、single tubの部分を無効にします。</p>
+<p>~/mycar/manage.py</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kn>import</span> <span class=nn>os</span>
+<span class=kn>from</span> <span class=nn>docopt</span> <span class=kn>import</span> <span class=n>docopt</span>
+
+<span class=kn>import</span> <span class=nn>donkeycar</span> <span class=kn>as</span> <span class=nn>dk</span>
+<span class=hll><span class=kn>from</span> <span class=nn>donkeycar.parts.datastore</span> <span class=kn>import</span> <span class=n>TubGroup</span><span class=p>,</span> <span class=n>TubWriter</span><span class=p>,</span> <span class=n>TubHandler</span>
+</span><span class=kn>from</span> <span class=nn>donkeypart_ps3_controller</span> <span class=kn>import</span> <span class=n>F710JoystickController</span>
+<span class=kn>from</span> <span class=nn>donkeycar.parts.camera</span> <span class=kn>import</span> <span class=n>PiCamera</span>
+<span class=kn>from</span> <span class=nn>donkeycar.parts.transform</span> <span class=kn>import</span> <span class=n>Lambda</span>
+<span class=kn>from</span> <span class=nn>donkeycar.parts.keras</span> <span class=kn>import</span> <span class=n>KerasLinear</span>
+<span class=kn>from</span> <span class=nn>donkeycar.parts.actuator</span> <span class=kn>import</span> <span class=n>PCA9685</span><span class=p>,</span> <span class=n>PWMSteering</span><span class=p>,</span> <span class=n>PWMThrottle</span>
 </pre></div></td></tr></table></p>
-<h2 id="_3">サーボの制御</h2>
-<p>サーボの制御は、PWM1でおこないます。</p>
-<p>例</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkey calibrate --channel 1
+<p>...</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class=code><div class=codehilite><pre><span></span>    <span class=n>V</span><span class=o>.</span><span class=n>add</span><span class=p>(</span><span class=n>steering</span><span class=p>,</span> <span class=n>inputs</span><span class=o>=</span><span class=p>[</span><span class=s1>&#39;angle&#39;</span><span class=p>])</span>
+    <span class=n>V</span><span class=o>.</span><span class=n>add</span><span class=p>(</span><span class=n>throttle</span><span class=p>,</span> <span class=n>inputs</span><span class=o>=</span><span class=p>[</span><span class=s1>&#39;throttle&#39;</span><span class=p>])</span>
+
+    <span class=c1># add tub to save data</span>
+    <span class=n>inputs</span> <span class=o>=</span> <span class=p>[</span><span class=s1>&#39;cam/image_array&#39;</span><span class=p>,</span> <span class=s1>&#39;user/angle&#39;</span><span class=p>,</span> <span class=s1>&#39;user/throttle&#39;</span><span class=p>,</span> <span class=s1>&#39;user/mode&#39;</span><span class=p>,</span> <span class=s1>&#39;t$</span>
+    <span class=n>types</span> <span class=o>=</span> <span class=p>[</span><span class=s1>&#39;image_array&#39;</span><span class=p>,</span> <span class=s1>&#39;float&#39;</span><span class=p>,</span> <span class=s1>&#39;float&#39;</span><span class=p>,</span>  <span class=s1>&#39;str&#39;</span><span class=p>,</span> <span class=s1>&#39;str&#39;</span><span class=p>]</span>
+
+    <span class=c1># multiple tubs</span>
+<span class=hll>    <span class=n>th</span> <span class=o>=</span> <span class=n>TubHandler</span><span class=p>(</span><span class=n>path</span><span class=o>=</span><span class=n>cfg</span><span class=o>.</span><span class=n>DATA_PATH</span><span class=p>)</span>
+</span><span class=hll>    <span class=n>tub</span> <span class=o>=</span> <span class=n>th</span><span class=o>.</span><span class=n>new_tub_writer</span><span class=p>(</span><span class=n>inputs</span><span class=o>=</span><span class=n>inputs</span><span class=p>,</span> <span class=n>types</span><span class=o>=</span><span class=n>types</span><span class=p>)</span>
+</span>
+    <span class=c1># single tub</span>
+<span class=hll>    <span class=c1>#tub = TubWriter(path=cfg.TUB_PATH, inputs=inputs, types=types)</span>
+</span></pre></div></td></tr></table></p>
+<h2 id="_2">教師データの作成</h2>
+<p>DonkeyCarを起動します。</p>
+<p>JoyStick</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2</pre></div></td><td class=code><div class=codehilite><pre><span></span>$ <span class=nb>cd</span> ~/mycar
+$ python manage.py drive --js
 </pre></div></td></tr></table></p>
-<p>一番右の値と、一番左の値を見つけ出してください。310-410の間ぐらいが可動範囲です。値をconfig.pyに反映します。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>vi ~/mycar/config.py
-</pre></div></td></tr></table></p>
-<p><code>config.py</code></p>
+<p>教師データは、<code>~/mycar/dara</code>以下に保存されます。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
-3
-4</pre></div></td><td class=code><div class=codehilite><pre><span></span>#STEERING
-STEERING_CHANNEL = 1
-STEERING_LEFT_PWM = 410
-STEERING_RIGHT_PWM = 310
+3</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd ~/mycar/data
+ls
+tub_01_19-01-26
 </pre></div></td></tr></table></p>
-<h2 id="_4">モーターの制御</h2>
-<p>モーターの制御は、PWM0でおこないます。</p>
-<p>例</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkey calibrate --channel 0
+<p><span class="keys"><kbd>CTRL</kbd><span>+</span><kbd>x</kbd></span>で終了します。</p>
+<h2 id="_3">教師データの圧縮</h2>
+<p>データを圧縮し、1つのファイル(ZIP形式)にしてPCに転送します。</p>
+<p>RaspberryPi3にZIPをインストールします。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo apt-get install zip
 </pre></div></td></tr></table></p>
-<p>まず、DonkeyCarの電源をOffにし、ESCの初期化処理をおこないます。</p>
-<p><img alt="" src="../img/esc001.png" /></p>
-<p>初期化は、360の値でおこないます。</p>
+<p>ZIPでフォルダを圧縮します。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
-2
-3</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkey calibrate --channel 0
-using donkey version: 2.5.8 ...
-Enter a PWM setting to test(0-1500)360
+2</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd ~/mycar/data
+zip -r datas.zip tub_01_19-01-26
 </pre></div></td></tr></table></p>
-<p>この状態で、DonkeyCarの電源をOnにします。「ピィ・ピィーー」と音がなります。これで初期化設定です。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
-2
-3
-4</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkey calibrate --channel 0
-using donkey version: 2.5.8 ...
-Enter a PWM setting to test(0-1500)360
-Enter a PWM setting to test(0-1500)400
-</pre></div></td></tr></table></p>
-<p>前後にタイヤが回る範囲を見つけ出し、config.pyに反映します。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>vi ~/mycar/config.py
-</pre></div></td></tr></table></p>
-<p><code>config.py</code></p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
-2
-3
-4
-5</pre></div></td><td class=code><div class=codehilite><pre><span></span>#THROTTLE
-THROTTLE_CHANNEL = 0
-THROTTLE_FORWARD_PWM = 400
-THROTTLE_STOPPED_PWM = 360
-THROTTLE_REVERSE_PWM = 310
-</pre></div></td></tr></table></p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>PWMで信号を発信中にRCカー本体の電源をONにすると、そのPWM値が初期値として登録される。例えば、donkey calibrate --channel 0 で600を入力中に、電源をOnした場合、600が中央値になる。中央値がずれた場合は、donkey calibrate --channel 0 で、360程度の値で電源をOnにし、360を中央値に設定し直す。<a href="http://www.redcatracing.com/manuals/HW-WP-1040-Brushed.pdf">ESCのDatasheet(Hobbywing QuicRun 1040)</a></p>
-</div>
-<div class="admonition warining">
-<p class="admonition-title">Warining</p>
-<p>前進は、どのような状況でも操作できます。前進したのちの、後進は、一度 360の初期値をおくったあとに、後進が有効になります。　</p>
-</div>
+<h2 id="_4">データの転送</h2>
+<p>データの転送には、SFTPに対応した<a href="https://filezilla-project.org/">FileZilla</a>を使用します。</p>
+<p>PCに<a href="https://filezilla-project.org/">FileZilla</a>をインストールし、実行します。</p>
+<p><img alt="" src="../img/fz001.png" /></p>
+<p><img alt="" src="../img/fz002.png" /></p>
+<p><img alt="" src="../img/fz003.png" /></p>
+<p><img alt="" src="../img/fz004.png" /></p>
+<p><img alt="" src="../img/fz005.png" /></p>
+<p>RaspberryPi3からPCに、datas.zipを転送します。</p>
                 
                   
                 
@@ -854,7 +868,7 @@ THROTTLE_REVERSE_PWM = 310
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../04.manage/" title="Projectの作成" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../06.joystick/" title="F710 Joystick(Wireless Joystick)" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -863,19 +877,19 @@ THROTTLE_REVERSE_PWM = 310
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                Projectの作成
+                F710 Joystick(Wireless Joystick)
               </span>
             </div>
           </a>
         
         
-          <a href="../07.joystick/" title="F710 Joystick(Wireless Joystick)" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../08.train_colab/" title="Colabでの学習(GPU)" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                F710 Joystick(Wireless Joystick)
+                Colabでの学習(GPU)
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
