@@ -1,4 +1,4 @@
-site_name: FaBo Donkey Docs
+site_name: FaBo DonkeyCar Docs
 theme:
     name: material
     language: 'ja'
@@ -10,5 +10,8 @@ markdown_extensions:
   - codehilite:
       linenums: true
   - admonition
+  - pymdownx.keys
+  - markdown_fenced_code_tabs
 extra_css:
   - "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css"  
+  - 'stylesheets/extra.css'
