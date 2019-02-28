@@ -36,7 +36,7 @@
     
     
       
-        <title>PCでの学習 - FaBo DonkeyCar Docs</title>
+        <title>データの整形 - FaBo DonkeyCar Docs</title>
       
     
     
@@ -76,7 +76,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#pc" tabindex="1" class="md-skip">
+      <a href="#_1" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -102,7 +102,7 @@
                 FaBo DonkeyCar Docs
               </span>
               <span class="md-header-nav__topic">
-                PCでの学習
+                データの整形
               </span>
             
           
@@ -286,11 +286,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        PCでの学習
+        データの整形
       </label>
     
-    <a href="./" title="PCでの学習" class="md-nav__link md-nav__link--active">
-      PCでの学習
+    <a href="./" title="データの整形" class="md-nav__link md-nav__link--active">
+      データの整形
     </a>
     
       
@@ -304,36 +304,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="教師データの作成" class="md-nav__link">
-    教師データの作成
+  <a href="#donkeycarrepogit-clone" title="DonkeyCarのRepoをgit clone" class="md-nav__link">
+    DonkeyCarのRepoをgit clone
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mac" title="教師データの学習(Mac側)" class="md-nav__link">
-    教師データの学習(Mac側)
+  <a href="#colabdonkeycar" title="ColabへのDonkeyCarの取り込み" class="md-nav__link">
+    ColabへのDonkeyCarの取り込み
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="学習" class="md-nav__link">
-    学習
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#raspberrypi" title="学習済みモデルをRaspberryPiに戻す" class="md-nav__link">
-    学習済みモデルをRaspberryPiに戻す
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#donkey" title="学習済みモデルでDonkeyを動かす" class="md-nav__link">
-    学習済みモデルでDonkeyを動かす
+  <a href="#tubecube" title="Tubecubeを起動" class="md-nav__link">
+    Tubecubeを起動
   </a>
   
 </li>
@@ -346,6 +332,18 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../10.train_rc/" title="PCでの学習" class="md-nav__link">
+      PCでの学習
+    </a>
   </li>
 
         
@@ -699,36 +697,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" title="教師データの作成" class="md-nav__link">
-    教師データの作成
+  <a href="#donkeycarrepogit-clone" title="DonkeyCarのRepoをgit clone" class="md-nav__link">
+    DonkeyCarのRepoをgit clone
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#mac" title="教師データの学習(Mac側)" class="md-nav__link">
-    教師データの学習(Mac側)
+  <a href="#colabdonkeycar" title="ColabへのDonkeyCarの取り込み" class="md-nav__link">
+    ColabへのDonkeyCarの取り込み
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="学習" class="md-nav__link">
-    学習
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#raspberrypi" title="学習済みモデルをRaspberryPiに戻す" class="md-nav__link">
-    学習済みモデルをRaspberryPiに戻す
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#donkey" title="学習済みモデルでDonkeyを動かす" class="md-nav__link">
-    学習済みモデルでDonkeyを動かす
+  <a href="#tubecube" title="Tubecubeを起動" class="md-nav__link">
+    Tubecubeを起動
   </a>
   
 </li>
@@ -750,52 +734,21 @@
               
                 
                 
-                <h1 id="pc">PCでの学習</h1>
-<h2 id="_1">教師データの作成</h2>
-<p>DonkeyCarを起動します。</p>
-<p>WebController</p>
+                <h1 id="_1">データの整形</h1>
+<h2 id="donkeycarrepogit-clone">DonkeyCarのRepoをgit clone</h2>
+<p>tubecleanのhtml関連のファイルが不足しているので、DonkeyCarのプロジェクトをgit cloneしてきます。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
-2</pre></div></td><td class=code><div class=codehilite><pre><span></span>$ <span class=nb>cd</span> ~/mycar
-$ python manage.py drive
+2</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd ~/
+git clone https://github.com/autorope/donkeycar
 </pre></div></td></tr></table></p>
-<p>JoyStick</p>
+<h2 id="colabdonkeycar">ColabへのDonkeyCarの取り込み</h2>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
-2</pre></div></td><td class=code><div class=codehilite><pre><span></span>$ <span class=nb>cd</span> ~/mycar
-$ python manage.py drive --js
+2</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd ~/
+cp -r ~/donkeycar/donkeycar/management/tub_web ~/env/lib/python3.5/site-packages/donkeycar/management/
 </pre></div></td></tr></table></p>
-<p>教師データは、<code>~/mycar/dara</code>以下に保存されます。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
-2
-3</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd ~/mycar/data
-ls
-tub_01_19-01-26
+<h2 id="tubecube">Tubecubeを起動</h2>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkey tubecube ~/mycar/data/
 </pre></div></td></tr></table></p>
-<h2 id="mac">教師データの学習(Mac側)</h2>
-<p>教師データをRaspberryPiから、Macにrsyncする。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>$ rsync -r pi@&lt;your_ip_address&gt;:~/mycar/data/ ~/mycar/data/
-</pre></div></td></tr></table></p>
-<p>PC側の~/mycar/dataに同期される。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
-2</pre></div></td><td class=code><div class=codehilite><pre><span></span>$  ls data
-tub_01_19-01-26
-</pre></div></td></tr></table></p>
-<p>Mac側には、tub_日付のフォルダが教師データ作成の度にふえていく。</p>
-<p>donkey tubecleanコマンドで、いらないデータを削除する。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>$ donkey tubclean ~/mycar/data
-</pre></div></td></tr></table></p>
-<h2 id="_2">学習</h2>
-<p>学習を開始する</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>$ python ~/mycar/manage.py train --tub<span class=o>=</span>~/mycar/data/tub_01_18-08-27 --model<span class=o>=</span>./models/mypilot
-</pre></div></td></tr></table></p>
-<p>これで学習開始。</p>
-<h2 id="raspberrypi">学習済みモデルをRaspberryPiに戻す</h2>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>$ rsync -r ~/mycar/models/ pi@&lt;your_ip_address&gt;:~/mycar/models/
-</pre></div></td></tr></table></p>
-<h2 id="donkey">学習済みモデルでDonkeyを動かす</h2>
-<p>RaspberryPi側にログイン。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>$ python manage.py drive --model ~/mycar/models/mypilot
-</pre></div></td></tr></table></p>
-<p>Web画面のmodel &amp; pilotから、autopilotを選ぶ。</p>
                 
                   
                 
@@ -831,13 +784,13 @@ tub_01_19-01-26
           </a>
         
         
-          <a href="../../2.Simulator/2.sim/" title="環境構築" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../10.train_rc/" title="PCでの学習" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                環境構築
+                PCでの学習
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
