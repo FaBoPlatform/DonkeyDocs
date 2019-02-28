@@ -257,23 +257,23 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ip" title="IPアドレスの検索" class="md-nav__link">
-    IPアドレスの検索
+  <a href="#iposx" title="IPアドレスの検索(OSXのみ対応)" class="md-nav__link">
+    IPアドレスの検索(OSXのみ対応)
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#etchostname" title="/etc/hostnameの修正" class="md-nav__link">
-    /etc/hostnameの修正
+  <a href="#etchostnameosx" title="/etc/hostnameの修正(OSXのみ対応)" class="md-nav__link">
+    /etc/hostnameの修正(OSXのみ対応)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#etchosts" title="/etc/hostsの修正" class="md-nav__link">
-    /etc/hostsの修正
+  <a href="#etchostsosx" title="/etc/hostsの修正(OSXのみ対応)" class="md-nav__link">
+    /etc/hostsの修正(OSXのみ対応)
   </a>
   
 </li>
@@ -300,7 +300,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../05.manage/" title="Projectの作成" class="md-nav__link">
+    <a href="../04.manage/" title="Projectの作成" class="md-nav__link">
       Projectの作成
     </a>
   </li>
@@ -716,23 +716,23 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ip" title="IPアドレスの検索" class="md-nav__link">
-    IPアドレスの検索
+  <a href="#iposx" title="IPアドレスの検索(OSXのみ対応)" class="md-nav__link">
+    IPアドレスの検索(OSXのみ対応)
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#etchostname" title="/etc/hostnameの修正" class="md-nav__link">
-    /etc/hostnameの修正
+  <a href="#etchostnameosx" title="/etc/hostnameの修正(OSXのみ対応)" class="md-nav__link">
+    /etc/hostnameの修正(OSXのみ対応)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#etchosts" title="/etc/hostsの修正" class="md-nav__link">
-    /etc/hostsの修正
+  <a href="#etchostsosx" title="/etc/hostsの修正(OSXのみ対応)" class="md-nav__link">
+    /etc/hostsの修正(OSXのみ対応)
   </a>
   
 </li>
@@ -762,24 +762,9 @@
                 <h1 id="wifi">Wifiの設定</h1>
 <p>作成したSDカードをPCで開き、wpa_supplicant.confを作成します。</p>
 <p><img alt="" src="../img/wifi001.png" /></p>
-<p>wpa_supplicant.confに、接続先のssid, password(psk)を記載します。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class=code><div class=codehilite><pre><span></span>country=US
-ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-update_config=1
-
-network={
-    ssid=&quot;&lt;your network name&gt;&quot;
-    psk=&quot;&lt;your password&gt;&quot;
-}
-</pre></div></td></tr></table></p>
-<p>ステルスモードの場合</p>
+<p><a href="https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/FaBoPlatform/DonkeyDocs/blob/master/files/wpa_supplicant.conf">wpa_supplicant.confのDonwload</a></p>
+<p>wpa_supplicant.zipを解凍し、wpa_supplicant.confを編集します。</p>
+<p>ssidに接続先のssid, pskにpasswordを記載します。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
 3
@@ -798,8 +783,8 @@ network={
     psk=&quot;&lt;your password&gt;&quot;
 }
 </pre></div></td></tr></table></p>
-<p>RaspberryPi起動時に、wpa_supplicant.confが、/etc/wpa_supplicant/wpa_supplicant.confにコピーされ、Wifiに接続されます。</p>
-<h2 id="ip">IPアドレスの検索</h2>
+<p>RaspberryPi3起動時に、wpa_supplicant.confが、/etc/wpa_supplicant/wpa_supplicant.confにコピーされ、Wifiに接続されます。</p>
+<h2 id="iposx">IPアドレスの検索(OSXのみ対応)</h2>
 <p>初期のイメージでは、RaspberryPiのHost名は、<code>donkeypi</code>になっています。PCとRaspberryPiが同一ネットワーク内に存在するのなら、Host名で接続することが可能です。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>ssh pi@donkeypi.local
 </pre></div></td></tr></table></p>
@@ -822,14 +807,14 @@ network={
 </tr>
 </tbody>
 </table>
-<h3 id="etchostname">/etc/hostnameの修正</h3>
+<h3 id="etchostnameosx">/etc/hostnameの修正(OSXのみ対応)</h3>
 <p>自分のDonkeyCarが、他人と同じHost名にならないように、Host名を変更します。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo vi /etc/hostname
 </pre></div></td></tr></table></p>
 <p>/etc/hostname</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkeypi-akira
 </pre></div></td></tr></table></p>
-<h3 id="etchosts">/etc/hostsの修正</h3>
+<h3 id="etchostsosx">/etc/hostsの修正(OSXのみ対応)</h3>
 <p>自分のDonkeyCarが、他人と同じHost名にならないように、Host名を変更します。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo vi /etc/hosts
 </pre></div></td></tr></table></p>
@@ -884,7 +869,7 @@ ff02::2         ip6-allrouters
           </a>
         
         
-          <a href="../05.manage/" title="Projectの作成" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../04.manage/" title="Projectの作成" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
