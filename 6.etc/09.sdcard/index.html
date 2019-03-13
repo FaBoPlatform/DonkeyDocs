@@ -772,7 +772,9 @@
                 <h1 id="sd">SDカードの作成</h1>
 <h1 id="docker">Docker</h1>
 <p>DockerでUbuntu 16.04のイメージをバックグランド起動</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>docker run -itd ubuntu:16.04 
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2</pre></div></td><td class=code><div class=codehilite><pre><span></span>docker pull ubuntu:16.04
+docker run -itd ubuntu:16.04 
 </pre></div></td></tr></table></p>
 <p>Docker psコマンドで、作成したDockerのIDを表示</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>docker ps
