@@ -786,7 +786,7 @@
 <p>DockerでUbuntu 16.04のイメージをバックグランド起動</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2</pre></div></td><td class=code><div class=codehilite><pre><span></span>docker pull ubuntu:16.04
-docker run -itd ubuntu:16.04 
+docker run --privileged -itd ubuntu:16.04 
 </pre></div></td></tr></table></p>
 <p>Docker psコマンドで、作成したDockerのIDを表示</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>docker ps
@@ -804,18 +804,30 @@ apt-get install git
 <h2 id="git-clone">Git clone</h2>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>git clone https://github.com/Drewsif/PiShrink
 </pre></div></td></tr></table></p>
+<h2 id="rasppi-sd">RaspPi側 SDカード</h2>
+<p>コマンド履歴を消す</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2
+3</pre></div></td><td class=code><div class=codehilite><pre><span></span>history -c
+HISTIGNORE=*;history -d `history|awk &#39;{a=$1;}END{print a;}&#39;`
+rm -rf ~/.bash_history
+</pre></div></td></tr></table></p>
 <h2 id="sd_1">SDイメージの作成</h2>
 <p>SDカードからimgファイルを生成する　</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2</pre></div></td><td class=code><div class=codehilite><pre><span></span>diskutil list
+sudo dd if=/dev/disk2 of=~/Desktop/donkeypi.img
+</pre></div></td></tr></table></p>
 <h2 id="docker_1">Dockerへのコピー</h2>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>docker cp mypi.img dockerのID:/root/mypi.img
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>docker cp ~/Desktop/donkeypi.img dockerのID:/root/donkeypi.img
 </pre></div></td></tr></table></p>
 <h2 id="_1">圧縮イメージの作成</h2>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd PiShrink
-./pishrink.sh mying.img output.img
+./pishrink.sh donkeypi.img output.img
 </pre></div></td></tr></table></p>
 <h2 id="pc">PCへのコピー</h2>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>docker cp dockerのID:/root/PiShrink/output.omg output.img
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>docker cp dockerのID:/root/PiShrink/output.img output.img
 </pre></div></td></tr></table></p>
                 
                   
