@@ -36,7 +36,7 @@
     
     
       
-        <title>教師データの作成 - FaBo DonkeyCar Docs</title>
+        <title>05.parent - FaBo DonkeyCar Docs</title>
       
     
     
@@ -102,7 +102,7 @@
                 FaBo DonkeyCar Docs
               </span>
               <span class="md-header-nav__topic">
-                教師データの作成
+                05.parent
               </span>
             
           
@@ -234,50 +234,39 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
-      
-    
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        教師データの作成
+        05.parent
       </label>
     
-    <a href="./" title="教師データの作成" class="md-nav__link md-nav__link--active">
-      教師データの作成
+    <a href="./" title="05.parent" class="md-nav__link md-nav__link--active">
+      05.parent
     </a>
     
       
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">目次</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tub" title="マルチTub化" class="md-nav__link">
-    マルチTub化
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="教師データの作成" class="md-nav__link">
+  <a href="#_1" title="教師データの作成" class="md-nav__link">
     教師データの作成
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="教師データの圧縮" class="md-nav__link">
+  <a href="#_2" title="教師データの圧縮" class="md-nav__link">
     教師データの圧縮
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" title="データの転送" class="md-nav__link">
+  <a href="#_3" title="データの転送" class="md-nav__link">
     データの転送
   </a>
   
@@ -793,35 +782,26 @@
 <nav class="md-nav md-nav--secondary">
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">目次</label>
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#tub" title="マルチTub化" class="md-nav__link">
-    マルチTub化
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="教師データの作成" class="md-nav__link">
+  <a href="#_1" title="教師データの作成" class="md-nav__link">
     教師データの作成
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="教師データの圧縮" class="md-nav__link">
+  <a href="#_2" title="教師データの圧縮" class="md-nav__link">
     教師データの圧縮
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" title="データの転送" class="md-nav__link">
+  <a href="#_3" title="データの転送" class="md-nav__link">
     データの転送
   </a>
   
@@ -844,60 +824,9 @@
               
                 
                 
-                <h1 id="_1">教師データの作成</h1>
-<h2 id="tub">マルチTub化</h2>
-<p>MultiTub化することで、保存データをフォルダわけすることが可能です。</p>
-<p>RaspberryPi側の<code>manager.py</code>を修正します。</p>
-<p>multiple tubsの部分のコメントを外し、single tubの部分を無効にします。</p>
-<p>~/mycar/manage.py</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kn>import</span> <span class=nn>os</span>
-<span class=kn>from</span> <span class=nn>docopt</span> <span class=kn>import</span> <span class=n>docopt</span>
-
-<span class=kn>import</span> <span class=nn>donkeycar</span> <span class=kn>as</span> <span class=nn>dk</span>
-<span class=hll><span class=kn>from</span> <span class=nn>donkeycar.parts.datastore</span> <span class=kn>import</span> <span class=n>TubGroup</span><span class=p>,</span> <span class=n>TubWriter</span><span class=p>,</span> <span class=n>TubHandler</span>
-</span><span class=kn>from</span> <span class=nn>donkeypart_ps3_controller</span> <span class=kn>import</span> <span class=n>F710JoystickController</span>
-<span class=kn>from</span> <span class=nn>donkeycar.parts.camera</span> <span class=kn>import</span> <span class=n>PiCamera</span>
-<span class=kn>from</span> <span class=nn>donkeycar.parts.transform</span> <span class=kn>import</span> <span class=n>Lambda</span>
-<span class=kn>from</span> <span class=nn>donkeycar.parts.keras</span> <span class=kn>import</span> <span class=n>KerasLinear</span>
-<span class=kn>from</span> <span class=nn>donkeycar.parts.actuator</span> <span class=kn>import</span> <span class=n>PCA9685</span><span class=p>,</span> <span class=n>PWMSteering</span><span class=p>,</span> <span class=n>PWMThrottle</span>
-</pre></div></td></tr></table></p>
-<p>...</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13</pre></div></td><td class=code><div class=codehilite><pre><span></span>    <span class=n>V</span><span class=o>.</span><span class=n>add</span><span class=p>(</span><span class=n>steering</span><span class=p>,</span> <span class=n>inputs</span><span class=o>=</span><span class=p>[</span><span class=s1>&#39;angle&#39;</span><span class=p>])</span>
-    <span class=n>V</span><span class=o>.</span><span class=n>add</span><span class=p>(</span><span class=n>throttle</span><span class=p>,</span> <span class=n>inputs</span><span class=o>=</span><span class=p>[</span><span class=s1>&#39;throttle&#39;</span><span class=p>])</span>
-
-    <span class=c1># add tub to save data</span>
-    <span class=n>inputs</span> <span class=o>=</span> <span class=p>[</span><span class=s1>&#39;cam/image_array&#39;</span><span class=p>,</span> <span class=s1>&#39;user/angle&#39;</span><span class=p>,</span> <span class=s1>&#39;user/throttle&#39;</span><span class=p>,</span> <span class=s1>&#39;user/mode&#39;</span><span class=p>,</span> <span class=s1>&#39;t$</span>
-    <span class=n>types</span> <span class=o>=</span> <span class=p>[</span><span class=s1>&#39;image_array&#39;</span><span class=p>,</span> <span class=s1>&#39;float&#39;</span><span class=p>,</span> <span class=s1>&#39;float&#39;</span><span class=p>,</span>  <span class=s1>&#39;str&#39;</span><span class=p>,</span> <span class=s1>&#39;str&#39;</span><span class=p>]</span>
-
-    <span class=c1># multiple tubs</span>
-<span class=hll>    <span class=n>th</span> <span class=o>=</span> <span class=n>TubHandler</span><span class=p>(</span><span class=n>path</span><span class=o>=</span><span class=n>cfg</span><span class=o>.</span><span class=n>DATA_PATH</span><span class=p>)</span>
-</span><span class=hll>    <span class=n>tub</span> <span class=o>=</span> <span class=n>th</span><span class=o>.</span><span class=n>new_tub_writer</span><span class=p>(</span><span class=n>inputs</span><span class=o>=</span><span class=n>inputs</span><span class=p>,</span> <span class=n>types</span><span class=o>=</span><span class=n>types</span><span class=p>)</span>
-</span>
-    <span class=c1># single tub</span>
-<span class=hll>    <span class=c1>#tub = TubWriter(path=cfg.TUB_PATH, inputs=inputs, types=types)</span>
-</span></pre></div></td></tr></table></p>
-<h2 id="_2">教師データの作成</h2>
+                  <h1>05.parent</h1>
+                
+                <h2 id="_1">教師データの作成</h2>
 <p>DonkeyCarを起動します。</p>
 <p>JoyStick</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
@@ -912,7 +841,7 @@ ls
 tub_01_19-01-26
 </pre></div></td></tr></table></p>
 <p><span class="keys"><kbd>CTRL</kbd><span>+</span><kbd>c</kbd></span>で終了します。</p>
-<h2 id="_3">教師データの圧縮</h2>
+<h2 id="_2">教師データの圧縮</h2>
 <p>データを圧縮し、1つのファイル(ZIP形式)にしてPCに転送します。</p>
 <p>RaspberryPi3にZIPをインストールします。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo apt-get install zip
@@ -922,7 +851,7 @@ tub_01_19-01-26
 2</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd ~/mycar/data
 zip -r datas.zip tub_01_19-01-26
 </pre></div></td></tr></table></p>
-<h2 id="_4">データの転送</h2>
+<h2 id="_3">データの転送</h2>
 <p><a href="https://cyberduck.io/">Cyberduck</a> をインストールします。</p>
 <p><img alt="" src="../img/duck001.png" /></p>
 <p><img alt="" src="../img/duck002.png" /></p>
