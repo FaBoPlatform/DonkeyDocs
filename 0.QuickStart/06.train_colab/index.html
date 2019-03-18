@@ -36,7 +36,7 @@
     
     
       
-        <title>Wifiの設定 - FaBo DonkeyCar Docs</title>
+        <title>Colabでの学習(GPU) - FaBo DonkeyCar Docs</title>
       
     
     
@@ -76,7 +76,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#wifi" tabindex="1" class="md-skip">
+      <a href="#colabgpu" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -102,7 +102,7 @@
                 FaBo DonkeyCar Docs
               </span>
               <span class="md-header-nav__topic">
-                Wifiの設定
+                Colabでの学習(GPU)
               </span>
             
           
@@ -203,56 +203,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Wifiの設定
-      </label>
-    
-    <a href="./" title="Wifiの設定" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../03.network/" title="Wifiの設定" class="md-nav__link">
       Wifiの設定
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">目次</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#wpa_supplicant" title="wpa_supplicant" class="md-nav__link">
-    wpa_supplicant
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ip" title="IPアドレスの確認" class="md-nav__link">
-    IPアドレスの確認
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -284,11 +239,70 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../06.train_colab/" title="Colabでの学習(GPU)" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Colabでの学習(GPU)
+      </label>
+    
+    <a href="./" title="Colabでの学習(GPU)" class="md-nav__link md-nav__link--active">
       Colabでの学習(GPU)
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#colab" title="学習にはColabを用います。" class="md-nav__link">
+    学習にはColabを用います。
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#colabdonkeycar" title="ColabへのDonkeyCarの取り込み" class="md-nav__link">
+    ColabへのDonkeyCarの取り込み
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#donwloadraspberrypi3" title="学習済みデータをDonwloadしてRaspberryPi3へ" class="md-nav__link">
+    学習済みデータをDonwloadしてRaspberryPi3へ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#donkeycarraspi3" title="学習済みモデルでDonkeyCarを動かす(RasPi3)" class="md-nav__link">
+    学習済みモデルでDonkeyCarを動かす(RasPi3)
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -786,15 +800,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#wpa_supplicant" title="wpa_supplicant" class="md-nav__link">
-    wpa_supplicant
+  <a href="#colab" title="学習にはColabを用います。" class="md-nav__link">
+    学習にはColabを用います。
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#ip" title="IPアドレスの確認" class="md-nav__link">
-    IPアドレスの確認
+  <a href="#colabdonkeycar" title="ColabへのDonkeyCarの取り込み" class="md-nav__link">
+    ColabへのDonkeyCarの取り込み
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#donwloadraspberrypi3" title="学習済みデータをDonwloadしてRaspberryPi3へ" class="md-nav__link">
+    学習済みデータをDonwloadしてRaspberryPi3へ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#donkeycarraspi3" title="学習済みモデルでDonkeyCarを動かす(RasPi3)" class="md-nav__link">
+    学習済みモデルでDonkeyCarを動かす(RasPi3)
   </a>
   
 </li>
@@ -816,39 +844,44 @@
               
                 
                 
-                <h1 id="wifi">Wifiの設定</h1>
-<p>作成したSDカードをPCで開き、wpa_supplicant.confを作成します。</p>
-<h2 id="wpa_supplicant">wpa_supplicant</h2>
-<p><a href="https://faboplatform.github.io/DonkeyDocs/1.DonkeyCar%E6%A7%8B%E7%AF%89%E3%83%BB%E5%AD%A6%E7%BF%92/wpa_supplicant.conf" download>wpa_supplicant.confをdownload</a>
-し、PCでSDカードを開き、wpa_supplicant.confを置きます。</p>
-<p><img alt="" src="../img/wifi001.png" /></p>
-<p>ssidに接続先のssid, pskにpasswordを記載します。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
-2
-3
-4
-5
-6
-7
-8
-9</pre></div></td><td class=code><div class=codehilite><pre><span></span>country=US
-ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-update_config=1
-
-network={
-    ssid=&quot;&lt;your network name&gt;&quot;
-    scan_ssid=1
-    psk=&quot;&lt;your password&gt;&quot;
-}
+                <h1 id="colabgpu">Colabでの学習(GPU)</h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Colabのサンプルは、かならずChormeで実施してください。他のブラウザを用いる場合は、ファイルのアップロードに失敗します。</p>
+</div>
+<h2 id="colab">学習にはColabを用います。</h2>
+<p><a href="https://colab.research.google.com/">https://colab.research.google.com/</a></p>
+<h2 id="colabdonkeycar">ColabへのDonkeyCarの取り込み</h2>
+<p><img alt="" src="../img/colab001.png" /></p>
+<p><img alt="" src="../img/colab002.png" /></p>
+<table>
+<thead>
+<tr>
+<th align="left">ノートブックのRepo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="https://github.com/FaBoPlatform/DonkeyColab">https://github.com/FaBoPlatform/DonkeyColab</a></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>ColabとRaspberryPi3のTensorFlow, KerasのVersionをあわせる必要があります。TensorFlow 1.12.0, Keras 2.2.4に合わせてください。Versionをあわせないとフォーマットエラーが発生します。</p>
+</div>
+<h2 id="donwloadraspberrypi3">学習済みデータをDonwloadしてRaspberryPi3へ</h2>
+<p>mypilotをダブルクリックするとダウンロードが始まります。</p>
+<p><img alt="" src="../img/upload001.png" /></p>
+<p>Cyberduckを起動し、SFTPでRaspberryPi3側の<code>/home/pi/mycar/models</code>フォルダにアップロードします。</p>
+<p><img alt="" src="../img/duck101.png" /></p>
+<p><img alt="" src="../img/duck102.png" /></p>
+<h2 id="donkeycarraspi3">学習済みモデルでDonkeyCarを動かす(RasPi3)</h2>
+<p>RaspberryPi側にログイン。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>$ python manage.py drive --model ~/mycar/models/mypilot
 </pre></div></td></tr></table></p>
-<p>RaspberryPi3起動時に、wpa_supplicant.confが、/etc/wpa_supplicant/wpa_supplicant.confにコピーされ、ssidで指定したnetworkへの接続を試みます。</p>
-<h2 id="ip">IPアドレスの確認</h2>
-<p>RaspberryPi3をHDMIケーブルでDisplayに接続します。起動画面の最後でIPアドレスが表示されれば、ネットワークに接続成功です。</p>
-<p>接続に失敗した場合は、<code>/etc/wpa_supplicant/wpa_supplicant.conf</code>の中身を確認します。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
-2</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd  /etc/wpa_supplicant/
-sudo nano wpa_supplicant.conf
-</pre></div></td></tr></table></p>
+<p>Web画面のmodel &amp; pilotから、local pilotを選ぶ。</p>
+<p><img alt="" src="../img/pilot.png" /></p>
                 
                   
                 
@@ -869,7 +902,7 @@ sudo nano wpa_supplicant.conf
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../02.rasppi_allsetting/" title="RaspPi3用のイメージ作成" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../05.parent/" title="教師データの作成" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -878,19 +911,19 @@ sudo nano wpa_supplicant.conf
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                RaspPi3用のイメージ作成
+                教師データの作成
               </span>
             </div>
           </a>
         
         
-          <a href="../04.calbration/" title="キャリブレーション" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../1.DonkeyCar構築・学習/01.build/" title="組み立て" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                キャリブレーション
+                組み立て
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
