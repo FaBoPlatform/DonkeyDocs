@@ -280,6 +280,20 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#joystick" title="Joystickの接続" class="md-nav__link">
+    Joystickの接続
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#donkeycar" title="DonkeyCarの起動" class="md-nav__link">
+    DonkeyCarの起動
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" title="教師データの圧縮" class="md-nav__link">
     教師データの圧縮
   </a>
@@ -822,6 +836,20 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#joystick" title="Joystickの接続" class="md-nav__link">
+    Joystickの接続
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#donkeycar" title="DonkeyCarの起動" class="md-nav__link">
+    DonkeyCarの起動
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" title="教師データの圧縮" class="md-nav__link">
     教師データの圧縮
   </a>
@@ -853,12 +881,22 @@
                 
                 
                 <h1 id="_1">教師データの作成</h1>
+<p><img alt="" src="../img/run001.png" /></p>
 <div class="admonition warning">
 <p class="admonition-title">注意点</p>
 <p>本ドキュメントはDonkeyCar 2.5.8に対応しています。</p>
 </div>
+<h2 id="joystick">Joystickの接続</h2>
+<p>JoystickをDonkeyCarに接続します。Joystickの裏側の蓋を外すと、USBドングルが入っているので、DonkeyCarのRaspPi3のUSBに差し込みます。</p>
+<p><img alt="" src="../img/joystick001.png" /></p>
+<p><img alt="" src="../img/joystick002.png" /></p>
+<p><img alt="" src="../img/joystick003.png" /></p>
+<div class="admonition warning">
+<p class="admonition-title">Joystickは省電力モードにすぐ入ります</p>
+<p>Joystickをいじっていない時間が長いと、Joystickは省電力モードにはいります。復活させるには、<code>start</code>や<code>vibration</code>ボタンを教えて省電力モードから復活させておきます。他のボタンにはコマンドが割り振られているために押さないようにしてください。</p>
+</div>
+<h2 id="donkeycar">DonkeyCarの起動</h2>
 <p>DonkeyCarを起動します。</p>
-<p>JoyStick</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2</pre></div></td><td class=code><div class=codehilite><pre><span></span>$ <span class=nb>cd</span> ~/mycar
 $ python manage.py drive --js
@@ -870,13 +908,17 @@ $ python manage.py drive --js
 ls
 tub_01_19-01-26
 </pre></div></td></tr></table></p>
-<p><span class="keys"><kbd>CTRL</kbd><span>+</span><kbd>c</kbd></span>で終了します。</p>
+<p>DonkeyCarの起動は、<span class="keys"><kbd>CTRL</kbd><span>+</span><kbd>c</kbd></span>で終了します。</p>
+<div class="admonition warning">
+<p class="admonition-title">フォルダのできるタイミング</p>
+<p>tubフォルダができるタイミングは、<code>python manage.py drive --js</code>を実行したタイミングです。</p>
+</div>
 <h2 id="_2">教師データの圧縮</h2>
 <p>データを圧縮し、1つのファイル(ZIP形式)にしてPCに転送します。</p>
 <p>RaspberryPi3にZIPをインストールします。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo apt-get install zip
 </pre></div></td></tr></table></p>
-<p>ZIPでフォルダを圧縮します。</p>
+<p>ZIPで学習データとして使いたい走行のフォルダを圧縮します。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd ~/mycar/data
 zip -r datas.zip tub_01_19-01-26
