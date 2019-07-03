@@ -36,7 +36,7 @@
     
     
       
-        <title>教師データの作成 - FaBo DonkeyCar Docs</title>
+        <title>マルチタブ化 - FaBo DonkeyCar Docs</title>
       
     
     
@@ -102,7 +102,7 @@
                 FaBo DonkeyCar Docs
               </span>
               <span class="md-header-nav__topic">
-                教師データの作成
+                マルチタブ化
               </span>
             
           
@@ -418,11 +418,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        教師データの作成
+        マルチタブ化
       </label>
     
-    <a href="./" title="教師データの作成" class="md-nav__link md-nav__link--active">
-      教師データの作成
+    <a href="./" title="マルチタブ化" class="md-nav__link md-nav__link--active">
+      マルチタブ化
     </a>
     
       
@@ -438,27 +438,6 @@
         <li class="md-nav__item">
   <a href="#tub" title="マルチTub化" class="md-nav__link">
     マルチTub化
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="教師データの作成" class="md-nav__link">
-    教師データの作成
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" title="教師データの圧縮" class="md-nav__link">
-    教師データの圧縮
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" title="データの転送" class="md-nav__link">
-    データの転送
   </a>
   
 </li>
@@ -480,7 +459,19 @@
 
 
   <li class="md-nav__item">
-    <a href="../10.data/" title="データの整形" class="md-nav__link">
+    <a href="../11.parent/" title="教師データの作成" class="md-nav__link">
+      教師データの作成
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../12.data/" title="データの整形" class="md-nav__link">
       データの整形
     </a>
   </li>
@@ -492,7 +483,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../11.train_colab/" title="Colabでの学習(GPU)" class="md-nav__link">
+    <a href="../13.train_colab/" title="Colabでの学習(GPU)" class="md-nav__link">
       Colabでの学習(GPU)
     </a>
   </li>
@@ -504,7 +495,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../12.train_rc/" title="PCでの学習" class="md-nav__link">
+    <a href="../14.train_rc/" title="PCでの学習" class="md-nav__link">
       PCでの学習
     </a>
   </li>
@@ -830,27 +821,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#_2" title="教師データの作成" class="md-nav__link">
-    教師データの作成
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" title="教師データの圧縮" class="md-nav__link">
-    教師データの圧縮
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" title="データの転送" class="md-nav__link">
-    データの転送
-  </a>
-  
-</li>
-      
       
       
       
@@ -868,7 +838,7 @@
               
                 
                 
-                <h1 id="_1">教師データの作成</h1>
+                <h1 id="_1">マルチタブ化</h1>
 <h2 id="tub">マルチTub化</h2>
 <p>MultiTub化することで、保存データをフォルダわけすることが可能です。</p>
 <p>RaspberryPi側の<code>manager.py</code>を修正します。</p>
@@ -921,38 +891,6 @@
     <span class=c1># single tub</span>
 <span class=hll>    <span class=c1>#tub = TubWriter(path=cfg.TUB_PATH, inputs=inputs, types=types)</span>
 </span></pre></div></td></tr></table></p>
-<h2 id="_2">教師データの作成</h2>
-<p>DonkeyCarを起動します。</p>
-<p>JoyStick</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
-2</pre></div></td><td class=code><div class=codehilite><pre><span></span>$ <span class=nb>cd</span> ~/mycar
-$ python manage.py drive --js
-</pre></div></td></tr></table></p>
-<p>教師データは、<code>~/mycar/dara</code>以下に保存されます。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
-2
-3</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd ~/mycar/data
-ls
-tub_01_19-01-26
-</pre></div></td></tr></table></p>
-<p><span class="keys"><kbd>CTRL</kbd><span>+</span><kbd>c</kbd></span>で終了します。</p>
-<h2 id="_3">教師データの圧縮</h2>
-<p>データを圧縮し、1つのファイル(ZIP形式)にしてPCに転送します。</p>
-<p>RaspberryPi3にZIPをインストールします。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo apt-get install zip
-</pre></div></td></tr></table></p>
-<p>ZIPでフォルダを圧縮します。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
-2</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd ~/mycar/data
-zip -r datas.zip tub_01_19-01-26
-</pre></div></td></tr></table></p>
-<h2 id="_4">データの転送</h2>
-<p><a href="https://cyberduck.io/">Cyberduck</a> をインストールします。</p>
-<p><img alt="" src="../img/duck001.png" /></p>
-<p><img alt="" src="../img/duck002.png" /></p>
-<p><img alt="" src="../img/duck003.png" /></p>
-<p><img alt="" src="../img/duck004.png" /></p>
-<p>RaspberryPi3からPCに、datas.zipを転送します。</p>
                 
                   
                 
@@ -988,13 +926,13 @@ zip -r datas.zip tub_01_19-01-26
           </a>
         
         
-          <a href="../10.data/" title="データの整形" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../11.parent/" title="教師データの作成" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                データの整形
+                教師データの作成
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
