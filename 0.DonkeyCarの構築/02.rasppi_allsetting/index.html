@@ -36,7 +36,7 @@
     
     
       
-        <title>Double Deep Q-Learning - FaBo DonkeyCar Docs</title>
+        <title>RaspPi3用のイメージ作成 - FaBo DonkeyCar Docs</title>
       
     
     
@@ -76,7 +76,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#double-deep-q-learning" tabindex="1" class="md-skip">
+      <a href="#rasppi3" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -102,7 +102,7 @@
                 FaBo DonkeyCar Docs
               </span>
               <span class="md-header-nav__topic">
-                Double Deep Q-Learning
+                RaspPi3用のイメージ作成
               </span>
             
           
@@ -158,10 +158,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       0.DonkeyCarの構築
@@ -179,7 +181,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../0.DonkeyCarの構築/00.build/" title="組み立て" class="md-nav__link">
+    <a href="../00.build/" title="組み立て" class="md-nav__link">
       組み立て
     </a>
   </li>
@@ -191,7 +193,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../0.DonkeyCarの構築/01.Tools/" title="使用ツール" class="md-nav__link">
+    <a href="../01.Tools/" title="使用ツール" class="md-nav__link">
       使用ツール
     </a>
   </li>
@@ -201,11 +203,56 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../0.DonkeyCarの構築/02.rasppi_allsetting/" title="RaspPi3用のイメージ作成" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        RaspPi3用のイメージ作成
+      </label>
+    
+    <a href="./" title="RaspPi3用のイメージ作成" class="md-nav__link md-nav__link--active">
       RaspPi3用のイメージ作成
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">目次</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="本イメージ" class="md-nav__link">
+    本イメージ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" title="焼き込み" class="md-nav__link">
+    焼き込み
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -215,7 +262,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../0.DonkeyCarの構築/03.network/" title="Wifiの設定" class="md-nav__link">
+    <a href="../03.network/" title="Wifiの設定" class="md-nav__link">
       Wifiの設定
     </a>
   </li>
@@ -227,7 +274,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../0.DonkeyCarの構築/04.ssh/" title="SSHでRaspberryPiのログイン" class="md-nav__link">
+    <a href="../04.ssh/" title="SSHでRaspberryPiのログイン" class="md-nav__link">
       SSHでRaspberryPiのログイン
     </a>
   </li>
@@ -239,7 +286,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../0.DonkeyCarの構築/05.calbration/" title="キャリブレーション" class="md-nav__link">
+    <a href="../05.calbration/" title="キャリブレーション" class="md-nav__link">
       キャリブレーション
     </a>
   </li>
@@ -251,7 +298,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../0.DonkeyCarの構築/06.parent/" title="教師データの作成" class="md-nav__link">
+    <a href="../06.parent/" title="教師データの作成" class="md-nav__link">
       教師データの作成
     </a>
   </li>
@@ -263,7 +310,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../0.DonkeyCarの構築/07.train_colab/" title="Colabでの学習(GPU)" class="md-nav__link">
+    <a href="../07.train_colab/" title="Colabでの学習(GPU)" class="md-nav__link">
       Colabでの学習(GPU)
     </a>
   </li>
@@ -530,12 +577,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
     <label class="md-nav__link" for="nav-5">
       3.強化学習
@@ -553,7 +598,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../1.ppo_train/" title="PPO Train" class="md-nav__link">
+    <a href="../../3.強化学習/1.ppo_train/" title="PPO Train" class="md-nav__link">
       PPO Train
     </a>
   </li>
@@ -563,77 +608,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Double Deep Q-Learning
-      </label>
-    
-    <a href="./" title="Double Deep Q-Learning" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../3.強化学習/2.DeepQNET/" title="Double Deep Q-Learning" class="md-nav__link">
       Double Deep Q-Learning
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">目次</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#git-clone" title="Git clone" class="md-nav__link">
-    Git clone
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#openmpi" title="OpenMPIのインストール" class="md-nav__link">
-    OpenMPIのインストール
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#matplotlibrc" title="Matplotlibrcの修正" class="md-nav__link">
-    Matplotlibrcの修正
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="実行" class="md-nav__link">
-    実行
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="エミュレータを実行" class="md-nav__link">
-    エミュレータを実行
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -643,7 +622,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../3.architecture/" title="Double Deep Q-Learning解説" class="md-nav__link">
+    <a href="../../3.強化学習/3.architecture/" title="Double Deep Q-Learning解説" class="md-nav__link">
       Double Deep Q-Learning解説
     </a>
   </li>
@@ -655,7 +634,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../4.learning-to-drive-in-minitues/" title="learning-to-drive-in-5-minutes" class="md-nav__link">
+    <a href="../../3.強化学習/4.learning-to-drive-in-minitues/" title="learning-to-drive-in-5-minutes" class="md-nav__link">
       learning-to-drive-in-5-minutes
     </a>
   </li>
@@ -843,36 +822,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#git-clone" title="Git clone" class="md-nav__link">
-    Git clone
+  <a href="#_1" title="本イメージ" class="md-nav__link">
+    本イメージ
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#openmpi" title="OpenMPIのインストール" class="md-nav__link">
-    OpenMPIのインストール
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#matplotlibrc" title="Matplotlibrcの修正" class="md-nav__link">
-    Matplotlibrcの修正
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" title="実行" class="md-nav__link">
-    実行
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" title="エミュレータを実行" class="md-nav__link">
-    エミュレータを実行
+  <a href="#_2" title="焼き込み" class="md-nav__link">
+    焼き込み
   </a>
   
 </li>
@@ -894,30 +852,44 @@
               
                 
                 
-                <h1 id="double-deep-q-learning">Double Deep Q-Learning</h1>
-<h2 id="git-clone">Git clone</h2>
-<p>Git clone</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>git clone https://github.com/autorope/donkey_gym
-</pre></div></td></tr></table></p>
-<h2 id="openmpi">OpenMPIのインストール</h2>
-<p>OpenMPIをインストール</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
-2</pre></div></td><td class=code><div class=codehilite><pre><span></span>brew install cmake openmpi
-pip install stable-baselines
-</pre></div></td></tr></table></p>
-<p>Scikit Imafeをインストール</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>pip install scikit-image
-</pre></div></td></tr></table></p>
-<h2 id="matplotlibrc">Matplotlibrcの修正</h2>
-<p>matplotlibrcの場所の確認</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=n>python</span> <span class=o>-</span><span class=n>c</span> <span class=s2>&quot;import matplotlib;print(matplotlib.matplotlib_fname())&quot;</span>
-</pre></div></td></tr></table></p>
-<p><code>matplotlibrc</code>の<code>backend: macosx</code>を<code>backend: Tkagg</code>に書き換える</p>
-<h2 id="_1">実行</h2>
-<p>実行</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>python donkey_gym/examples/reinforcement_learning/ddqn.py
-</pre></div></td></tr></table></p>
-<h2 id="_2">エミュレータを実行</h2>
+                <h1 id="rasppi3">RaspPi3用のイメージ作成</h1>
+<h2 id="_1">本イメージ</h2>
+<p>Google Colaboraotoryと連携するために、DonkeyCar 2.5.8, TernsorFlow 2.0.0 Alpha0をインストールしたRaspberryPi用イメージになります。</p>
+<p><a href="https://drive.google.com/open?id=1i7_qAR-i-pqW47MtnTXW08zxKMfCSH8x">Download</a></p>
+<p>プロジェクトの作成やWireless Joystick、マルチタブ化も実施済みです。</p>
+<p>SDカードイメージには、下記処理を実施済みです。</p>
+<table>
+<thead>
+<tr>
+<th align="left">項目</th>
+<th align="left">処理内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><a href="https://faboplatform.github.io/DonkeyDocs/1.DonkeyCar%E6%A7%8B%E7%AF%89%E3%83%BB%E5%AD%A6%E7%BF%92/03.install/">DonkeyCarのインストール</a></td>
+<td align="left">SSHの有効化, DonkeyCarの2.5.8へのUpDate, TensorFlow 2.0.0-Alpha0のインストール</td>
+</tr>
+<tr>
+<td align="left"><a href="https://faboplatform.github.io/DonkeyDocs/1.DonkeyCar%E6%A7%8B%E7%AF%89%E3%83%BB%E5%AD%A6%E7%BF%92/07.manage/">Projectの作成</a></td>
+<td align="left">~/mycarにプロジェクトの作成</td>
+</tr>
+<tr>
+<td align="left"><a href="https://faboplatform.github.io/DonkeyDocs/1.DonkeyCar%E6%A7%8B%E7%AF%89%E3%83%BB%E5%AD%A6%E7%BF%92/09.joystick/">F710 Joystick(Wireless Joystick)</a></td>
+<td align="left">F710の有効化</td>
+</tr>
+<tr>
+<td align="left"><a href="https://faboplatform.github.io/DonkeyDocs/1.DonkeyCar%E6%A7%8B%E7%AF%89%E3%83%BB%E5%AD%A6%E7%BF%92/10.tab/">マルチタブ化</a></td>
+<td align="left">データの保存先を~/mycar/data以下でタブ化</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_2">焼き込み</h2>
+<p>焼き込みには、Etcherを使い焼き込みます。
+<a href="https://www.balena.io/etcher/">https://www.balena.io/etcher/</a></p>
+<p><a href="https://drive.google.com/open?id=1i7_qAR-i-pqW47MtnTXW08zxKMfCSH8x">Download</a>
+からイメージをダウンロードすると、donkeypi_tf2_0_0.zipがダウンロードできるので解凍し生成されるdonkeypi_tf2_0_0.imgをSDカードに焼き込みます。</p>
+<p><img alt="" src="../img/et001.png" /></p>
                 
                   
                 
@@ -938,7 +910,7 @@ pip install stable-baselines
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../1.ppo_train/" title="PPO Train" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../01.Tools/" title="使用ツール" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -947,19 +919,19 @@ pip install stable-baselines
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                PPO Train
+                使用ツール
               </span>
             </div>
           </a>
         
         
-          <a href="../3.architecture/" title="Double Deep Q-Learning解説" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../03.network/" title="Wifiの設定" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                Double Deep Q-Learning解説
+                Wifiの設定
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
