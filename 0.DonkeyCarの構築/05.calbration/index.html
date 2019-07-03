@@ -926,8 +926,8 @@ STEERING_RIGHT_PWM = 310
 </tbody>
 </table>
 <h2 id="escchannel-0">ESCの調整(channel 0)</h2>
-<p>モーターの制御は、PWM0でおこないます。</p>
-<p>例</p>
+<p>モーターの制御は、channel 1のPWM0でおこないます。</p>
+<p>コマンド</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkey calibrate --channel 0
 </pre></div></td></tr></table></p>
 <p>まず、DonkeyCarの電源をOffにし、ESCの初期化処理をおこないます。</p>
@@ -967,9 +967,10 @@ THROTTLE_REVERSE_PWM = 310
 <p>PWMで信号を発信中にRCカー本体の電源をONにすると、そのPWM値が初期値として登録される。例えば、donkey calibrate --channel 0 で600を入力中に、電源をOnした場合、600が中央値になる。中央値がずれた場合は、donkey calibrate --channel 0 で、360程度の値で電源をOnにし、360を中央値に設定し直す。<a href="http://www.redcatracing.com/manuals/HW-WP-1040-Brushed.pdf">ESCのDatasheet(Hobbywing QuicRun 1040)</a></p>
 </div>
 <div class="admonition warining">
-<p class="admonition-title">Warining</p>
+<p class="admonition-title">後進の注意点</p>
 <p>前進は、どのような状況でも操作できます。前進したのちの、後進は、一度 360の初期値をおくったあとに、後進が有効になります。　</p>
 </div>
+<p><img alt="" src="../img/lock001.png" /></p>
                 
                   
                 
