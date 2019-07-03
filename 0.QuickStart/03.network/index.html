@@ -853,7 +853,8 @@
                 
                 
                 <h1 id="wifi">Wifiの設定</h1>
-<p>作成したSDカードをPCで開き、wpa_supplicant.confを作成します。</p>
+<p>Wifiの設定は、全手順で作成したSDカードに、wpa_supplicant.confをコピーし、接続先のSSIDとPasswordを入力してください。</p>
+<p>初回起動時にSDカードにあるwpa_supplicant.confが自動的に、 /etc/wpa_supplicant/wpa_supplicant.conf へコピーされ、指定したWifiネットワークに接続されます。</p>
 <h2 id="wpa_supplicant">wpa_supplicant</h2>
 <p><a href="https://faboplatform.github.io/DonkeyDocs/1.DonkeyCar%E6%A7%8B%E7%AF%89%E3%83%BB%E5%AD%A6%E7%BF%92/wpa_supplicant.conf" download>wpa_supplicant.confをdownload</a>
 し、PCでSDカードを開き、wpa_supplicant.confを置きます。</p>
@@ -872,9 +873,9 @@ ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
 
 network={
-    ssid=&quot;&lt;your network name&gt;&quot;
+    ssid=&quot;your network name&quot;
     scan_ssid=1
-    psk=&quot;&lt;your password&gt;&quot;
+    psk=&quot;your password&quot;
 }
 </pre></div></td></tr></table></p>
 <p>RaspberryPi3起動時に、wpa_supplicant.confが、/etc/wpa_supplicant/wpa_supplicant.confにコピーされ、ssidで指定したnetworkへの接続を試みます。</p>
