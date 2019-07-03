@@ -878,10 +878,26 @@ network={
     psk=&quot;your password&quot;
 }
 </pre></div></td></tr></table></p>
-<p>RaspberryPi3起動時に、wpa_supplicant.confが、/etc/wpa_supplicant/wpa_supplicant.confにコピーされ、ssidで指定したnetworkへの接続を試みます。</p>
+<p>PasswordのないWifiスポットに接続する場合は、下記例を参考にしてください。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class=code><div class=codehilite><pre><span></span>country=US
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
+network={
+    ssid=&quot;your network name&quot;
+    key_mgmt=NONE
+}
+</pre></div></td></tr></table></p>
 <h2 id="ip">IPアドレスの確認</h2>
 <p>RaspberryPi3をHDMIケーブルでDisplayに接続します。起動画面の最後でIPアドレスが表示されれば、ネットワークに接続成功です。</p>
-<p>接続に失敗した場合は、<code>/etc/wpa_supplicant/wpa_supplicant.conf</code>の中身を確認します。</p>
+<p>接続に失敗した場合は、<code>/etc/wpa_supplicant/wpa_supplicant.conf</code>の中身を確認し、修正が必要な場合は修正します。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd  /etc/wpa_supplicant/
 sudo nano wpa_supplicant.conf
