@@ -268,22 +268,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="キャリブレーション" class="md-nav__link">
-    キャリブレーション
+  <a href="#-channel-1" title="サーボの調整(--channel 1)" class="md-nav__link">
+    サーボの調整(--channel 1)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="サーボの制御" class="md-nav__link">
-    サーボの制御
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" title="モーターの制御" class="md-nav__link">
-    モーターの制御
+  <a href="#escchannel-0" title="ESCの調整(channel 0)" class="md-nav__link">
+    ESCの調整(channel 0)
   </a>
   
 </li>
@@ -829,22 +822,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" title="キャリブレーション" class="md-nav__link">
-    キャリブレーション
+  <a href="#-channel-1" title="サーボの調整(--channel 1)" class="md-nav__link">
+    サーボの調整(--channel 1)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="サーボの制御" class="md-nav__link">
-    サーボの制御
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" title="モーターの制御" class="md-nav__link">
-    モーターの制御
+  <a href="#escchannel-0" title="ESCの調整(channel 0)" class="md-nav__link">
+    ESCの調整(channel 0)
   </a>
   
 </li>
@@ -867,6 +853,7 @@
                 
                 
                 <h1 id="_1">キャリブレーション</h1>
+<p><img alt="" src="../img/cal000.png" /></p>
 <div class="admonition warning">
 <p class="admonition-title">注意点</p>
 <p>本ドキュメントはDonkeyCar 2.5.8に対応しています。</p>
@@ -892,17 +879,31 @@
 </tr>
 </tbody>
 </table>
-<h2 id="_2">キャリブレーション</h2>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkey calibrate --channel チャンネル番号
 </pre></div></td></tr></table></p>
-<h2 id="_3">サーボの制御</h2>
-<p>サーボの制御は、PWM1でおこないます。</p>
-<p>例</p>
+<h2 id="-channel-1">サーボの調整(--channel 1)</h2>
+<p>サーボの制御は、channel 1のPWM1でおこないます。</p>
+<p>コマンド</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkey calibrate --channel 1
 </pre></div></td></tr></table></p>
 <p>一番右の値と、一番左の値を見つけ出してください。310-410の間ぐらいが可動範囲です。値をconfig.pyに反映します。</p>
+<div class="admonition info">
+<p class="admonition-title">左右均等にするポイント</p>
+<p>左右の振れ幅を均等にしないとDonkeyCarはまっすぐ走りません。車輪が真ん中にあんる位置を見つけ出し、そこから同じ数だけ左右にずらすと左右均等になるはずです。</p>
+</div>
+<p>値が調整できたら、~/mycar/config.pyの値を修正します。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>nano ~/mycar/config.py
 </pre></div></td></tr></table></p>
+<p><code>config.py</code></p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2
+3
+4</pre></div></td><td class=code><div class=codehilite><pre><span></span>#STEERING
+STEERING_CHANNEL = 1
+STEERING_LEFT_PWM = 410
+STEERING_RIGHT_PWM = 310
+</pre></div></td></tr></table></p>
+<p>nanoの操作方法</p>
 <table>
 <thead>
 <tr>
@@ -924,16 +925,7 @@
 </tr>
 </tbody>
 </table>
-<p><code>config.py</code></p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
-2
-3
-4</pre></div></td><td class=code><div class=codehilite><pre><span></span>#STEERING
-STEERING_CHANNEL = 1
-STEERING_LEFT_PWM = 410
-STEERING_RIGHT_PWM = 310
-</pre></div></td></tr></table></p>
-<h2 id="_4">モーターの制御</h2>
+<h2 id="escchannel-0">ESCの調整(channel 0)</h2>
 <p>モーターの制御は、PWM0でおこないます。</p>
 <p>例</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkey calibrate --channel 0
