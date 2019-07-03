@@ -251,8 +251,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ip" title="IPアドレスの確認" class="md-nav__link">
-    IPアドレスの確認
+  <a href="#osx" title="接続の確認(OSX)" class="md-nav__link">
+    接続の確認(OSX)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ipwindows" title="IPアドレスの確認(Windows)" class="md-nav__link">
+    IPアドレスの確認(Windows)
   </a>
   
 </li>
@@ -829,8 +836,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#ip" title="IPアドレスの確認" class="md-nav__link">
-    IPアドレスの確認
+  <a href="#osx" title="接続の確認(OSX)" class="md-nav__link">
+    接続の確認(OSX)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ipwindows" title="IPアドレスの確認(Windows)" class="md-nav__link">
+    IPアドレスの確認(Windows)
   </a>
   
 </li>
@@ -895,13 +909,39 @@ network={
     key_mgmt=NONE
 }
 </pre></div></td></tr></table></p>
-<h2 id="ip">IPアドレスの確認</h2>
+<h2 id="osx">接続の確認(OSX)</h2>
+<p>DonkeyCarと同一ネットワークに接続しているOSXより、下記コマンドで接続を試みます。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>$ ssh pi@donkeypi.local
+</pre></div></td></tr></table></p>
+<table>
+<thead>
+<tr>
+<th align="left">項目</th>
+<th align="left">値</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">id</td>
+<td align="left">pi</td>
+</tr>
+<tr>
+<td align="left">password</td>
+<td align="left">raspberry</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ipwindows">IPアドレスの確認(Windows)</h2>
 <p>RaspberryPi3をHDMIケーブルでDisplayに接続します。起動画面の最後でIPアドレスが表示されれば、ネットワークに接続成功です。</p>
 <p>接続に失敗した場合は、<code>/etc/wpa_supplicant/wpa_supplicant.conf</code>の中身を確認し、修正が必要な場合は修正します。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd  /etc/wpa_supplicant/
 sudo nano wpa_supplicant.conf
 </pre></div></td></tr></table></p>
+<div class="admonition info">
+<p class="admonition-title">IPアドレス</p>
+<p>自分のIPアドレスをメモっておきます。</p>
+</div>
                 
                   
                 
