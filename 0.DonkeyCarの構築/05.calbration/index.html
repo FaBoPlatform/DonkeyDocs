@@ -268,6 +268,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_2" title="説明" class="md-nav__link">
+    説明
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#escchannel-0" title="ESCの調整(channel 0)" class="md-nav__link">
     ESCの調整(channel 0)
   </a>
@@ -834,6 +841,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#_2" title="説明" class="md-nav__link">
+    説明
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#escchannel-0" title="ESCの調整(channel 0)" class="md-nav__link">
     ESCの調整(channel 0)
   </a>
@@ -870,6 +884,8 @@
 <p class="admonition-title">注意点</p>
 <p>本ドキュメントはDonkeyCar 2.5.8に対応しています。</p>
 </div>
+<h2 id="_2">説明</h2>
+<p>ESC，サーボの接続は、下記表の通りにおこなっています。</p>
 <table>
 <thead>
 <tr>
@@ -882,7 +898,7 @@
 <tr>
 <td align="left">0</td>
 <td align="left">pwm0</td>
-<td align="left">モーターの制御</td>
+<td align="left">ESC, モーターの制御</td>
 </tr>
 <tr>
 <td align="left">1</td>
@@ -891,8 +907,13 @@
 </tr>
 </tbody>
 </table>
+<p>キャリブレーションのコマンドは下記のコマンドになります。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkey calibrate --channel チャンネル番号
 </pre></div></td></tr></table></p>
+<div class="admonition warning">
+<p class="admonition-title">注意</p>
+<p>ここから先は車輪が動き始めます。車輪が空転するようにタイヤを浮かせた状態でコマンドを実行してください。</p>
+</div>
 <h2 id="escchannel-0">ESCの調整(channel 0)</h2>
 <p>モーターの制御は、channel 1のPWM0でおこないます。</p>
 <p>コマンド</p>
