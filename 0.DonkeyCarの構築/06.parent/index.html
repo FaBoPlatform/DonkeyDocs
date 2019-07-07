@@ -944,10 +944,11 @@
 <hr>
 
 <p>データは、前進・行進している間、自動保存されます。保存先は、<code>~/mycar/dara</code>になります。フォルダが生成されるタイミングは、<code>python manage.py drive --js</code>を実行したタイミングで、毎回作成されます。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd ~/mycar/data
+</pre></div></td></tr></table></p>
+<p>lsコマンドで作成されたフォルダを確認します。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
-2
-3</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd ~/mycar/data
-ls
+2</pre></div></td><td class=code><div class=codehilite><pre><span></span>ls
 tub_01_19-01-26
 </pre></div></td></tr></table></p>
 <p>DonkeyCarの終了は、<span class="keys"><kbd>CTRL</kbd><span>+</span><kbd>c</kbd></span>で終了します。</p>
@@ -965,8 +966,8 @@ tub_01_19-01-26
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo apt-get install zip
 </pre></div></td></tr></table></p>
 <p>ZIPで学習データとして使いたい走行のフォルダを圧縮します。</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-4><input name=tab-group-4 type=radio id=tab-group-4-0_fxszquqhakl78kz checked=checked class=code-tab data-lang aria-controls=tab-group-4-0_fxszquqhakl78kz-panel role=tab><label for=tab-group-4-0_fxszquqhakl78kz class=code-tab-label data-lang id=tab-group-4-0_fxszquqhakl78kz-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-4-0_fxszquqhakl78kz-panel aria-labelledby=tab-group-4-0_fxszquqhakl78kz-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd ~/mycar/data
-</pre></div></td></tr></table></div><input name=tab-group-4 type=radio id=tab-group-4-1_tk9o13gajj05ne0 class=code-tab data-lang aria-controls=tab-group-4-1_tk9o13gajj05ne0-panel role=tab><label for=tab-group-4-1_tk9o13gajj05ne0 class=code-tab-label data-lang id=tab-group-4-1_tk9o13gajj05ne0-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-4-1_tk9o13gajj05ne0-panel aria-labelledby=tab-group-4-1_tk9o13gajj05ne0-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>zip -r datas.zip tub_01_19-01-26
+<div class=md-fenced-code-tabs id=tab-tab-group-5><input name=tab-group-5 type=radio id=tab-group-5-0_6h0hw12jrg7ozfx checked=checked class=code-tab data-lang aria-controls=tab-group-5-0_6h0hw12jrg7ozfx-panel role=tab><label for=tab-group-5-0_6h0hw12jrg7ozfx class=code-tab-label data-lang id=tab-group-5-0_6h0hw12jrg7ozfx-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-5-0_6h0hw12jrg7ozfx-panel aria-labelledby=tab-group-5-0_6h0hw12jrg7ozfx-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd ~/mycar/data
+</pre></div></td></tr></table></div><input name=tab-group-5 type=radio id=tab-group-5-1_h50dmrcdatuyhmy class=code-tab data-lang aria-controls=tab-group-5-1_h50dmrcdatuyhmy-panel role=tab><label for=tab-group-5-1_h50dmrcdatuyhmy class=code-tab-label data-lang id=tab-group-5-1_h50dmrcdatuyhmy-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-5-1_h50dmrcdatuyhmy-panel aria-labelledby=tab-group-5-1_h50dmrcdatuyhmy-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>zip -r datas.zip tub_01_19-01-26
 </pre></div></td></tr></table></div></div>
 
 <div class="admonition info">
