@@ -928,14 +928,15 @@
 最初に、ESCの初期化処理をおこないます。初期化の値は、360です。</p>
 <p>モーターの制御は、channel 1のPWM0でおこないます。</p>
 <p>コマンド</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_cydsvoyrixzpbxd checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_cydsvoyrixzpbxd-panel role=tab><label for=tab-group-1-0_cydsvoyrixzpbxd class=code-tab-label data-lang id=tab-group-1-0_cydsvoyrixzpbxd-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_cydsvoyrixzpbxd-panel aria-labelledby=tab-group-1-0_cydsvoyrixzpbxd-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkey calibrate --channel 0
-</pre></div></td></tr></table></div><input name=tab-group-1 type=radio id=tab-group-1-1_cnglecocdpaih3l class=code-tab data-lang aria-controls=tab-group-1-1_cnglecocdpaih3l-panel role=tab><label for=tab-group-1-1_cnglecocdpaih3l class=code-tab-label data-lang id=tab-group-1-1_cnglecocdpaih3l-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_cnglecocdpaih3l-panel aria-labelledby=tab-group-1-1_cnglecocdpaih3l-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkey calibrate --channel 0
+</pre></div></td></tr></table></p>
+<p>初期値の入力</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
 3</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkey calibrate --channel 0
 using donkey version: 2.5.8 ...
 Enter a PWM setting to test(0-1500)360
-</pre></div></td></tr></table></div></div>
-
+</pre></div></td></tr></table></p>
 <p>この状態で、DonkeyCarの電源をOnにします。「ピィ・ピィーー」と音がなります。これで初期化設定です。</p>
 <p>初期値の360は、モーターが回らない状態です。360よりも大きい値にすると前進し、360より小さい値を入れると行進します(行進時は、初期値である360に2-3回戻すことで、有効になります。例) 360-&gt;360-&gt;360-&gt;320)</p>
 <p>ここでは、前進の最大値の50%-70%、行進の最大値の50%-70%ぐらいの値を探し出します。</p>
