@@ -268,15 +268,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#-channel-1" title="サーボの調整(--channel 1)" class="md-nav__link">
-    サーボの調整(--channel 1)
+  <a href="#escchannel-0" title="ESCの調整(channel 0)" class="md-nav__link">
+    ESCの調整(channel 0)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#escchannel-0" title="ESCの調整(channel 0)" class="md-nav__link">
-    ESCの調整(channel 0)
+  <a href="#-channel-1" title="サーボの調整(--channel 1)" class="md-nav__link">
+    サーボの調整(--channel 1)
   </a>
   
 </li>
@@ -834,15 +834,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#-channel-1" title="サーボの調整(--channel 1)" class="md-nav__link">
-    サーボの調整(--channel 1)
+  <a href="#escchannel-0" title="ESCの調整(channel 0)" class="md-nav__link">
+    ESCの調整(channel 0)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#escchannel-0" title="ESCの調整(channel 0)" class="md-nav__link">
-    ESCの調整(channel 0)
+  <a href="#-channel-1" title="サーボの調整(--channel 1)" class="md-nav__link">
+    サーボの調整(--channel 1)
   </a>
   
 </li>
@@ -893,6 +893,52 @@
 </table>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkey calibrate --channel チャンネル番号
 </pre></div></td></tr></table></p>
+<h2 id="escchannel-0">ESCの調整(channel 0)</h2>
+<p>モーターの制御は、channel 1のPWM0でおこないます。</p>
+<p>コマンド</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkey calibrate --channel 0
+</pre></div></td></tr></table></p>
+<p>まず、DonkeyCarの電源をOffにしてください。</p>
+<p>最初に、ESCの初期化処理をおこないます。初期化の値は、360です。</p>
+<p><img alt="" src="../img/default001.png" /></p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2
+3</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkey calibrate --channel 0
+using donkey version: 2.5.8 ...
+Enter a PWM setting to test(0-1500)360
+</pre></div></td></tr></table></p>
+<p>この状態で、DonkeyCarの電源をOnにします。「ピィ・ピィーー」と音がなります。これで初期化設定です。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2
+3
+4</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkey calibrate --channel 0
+using donkey version: 2.5.8 ...
+Enter a PWM setting to test(0-1500)360
+Enter a PWM setting to test(0-1500)400
+</pre></div></td></tr></table></p>
+<p>前後にタイヤが回る範囲を見つけ出し、config.pyに反映します。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>nano ~/mycar/config.py
+</pre></div></td></tr></table></p>
+<p><code>config.py</code></p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2
+3
+4
+5</pre></div></td><td class=code><div class=codehilite><pre><span></span>#THROTTLE
+THROTTLE_CHANNEL = 0
+THROTTLE_FORWARD_PWM = 400
+THROTTLE_STOPPED_PWM = 360
+THROTTLE_REVERSE_PWM = 310
+</pre></div></td></tr></table></p>
+<div class="admonition warning">
+<p class="admonition-title">初期値</p>
+<p>PWMで信号を発信中にRCカー本体の電源をONにすると、そのPWM値が初期値として登録される。例えば、donkey calibrate --channel 0 で600を入力中に、電源をOnした場合、600が中央値になる。中央値がずれた場合は、donkey calibrate --channel 0 で、360の値を入力し、電源をOnにし、360を中央値に設定し直す。<a href="http://www.redcatracing.com/manuals/HW-WP-1040-Brushed.pdf">ESCのDatasheet(Hobbywing QuicRun 1040)</a></p>
+</div>
+<div class="admonition warining">
+<p class="admonition-title">後進の注意点</p>
+<p>前進は、どのような状況でも操作できます。前進したのちの、後進は、一度 360の初期値をおくったあとに、後進が有効になります。　</p>
+</div>
+<p><img alt="" src="../img/lock001.png" /></p>
 <h2 id="-channel-1">サーボの調整(--channel 1)</h2>
 <p>サーボの制御は、channel 1のPWM1でおこないます。</p>
 <p>コマンド</p>
@@ -937,52 +983,6 @@ STEERING_RIGHT_PWM = 310
 </tr>
 </tbody>
 </table>
-<h2 id="escchannel-0">ESCの調整(channel 0)</h2>
-<p>モーターの制御は、channel 1のPWM0でおこないます。</p>
-<p>コマンド</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkey calibrate --channel 0
-</pre></div></td></tr></table></p>
-<p>まず、DonkeyCarの電源をOffにし、ESCの初期化処理をおこないます。</p>
-<p>初期化は、360の値でおこないます。</p>
-<p><img alt="" src="../img/default001.png" /></p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
-2
-3</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkey calibrate --channel 0
-using donkey version: 2.5.8 ...
-Enter a PWM setting to test(0-1500)360
-</pre></div></td></tr></table></p>
-<p>この状態で、DonkeyCarの電源をOnにします。「ピィ・ピィーー」と音がなります。これで初期化設定です。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
-2
-3
-4</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkey calibrate --channel 0
-using donkey version: 2.5.8 ...
-Enter a PWM setting to test(0-1500)360
-Enter a PWM setting to test(0-1500)400
-</pre></div></td></tr></table></p>
-<p>前後にタイヤが回る範囲を見つけ出し、config.pyに反映します。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>nano ~/mycar/config.py
-</pre></div></td></tr></table></p>
-<p><code>config.py</code></p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
-2
-3
-4
-5</pre></div></td><td class=code><div class=codehilite><pre><span></span>#THROTTLE
-THROTTLE_CHANNEL = 0
-THROTTLE_FORWARD_PWM = 400
-THROTTLE_STOPPED_PWM = 360
-THROTTLE_REVERSE_PWM = 310
-</pre></div></td></tr></table></p>
-<div class="admonition warning">
-<p class="admonition-title">初期値</p>
-<p>PWMで信号を発信中にRCカー本体の電源をONにすると、そのPWM値が初期値として登録される。例えば、donkey calibrate --channel 0 で600を入力中に、電源をOnした場合、600が中央値になる。中央値がずれた場合は、donkey calibrate --channel 0 で、360の値を入力し、電源をOnにし、360を中央値に設定し直す。<a href="http://www.redcatracing.com/manuals/HW-WP-1040-Brushed.pdf">ESCのDatasheet(Hobbywing QuicRun 1040)</a></p>
-</div>
-<div class="admonition warining">
-<p class="admonition-title">後進の注意点</p>
-<p>前進は、どのような状況でも操作できます。前進したのちの、後進は、一度 360の初期値をおくったあとに、後進が有効になります。　</p>
-</div>
-<p><img alt="" src="../img/lock001.png" /></p>
                 
                   
                 

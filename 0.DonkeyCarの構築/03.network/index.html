@@ -271,6 +271,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#wpa_supplicant_1" title="wpa_supplicantの修正" class="md-nav__link">
+    wpa_supplicantの修正
+  </a>
+  
+</li>
+      
       
       
       
@@ -875,6 +882,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#wpa_supplicant_1" title="wpa_supplicantの修正" class="md-nav__link">
+    wpa_supplicantの修正
+  </a>
+  
+</li>
+      
       
       
       
@@ -973,9 +987,13 @@ network={
 <p class="admonition-title">Host名について</p>
 <p>上記方法はOSXのみで有効で、複数台使用時は、DonkeyCarのRasPi3のhost名を任意のユニークな名前に書き直す必要があります。</p>
 </div>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>ifconfigf -a
+</pre></div></td></tr></table></p>
+<p>で表示されるWLAN0にIPアドレスが表示されます。</p>
 <h2 id="windows">接続先の確認(Windows)</h2>
 <p>RaspberryPi3をHDMIケーブルでDisplayに接続します。起動画面の最後でIPアドレスが表示されれば、ネットワークに接続成功です。</p>
-<p>接続に失敗した場合は、<code>/etc/wpa_supplicant/wpa_supplicant.conf</code>の中身を確認し、修正が必要な場合は修正します。</p>
+<h2 id="wpa_supplicant_1">wpa_supplicantの修正</h2>
+<p>接続に失敗した場合は、RaspPi3内の<code>/etc/wpa_supplicant/wpa_supplicant.conf</code> を修正することで、接続先の変更が可能です。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd  /etc/wpa_supplicant/
 sudo nano wpa_supplicant.conf
