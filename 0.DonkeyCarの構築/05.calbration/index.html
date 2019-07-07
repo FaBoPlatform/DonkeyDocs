@@ -924,8 +924,7 @@
 <hr>
 
 <p><img alt="" src="../img/default001.png" /></p>
-<p>まず、DonkeyCar本体(ラジコン)の電源をOffにしてください。
-最初に、ESCの初期化処理をおこないます。初期化の値は、360です。</p>
+<p>まず、DonkeyCar本体(ラジコン)の電源をOffにしてください。最初に、ESCの初期化処理をおこないます。初期化の値は、360です。</p>
 <p>モーターの制御は、channel 1のPWM0でおこないます。</p>
 <p>コマンド</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkey calibrate --channel 0
@@ -957,7 +956,7 @@ Enter a PWM setting to test(0-1500)400
 <p>前進は、どのような状況でも操作できます。前進したのちの、後進は、一度 360の初期値をおくったあとに、後進が有効になります。　</p>
 </div>
 <p>キャリブレーションの終了は、<span class="keys"><kbd>CTRL</kbd><span>+</span><kbd>c</kbd></span>です。いったん、キャリブレーションを終了し、調整した値をconfig.pyに反映します。</p>
-<p>前後にタイヤが回る範囲を見つけ出し、config.pyに反映します。</p>
+<p>前後にタイヤが回る範囲を見つけ出し、config.pyに反映します。config.pyの値の書き直しは、nanoでおこないます。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>nano ~/mycar/config.py
 </pre></div></td></tr></table></p>
 <p><code>config.py</code></p>
