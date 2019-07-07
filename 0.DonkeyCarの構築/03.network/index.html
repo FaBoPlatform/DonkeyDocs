@@ -915,7 +915,11 @@
 <p>SDカードにイメージを焼き込みおわるったあとに、SDカードを抜いて、再度PCに挿し直すと、PCでSDカードが認識されます。</p>
 <p>Wifiの設定は、前手順で作成したSDカードに、wpa_supplicant.confをコピーし、接続先のSSIDとPasswordを入力してください。</p>
 <p>DonkeyCarの初回起動時にSDカードにある<code>wpa_supplicant.conf</code>が自動的に<code>/etc/wpa_supplicant/wpa_supplicant.conf</code>へコピーされ、指定したWifiネットワークに接続されます。</p>
+<hr>
+
 <h2 id="wpa_supplicant">wpa_supplicant</h2>
+<hr>
+
 <p><a href="https://faboplatform.github.io/DonkeyDocs/0.DonkeyCarの構築/wpa_supplicant.conf" download>wpa_supplicant.conf</a>
 をdownloadし、SDカードにコピーし、<code>wpa_supplicant.conf</code>の値を書き直します。</p>
 <p><img alt="" src="../img/wifi001.png" /></p>
@@ -959,9 +963,17 @@ network={
 <p class="admonition-title">5GHz</p>
 <p>RaspPi3は、5GHz帯のWifiは非対応です。2.4GHz帯のWifiのアクセスポイントを設定するようにしてください。</p>
 </div>
+<hr>
+
 <h2 id="sddonekycar">SDカードをDonekyCarに挿入</h2>
+<hr>
+
 <p>SDカードをDonkeyCarのRaspPi3に挿入し、電源をOnにします。</p>
+<hr>
+
 <h2 id="osx">接続先の確認(OSX)</h2>
+<hr>
+
 <p>DonkeyCarと同一ネットワークに接続しているOSXより、下記コマンドで接続を試みます。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>ssh pi@donkeypi.local
 </pre></div></td></tr></table></p>
@@ -990,9 +1002,17 @@ network={
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>ifconfigf -a
 </pre></div></td></tr></table></p>
 <p>で表示されるWLAN0にIPアドレスが表示されます。</p>
+<hr>
+
 <h2 id="windows">接続先の確認(Windows)</h2>
+<hr>
+
 <p>RaspberryPi3をHDMIケーブルでDisplayに接続します。起動画面の最後でIPアドレスが表示されれば、ネットワークに接続成功です。</p>
+<hr>
+
 <h2 id="wpa_supplicant_1">wpa_supplicantの修正</h2>
+<hr>
+
 <p>接続に失敗した場合は、RaspPi3内の<code>/etc/wpa_supplicant/wpa_supplicant.conf</code> を修正することで、接続先の変更が可能です。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd  /etc/wpa_supplicant/
