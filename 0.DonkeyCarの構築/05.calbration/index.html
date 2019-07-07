@@ -928,8 +928,8 @@
 最初に、ESCの初期化処理をおこないます。初期化の値は、360です。</p>
 <p>モーターの制御は、channel 1のPWM0でおこないます。</p>
 <p>コマンド</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_gd0y42v4hzncawf checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_gd0y42v4hzncawf-panel role=tab><label for=tab-group-1-0_gd0y42v4hzncawf class=code-tab-label data-lang id=tab-group-1-0_gd0y42v4hzncawf-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_gd0y42v4hzncawf-panel aria-labelledby=tab-group-1-0_gd0y42v4hzncawf-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkey calibrate --channel 0
-</pre></div></td></tr></table></div><input name=tab-group-1 type=radio id=tab-group-1-1_26itwdq7h4klu12 class=code-tab data-lang aria-controls=tab-group-1-1_26itwdq7h4klu12-panel role=tab><label for=tab-group-1-1_26itwdq7h4klu12 class=code-tab-label data-lang id=tab-group-1-1_26itwdq7h4klu12-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_26itwdq7h4klu12-panel aria-labelledby=tab-group-1-1_26itwdq7h4klu12-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_00awm47vixcp9lq checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_00awm47vixcp9lq-panel role=tab><label for=tab-group-1-0_00awm47vixcp9lq class=code-tab-label data-lang id=tab-group-1-0_00awm47vixcp9lq-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_00awm47vixcp9lq-panel aria-labelledby=tab-group-1-0_00awm47vixcp9lq-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkey calibrate --channel 0
+</pre></div></td></tr></table></div><input name=tab-group-1 type=radio id=tab-group-1-1_546rqf90zhzvrd3 class=code-tab data-lang aria-controls=tab-group-1-1_546rqf90zhzvrd3-panel role=tab><label for=tab-group-1-1_546rqf90zhzvrd3 class=code-tab-label data-lang id=tab-group-1-1_546rqf90zhzvrd3-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_546rqf90zhzvrd3-panel aria-labelledby=tab-group-1-1_546rqf90zhzvrd3-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
 3</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkey calibrate --channel 0
 using donkey version: 2.5.8 ...
@@ -937,7 +937,7 @@ Enter a PWM setting to test(0-1500)360
 </pre></div></td></tr></table></div></div>
 
 <p>この状態で、DonkeyCarの電源をOnにします。「ピィ・ピィーー」と音がなります。これで初期化設定です。</p>
-<p>初期値の360は、モーターが回らない状態です。360よりも大きい値にすると前進し、360より小さい値を入れると行進します(行進時は、)</p>
+<p>初期値の360は、モーターが回らない状態です。360よりも大きい値にすると前進し、360より小さい値を入れると行進します(行進時は、初期値である360に2-3回戻すことで、有効になります。例) 360-&gt;360-&gt;360-&gt;320)</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
 3
@@ -961,6 +961,28 @@ THROTTLE_FORWARD_PWM = 400
 THROTTLE_STOPPED_PWM = 360
 THROTTLE_REVERSE_PWM = 310
 </pre></div></td></tr></table></p>
+<p>nanoの操作方法</p>
+<table>
+<thead>
+<tr>
+<th align="left">操作</th>
+<th align="left">コマンド</th>
+<th align="left">メモ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">保存</td>
+<td align="left"><span class="keys"><kbd>CTRL</kbd><span>+</span><kbd>o</kbd></span></td>
+<td align="left">コマンド実行後 <span class="keys"><kbd>Enter</kbd></span>で保存をします。</td>
+</tr>
+<tr>
+<td align="left">終了</td>
+<td align="left"><span class="keys"><kbd>CTRL</kbd><span>+</span><kbd>x</kbd></span></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
 <div class="admonition warning">
 <p class="admonition-title">初期値</p>
 <p>PWMで信号を発信中にRCカー本体の電源をONにすると、そのPWM値が初期値として登録される。例えば、donkey calibrate --channel 0 で600を入力中に、電源をOnした場合、600が中央値になる。中央値がずれた場合は、donkey calibrate --channel 0 で、360の値を入力し、電源をOnにし、360を中央値に設定し直す。<a href="http://www.redcatracing.com/manuals/HW-WP-1040-Brushed.pdf">ESCのDatasheet(Hobbywing QuicRun 1040)</a></p>
