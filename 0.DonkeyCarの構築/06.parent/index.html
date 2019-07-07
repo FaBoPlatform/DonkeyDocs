@@ -294,14 +294,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="教師データの圧縮" class="md-nav__link">
+  <a href="#_2" title="データの保存" class="md-nav__link">
+    データの保存
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="教師データの圧縮" class="md-nav__link">
     教師データの圧縮
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="データの転送" class="md-nav__link">
+  <a href="#_4" title="データの転送" class="md-nav__link">
     データの転送
   </a>
   
@@ -862,14 +869,21 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" title="教師データの圧縮" class="md-nav__link">
+  <a href="#_2" title="データの保存" class="md-nav__link">
+    データの保存
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" title="教師データの圧縮" class="md-nav__link">
     教師データの圧縮
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_3" title="データの転送" class="md-nav__link">
+  <a href="#_4" title="データの転送" class="md-nav__link">
     データの転送
   </a>
   
@@ -898,7 +912,11 @@
 <p class="admonition-title">注意点</p>
 <p>本ドキュメントはDonkeyCar 2.5.8に対応しています。</p>
 </div>
+<hr>
+
 <h2 id="joystick">Joystickの接続</h2>
+<hr>
+
 <p>JoystickをDonkeyCarに接続します。Joystickの裏側の蓋を外すと、USBドングルが入っているので、DonkeyCarのRaspPi3のUSBに差し込みます。</p>
 <p><img alt="" src="../img/joystick001.png" /></p>
 <p><img alt="" src="../img/joystick002.png" /></p>
@@ -907,13 +925,25 @@
 <p class="admonition-title">Joystickは省電力モードにすぐ入ります</p>
 <p>Joystickをいじっていない時間が長いと、Joystickは省電力モードにはいります。復活させるには、<code>start</code>を押し、<code>vibration</code>ボタンで電源のOn/Offを確認します。他のボタンにはコマンドが割り振られているために押さないようにしてください。</p>
 </div>
+<hr>
+
 <h2 id="donkeycar">DonkeyCarの起動</h2>
-<p>DonkeyCarを起動します。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
-2</pre></div></td><td class=code><div class=codehilite><pre><span></span>$ <span class=nb>cd</span> ~/mycar
-$ python manage.py drive --js
+<hr>
+
+<p><code>~/mycar</code>フォルダに移動します。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd ~/mycar
 </pre></div></td></tr></table></p>
-<p>教師データは、<code>~/mycar/dara</code>以下に保存されます。</p>
+<p>DonkeyCarを起動します。<code>--js</code>をつけると、Joystickが有効になります。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>python manage.py drive --js
+</pre></div></td></tr></table></p>
+<p>早速、DonkeyCarのテスト走行を行いましょう!!
+走行の終了は、<span class="keys"><kbd>CTRL</kbd><span>+</span><kbd>c</kbd></span>で、終了します。</p>
+<hr>
+
+<h2 id="_2">データの保存</h2>
+<hr>
+
+<p>データは、前進・行進している間、自動保存されます。保存先は、<code>~/mycar/dara</code>になります。フォルダが生成されるタイミングは、<code>python manage.py drive --js</code>を実行したタイミングで、毎回作成されます。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
 3</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd ~/mycar/data
@@ -925,21 +955,29 @@ tub_01_19-01-26
 <p class="admonition-title">フォルダのできるタイミング</p>
 <p>tubフォルダができるタイミングは、<code>python manage.py drive --js</code>を実行したタイミングです。</p>
 </div>
-<h2 id="_2">教師データの圧縮</h2>
+<hr>
+
+<h2 id="_3">教師データの圧縮</h2>
+<hr>
+
 <p>データを圧縮し、1つのファイル(ZIP形式)にしてPCに転送します。</p>
 <p>RaspberryPi3にZIPをインストールします。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo apt-get install zip
 </pre></div></td></tr></table></p>
 <p>ZIPで学習データとして使いたい走行のフォルダを圧縮します。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
-2</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd ~/mycar/data
-zip -r datas.zip tub_01_19-01-26
-</pre></div></td></tr></table></p>
+<div class=md-fenced-code-tabs id=tab-tab-group-4><input name=tab-group-4 type=radio id=tab-group-4-0_fxszquqhakl78kz checked=checked class=code-tab data-lang aria-controls=tab-group-4-0_fxszquqhakl78kz-panel role=tab><label for=tab-group-4-0_fxszquqhakl78kz class=code-tab-label data-lang id=tab-group-4-0_fxszquqhakl78kz-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-4-0_fxszquqhakl78kz-panel aria-labelledby=tab-group-4-0_fxszquqhakl78kz-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd ~/mycar/data
+</pre></div></td></tr></table></div><input name=tab-group-4 type=radio id=tab-group-4-1_tk9o13gajj05ne0 class=code-tab data-lang aria-controls=tab-group-4-1_tk9o13gajj05ne0-panel role=tab><label for=tab-group-4-1_tk9o13gajj05ne0 class=code-tab-label data-lang id=tab-group-4-1_tk9o13gajj05ne0-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-4-1_tk9o13gajj05ne0-panel aria-labelledby=tab-group-4-1_tk9o13gajj05ne0-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>zip -r datas.zip tub_01_19-01-26
+</pre></div></td></tr></table></div></div>
+
 <div class="admonition info">
 <p class="admonition-title">学習に必要なデータ・セット数</p>
 <p>学習に必要なデータセット数は、5000〜2万データ・セットぐらいになります。</p>
 </div>
-<h2 id="_3">データの転送</h2>
+<hr>
+
+<h2 id="_4">データの転送</h2>
+<hr>
+
 <p><img alt="" src="../img/sftp001.png" /></p>
 <p><a href="https://cyberduck.io/">Cyberduck</a> をインストールします。</p>
 <p><img alt="" src="../img/duck001.png" /></p>
@@ -947,6 +985,7 @@ zip -r datas.zip tub_01_19-01-26
 <p><img alt="" src="../img/duck003.png" /></p>
 <p><img alt="" src="../img/duck004.png" /></p>
 <p>RaspberryPi3からPCに、datas.zipを転送します。</p>
+<p>s</p>
                 
                   
                 
