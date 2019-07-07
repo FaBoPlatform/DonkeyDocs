@@ -928,8 +928,8 @@
 最初に、ESCの初期化処理をおこないます。初期化の値は、360です。</p>
 <p>モーターの制御は、channel 1のPWM0でおこないます。</p>
 <p>コマンド</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_2hgxgkglhw9qv8n checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_2hgxgkglhw9qv8n-panel role=tab><label for=tab-group-1-0_2hgxgkglhw9qv8n class=code-tab-label data-lang id=tab-group-1-0_2hgxgkglhw9qv8n-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_2hgxgkglhw9qv8n-panel aria-labelledby=tab-group-1-0_2hgxgkglhw9qv8n-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkey calibrate --channel 0
-</pre></div></td></tr></table></div><input name=tab-group-1 type=radio id=tab-group-1-1_66wp6eli0q5la2a class=code-tab data-lang aria-controls=tab-group-1-1_66wp6eli0q5la2a-panel role=tab><label for=tab-group-1-1_66wp6eli0q5la2a class=code-tab-label data-lang id=tab-group-1-1_66wp6eli0q5la2a-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_66wp6eli0q5la2a-panel aria-labelledby=tab-group-1-1_66wp6eli0q5la2a-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+<div class=md-fenced-code-tabs id=tab-tab-group-1><input name=tab-group-1 type=radio id=tab-group-1-0_gd0y42v4hzncawf checked=checked class=code-tab data-lang aria-controls=tab-group-1-0_gd0y42v4hzncawf-panel role=tab><label for=tab-group-1-0_gd0y42v4hzncawf class=code-tab-label data-lang id=tab-group-1-0_gd0y42v4hzncawf-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-0_gd0y42v4hzncawf-panel aria-labelledby=tab-group-1-0_gd0y42v4hzncawf-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkey calibrate --channel 0
+</pre></div></td></tr></table></div><input name=tab-group-1 type=radio id=tab-group-1-1_26itwdq7h4klu12 class=code-tab data-lang aria-controls=tab-group-1-1_26itwdq7h4klu12-panel role=tab><label for=tab-group-1-1_26itwdq7h4klu12 class=code-tab-label data-lang id=tab-group-1-1_26itwdq7h4klu12-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-1-1_26itwdq7h4klu12-panel aria-labelledby=tab-group-1-1_26itwdq7h4klu12-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
 3</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkey calibrate --channel 0
 using donkey version: 2.5.8 ...
@@ -937,6 +937,7 @@ Enter a PWM setting to test(0-1500)360
 </pre></div></td></tr></table></div></div>
 
 <p>この状態で、DonkeyCarの電源をOnにします。「ピィ・ピィーー」と音がなります。これで初期化設定です。</p>
+<p>初期値の360は、モーターが回らない状態です。360よりも大きい値にすると前進し、360より小さい値を入れると行進します(行進時は、)</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
 3
@@ -945,6 +946,7 @@ using donkey version: 2.5.8 ...
 Enter a PWM setting to test(0-1500)360
 Enter a PWM setting to test(0-1500)400
 </pre></div></td></tr></table></p>
+<p>キャリブレーションの終了は、<span class="keys"><kbd>CTRL</kbd><span>+</span><kbd>c</kbd></span>です。いったん、キャリブレーションを終了し、調整した値をconfig.pyに反映します。</p>
 <p>前後にタイヤが回る範囲を見つけ出し、config.pyに反映します。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>nano ~/mycar/config.py
 </pre></div></td></tr></table></p>
