@@ -1014,13 +1014,16 @@
 2
 3
 4
-5</pre></div></td><td class=code><div class=codehilite><pre><span></span>#THROTTLE
-THROTTLE_CHANNEL = 0
-THROTTLE_FORWARD_PWM = 450
-THROTTLE_STOPPED_PWM = 370
-THROTTLE_REVERSE_PWM = 320
+5
+6</pre></div></td><td class=code><div class=codehilite><pre><span></span># #CAMERA
+CAMERA_TYPE = &quot;PICAM&quot;   # (PICAM|WEBCAM|CVCAM|CSIC|V4L|MOCK)
+IMAGE_W = 160
+IMAGE_H = 120
+IMAGE_DEPTH = 3         # default RGB=3, make 1 for mono
+# CAMERA_FRAMERATE = DRIVE_LOOP_HZ
 </pre></div></td></tr></table></p>
 <h2 id="_1">カメラで発生するエラー</h2>
+<p>PiCAMERAが認識できてない場合は、下記のようなエラーが発生します。PiCameraとRaspberryPi3間のケーブルがねじれるために、断線をおこすことが多いようです。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
  2
  3
