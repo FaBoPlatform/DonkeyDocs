@@ -1036,19 +1036,87 @@
 <hr>
 
 <p>RaspberryPi側にログイン。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class=code><div class=codehilite><pre><span></span>python manage.py drive --model=~/mycar/models/mypilot
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41</pre></div></td><td class=code><div class=codehilite><pre><span></span>python manage.py drive --model ~/mycar/models/mypilot.h5
 ...
 ...
 ...
-You can now go to http://192.168.0.101:8887 to drive your car.
-/home/pi/env/lib/python3.5/site-packages/picamera/encoders.py:544: PiCameraResolutionRounded: frame size rounded up from 160x120 to 160x128
+Yusing donkey v3.0.2 ...
+loading config file: /home/pi/mycar/config.py
+loading personal config over-rides
+
+config loaded
+cfg.CAMERA_TYPE PICAM
+PiCamera loaded.. .warming camera
+Adding part PiCamera.
+Starting Donkey Server...
+Adding part LocalWebController.
+Adding part ThrottleFilter.
+Adding part PilotCondition.
+Adding part RecordTracker.
+&quot;get_model_by_type&quot; model Type is: linear
+loading model /home/pi/mycar/models/mypilot.h5
+finished loading in 12.664790868759155 sec.
+Adding part FileWatcher.
+Adding part FileWatcher.
+Adding part DelayedTrigger.
+Adding part TriggeredCallback.
+Adding part KerasLinear.
+Adding part DriveMode.
+Adding part AiLaunch.
+Adding part AiRunCondition.
+Init ESC
+Adding part PWMSteering.
+Adding part PWMThrottle.
+Tub does NOT exist. Creating new tub...
+New tub created at: /home/pi/mycar/data/tub_2_19-07-16
+Adding part TubWriter.
+You can now go to &lt;your pi ip address&gt;:8887 to drive your car.
+Starting vehicle...
+8887
+/usr/lib/python3/dist-packages/picamera/encoders.py:544: PiCameraResolutionRounded: frame size rounded up from 160x120 to 160x128
   width, height, fwidth, fheight)))
+WARNING: Logging before flag parsing goes to stderr.
+W0716 10:51:58.391323 1502708848 web.py:2246] 404 GET /favicon.ico (10.104.77.70) 11.61ms
 </pre></div></td></tr></table></p>
 <p>起動ログに、Web Consoleの起動しているサーバのアドレスとポートが出てくるので、Web Browserで接続します。</p>
 <p>Web画面のmodel &amp; pilotから、local pilotを選ぶ。</p>
