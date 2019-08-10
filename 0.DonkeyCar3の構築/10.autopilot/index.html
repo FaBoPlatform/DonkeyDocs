@@ -1035,11 +1035,21 @@
 <h2 id="donkeycarraspi3">学習済みモデルでDonkeyCarを動かす(RasPi3)</h2>
 <hr>
 
-<p>クラウドで学習したモデルタイプにRaspberryPi側も合せます。</p>
+<p>クラウドで学習したモデルタイプにRaspberryPi側も合せます。myconfig.pyのDEFAULT_MODEL_TYPEを有効にし、値を'categorical'に設定します。<code>DEFAULT_MODEL_TYPE = 'categorical'</code></p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>nano ~/mycar/myconfig.py
 </pre></div></td></tr></table></p>
 <p>myconfig.py</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>DEFAULT_MODEL_TYPE=&quot;categorical&quot;
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class=code><div class=codehilite><pre><span></span># #TRAINING
+# #The DEFAULT_MODEL_TYPE will choose which model will be created at training time. This chooses
+# #between different neural network designs. You can override this setting by passing the command
+# #line parameter --type to the python manage.py train and drive commands.
+DEFAULT_MODEL_TYPE = &#39;categorical&#39;   #(linear|categorical|rnn|imu|behavior|3d|localizer|
+latent)
 </pre></div></td></tr></table></p>
 <p>RaspberryPi側にログイン。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
