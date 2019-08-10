@@ -1137,13 +1137,19 @@
 <h2 id="_4">データの転送</h2>
 <hr>
 
-<p><img alt="" src="../img/sftp001.png" /></p>
-<p><a href="https://cyberduck.io/">Cyberduck</a> をインストールします。</p>
-<p><img alt="" src="../img/duck001.png" /></p>
+<p>Secure Shellを再起動(ChromeのReload)し、ログイン画面に戻ります。今度は、SFTPを選択し、SFTPでDonkeyCarに接続します。</p>
+<p><img alt="" src="../img/sftp000.png" /></p>
+<p>data.zipのあるフォルダに移動します。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd ~/mycar/data
+ls
+</pre></div></td></tr></table></p>
 <p><img alt="" src="../img/duck002.png" /></p>
+<p>datas.zipをgetします。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>get datas.zip
+</pre></div></td></tr></table></p>
 <p><img alt="" src="../img/duck003.png" /></p>
-<p><img alt="" src="../img/duck004.png" /></p>
-<p>dataフォルダを開き、フォルダのdata.zipを、RaspberryPi3からPCに転送します。</p>
+<p>これで、datas.zipがPCに転送されます。</p>
                 
                   
                 
