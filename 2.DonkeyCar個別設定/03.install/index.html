@@ -564,6 +564,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../03.install3_0_2/" title="DonkeyCarのインストール(3.0.2)" class="md-nav__link">
+      DonkeyCarのインストール(3.0.2)
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../04.Tools/" title="使用ツール" class="md-nav__link">
       使用ツール
     </a>
@@ -1091,7 +1103,8 @@ tmpfs              89664       0     89664   0% /run/user/1000
 <span class=mf>2.5</span><span class=o>.</span><span class=mi>8</span>
 </pre></div></td></tr></table></p>
 <h2 id="tensorflowupdate">TensorFlowのUpdate</h2>
-<p>Google Colabでの学習に対応するために、RaspberryPi側も、TensorFlow 2.0.0-Alpha0にUpdateします。</p>
+<p>Google ColabでのCUDAのVersionに合わせるために、RaspberryPi側も、TensorFlow 2.0.0-Beta1にUpdateします。</p>
+<p>Googleの公式版のTensorFlowレポジトリのRaspberryPi3対応版は、最新版に対応していないために、<a href="https://github.com/PINTO0309">PINTO0309</a>さんによりBuildをかけて公開されている2.0.0 Beta1をインストールして使用します。</p>
 <table>
 <thead>
 <tr>
@@ -1102,20 +1115,20 @@ tmpfs              89664       0     89664   0% /run/user/1000
 <tbody>
 <tr>
 <td align="left">TensorFlow</td>
-<td align="left">2.0.0-Alpha0</td>
+<td align="left">2.0.0-Beta1</td>
 </tr>
 </tbody>
 </table>
-<p>TensorFlow 2.0.0-Alpha0をwgetコマンドで取得します。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/tensorflow-2.0.0a0-cp35-cp35m-linux_armv7l.whl
+<p>TensorFlow 2.0.0-Beta1をwgetコマンドで取得します。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>wget https://github.com/PINTO0309/Tensorflow-bin/raw/master/tensorflow-2.0.0b1-cp37-cp37m-linux_armv7l.whl
 </pre></div></td></tr></table></p>
-<p>TensorFlow 2.0.0-Alpha0をインストールします。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>pip install tensorflow-2.0.0a0-cp35-cp35m-linux_armv7l.whl
+<p>TensorFlow 2.0.0-Beta1をインストールします。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>pip install tensorflow-2.0.0b1-cp37-cp37m-linux_armv7l.whl
 </pre></div></td></tr></table></p>
 <p>pip listでインストールしたVersionを確認します。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2</pre></div></td><td class=code><div class=codehilite><pre><span></span>pip list | grep -i -e keras -e tensorflow     
-tensorflow          2.0.0-Alpha0
+tensorflow          2.0.0-Beta1
 </pre></div></td></tr></table></p>
                 
                   
@@ -1152,13 +1165,13 @@ tensorflow          2.0.0-Alpha0
           </a>
         
         
-          <a href="../04.Tools/" title="使用ツール" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../03.install3_0_2/" title="DonkeyCarのインストール(3.0.2)" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   次
                 </span>
-                使用ツール
+                DonkeyCarのインストール(3.0.2)
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
