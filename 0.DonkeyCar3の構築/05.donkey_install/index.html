@@ -268,7 +268,21 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#raspberry-pi" title="Raspberry Piのアップデート" class="md-nav__link">
+  <a href="#raspberry-pi" title="Raspberry Piのイメージ" class="md-nav__link">
+    Raspberry Piのイメージ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="焼き込み" class="md-nav__link">
+    焼き込み
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raspberry-pi_1" title="Raspberry Piのアップデート" class="md-nav__link">
     Raspberry Piのアップデート
   </a>
   
@@ -317,7 +331,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" title="依存関係があるパッケージのインストール" class="md-nav__link">
+  <a href="#_2" title="依存関係があるパッケージのインストール" class="md-nav__link">
     依存関係があるパッケージのインストール
   </a>
   
@@ -331,14 +345,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" title="必要なパッケージのインストール" class="md-nav__link">
+  <a href="#_3" title="必要なパッケージのインストール" class="md-nav__link">
     必要なパッケージのインストール
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" title="環境の構築" class="md-nav__link">
+  <a href="#_4" title="環境の構築" class="md-nav__link">
     環境の構築
   </a>
   
@@ -1123,7 +1137,21 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#raspberry-pi" title="Raspberry Piのアップデート" class="md-nav__link">
+  <a href="#raspberry-pi" title="Raspberry Piのイメージ" class="md-nav__link">
+    Raspberry Piのイメージ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" title="焼き込み" class="md-nav__link">
+    焼き込み
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#raspberry-pi_1" title="Raspberry Piのアップデート" class="md-nav__link">
     Raspberry Piのアップデート
   </a>
   
@@ -1172,7 +1200,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_1" title="依存関係があるパッケージのインストール" class="md-nav__link">
+  <a href="#_2" title="依存関係があるパッケージのインストール" class="md-nav__link">
     依存関係があるパッケージのインストール
   </a>
   
@@ -1186,14 +1214,14 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#_2" title="必要なパッケージのインストール" class="md-nav__link">
+  <a href="#_3" title="必要なパッケージのインストール" class="md-nav__link">
     必要なパッケージのインストール
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" title="環境の構築" class="md-nav__link">
+  <a href="#_4" title="環境の構築" class="md-nav__link">
     環境の構築
   </a>
   
@@ -1266,7 +1294,30 @@
 <p>参考: <a href="https://docs.donkeycar.com/guide/install_software/">DonkeyCar公式ページ</a></p>
 <p>最新のDonkeyCarをインストールします。
 公式サイトに沿ってインストールしていきます。</p>
-<h2 id="raspberry-pi">Raspberry Piのアップデート</h2>
+<h2 id="raspberry-pi">Raspberry Piのイメージ</h2>
+<hr>
+
+<p><a href="https://www.raspberrypi.org/downloads">Raspberry Piのイメージ</a>をダウンロードします。  </p>
+<p>通信が遅い場合は、ミラーサイトからダウンロードします。</p>
+<p><a href="http://ftp.jaist.ac.jp/pub/raspberrypi/raspbian_lite/images/raspbian_lite-2019-07-12/">Mirrorサイト</a></p>
+<p>Raspbian Buster Lite(20019-07-12)を使用します。</p>
+<p><img alt="" src="../img/et002.png" /></p>
+<h2 id="_1">焼き込み</h2>
+<hr>
+
+<p>焼き込みには、Etcherを使い焼き込みます。
+<a href="https://www.balena.io/etcher/">https://www.balena.io/etcher/</a></p>
+<p>ダウンロードしたをRaspberry PiのイメージをmicroSDカードに焼き込みます。</p>
+<div class="admonition warning">
+<p class="admonition-title">注意点</p>
+<p>必ずデータの入っていないmicroSDカードを使用してください。  </p>
+</div>
+<p><img alt="" src="../img/et001.png" /></p>
+<p>ダウンロードしたイメージとmicroSDカードを選択します。<br />
+<code>Flash</code>ボタンを押すことで焼き込むことができ、完了すれば焼き込み終了です。</p>
+<p><img alt="" src="../img/et003.png" /></p>
+<p>SDカードにイメージを焼き込み終わったあとに、SDカードを抜いて、再度PCに挿し直すと、PCでSDカードが認識されます。</p>
+<h2 id="raspberry-pi_1">Raspberry Piのアップデート</h2>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo apt-get update
 sudo apt-get upgrade
@@ -1288,13 +1339,13 @@ sudo apt-get upgrade
 <h2 id="hostname">Hostnameの修正</h2>
 <p>Defaultでは、Macユーザは <code>ssh pi@raspberrypi.local</code> でRaspberryPiに接続できます。全員同じ名前になると、区別がつかないので、<code>hostname</code>, <code>hosts</code> の 2箇所のhost名を書き直し、独自の名前で呼び出せるようにしておきます。今回は、<code>raspberrypi</code>から<code>donkeypi</code>に書き直します。</p>
 <h3 id="hostname_1">hostnameの修正</h3>
-<div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_d5jfvhtkmqfhslq checked=checked class=code-tab data-lang aria-controls=tab-group-2-0_d5jfvhtkmqfhslq-panel role=tab><label for=tab-group-2-0_d5jfvhtkmqfhslq class=code-tab-label data-lang id=tab-group-2-0_d5jfvhtkmqfhslq-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-0_d5jfvhtkmqfhslq-panel aria-labelledby=tab-group-2-0_d5jfvhtkmqfhslq-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo vi /etc/hostname
-</pre></div></td></tr></table></div><input name=tab-group-2 type=radio id=tab-group-2-1_oa2it7bu0rvr675 class=code-tab data-lang aria-controls=tab-group-2-1_oa2it7bu0rvr675-panel role=tab><label for=tab-group-2-1_oa2it7bu0rvr675 class=code-tab-label data-lang id=tab-group-2-1_oa2it7bu0rvr675-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-1_oa2it7bu0rvr675-panel aria-labelledby=tab-group-2-1_oa2it7bu0rvr675-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkeypi
+<div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_ythled21l54qk28 checked=checked class=code-tab data-lang aria-controls=tab-group-2-0_ythled21l54qk28-panel role=tab><label for=tab-group-2-0_ythled21l54qk28 class=code-tab-label data-lang id=tab-group-2-0_ythled21l54qk28-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-0_ythled21l54qk28-panel aria-labelledby=tab-group-2-0_ythled21l54qk28-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo vi /etc/hostname
+</pre></div></td></tr></table></div><input name=tab-group-2 type=radio id=tab-group-2-1_lk6v8o9db6qkzsg class=code-tab data-lang aria-controls=tab-group-2-1_lk6v8o9db6qkzsg-panel role=tab><label for=tab-group-2-1_lk6v8o9db6qkzsg class=code-tab-label data-lang id=tab-group-2-1_lk6v8o9db6qkzsg-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-1_lk6v8o9db6qkzsg-panel aria-labelledby=tab-group-2-1_lk6v8o9db6qkzsg-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkeypi
 </pre></div></td></tr></table></div></div>
 
 <h3 id="hosts">hostsの修正</h3>
-<div class=md-fenced-code-tabs id=tab-tab-group-3><input name=tab-group-3 type=radio id=tab-group-3-0_5ct61h403tcmo7u checked=checked class=code-tab data-lang aria-controls=tab-group-3-0_5ct61h403tcmo7u-panel role=tab><label for=tab-group-3-0_5ct61h403tcmo7u class=code-tab-label data-lang id=tab-group-3-0_5ct61h403tcmo7u-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-0_5ct61h403tcmo7u-panel aria-labelledby=tab-group-3-0_5ct61h403tcmo7u-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo vi /etc/hosts
-</pre></div></td></tr></table></div><input name=tab-group-3 type=radio id=tab-group-3-1_yg8hnjyj48i3wk3 class=code-tab data-lang aria-controls=tab-group-3-1_yg8hnjyj48i3wk3-panel role=tab><label for=tab-group-3-1_yg8hnjyj48i3wk3 class=code-tab-label data-lang id=tab-group-3-1_yg8hnjyj48i3wk3-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-1_yg8hnjyj48i3wk3-panel aria-labelledby=tab-group-3-1_yg8hnjyj48i3wk3-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+<div class=md-fenced-code-tabs id=tab-tab-group-3><input name=tab-group-3 type=radio id=tab-group-3-0_csk3x0l9jne7w65 checked=checked class=code-tab data-lang aria-controls=tab-group-3-0_csk3x0l9jne7w65-panel role=tab><label for=tab-group-3-0_csk3x0l9jne7w65 class=code-tab-label data-lang id=tab-group-3-0_csk3x0l9jne7w65-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-0_csk3x0l9jne7w65-panel aria-labelledby=tab-group-3-0_csk3x0l9jne7w65-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo vi /etc/hosts
+</pre></div></td></tr></table></div><input name=tab-group-3 type=radio id=tab-group-3-1_piamv21b2dxl7nf class=code-tab data-lang aria-controls=tab-group-3-1_piamv21b2dxl7nf-panel role=tab><label for=tab-group-3-1_piamv21b2dxl7nf class=code-tab-label data-lang id=tab-group-3-1_piamv21b2dxl7nf-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-1_piamv21b2dxl7nf-panel aria-labelledby=tab-group-3-1_piamv21b2dxl7nf-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
 3
 4
@@ -1312,16 +1363,16 @@ ff02::2         ip6-allrouters
 </pre></div></td></tr></table></div></div>
 
 <h2 id="donkeycar_1">DonkeyCarのインストール</h2>
-<h3 id="_1">依存関係があるパッケージのインストール</h3>
+<h3 id="_2">依存関係があるパッケージのインストール</h3>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo apt-get install build-essential python3 python3-dev python3-pip python3-virtualenv python3-numpy python3-picamera python3-pandas python3-rpi.gpio i2c-tools avahi-utils joystick libopenjp2-7-dev libtiff5-dev gfortran libatlas-base-dev libopenblas-dev libhdf5-serial-dev git
 </pre></div></td></tr></table></p>
 <h3 id="opencv">OpenCV関連のインストール</h3>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo apt-get install libilmbase-dev libopenexr-dev libgstreamer1.0-dev libjasper-dev libwebp-dev libatlas-base-dev libavcodec-dev libavformat-dev libswscale-dev libqtgui4 libqt4-test
 </pre></div></td></tr></table></p>
-<h3 id="_2">必要なパッケージのインストール</h3>
+<h3 id="_3">必要なパッケージのインストール</h3>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo apt-get install zip
 </pre></div></td></tr></table></p>
-<h3 id="_3">環境の構築</h3>
+<h3 id="_4">環境の構築</h3>
 <p>python3、pipが使用できる仮想環境を構築します。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
