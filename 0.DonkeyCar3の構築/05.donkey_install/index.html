@@ -36,7 +36,7 @@
     
     
       
-        <title>DonkeyCarのインストール（DonkeyCar 3.1 + TF 2.0.0 RC0の場合) - FaBo DonkeyCar Docs</title>
+        <title>DonkeyCarのインストール - FaBo DonkeyCar Docs</title>
       
     
     
@@ -76,7 +76,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#donkeycardonkeycar-31-tf-200-rc0" tabindex="1" class="md-skip">
+      <a href="#donkeycar" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -102,7 +102,7 @@
                 FaBo DonkeyCar Docs
               </span>
               <span class="md-header-nav__topic">
-                DonkeyCarのインストール（DonkeyCar 3.1 + TF 2.0.0 RC0の場合)
+                DonkeyCarのインストール
               </span>
             
           
@@ -250,11 +250,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        DonkeyCarのインストール（DonkeyCar 3.1 + TF 2.0.0 RC0の場合)
+        DonkeyCarのインストール
       </label>
     
-    <a href="./" title="DonkeyCarのインストール（DonkeyCar 3.1 + TF 2.0.0 RC0の場合)" class="md-nav__link md-nav__link--active">
-      DonkeyCarのインストール（DonkeyCar 3.1 + TF 2.0.0 RC0の場合)
+    <a href="./" title="DonkeyCarのインストール" class="md-nav__link md-nav__link--active">
+      DonkeyCarのインストール
     </a>
     
       
@@ -309,7 +309,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#donkeycar" title="DonkeyCarのインストール" class="md-nav__link">
+  <a href="#donkeycar_1" title="DonkeyCarのインストール" class="md-nav__link">
     DonkeyCarのインストール
   </a>
   
@@ -1164,7 +1164,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#donkeycar" title="DonkeyCarのインストール" class="md-nav__link">
+  <a href="#donkeycar_1" title="DonkeyCarのインストール" class="md-nav__link">
     DonkeyCarのインストール
   </a>
   
@@ -1262,7 +1262,7 @@
               
                 
                 
-                <h1 id="donkeycardonkeycar-31-tf-200-rc0">DonkeyCarのインストール（DonkeyCar 3.1 + TF 2.0.0 RC0の場合)</h1>
+                <h1 id="donkeycar">DonkeyCarのインストール</h1>
 <p>参考: <a href="https://docs.donkeycar.com/guide/install_software/">DonkeyCar公式ページ</a></p>
 <p>最新のDonkeyCarをインストールします。
 公式サイトに沿ってインストールしていきます。</p>
@@ -1288,13 +1288,13 @@ sudo apt-get upgrade
 <h2 id="hostname">Hostnameの修正</h2>
 <p>Defaultでは、Macユーザは <code>ssh pi@raspberrypi.local</code> でRaspberryPiに接続できます。全員同じ名前になると、区別がつかないので、<code>hostname</code>, <code>hosts</code> の 2箇所のhost名を書き直し、独自の名前で呼び出せるようにしておきます。今回は、<code>raspberrypi</code>から<code>donkeypi</code>に書き直します。</p>
 <h3 id="hostname_1">hostnameの修正</h3>
-<div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_2ura8g79tzgkiv8 checked=checked class=code-tab data-lang aria-controls=tab-group-2-0_2ura8g79tzgkiv8-panel role=tab><label for=tab-group-2-0_2ura8g79tzgkiv8 class=code-tab-label data-lang id=tab-group-2-0_2ura8g79tzgkiv8-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-0_2ura8g79tzgkiv8-panel aria-labelledby=tab-group-2-0_2ura8g79tzgkiv8-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo vi /etc/hostname
-</pre></div></td></tr></table></div><input name=tab-group-2 type=radio id=tab-group-2-1_n7fuukb0q9i67ka class=code-tab data-lang aria-controls=tab-group-2-1_n7fuukb0q9i67ka-panel role=tab><label for=tab-group-2-1_n7fuukb0q9i67ka class=code-tab-label data-lang id=tab-group-2-1_n7fuukb0q9i67ka-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-1_n7fuukb0q9i67ka-panel aria-labelledby=tab-group-2-1_n7fuukb0q9i67ka-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkeypi
+<div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_n5urbf5oky3lp4w checked=checked class=code-tab data-lang aria-controls=tab-group-2-0_n5urbf5oky3lp4w-panel role=tab><label for=tab-group-2-0_n5urbf5oky3lp4w class=code-tab-label data-lang id=tab-group-2-0_n5urbf5oky3lp4w-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-0_n5urbf5oky3lp4w-panel aria-labelledby=tab-group-2-0_n5urbf5oky3lp4w-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo vi /etc/hostname
+</pre></div></td></tr></table></div><input name=tab-group-2 type=radio id=tab-group-2-1_7kxbdwadkvcyfdw class=code-tab data-lang aria-controls=tab-group-2-1_7kxbdwadkvcyfdw-panel role=tab><label for=tab-group-2-1_7kxbdwadkvcyfdw class=code-tab-label data-lang id=tab-group-2-1_7kxbdwadkvcyfdw-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-1_7kxbdwadkvcyfdw-panel aria-labelledby=tab-group-2-1_7kxbdwadkvcyfdw-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkeypi
 </pre></div></td></tr></table></div></div>
 
 <h3 id="hosts">hostsの修正</h3>
-<div class=md-fenced-code-tabs id=tab-tab-group-3><input name=tab-group-3 type=radio id=tab-group-3-0_qt1yo3j4utcdgq0 checked=checked class=code-tab data-lang aria-controls=tab-group-3-0_qt1yo3j4utcdgq0-panel role=tab><label for=tab-group-3-0_qt1yo3j4utcdgq0 class=code-tab-label data-lang id=tab-group-3-0_qt1yo3j4utcdgq0-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-0_qt1yo3j4utcdgq0-panel aria-labelledby=tab-group-3-0_qt1yo3j4utcdgq0-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo vi /etc/hosts
-</pre></div></td></tr></table></div><input name=tab-group-3 type=radio id=tab-group-3-1_vn39e0vqb6bhu48 class=code-tab data-lang aria-controls=tab-group-3-1_vn39e0vqb6bhu48-panel role=tab><label for=tab-group-3-1_vn39e0vqb6bhu48 class=code-tab-label data-lang id=tab-group-3-1_vn39e0vqb6bhu48-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-1_vn39e0vqb6bhu48-panel aria-labelledby=tab-group-3-1_vn39e0vqb6bhu48-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+<div class=md-fenced-code-tabs id=tab-tab-group-3><input name=tab-group-3 type=radio id=tab-group-3-0_o2fii9dtd9hepap checked=checked class=code-tab data-lang aria-controls=tab-group-3-0_o2fii9dtd9hepap-panel role=tab><label for=tab-group-3-0_o2fii9dtd9hepap class=code-tab-label data-lang id=tab-group-3-0_o2fii9dtd9hepap-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-0_o2fii9dtd9hepap-panel aria-labelledby=tab-group-3-0_o2fii9dtd9hepap-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo vi /etc/hosts
+</pre></div></td></tr></table></div><input name=tab-group-3 type=radio id=tab-group-3-1_be0nagvuxjlffi8 class=code-tab data-lang aria-controls=tab-group-3-1_be0nagvuxjlffi8-panel role=tab><label for=tab-group-3-1_be0nagvuxjlffi8 class=code-tab-label data-lang id=tab-group-3-1_be0nagvuxjlffi8-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-1_be0nagvuxjlffi8-panel aria-labelledby=tab-group-3-1_be0nagvuxjlffi8-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
 3
 4
@@ -1311,7 +1311,7 @@ ff02::2         ip6-allrouters
 127.0.1.1       donkeypi
 </pre></div></td></tr></table></div></div>
 
-<h2 id="donkeycar">DonkeyCarのインストール</h2>
+<h2 id="donkeycar_1">DonkeyCarのインストール</h2>
 <h3 id="_1">依存関係があるパッケージのインストール</h3>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo apt-get install build-essential python3 python3-dev python3-pip python3-virtualenv python3-numpy python3-picamera python3-pandas python3-rpi.gpio i2c-tools avahi-utils joystick libopenjp2-7-dev libtiff5-dev gfortran libatlas-base-dev libopenblas-dev libhdf5-serial-dev git
 </pre></div></td></tr></table></p>
