@@ -1214,13 +1214,32 @@ network={
 5
 6
 7
-8</pre></div></td><td class=code><div class=codehilite><pre><span></span>country=US
+8</pre></div></td><td class=code><div class=codehilite><pre><span></span>country=JP
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
 
 network={
     ssid=&quot;your network name&quot;
     key_mgmt=NONE
+}
+</pre></div></td></tr></table></p>
+<p>ステルスモードのWifiスポットにログインする場合は、scan_ssid=1を入れます。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class=code><div class=codehilite><pre><span></span>country=JP
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+
+network={
+    ssid=&quot;your network name&quot;
+    psk=&quot;your password&quot;
+    scan_ssid=1
 }
 </pre></div></td></tr></table></p>
 <hr>
