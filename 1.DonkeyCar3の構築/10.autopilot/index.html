@@ -1091,11 +1091,11 @@
 
 <p>SFTPでRaspberryPi3側の<code>/home/pi/mycar/models</code>フォルダにアップロードします。</p>
 <p><img alt="" src="../img/sftp000.png" /></p>
-<p>学習済みモデルをアップするフォルダに移動します。`~/mycar/models/</p>
+<p>SFTPで、学習済みモデルをアップするフォルダに移動します。`~/mycar/models/</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd ~/mycar/models
 </pre></div></td></tr></table></p>
 <p><img alt="" src="../img/sftp004.png" /></p>
-<p>学習済みモデル mypilot.h5をアップロードします。</p>
+<p>SFTPで学習済みモデル mypilot.h5をアップロードします。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>put mypilot.h5
 </pre></div></td></tr></table></p>
 <p><img alt="" src="../img/sftp005.png" /></p>
@@ -1104,7 +1104,7 @@
 <h2 id="donkeycarraspi3">学習済みモデルでDonkeyCarを動かす(RasPi3)</h2>
 <hr>
 
-<p>RaspberryPi側にログインし、mycarフォルダに移動します。</p>
+<p>SSHで、RaspberryPi側にログインし、mycarフォルダに移動します。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd ~/mycar
 </pre></div></td></tr></table></p>
 <p>アップロードしたモデルを指定してDonkeyCarを指導します。</p>
@@ -1115,8 +1115,9 @@
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>ifconfig -a
 </pre></div></td></tr></table></p>
 <h2 id="_2">学習済みモデルの呼び出し自動走行</h2>
-<p>Web画面のmodel &amp; pilotから、<code>local pilot</code>を選ぶ。</p>
+<p>Web画面のmodel &amp; pilotから、<code>Local Pilot (d)</code>を選びます。</p>
 <p><img alt="" src="../img/pilot.png" /></p>
+<p>学習済みモデルでの走行を停止するには、Web画面のmodel &amp; pilotから、<code>User (d)</code>を選びます。</p>
                 
                   
                 
