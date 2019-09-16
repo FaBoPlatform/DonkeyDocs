@@ -1162,14 +1162,10 @@
 <h2 id="_3">教師データの圧縮</h2>
 <hr>
 
-<p>データを圧縮し、1つのファイル(ZIP形式)にしてPCに転送します。</p>
-<p>RaspberryPi3にZIPをインストールします。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo apt-get install zip
-</pre></div></td></tr></table></p>
 <p>ZIPで学習データとして使いたい走行のフォルダを圧縮します。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd ~/mycar/data
 </pre></div></td></tr></table></p>
-<p>ZIPコマンドでフォルダを圧縮します。</p>
+<p>ZIPコマンドでフォルダを圧縮します。<code>tub_01_19-01-26</code>の部分は、今作成した走行データの保存されているtubフォルダを指定します。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>zip -r datas.zip tub_01_19-01-26
 </pre></div></td></tr></table></p>
 <div class="admonition info">
