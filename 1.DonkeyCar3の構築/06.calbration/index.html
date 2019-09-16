@@ -1166,7 +1166,7 @@ Enter a PWM setting to test(0-1500):400
 <p>前進は、どのような状況でも操作できます。前進したのちの、後進は、一度 370の初期値をおくったあとに、後進が有効になります。　</p>
 </div>
 <p>キャリブレーションの終了は、<span class="keys"><kbd>CTRL</kbd><span>+</span><kbd>c</kbd></span>です。いったん、キャリブレーションを終了し、調整した値をconfig.pyに反映します。</p>
-<p>前後にタイヤが回る範囲を見つけ出し、config.pyに反映します。config.pyの値の書き直しは、nanoでおこないます。</p>
+<p>前後にタイヤが回る範囲を見つけ出し、qでキャリブレーションを終了し、config.pyに反映します。config.pyの値の書き直しは、nanoでおこないます。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>nano ~/mycar/myconfig.py
 </pre></div></td></tr></table></p>
 <p><code>myconfig.py</code></p>
@@ -1226,7 +1226,7 @@ THROTTLE_REVERSE_PWM = 320
 <p class="admonition-title">左右均等にするポイント</p>
 <p>左右の振れ幅を均等にしないとDonkeyCarはまっすぐ走りません。車輪が真ん中にあたる位置を見つけ出し、そこから同じ数だけ左右にずらすと左右均等になるはずです。</p>
 </div>
-<p>値が調整できたら、~/mycar/myconfig.pyの値を修正します。</p>
+<p>値が調整できたら、qでキャリブレーションを終了し、~/mycar/myconfig.pyの値を修正します。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>nano ~/mycar/myconfig.py
 </pre></div></td></tr></table></p>
 <p><code>myconfig.py</code></p>
