@@ -1143,8 +1143,8 @@ init PCA9685 on channel 0 address 0x40 bus 1
 Enter a PWM setting to test(0-1500)370
 </pre></div></td></tr></table></p>
 <p>この状態で、DonkeyCarの電源をOnにします。「ピィ・ピィーー」と音がなります。これで初期化設定です。</p>
-<p>初期値の370は、モーターが回らない状態です。370よりも大きい値にすると前進し、370より小さい値を入れると行進します(行進時は、初期値である360に2-3回戻すことで、有効になります。例) 370-&gt;370-&gt;370-&gt;320)</p>
-<p>ここでは、前進の最大値の50%-70%、行進の最大値の50%-70%ぐらいの値を探し出します。</p>
+<p>初期値の370は、モーターが回らない状態です。370よりも大きい値にすると前進し、370より小さい値を入れると行進します(後進時は、設定する値(例330)を一度入力したあとで、初期値である370に入力し、再度設定する値(例330)を入力する事で、ロックが解除され、後進が有効になります。例) 330-&gt;370-&gt;330)</p>
+<p>ここでは、前進の最大値の50%%、行進の最大値の70%ぐらいの値を探し出します。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
 3
@@ -1154,8 +1154,8 @@ Enter a PWM setting to test(0-1500)370
 using donkey v3.1.0 ...
 sombrero enabled
 init PCA9685 on channel 0 address 0x40 bus 1
-Enter a PWM setting to test(0-1500)370
-Enter a PWM setting to test(0-1500)400
+Enter a PWM setting to test(0-1500):370
+Enter a PWM setting to test(0-1500):400
 </pre></div></td></tr></table></p>
 <div class="admonition warning">
 <p class="admonition-title">初期値</p>
@@ -1197,12 +1197,17 @@ THROTTLE_REVERSE_PWM = 320
 <tr>
 <td align="left">保存</td>
 <td align="left"><span class="keys"><kbd>CTRL</kbd><span>+</span><kbd>o</kbd></span></td>
-<td align="left">コマンド実行後 <span class="keys"><kbd>Enter</kbd></span>で保存をします。</td>
+<td align="left">コマンド実行後、ファイルを保存するか聞いてくるので<span class="keys"><kbd>Enter</kbd></span>で保存をします。</td>
 </tr>
 <tr>
 <td align="left">終了</td>
 <td align="left"><span class="keys"><kbd>CTRL</kbd><span>+</span><kbd>x</kbd></span></td>
 <td align="left"></td>
+</tr>
+<tr>
+<td align="left">カーソルの移動</td>
+<td align="left">十字キーで移動します</td>
+<td align="left">注意!マウスのクリックでは移動しません。</td>
 </tr>
 </tbody>
 </table>
@@ -1215,7 +1220,8 @@ THROTTLE_REVERSE_PWM = 320
 <p>コマンド</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkey calibrate --channel 1 --bus 1
 </pre></div></td></tr></table></p>
-<p>一番右の値と、一番左の値を見つけ出してください。300-400の間ぐらいが可動範囲です。値をconfig.pyに反映します。</p>
+<p>一番右の値と、一番左の値を見つけ出してください。まず、中央値を発見し、左右均等に値を増やした、右の値と左の値を見つけ出します。200-500の間ぐらいが可動範囲です。</p>
+<p>見つけ出した値をconfig.pyに反映します。</p>
 <div class="admonition info">
 <p class="admonition-title">左右均等にするポイント</p>
 <p>左右の振れ幅を均等にしないとDonkeyCarはまっすぐ走りません。車輪が真ん中にあたる位置を見つけ出し、そこから同じ数だけ左右にずらすと左右均等になるはずです。</p>
@@ -1249,12 +1255,17 @@ STEERING_RIGHT_PWM = 310
 <tr>
 <td align="left">保存</td>
 <td align="left"><span class="keys"><kbd>CTRL</kbd><span>+</span><kbd>o</kbd></span></td>
-<td align="left">コマンド実行後 <span class="keys"><kbd>Enter</kbd></span>で保存をします。</td>
+<td align="left">コマンド実行後、ファイルを保存するか聞いてくるので<span class="keys"><kbd>Enter</kbd></span>で保存をします。</td>
 </tr>
 <tr>
 <td align="left">終了</td>
 <td align="left"><span class="keys"><kbd>CTRL</kbd><span>+</span><kbd>x</kbd></span></td>
 <td align="left"></td>
+</tr>
+<tr>
+<td align="left">カーソルの移動</td>
+<td align="left">十字キーで移動します</td>
+<td align="left">注意!マウスのクリックでは移動しません。</td>
 </tr>
 </tbody>
 </table>
