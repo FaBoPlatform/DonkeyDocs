@@ -215,8 +215,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../1.DonkeyCar3の構築/03.network/" title="Wi-Fi・SSHの設定" class="md-nav__link">
-      Wi-Fi・SSHの設定
+    <a href="../../1.DonkeyCar3の構築/03.network/" title="Wi-Fiの設定" class="md-nav__link">
+      Wi-Fiの設定
     </a>
   </li>
 
@@ -1363,13 +1363,13 @@ sudo apt-get upgrade
 <h2 id="hostname">Hostnameの修正</h2>
 <p>Defaultでは、Macユーザは <code>ssh pi@raspberrypi.local</code> でRaspberryPiに接続できます。全員同じ名前になると、区別がつかないので、<code>hostname</code>, <code>hosts</code> の 2箇所のhost名を書き直し、独自の名前で呼び出せるようにしておきます。今回は、<code>raspberrypi</code>から<code>donkeypi</code>に書き直します。</p>
 <h3 id="hostname_1">hostnameの修正</h3>
-<div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_a2tqtja22whebhj checked=checked class=code-tab data-lang aria-controls=tab-group-2-0_a2tqtja22whebhj-panel role=tab><label for=tab-group-2-0_a2tqtja22whebhj class=code-tab-label data-lang id=tab-group-2-0_a2tqtja22whebhj-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-0_a2tqtja22whebhj-panel aria-labelledby=tab-group-2-0_a2tqtja22whebhj-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo vi /etc/hostname
-</pre></div></td></tr></table></div><input name=tab-group-2 type=radio id=tab-group-2-1_lvm9wfn3qn5o0q7 class=code-tab data-lang aria-controls=tab-group-2-1_lvm9wfn3qn5o0q7-panel role=tab><label for=tab-group-2-1_lvm9wfn3qn5o0q7 class=code-tab-label data-lang id=tab-group-2-1_lvm9wfn3qn5o0q7-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-1_lvm9wfn3qn5o0q7-panel aria-labelledby=tab-group-2-1_lvm9wfn3qn5o0q7-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkeypi
+<div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_w8dz0ek1t7wfa17 checked=checked class=code-tab data-lang aria-controls=tab-group-2-0_w8dz0ek1t7wfa17-panel role=tab><label for=tab-group-2-0_w8dz0ek1t7wfa17 class=code-tab-label data-lang id=tab-group-2-0_w8dz0ek1t7wfa17-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-0_w8dz0ek1t7wfa17-panel aria-labelledby=tab-group-2-0_w8dz0ek1t7wfa17-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo vi /etc/hostname
+</pre></div></td></tr></table></div><input name=tab-group-2 type=radio id=tab-group-2-1_ex6eb1zo05mjesj class=code-tab data-lang aria-controls=tab-group-2-1_ex6eb1zo05mjesj-panel role=tab><label for=tab-group-2-1_ex6eb1zo05mjesj class=code-tab-label data-lang id=tab-group-2-1_ex6eb1zo05mjesj-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-1_ex6eb1zo05mjesj-panel aria-labelledby=tab-group-2-1_ex6eb1zo05mjesj-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkeypi
 </pre></div></td></tr></table></div></div>
 
 <h3 id="hosts">hostsの修正</h3>
-<div class=md-fenced-code-tabs id=tab-tab-group-3><input name=tab-group-3 type=radio id=tab-group-3-0_56i9p07nbyuqdsp checked=checked class=code-tab data-lang aria-controls=tab-group-3-0_56i9p07nbyuqdsp-panel role=tab><label for=tab-group-3-0_56i9p07nbyuqdsp class=code-tab-label data-lang id=tab-group-3-0_56i9p07nbyuqdsp-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-0_56i9p07nbyuqdsp-panel aria-labelledby=tab-group-3-0_56i9p07nbyuqdsp-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo vi /etc/hosts
-</pre></div></td></tr></table></div><input name=tab-group-3 type=radio id=tab-group-3-1_ya1keyzf4w2zs9f class=code-tab data-lang aria-controls=tab-group-3-1_ya1keyzf4w2zs9f-panel role=tab><label for=tab-group-3-1_ya1keyzf4w2zs9f class=code-tab-label data-lang id=tab-group-3-1_ya1keyzf4w2zs9f-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-1_ya1keyzf4w2zs9f-panel aria-labelledby=tab-group-3-1_ya1keyzf4w2zs9f-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+<div class=md-fenced-code-tabs id=tab-tab-group-3><input name=tab-group-3 type=radio id=tab-group-3-0_fccmranocsye4bs checked=checked class=code-tab data-lang aria-controls=tab-group-3-0_fccmranocsye4bs-panel role=tab><label for=tab-group-3-0_fccmranocsye4bs class=code-tab-label data-lang id=tab-group-3-0_fccmranocsye4bs-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-0_fccmranocsye4bs-panel aria-labelledby=tab-group-3-0_fccmranocsye4bs-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo vi /etc/hosts
+</pre></div></td></tr></table></div><input name=tab-group-3 type=radio id=tab-group-3-1_yh4xyp4r1z86p93 class=code-tab data-lang aria-controls=tab-group-3-1_yh4xyp4r1z86p93-panel role=tab><label for=tab-group-3-1_yh4xyp4r1z86p93 class=code-tab-label data-lang id=tab-group-3-1_yh4xyp4r1z86p93-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-1_yh4xyp4r1z86p93-panel aria-labelledby=tab-group-3-1_yh4xyp4r1z86p93-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
 3
 4
