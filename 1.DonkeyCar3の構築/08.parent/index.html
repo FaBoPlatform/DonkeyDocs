@@ -332,6 +332,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#zip" title="ZIPコマンドでフォルダを圧縮" class="md-nav__link">
+    ZIPコマンドでフォルダを圧縮
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_4" title="データの転送" class="md-nav__link">
     データの転送
   </a>
@@ -1087,6 +1094,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#zip" title="ZIPコマンドでフォルダを圧縮" class="md-nav__link">
+    ZIPコマンドでフォルダを圧縮
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_4" title="データの転送" class="md-nav__link">
     データの転送
   </a>
@@ -1167,8 +1181,13 @@
 <p>ZIPで学習データとして使いたい走行のフォルダを圧縮します。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>cd ~/mycar/data
 </pre></div></td></tr></table></p>
-<p>ZIPコマンドでフォルダを圧縮します。<code>tub_01_19-01-26</code>の部分は、今作成した走行データの保存されているtubフォルダを指定します。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>zip -r datas.zip tub_01_19-01-26
+<h2 id="zip">ZIPコマンドでフォルダを圧縮</h2>
+<p>ZIPコマンドでフォルダを圧縮します。</p>
+<p>まず、過去のdatas.zipが存在する場合があるので、削除します。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>rm datas.zip
+</pre></div></td></tr></table></p>
+<p>今作成した走行データの保存されているtubフォルダを指定します。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>zip -r datas.zip tub_自分のフォルダ名
 </pre></div></td></tr></table></p>
 <div class="admonition info">
 <p class="admonition-title">学習に必要なデータ・セット数</p>
