@@ -1093,9 +1093,13 @@
 <h2 id="donwload">学習済みデータをDonwload</h2>
 <hr>
 
-<p>Colabから学習結果をダウンロードします。
-mypilotをダブルクリックするとダウンロードが始まります。</p>
-<p><img alt="" src="../img/upload001.png" /></p>
+<p>Colabから学習結果をダウンロードします。Colabの下記コードを実行すると'mypilot.h5'が自動ダウンロードされます。(少々時間がかかります。)</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2
+3</pre></div></td><td class=code><div class=codehilite><pre><span></span><span class=kn>from</span> <span class=nn>google.colab</span> <span class=kn>import</span> <span class=n>files</span>
+
+<span class=n>files</span><span class=o>.</span><span class=n>download</span><span class=p>(</span><span class=s1>&#39;/content/mycar/models/mypilot.h5&#39;</span><span class=p>)</span>
+</pre></div></td></tr></table></p>
                 
                   
                 
