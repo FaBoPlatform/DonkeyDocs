@@ -1140,6 +1140,66 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      9.FaBoCar
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        9.FaBoCar
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../9.FaBoCar/00.motor/" title="Motorの制御" class="md-nav__link">
+      Motorの制御
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../9.FaBoCar/01.pwm/" title="Servoの制御" class="md-nav__link">
+      Servoの制御
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../9.FaBoCar/02.faboai/" title="FaBo AI Car" class="md-nav__link">
+      FaBo AI Car
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -1363,13 +1423,13 @@ sudo apt-get upgrade
 <h2 id="hostname">Hostnameの修正</h2>
 <p>Defaultでは、Macユーザは <code>ssh pi@raspberrypi.local</code> でRaspberryPiに接続できます。全員同じ名前になると、区別がつかないので、<code>hostname</code>, <code>hosts</code> の 2箇所のhost名を書き直し、独自の名前で呼び出せるようにしておきます。今回は、<code>raspberrypi</code>から<code>donkeypi</code>に書き直します。</p>
 <h3 id="hostname_1">hostnameの修正</h3>
-<div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_oc7xl8ujmpbeqrb checked=checked class=code-tab data-lang aria-controls=tab-group-2-0_oc7xl8ujmpbeqrb-panel role=tab><label for=tab-group-2-0_oc7xl8ujmpbeqrb class=code-tab-label data-lang id=tab-group-2-0_oc7xl8ujmpbeqrb-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-0_oc7xl8ujmpbeqrb-panel aria-labelledby=tab-group-2-0_oc7xl8ujmpbeqrb-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo vi /etc/hostname
-</pre></div></td></tr></table></div><input name=tab-group-2 type=radio id=tab-group-2-1_oxntsgextg2w7nb class=code-tab data-lang aria-controls=tab-group-2-1_oxntsgextg2w7nb-panel role=tab><label for=tab-group-2-1_oxntsgextg2w7nb class=code-tab-label data-lang id=tab-group-2-1_oxntsgextg2w7nb-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-1_oxntsgextg2w7nb-panel aria-labelledby=tab-group-2-1_oxntsgextg2w7nb-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkeypi
+<div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_qjjf7zgjewh4e5n checked=checked class=code-tab data-lang aria-controls=tab-group-2-0_qjjf7zgjewh4e5n-panel role=tab><label for=tab-group-2-0_qjjf7zgjewh4e5n class=code-tab-label data-lang id=tab-group-2-0_qjjf7zgjewh4e5n-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-0_qjjf7zgjewh4e5n-panel aria-labelledby=tab-group-2-0_qjjf7zgjewh4e5n-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo vi /etc/hostname
+</pre></div></td></tr></table></div><input name=tab-group-2 type=radio id=tab-group-2-1_homyrf441v4svr6 class=code-tab data-lang aria-controls=tab-group-2-1_homyrf441v4svr6-panel role=tab><label for=tab-group-2-1_homyrf441v4svr6 class=code-tab-label data-lang id=tab-group-2-1_homyrf441v4svr6-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-1_homyrf441v4svr6-panel aria-labelledby=tab-group-2-1_homyrf441v4svr6-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>donkeypi
 </pre></div></td></tr></table></div></div>
 
 <h3 id="hosts">hostsの修正</h3>
-<div class=md-fenced-code-tabs id=tab-tab-group-3><input name=tab-group-3 type=radio id=tab-group-3-0_3fb56wcvfyr548a checked=checked class=code-tab data-lang aria-controls=tab-group-3-0_3fb56wcvfyr548a-panel role=tab><label for=tab-group-3-0_3fb56wcvfyr548a class=code-tab-label data-lang id=tab-group-3-0_3fb56wcvfyr548a-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-0_3fb56wcvfyr548a-panel aria-labelledby=tab-group-3-0_3fb56wcvfyr548a-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo vi /etc/hosts
-</pre></div></td></tr></table></div><input name=tab-group-3 type=radio id=tab-group-3-1_qlr1yy76e3qfzz5 class=code-tab data-lang aria-controls=tab-group-3-1_qlr1yy76e3qfzz5-panel role=tab><label for=tab-group-3-1_qlr1yy76e3qfzz5 class=code-tab-label data-lang id=tab-group-3-1_qlr1yy76e3qfzz5-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-1_qlr1yy76e3qfzz5-panel aria-labelledby=tab-group-3-1_qlr1yy76e3qfzz5-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+<div class=md-fenced-code-tabs id=tab-tab-group-3><input name=tab-group-3 type=radio id=tab-group-3-0_gyhspvdrjr4io29 checked=checked class=code-tab data-lang aria-controls=tab-group-3-0_gyhspvdrjr4io29-panel role=tab><label for=tab-group-3-0_gyhspvdrjr4io29 class=code-tab-label data-lang id=tab-group-3-0_gyhspvdrjr4io29-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-0_gyhspvdrjr4io29-panel aria-labelledby=tab-group-3-0_gyhspvdrjr4io29-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span>sudo vi /etc/hosts
+</pre></div></td></tr></table></div><input name=tab-group-3 type=radio id=tab-group-3-1_29b7a1tj1e1fdmn class=code-tab data-lang aria-controls=tab-group-3-1_29b7a1tj1e1fdmn-panel role=tab><label for=tab-group-3-1_29b7a1tj1e1fdmn class=code-tab-label data-lang id=tab-group-3-1_29b7a1tj1e1fdmn-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-1_29b7a1tj1e1fdmn-panel aria-labelledby=tab-group-3-1_29b7a1tj1e1fdmn-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
 3
 4
