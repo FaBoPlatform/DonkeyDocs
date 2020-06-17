@@ -8,6 +8,10 @@ DonkeyCarに関するドキュメントです。
 
 GithubのRepoに[Issues](https://github.com/FaBoPlatform/DonkeyDocs/issues)をあげてください。
 
+## サポート Discord
+
+[https://discord.gg/StJ84Hb](https://discord.gg/StJ84Hb)
+
 ## 本ドキュメントでのセミナーの実施
 
 - 2018年11月-12月 宇都宮大学院下期授業(5台)
@@ -18,17 +22,33 @@ GithubのRepoに[Issues](https://github.com/FaBoPlatform/DonkeyDocs/issues)を�
 - 2019年5月25日 ABC2019 Spring(日本Androidの会主催)(10台)
 - 2019年6月22日 AI RCカー勉強会＠柏の葉「Donkey Carハンズオン」(14台)
 - 2019年7月17日 AIでRCカーを走らせよう!(アスキー角川主催)(11台)
+- 2019年9月8日 AIカー柏ハンズオン(10台)
+- 2019年11月4日 ABCD会津 DonkeyCarハンズオン(日本Androidの会 会津支部)(10台)
+- 2019年11月6日 DonkeyCarハンズオン&レース(会津大学主催)(10台)
+- 2019年11月9日 AIでRCカーを走らせよう！＠SHIBUYA QWS(AIでRCカーを走らせよう！主催)(8台)
+- 2020年1月14日 AI ラジコン Car Hands-On(日本大学 Nihon Technology Students Association主催)(10台)
+- 2020年2月15日 DonkeyCarもくもく会(富士通Ply主催)(8台)
+- 2020年2月21日 研究所向け新入社員研修(14台)
 
+## DonkeyCarの購入先(FaBo Store)
+- [DonkeyCar Kit](https://fabo.store/collections/donkeycar/products/donkeycar-kit-1)
 
-## AI Robot Car
+## 関連記事
+- [AIカーが来てる！　自動運転でラジコンカーを走らせよう！](https://ascii.jp/elem/000/001/779/1779694/)
+- [オープンソースのAI学習カー「Donkey Car」を走らせてみた！](https://weekly.ascii.jp/elem/000/000/423/423904/)
+- [話題のAIで自動運転するドンキーカーを走らせてみた、ちびっこ対AIの白熱バトルも! 遠藤諭の「Maker Faire Tokyo 2019」レポート](https://robotstart.info/2019/08/29/donkeycar-maker-tokyo.html)
+- [テクノロジーの大波は「オモチャ」のようなものからやってくる](https://ascii.jp/elem/000/001/895/1895561/)
+
+## FaBo AI 教材
+- [JetRacer Docs](https://faboplatform.github.io/JetracerDocs/)
 - [JetBot Docs](https://faboplatform.github.io/JetbotDocs/)
 - [DonkeyCar Docs](https://faboplatform.github.io/DonkeyDocs/)
+- [EdgeAI Docs](https://faboplatform.github.io/EdgeAIDocs/)
 
 ## その他のドキュメント
-- [LoRa Docs](https://faboplatform.github.io/LoRaDocs/)
 - [Android Things Docs](https://faboplatform.github.io/AndroidThingsDocs/)
 - [Denbun Docs](https://faboplatform.github.io/DenbunDocs/)
 - [Circuit Docs](https://faboplatform.github.io/CircuitDocs/)
 - [Swift Docs](https://faboplatform.github.io/SwiftDocs/)
-- [Keras Docs](https://faboplatform.github.io/KerasDocs/)
 - [NRF Docs](https://faboplatform.github.io/NRFDocs/)
+
