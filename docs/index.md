@@ -1,5 +1,7 @@
 # FaBo DonkeyCar Docs
 
+![](./img/DonkeyCarDocsMain.jpg)
+
 ## FaBo DonkeyCar Docsについて
 
 DonkeyCarに関するドキュメントです。
