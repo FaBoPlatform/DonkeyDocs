@@ -1,6 +1,6 @@
 # FaBo DonkeyCar Docs
 
-![](./img/DonkeyCarDocsMain.jpg)
+![](./img/DonkeyCarMain.jpg)
 
 ## FaBo DonkeyCar Docsについて
 
