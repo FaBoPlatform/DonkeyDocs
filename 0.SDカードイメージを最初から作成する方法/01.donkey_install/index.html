@@ -263,7 +263,7 @@
         
           <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    パッケージ群のインストール
+    必要なパッケージ群のインストール
   </a>
   
 </li>
@@ -278,6 +278,13 @@
           <li class="md-nav__item">
   <a href="#donkeycar_1" class="md-nav__link">
     DonkeyCarのインストール
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opencv-4x" class="md-nav__link">
+    OpenCV 4.x関連エラー
   </a>
   
 </li>
@@ -782,7 +789,7 @@
         
           <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    パッケージ群のインストール
+    必要なパッケージ群のインストール
   </a>
   
 </li>
@@ -797,6 +804,13 @@
           <li class="md-nav__item">
   <a href="#donkeycar_1" class="md-nav__link">
     DonkeyCarのインストール
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#opencv-4x" class="md-nav__link">
+    OpenCV 4.x関連エラー
   </a>
   
 </li>
@@ -979,35 +993,35 @@
 <p>Widnowsでは、RaspberryPiのHost名検索ができないので、注意してください。</p>
 </div>
 <h2 id="donkeycar">DonkeyCarのインストール</h2>
-<h3 id="_1">パッケージ群のインストール</h3>
+<h3 id="_1">必要なパッケージ群のインストール</h3>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
-3
-4
-5</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=n>sudo</span> <span class=n>apt</span><span class=o>-</span><span class=k>get</span> <span class=n>install</span> <span class=o>-</span><span class=n>y</span> <span class=n>vim</span> <span class=n>htop</span> <span class=n>locate</span> <span class=n>arp</span><span class=o>-</span><span class=n>scan</span> <span class=n>screen</span>
-
-<span class=n>sudo</span> <span class=n>apt</span><span class=o>-</span><span class=k>get</span> <span class=n>install</span> <span class=o>-</span><span class=n>y</span> <span class=n>build</span><span class=o>-</span><span class=n>essential</span> <span class=n>python3</span> <span class=n>python3</span><span class=o>-</span><span class=n>dev</span> <span class=n>python3</span><span class=o>-</span><span class=n>pip</span> <span class=n>python3</span><span class=o>-</span><span class=n>virtualenv</span> <span class=n>python3</span><span class=o>-</span><span class=n>numpy</span> <span class=n>python3</span><span class=o>-</span><span class=n>picamera</span> <span class=n>python3</span><span class=o>-</span><span class=n>pandas</span> <span class=n>python3</span><span class=o>-</span><span class=n>rpi</span><span class=p>.</span><span class=n>gpio</span> <span class=n>i2c</span><span class=o>-</span><span class=n>tools</span> <span class=n>avahi</span><span class=o>-</span><span class=n>utils</span> <span class=n>joystick</span> <span class=n>libopenjp2</span><span class=o>-</span><span class=mi>7</span><span class=o>-</span><span class=n>dev</span> <span class=n>libtiff5</span><span class=o>-</span><span class=n>dev</span> <span class=n>gfortran</span> <span class=n>libatlas</span><span class=o>-</span><span class=n>base</span><span class=o>-</span><span class=n>dev</span> <span class=n>libopenblas</span><span class=o>-</span><span class=n>dev</span> <span class=n>libhdf5</span><span class=o>-</span><span class=nb>serial</span><span class=o>-</span><span class=n>dev</span> <span class=n>git</span> <span class=n>ntp</span>
-
-<span class=n>sudo</span> <span class=n>apt</span><span class=o>-</span><span class=k>get</span> <span class=n>install</span> <span class=o>-</span><span class=n>y</span> <span class=n>libilmbase</span><span class=o>-</span><span class=n>dev</span> <span class=n>libopenexr</span><span class=o>-</span><span class=n>dev</span> <span class=n>libgstreamer1</span><span class=p>.</span><span class=mi>0</span><span class=o>-</span><span class=n>dev</span> <span class=n>libjasper</span><span class=o>-</span><span class=n>dev</span> <span class=n>libwebp</span><span class=o>-</span><span class=n>dev</span> <span class=n>libatlas</span><span class=o>-</span><span class=n>base</span><span class=o>-</span><span class=n>dev</span> <span class=n>libavcodec</span><span class=o>-</span><span class=n>dev</span> <span class=n>libavformat</span><span class=o>-</span><span class=n>dev</span> <span class=n>libswscale</span><span class=o>-</span><span class=n>dev</span> <span class=n>libqtgui4</span> <span class=n>libqt4</span><span class=o>-</span><span class=n>test</span>
+3</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>sudo apt-get install -y vim htop locate arp-scan screen</span>
+<span class=err>sudo apt-get install -y build-essential python3 python3-dev python3-pip python3-virtualenv python3-numpy python3-picamera python3-pandas python3-rpi.gpio i2c-tools avahi-utils joystick libopenjp2-7-dev libtiff5-dev gfortran libatlas-base-dev libopenblas-dev libhdf5-serial-dev git ntp</span>
+<span class=err>sudo apt-get install -y libilmbase-dev libopenexr-dev libgstreamer1.0-dev libjasper-dev libwebp-dev libatlas-base-dev libavcodec-dev libavformat-dev libswscale-dev libqtgui4 libqt4-test</span>
 </code></pre></div></td></tr></table></p>
 <h3 id="virtualenv">virtualenv環境の構築</h3>
-<p>python/pip環境をpython3/pip3で構築します。<br>
-この仮想環境は~/env/に作成されます。<br></p>
-<p><code>source ~/env/bin/activate</code>コマンドで仮想環境を有効化して、<code>deactivate</code>コマンドで仮想環境を抜けます。<br>
-pip仮想環境を削除する場合は<code>rm -rf ~/env</code>でディレクトリを削除することで可能です。</p>
+<p>python/pip環境をpython3/pip3で構築します。この仮想環境は~/env/に構築されます。</p>
+<p><code>source ~/env/bin/activate</code>コマンドで仮想環境を有効化します。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
 3</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>python3 -m virtualenv -p python3 ~/env --system-site-packages</span>
 <span class=err>echo &quot;source ~/env/bin/activate&quot; &gt;&gt; ~/.bashrc</span>
 <span class=err>source ~/.bashrc</span>
 </code></pre></div></td></tr></table></p>
-<p>上記コマンドでログインシェルのbash設定ファイルである<code>~/.bashrc</code>ファイルに仮想環境を有効化するように追記したため、ログインすると自動的にこの環境を使用する設定にしています。<br>
-<code>deactivate</code>を実行すれば元のpythonの環境に戻せます。</p>
+<p><code>~/.bashrc</code>ファイルに仮想環境を有効化する記述を追加し、ログインに仮想環境を有効化します。</p>
+<div class="admonition info">
+<p class="admonition-title">仮想環境から抜け出す場合は</p>
+<p><code>deactivate</code>コマンドで仮想環境を抜けます。</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">仮想環境を削除したい場合は</p>
+<p>pip仮想環境を削除する場合は<code>rm -rf ~/env</code>でディレクトリを削除することで可能です。</p>
+</div>
 <h3 id="donkeycar_1">DonkeyCarのインストール</h3>
 <p>参考: <a href="https://docs.donkeycar.com/guide/install_software/">DonkeyCar公式ページ</a></p>
-<p>最新のDonkeyCarをインストールします。<br>
-困ったら公式サイトをみるようにします。<br>
-ここではpip install opencv-pythonとして、OpenCV最新版をビルドしてインストールしているのですが、Raspberry Pi3B+で3時間くらいかかるので、<code>sudo apt-get install python3-opencv</code>でインストール出来る場合はそちらでもいいと思います。</p>
+<p>最新のDonkeyCarをインストールします。<a href="https://docs.donkeycar.com/guide/install_software/">DonkeyCar公式ページ</a>も参考にしてください。<br></p>
+<p>DonkeyCarのインストール</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
  2
  3
@@ -1030,7 +1044,13 @@ pip仮想環境を削除する場合は<code>rm -rf ~/env</code>でディレク�
 <span class=n>pip</span><span class=w> </span><span class=n>install</span><span class=w> </span><span class=n>opencv</span><span class=o>-</span><span class=n>python</span><span class=w></span>
 <span class=n>pip</span><span class=w> </span><span class=n>install</span><span class=w> </span><span class=n>smbus</span><span class=w></span>
 </code></pre></div></td></tr></table></p>
-<p>OpenCV 4.xは以下のエラーが出る場合があります。<br></p>
+<div class="admonition warning">
+<p class="admonition-title">pip install opencv-pythonは3時間(RaspPi3B+)かかります</p>
+<p><code>pip install opencv-python</code>のコマンドで、OpenCV最新版をビルドしてインストールしています。この処理に3時間(RaspPi3B+)で3時間くらいかかります。インストールを急ぎたい場合は、<code>sudo apt-get install python3-opencv</code>のコマンドでインストールも可能です。</p>
+</div>
+<h3 id="opencv-4x">OpenCV 4.x関連エラー</h3>
+<p>エラーが発生しない場合は、本項目はスキップしてください。</p>
+<p>OpenCV 4.xは以下のエラーが出る場合があります。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
 3
@@ -1043,24 +1063,25 @@ pip仮想環境を削除する場合は<code>rm -rf ~/env</code>でディレク�
     <span class=kn>from</span> <span class=nn>.cv2</span> <span class=kn>import</span> <span class=o>*</span>
 <span class=ne>ImportError</span><span class=p>:</span> <span class=o>/</span><span class=n>home</span><span class=o>/</span><span class=n>pi</span><span class=o>/</span><span class=n>env</span><span class=o>/</span><span class=n>lib</span><span class=o>/</span><span class=n>python3</span><span class=o>.</span><span class=mi>7</span><span class=o>/</span><span class=n>site</span><span class=o>-</span><span class=n>packages</span><span class=o>/</span><span class=n>cv2</span><span class=o>/</span><span class=n>cv2</span><span class=o>.</span><span class=n>cpython</span><span class=o>-</span><span class=mi>37</span><span class=n>m</span><span class=o>-</span><span class=n>arm</span><span class=o>-</span><span class=n>linux</span><span class=o>-</span><span class=n>gnueabihf</span><span class=o>.</span><span class=n>so</span><span class=p>:</span> <span class=n>undefined</span> <span class=n>symbol</span><span class=p>:</span> <span class=n>__atomic_fetch_add_8</span>
 </code></pre></div></td></tr></table></p>
-<p>これはOpenCVの問題のようなので、問題が解決されるまで以下のように対応しておきます。<br></p>
+<p>これはOpenCVの問題のようなので、問題が解決されるまで以下のように対応しておきます。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>echo &quot;export LD_PRELOAD=/usr/lib/arm-linux-gnueabihf/libatomic.so.1&quot; &gt;&gt; ~/.bashrc</span>
 <span class=err>source ~/.bashrc</span>
 </code></pre></div></td></tr></table></p>
 <p>参考：<a href="https://github.com/piwheels/packages/issues/59">https://github.com/piwheels/packages/issues/59</a></p>
 <h2 id="donkeycar_2">DonkeyCar 設定</h2>
-<p>まずは~/mycarを作成して、自分の車両用の設定ファイルをテンプレートから作成します。</p>
+<p>~/mycarでプロジェクトを作成して、自分の車両用の設定ファイルをテンプレートを作成します。</p>
+<p>createcar</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>donkey createcar --path ~/mycar</span>
 <span class=err>cd ~/mycar</span>
 </code></pre></div></td></tr></table></p>
-<p>次に、myconfig.pyを編集します。</p>
+<p>myconfig.pyの編集</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>vi myconfig.pi</span>
 </code></pre></div></td></tr></table></p>
-<p>ステアリングPWMとスロットルPWMはキャリブレーションを実施して適切な値を入れます。<br>
-JOYSTICK_DEADZONEはスロットルオフの時にレコーディングが止まるように少しあった方がいいようです。<br>
-(元々のDonkeyCar設計はスロットルオフの時にレコーディングが止まる設計なのですが、ジョイスチックの値が少しブレてしまうようで、無視する範囲がデフォルトの0.0だとスロットルオフの時もレコーディングが止まらなくなってしまうようです。）<br></p>
+<p>ステアリングPWM(<code>STEERING_LEFT_PWM</code>,<code>STEERING_RIGHT_PWM</code>)とスロットルPWM(<code>THROTTLE_FORWARD_PWM</code>,<code>THROTTLE_STOPPED_PWM</code>,<code>THROTTLE_REVERSE_PWM</code>)はキャリブレーションを実施して適切な値を入れます。</p>
+<p><code>JOYSTICK_DEADZONE</code>はスロットルオフの時にレコーディングが止まるようにするための閾値を設定します。(0.0だとJoystck使用時はレコーディングが続く場合があるので0.05ぐらいの閾値にします。）<br></p>
+<p><code>~/mycar/myconfig.pi</code></p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre> 1
  2
  3
@@ -1094,12 +1115,14 @@ JOYSTICK_DEADZONEはスロットルオフの時にレコーディングが止ま
 <span class=o>#</span> <span class=n>GYM_CONF</span><span class=p>[</span><span class=ss>&quot;guid&quot;</span><span class=p>]</span> <span class=o>=</span> <span class=ss>&quot;00000000-0000-4000-0000-000000000000&quot;</span>
 </code></pre></div></td></tr></table></p>
 <h2 id="oled">OLED設定</h2>
-<p>新しいDonkeyBoardにはOLEDが搭載されています。<br>
-Raspberry Piを起動したときに、IPアドレスを表示することが可能になるため、その設定をおこないます。<br>
-また、DonkeyCarもOLEDを利用できますが、ネットワークインターフェースが存在しない場合（Raspberry Pi3A+）にエラーになります。<br>
-ネットワークインターフェースの確認を追加したコードをpull requestしてあるので、将来的には解決すると思いますが、今の所は対策済みの<code>oled.py</code>をdonkeycarのソースコードにコピーしておくことにします。</p>
-<p>参考：<a href="https://github.com/FaBoPlatform/ip_address_display">https://github.com/FaBoPlatform/ip_address_display</a></p>
-<p>ダウンロードと設定</p>
+<p>新しいFaBo DonkeyBoardにはOLEDが搭載されています。それに伴い、FaBo DonkeyCarでは、Raspberry Pi起動時に、IPアドレスを表示することが可能になりました。
+ここでは、その設定方法を説明します。</p>
+<div class="admonition warning">
+<p class="admonition-title">Raspberry Pi3A+ではハードウェア構成が違う</p>
+<p>DonkeyCarの最新パッケージ(3.1.5)は、走行時にOLEDを表示する拡張が入りました。一方で、RaspberryPi 3A+のようにハードウェア構成が違う場合は、エラーが発生します。エラーの原因は、ネットワークインターフェースが存在しない事が原因で発生します。</p>
+</div>
+<p>FaBo DonkeyCar用に、下記パッケージをインストールします。</p>
+<p>FaBo DonkeyCarのOLEDの拡張パッケージのダウンロードと設定</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
 3
@@ -1112,10 +1135,12 @@ Raspberry Piを起動したときに、IPアドレスを表示することが可
 <span class=err>cp oled_ip* ~/fabo/bin</span>
 <span class=err>cp oled.py ~/projects/donkeycar/donkeycar/parts/</span>
 </code></pre></div></td></tr></table></p>
-<p>/etc/rc.local編集<br>
-exit 0の前にOLEDを表示するスクリプトの実行を追加します。</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-20><input name=tab-group-20 type=radio id=tab-group-20-0_jzk49rfpoh0rvgc checked=checked class=code-tab data-lang aria-controls=tab-group-20-0_jzk49rfpoh0rvgc-panel role=tab><label for=tab-group-20-0_jzk49rfpoh0rvgc class=code-tab-label data-lang id=tab-group-20-0_jzk49rfpoh0rvgc-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-20-0_jzk49rfpoh0rvgc-panel aria-labelledby=tab-group-20-0_jzk49rfpoh0rvgc-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>sudo vi /etc/rc.local</span>
-</code></pre></div></td></tr></table></div><input name=tab-group-20 type=radio id=tab-group-20-1_s68n1kni1o3flxi class=code-tab data-lang aria-controls=tab-group-20-1_s68n1kni1o3flxi-panel role=tab><label for=tab-group-20-1_s68n1kni1o3flxi class=code-tab-label data-lang id=tab-group-20-1_s68n1kni1o3flxi-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-20-1_s68n1kni1o3flxi-panel aria-labelledby=tab-group-20-1_s68n1kni1o3flxi-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+<p>/etc/rc.localのexit 0の前にOLEDを表示するスクリプトの実行を追加します。</p>
+<p>/etc/rc.localの編集</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>sudo vi /etc/rc.local</span>
+</code></pre></div></td></tr></table></p>
+<p><code>/etc/rc.local</code></p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
 3
 4
@@ -1124,8 +1149,7 @@ exit 0の前にOLEDを表示するスクリプトの実行を追加します。<
 
 <span class=n>after</span><span class=o>:</span>
 <span class=sr>/home/$(getent passwd 1000 | cut -d: -f1)/fabo/bin/</span><span class=n>oled_ip</span><span class=o>.</span><span class=na>sh</span>
-</code></pre></div></td></tr></table></div></div>
-
+</code></pre></div></td></tr></table></p>
 <p>rc.local有効化</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
@@ -1135,9 +1159,10 @@ exit 0の前にOLEDを表示するスクリプトの実行を追加します。<
 <span class=err>sudo systemctl start rc.local</span>
 <span class=err>sudo systemctl status rc.local</span>
 </code></pre></div></td></tr></table></p>
-<p>再起動後、ネットワークに接続されていればOLEDにIPアドレスが表示されます。</p>
+<p>再起動後</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>sudo reboot</span>
 </code></pre></div></td></tr></table></p>
+<p>うまくパッケージが反映されれば、RaspberryPiのIPアドレスが表示されるようになります。</p>
                 
               
               
