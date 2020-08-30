@@ -869,9 +869,25 @@
 <p class="admonition-title">インストール済みイメージを使う場合は、本作業をスキップ</p>
 <p>DonkeyCarインストール済みイメージを使う場合は、1.車体作成にお進みください。<br></p>
 </div>
-<p>本項目は、DonkeyCar用のSDカードイメージを自分でインストールして作る場合の説明になります。<br></p>
+<table>
+<thead>
+<tr>
+<th align="left">作成済みイメージ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">DonkeyCar 3.1.5]https://drive.google.com/file/d/1cGmHjMB8FfMK6GlUsT7r5ZjFwyFhxgwu]</td>
+</tr>
+</tbody>
+</table>
+<p>本章には、上記のイメージを作成するためのインストール手順を解説しています。<br></p>
 <h2 id="raspberry-pi">Raspberry Piのイメージ</h2>
-<p>Raspberry Pi用のイメージはRaspberry Pi Imagerを使って直接micro SDカードにインストールする方法になりました。</p>
+<p>Raspberry Pi用のイメージは、<a href="https://www.raspberrypi.org/downloads">Raspberry Pi Imager</a>を使って直接micro SDカードに焼き込みます。</p>
+<div class="admonition info">
+<p class="admonition-title">イメージの焼き込みに使えるツールは</p>
+<p><a href="https://www.raspberrypi.org/downloads">Raspberry Pi Imager</a>の他にも、<a href="https://www.balena.io/etcher/">balenaEtcher</a>やDDコマンドなどでも焼き込み可能です。<br></p>
+</div>
 <hr>
 
 <p><a href="https://www.raspberrypi.org/downloads">Raspberry Pi Imager</a>をダウンロードします。Windows/maxOS/Ubuntu用があります。</p>
@@ -919,27 +935,27 @@ PCでSDカードを認識したら、<code>boot</code>パーティション直�
 <h2 id="hdmi-hotplug">HDMI HotPlug 有効化</h2>
 <p>Raspberry Pi起動後にHDMIケーブルを繋いだときに、モニターに画面を表示するための設定。<br>
 デフォルトだと電源を入れる前にHDMIケーブルを接続していなければモニターを認識しないので、この設定をしておくと便利になります。<br></p>
-<div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_d8b79wc4kc3zv9b checked=checked class=code-tab data-lang aria-controls=tab-group-2-0_d8b79wc4kc3zv9b-panel role=tab><label for=tab-group-2-0_d8b79wc4kc3zv9b class=code-tab-label data-lang id=tab-group-2-0_d8b79wc4kc3zv9b-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-0_d8b79wc4kc3zv9b-panel aria-labelledby=tab-group-2-0_d8b79wc4kc3zv9b-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>vi /boot/config.txt</span>
-</code></pre></div></td></tr></table></div><input name=tab-group-2 type=radio id=tab-group-2-1_v72cxeyb07u66ui class=code-tab data-lang aria-controls=tab-group-2-1_v72cxeyb07u66ui-panel role=tab><label for=tab-group-2-1_v72cxeyb07u66ui class=code-tab-label data-lang id=tab-group-2-1_v72cxeyb07u66ui-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-1_v72cxeyb07u66ui-panel aria-labelledby=tab-group-2-1_v72cxeyb07u66ui-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+<div class=md-fenced-code-tabs id=tab-tab-group-2><input name=tab-group-2 type=radio id=tab-group-2-0_qal1wqnp6yk6fd0 checked=checked class=code-tab data-lang aria-controls=tab-group-2-0_qal1wqnp6yk6fd0-panel role=tab><label for=tab-group-2-0_qal1wqnp6yk6fd0 class=code-tab-label data-lang id=tab-group-2-0_qal1wqnp6yk6fd0-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-0_qal1wqnp6yk6fd0-panel aria-labelledby=tab-group-2-0_qal1wqnp6yk6fd0-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>vi /boot/config.txt</span>
+</code></pre></div></td></tr></table></div><input name=tab-group-2 type=radio id=tab-group-2-1_67cn4fkkn4nx84e class=code-tab data-lang aria-controls=tab-group-2-1_67cn4fkkn4nx84e-panel role=tab><label for=tab-group-2-1_67cn4fkkn4nx84e class=code-tab-label data-lang id=tab-group-2-1_67cn4fkkn4nx84e-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-2-1_67cn4fkkn4nx84e-panel aria-labelledby=tab-group-2-1_67cn4fkkn4nx84e-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>hdmi_force_hotplug=1</span>
 <span class=err>hdmi_drive=2</span>
 </code></pre></div></td></tr></table></div></div>
 
 <h2 id="vim">vimでコピー&amp;ペーストを可能にする</h2>
-<div class=md-fenced-code-tabs id=tab-tab-group-3><input name=tab-group-3 type=radio id=tab-group-3-0_n9996366boto2y4 checked=checked class=code-tab data-lang aria-controls=tab-group-3-0_n9996366boto2y4-panel role=tab><label for=tab-group-3-0_n9996366boto2y4 class=code-tab-label data-lang id=tab-group-3-0_n9996366boto2y4-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-0_n9996366boto2y4-panel aria-labelledby=tab-group-3-0_n9996366boto2y4-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>vi ~/.vimrc</span>
-</code></pre></div></td></tr></table></div><input name=tab-group-3 type=radio id=tab-group-3-1_rwc2hjm8d5q69hp class=code-tab data-lang aria-controls=tab-group-3-1_rwc2hjm8d5q69hp-panel role=tab><label for=tab-group-3-1_rwc2hjm8d5q69hp class=code-tab-label data-lang id=tab-group-3-1_rwc2hjm8d5q69hp-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-1_rwc2hjm8d5q69hp-panel aria-labelledby=tab-group-3-1_rwc2hjm8d5q69hp-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>:set clipboard+=unnamed</span>
+<div class=md-fenced-code-tabs id=tab-tab-group-3><input name=tab-group-3 type=radio id=tab-group-3-0_xysmmfyzd2butb6 checked=checked class=code-tab data-lang aria-controls=tab-group-3-0_xysmmfyzd2butb6-panel role=tab><label for=tab-group-3-0_xysmmfyzd2butb6 class=code-tab-label data-lang id=tab-group-3-0_xysmmfyzd2butb6-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-0_xysmmfyzd2butb6-panel aria-labelledby=tab-group-3-0_xysmmfyzd2butb6-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>vi ~/.vimrc</span>
+</code></pre></div></td></tr></table></div><input name=tab-group-3 type=radio id=tab-group-3-1_6ih9sj07pqh0ife class=code-tab data-lang aria-controls=tab-group-3-1_6ih9sj07pqh0ife-panel role=tab><label for=tab-group-3-1_6ih9sj07pqh0ife class=code-tab-label data-lang id=tab-group-3-1_6ih9sj07pqh0ife-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-3-1_6ih9sj07pqh0ife-panel aria-labelledby=tab-group-3-1_6ih9sj07pqh0ife-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>:set clipboard+=unnamed</span>
 </code></pre></div></td></tr></table></div></div>
 
 <h2 id="hostname">Hostnameの修正</h2>
 <p>Defaultでは、Macユーザは <code>ssh pi@raspberrypi.local</code> でRaspberry Piに接続できます。全員同じ名前になると、区別がつかないので、<code>hostname</code>, <code>hosts</code> の 2箇所のhost名を書き直し、独自の名前で呼び出せるようにしておきます。今回は、<code>raspberrypi</code>から<code>donkeypi</code>に書き直します。</p>
 <h2 id="hostname_1">hostnameの修正</h2>
-<div class=md-fenced-code-tabs id=tab-tab-group-4><input name=tab-group-4 type=radio id=tab-group-4-0_656vzws7ekyieth checked=checked class=code-tab data-lang aria-controls=tab-group-4-0_656vzws7ekyieth-panel role=tab><label for=tab-group-4-0_656vzws7ekyieth class=code-tab-label data-lang id=tab-group-4-0_656vzws7ekyieth-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-4-0_656vzws7ekyieth-panel aria-labelledby=tab-group-4-0_656vzws7ekyieth-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>sudo vi /etc/hostname</span>
-</code></pre></div></td></tr></table></div><input name=tab-group-4 type=radio id=tab-group-4-1_pxdh2zi73frfjbw class=code-tab data-lang aria-controls=tab-group-4-1_pxdh2zi73frfjbw-panel role=tab><label for=tab-group-4-1_pxdh2zi73frfjbw class=code-tab-label data-lang id=tab-group-4-1_pxdh2zi73frfjbw-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-4-1_pxdh2zi73frfjbw-panel aria-labelledby=tab-group-4-1_pxdh2zi73frfjbw-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>donkeypi</span>
+<div class=md-fenced-code-tabs id=tab-tab-group-4><input name=tab-group-4 type=radio id=tab-group-4-0_5h1sjt5i1l2pzbx checked=checked class=code-tab data-lang aria-controls=tab-group-4-0_5h1sjt5i1l2pzbx-panel role=tab><label for=tab-group-4-0_5h1sjt5i1l2pzbx class=code-tab-label data-lang id=tab-group-4-0_5h1sjt5i1l2pzbx-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-4-0_5h1sjt5i1l2pzbx-panel aria-labelledby=tab-group-4-0_5h1sjt5i1l2pzbx-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>sudo vi /etc/hostname</span>
+</code></pre></div></td></tr></table></div><input name=tab-group-4 type=radio id=tab-group-4-1_l4a1w36cg5odjf2 class=code-tab data-lang aria-controls=tab-group-4-1_l4a1w36cg5odjf2-panel role=tab><label for=tab-group-4-1_l4a1w36cg5odjf2 class=code-tab-label data-lang id=tab-group-4-1_l4a1w36cg5odjf2-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-4-1_l4a1w36cg5odjf2-panel aria-labelledby=tab-group-4-1_l4a1w36cg5odjf2-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>donkeypi</span>
 </code></pre></div></td></tr></table></div></div>
 
 <h2 id="hosts">hostsの修正</h2>
-<div class=md-fenced-code-tabs id=tab-tab-group-5><input name=tab-group-5 type=radio id=tab-group-5-0_9r2nfl0eha065ax checked=checked class=code-tab data-lang aria-controls=tab-group-5-0_9r2nfl0eha065ax-panel role=tab><label for=tab-group-5-0_9r2nfl0eha065ax class=code-tab-label data-lang id=tab-group-5-0_9r2nfl0eha065ax-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-5-0_9r2nfl0eha065ax-panel aria-labelledby=tab-group-5-0_9r2nfl0eha065ax-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>sudo vi /etc/hosts</span>
-</code></pre></div></td></tr></table></div><input name=tab-group-5 type=radio id=tab-group-5-1_xmh1mlq4r526aua class=code-tab data-lang aria-controls=tab-group-5-1_xmh1mlq4r526aua-panel role=tab><label for=tab-group-5-1_xmh1mlq4r526aua class=code-tab-label data-lang id=tab-group-5-1_xmh1mlq4r526aua-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-5-1_xmh1mlq4r526aua-panel aria-labelledby=tab-group-5-1_xmh1mlq4r526aua-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+<div class=md-fenced-code-tabs id=tab-tab-group-5><input name=tab-group-5 type=radio id=tab-group-5-0_j1tqpcdbhs6ew20 checked=checked class=code-tab data-lang aria-controls=tab-group-5-0_j1tqpcdbhs6ew20-panel role=tab><label for=tab-group-5-0_j1tqpcdbhs6ew20 class=code-tab-label data-lang id=tab-group-5-0_j1tqpcdbhs6ew20-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-5-0_j1tqpcdbhs6ew20-panel aria-labelledby=tab-group-5-0_j1tqpcdbhs6ew20-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>sudo vi /etc/hosts</span>
+</code></pre></div></td></tr></table></div><input name=tab-group-5 type=radio id=tab-group-5-1_z7sbkb6xt3bklor class=code-tab data-lang aria-controls=tab-group-5-1_z7sbkb6xt3bklor-panel role=tab><label for=tab-group-5-1_z7sbkb6xt3bklor class=code-tab-label data-lang id=tab-group-5-1_z7sbkb6xt3bklor-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-5-1_z7sbkb6xt3bklor-panel aria-labelledby=tab-group-5-1_z7sbkb6xt3bklor-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
 3
 4
@@ -1092,8 +1108,8 @@ Raspberry Piを起動したときに、IPアドレスを表示することが可
 </code></pre></div></td></tr></table></p>
 <p>/etc/rc.local編集<br>
 exit 0の前にOLEDを表示するスクリプトの実行を追加します。</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-15><input name=tab-group-15 type=radio id=tab-group-15-0_9ld19u1lwgij3vn checked=checked class=code-tab data-lang aria-controls=tab-group-15-0_9ld19u1lwgij3vn-panel role=tab><label for=tab-group-15-0_9ld19u1lwgij3vn class=code-tab-label data-lang id=tab-group-15-0_9ld19u1lwgij3vn-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-15-0_9ld19u1lwgij3vn-panel aria-labelledby=tab-group-15-0_9ld19u1lwgij3vn-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>sudo vi /etc/rc.local</span>
-</code></pre></div></td></tr></table></div><input name=tab-group-15 type=radio id=tab-group-15-1_7924lpvxd8k4g1e class=code-tab data-lang aria-controls=tab-group-15-1_7924lpvxd8k4g1e-panel role=tab><label for=tab-group-15-1_7924lpvxd8k4g1e class=code-tab-label data-lang id=tab-group-15-1_7924lpvxd8k4g1e-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-15-1_7924lpvxd8k4g1e-panel aria-labelledby=tab-group-15-1_7924lpvxd8k4g1e-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+<div class=md-fenced-code-tabs id=tab-tab-group-15><input name=tab-group-15 type=radio id=tab-group-15-0_wkgtlfxmv09738u checked=checked class=code-tab data-lang aria-controls=tab-group-15-0_wkgtlfxmv09738u-panel role=tab><label for=tab-group-15-0_wkgtlfxmv09738u class=code-tab-label data-lang id=tab-group-15-0_wkgtlfxmv09738u-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-15-0_wkgtlfxmv09738u-panel aria-labelledby=tab-group-15-0_wkgtlfxmv09738u-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>sudo vi /etc/rc.local</span>
+</code></pre></div></td></tr></table></div><input name=tab-group-15 type=radio id=tab-group-15-1_hvirxxdl549k0ng class=code-tab data-lang aria-controls=tab-group-15-1_hvirxxdl549k0ng-panel role=tab><label for=tab-group-15-1_hvirxxdl549k0ng class=code-tab-label data-lang id=tab-group-15-1_hvirxxdl549k0ng-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-15-1_hvirxxdl549k0ng-panel aria-labelledby=tab-group-15-1_hvirxxdl549k0ng-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
 3
 4
