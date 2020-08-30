@@ -254,20 +254,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hostname_1" class="md-nav__link">
-    hostnameの修正
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hosts" class="md-nav__link">
-    hostsの修正
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#donkeycar" class="md-nav__link">
     DonkeyCarのインストール
   </a>
@@ -787,20 +773,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hostname_1" class="md-nav__link">
-    hostnameの修正
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hosts" class="md-nav__link">
-    hostsの修正
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#donkeycar" class="md-nav__link">
     DonkeyCarのインストール
   </a>
@@ -967,20 +939,26 @@
 <p>標準のイメージでは、電源を投入する前に、RaspberryPiにHDMIケーブルを接続し、その後、電源をOnにしないと、モニターに画面が表示されません。</p>
 </div>
 <h2 id="vim">vimでコピー&amp;ペーストを可能にする</h2>
-<div class=md-fenced-code-tabs id=tab-tab-group-5><input name=tab-group-5 type=radio id=tab-group-5-0_8c1zztdwqc5ejwr checked=checked class=code-tab data-lang aria-controls=tab-group-5-0_8c1zztdwqc5ejwr-panel role=tab><label for=tab-group-5-0_8c1zztdwqc5ejwr class=code-tab-label data-lang id=tab-group-5-0_8c1zztdwqc5ejwr-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-5-0_8c1zztdwqc5ejwr-panel aria-labelledby=tab-group-5-0_8c1zztdwqc5ejwr-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>vi ~/.vimrc</span>
-</code></pre></div></td></tr></table></div><input name=tab-group-5 type=radio id=tab-group-5-1_icq27j5sspljf3u class=code-tab data-lang aria-controls=tab-group-5-1_icq27j5sspljf3u-panel role=tab><label for=tab-group-5-1_icq27j5sspljf3u class=code-tab-label data-lang id=tab-group-5-1_icq27j5sspljf3u-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-5-1_icq27j5sspljf3u-panel aria-labelledby=tab-group-5-1_icq27j5sspljf3u-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>:set clipboard+=unnamed</span>
-</code></pre></div></td></tr></table></div></div>
-
+<p>標準のイメージでは、vimでのコピー&amp;ペーストが対応していません。ここでは、vimrcを書き直し、コピー&amp;ペーストに対応させます。</p>
+<p>.vimrcを編集</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>vi ~/.vimrc</span>
+</code></pre></div></td></tr></table></p>
+<p><code>/home/pi/.vimrc/</code></p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>:set clipboard+=unnamed</span>
+</code></pre></div></td></tr></table></p>
 <h2 id="hostname">Hostnameの修正</h2>
-<p>Defaultでは、Macユーザは <code>ssh pi@raspberrypi.local</code> でRaspberry Piに接続できます。全員同じ名前になると、区別がつかないので、<code>hostname</code>, <code>hosts</code> の 2箇所のhost名を書き直し、独自の名前で呼び出せるようにしておきます。今回は、<code>raspberrypi</code>から<code>donkeypi</code>に書き直します。</p>
-<h2 id="hostname_1">hostnameの修正</h2>
-<div class=md-fenced-code-tabs id=tab-tab-group-6><input name=tab-group-6 type=radio id=tab-group-6-0_ulp399pkalla814 checked=checked class=code-tab data-lang aria-controls=tab-group-6-0_ulp399pkalla814-panel role=tab><label for=tab-group-6-0_ulp399pkalla814 class=code-tab-label data-lang id=tab-group-6-0_ulp399pkalla814-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-6-0_ulp399pkalla814-panel aria-labelledby=tab-group-6-0_ulp399pkalla814-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>sudo vi /etc/hostname</span>
-</code></pre></div></td></tr></table></div><input name=tab-group-6 type=radio id=tab-group-6-1_myqpqnu0t7wllpu class=code-tab data-lang aria-controls=tab-group-6-1_myqpqnu0t7wllpu-panel role=tab><label for=tab-group-6-1_myqpqnu0t7wllpu class=code-tab-label data-lang id=tab-group-6-1_myqpqnu0t7wllpu-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-6-1_myqpqnu0t7wllpu-panel aria-labelledby=tab-group-6-1_myqpqnu0t7wllpu-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>donkeypi</span>
-</code></pre></div></td></tr></table></div></div>
-
-<h2 id="hosts">hostsの修正</h2>
-<div class=md-fenced-code-tabs id=tab-tab-group-7><input name=tab-group-7 type=radio id=tab-group-7-0_qz9k590cg173v8y checked=checked class=code-tab data-lang aria-controls=tab-group-7-0_qz9k590cg173v8y-panel role=tab><label for=tab-group-7-0_qz9k590cg173v8y class=code-tab-label data-lang id=tab-group-7-0_qz9k590cg173v8y-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-7-0_qz9k590cg173v8y-panel aria-labelledby=tab-group-7-0_qz9k590cg173v8y-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>sudo vi /etc/hosts</span>
-</code></pre></div></td></tr></table></div><input name=tab-group-7 type=radio id=tab-group-7-1_xckrbevqu3sfw47 class=code-tab data-lang aria-controls=tab-group-7-1_xckrbevqu3sfw47-panel role=tab><label for=tab-group-7-1_xckrbevqu3sfw47 class=code-tab-label data-lang id=tab-group-7-1_xckrbevqu3sfw47-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-7-1_xckrbevqu3sfw47-panel aria-labelledby=tab-group-7-1_xckrbevqu3sfw47-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+<p>標準のイメージでは、Macユーザは <code>ssh pi@raspberrypi.local</code> でRaspberry Piに接続できます。全員同じ名前になると、区別がつかないので、<code>hostname</code>, <code>hosts</code> の 2箇所のhost名を書き直し、独自の名前で呼び出せるようにしておきます。今回は、<code>raspberrypi</code>から<code>donkeypi</code>に書き直します。</p>
+<p>/etc/hostnameを編集</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>sudo vi /etc/hostname</span>
+</code></pre></div></td></tr></table></p>
+<p><code>/etc/hostname</code></p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>donkeypi</span>
+</code></pre></div></td></tr></table></p>
+<p>/etc/hostsを編集</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>sudo vi /etc/hosts</span>
+</code></pre></div></td></tr></table></p>
+<p><code>/etc/hosts</code></p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
 3
 4
@@ -995,8 +973,11 @@
 <span class=nl>ff02</span><span class=p>:</span><span class=err>:</span><span class=mi>2</span><span class=w>         </span><span class=n>ip6</span><span class=o>-</span><span class=n>allrouters</span><span class=w></span>
 
 <span class=mf>127.0.1.1</span><span class=w>       </span><span class=n>donkeypi</span><span class=w></span>
-</code></pre></div></td></tr></table></div></div>
-
+</code></pre></div></td></tr></table></p>
+<div class="admonition warning">
+<p class="admonition-title">WindowsではRaspberryPiのHost名検索ができない</p>
+<p>Widnowsでは、RaspberryPiのHost名検索ができないので、注意してください。</p>
+</div>
 <h2 id="donkeycar">DonkeyCarのインストール</h2>
 <h3 id="_1">パッケージ群のインストール</h3>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
@@ -1133,8 +1114,8 @@ Raspberry Piを起動したときに、IPアドレスを表示することが可
 </code></pre></div></td></tr></table></p>
 <p>/etc/rc.local編集<br>
 exit 0の前にOLEDを表示するスクリプトの実行を追加します。</p>
-<div class=md-fenced-code-tabs id=tab-tab-group-17><input name=tab-group-17 type=radio id=tab-group-17-0_k0o5iwpydvpa3de checked=checked class=code-tab data-lang aria-controls=tab-group-17-0_k0o5iwpydvpa3de-panel role=tab><label for=tab-group-17-0_k0o5iwpydvpa3de class=code-tab-label data-lang id=tab-group-17-0_k0o5iwpydvpa3de-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-17-0_k0o5iwpydvpa3de-panel aria-labelledby=tab-group-17-0_k0o5iwpydvpa3de-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>sudo vi /etc/rc.local</span>
-</code></pre></div></td></tr></table></div><input name=tab-group-17 type=radio id=tab-group-17-1_cb77m3k6prd3tz2 class=code-tab data-lang aria-controls=tab-group-17-1_cb77m3k6prd3tz2-panel role=tab><label for=tab-group-17-1_cb77m3k6prd3tz2 class=code-tab-label data-lang id=tab-group-17-1_cb77m3k6prd3tz2-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-17-1_cb77m3k6prd3tz2-panel aria-labelledby=tab-group-17-1_cb77m3k6prd3tz2-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+<div class=md-fenced-code-tabs id=tab-tab-group-20><input name=tab-group-20 type=radio id=tab-group-20-0_jzk49rfpoh0rvgc checked=checked class=code-tab data-lang aria-controls=tab-group-20-0_jzk49rfpoh0rvgc-panel role=tab><label for=tab-group-20-0_jzk49rfpoh0rvgc class=code-tab-label data-lang id=tab-group-20-0_jzk49rfpoh0rvgc-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-20-0_jzk49rfpoh0rvgc-panel aria-labelledby=tab-group-20-0_jzk49rfpoh0rvgc-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>sudo vi /etc/rc.local</span>
+</code></pre></div></td></tr></table></div><input name=tab-group-20 type=radio id=tab-group-20-1_s68n1kni1o3flxi class=code-tab data-lang aria-controls=tab-group-20-1_s68n1kni1o3flxi-panel role=tab><label for=tab-group-20-1_s68n1kni1o3flxi class=code-tab-label data-lang id=tab-group-20-1_s68n1kni1o3flxi-label></label><div class=code-tabpanel role=tabpanel data-lang id=tab-group-20-1_s68n1kni1o3flxi-panel aria-labelledby=tab-group-20-1_s68n1kni1o3flxi-label><table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
 3
 4
