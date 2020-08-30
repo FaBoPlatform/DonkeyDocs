@@ -15,7 +15,7 @@
     
     
       
-        <title>FaBo AI Car - FaBo DonkeyCar Docs</title>
+        <title>マニュアル走行と教師データの作成 - FaBo DonkeyCar Docs</title>
       
     
     
@@ -52,7 +52,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#fabo-ai-car" class="md-skip">
+        <a href="#_1" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -80,7 +80,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              FaBo AI Car
+              マニュアル走行と教師データの作成
             
           </span>
         </div>
@@ -296,10 +296,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
     
     <label class="md-nav__link" for="nav-5">
       3.マニュアル走行と学習データ作成
@@ -323,7 +325,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../3.%E3%83%9E%E3%83%8B%E3%83%A5%E3%82%A2%E3%83%AB%E8%B5%B0%E8%A1%8C%E3%81%A8%E5%AD%A6%E7%BF%92%E3%83%87%E3%83%BC%E3%82%BF%E4%BD%9C%E6%88%90/01.create_mycar/" title="mycarの作成" class="md-nav__link">
+    <a href="../01.create_mycar/" title="mycarの作成" class="md-nav__link">
       mycarの作成
     </a>
   </li>
@@ -335,7 +337,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../3.%E3%83%9E%E3%83%8B%E3%83%A5%E3%82%A2%E3%83%AB%E8%B5%B0%E8%A1%8C%E3%81%A8%E5%AD%A6%E7%BF%92%E3%83%87%E3%83%BC%E3%82%BF%E4%BD%9C%E6%88%90/02.calibration/" title="キャリブレーション" class="md-nav__link">
+    <a href="../02.calibration/" title="キャリブレーション" class="md-nav__link">
       キャリブレーション
     </a>
   </li>
@@ -345,11 +347,88 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../3.%E3%83%9E%E3%83%8B%E3%83%A5%E3%82%A2%E3%83%AB%E8%B5%B0%E8%A1%8C%E3%81%A8%E5%AD%A6%E7%BF%92%E3%83%87%E3%83%BC%E3%82%BF%E4%BD%9C%E6%88%90/03.manual_drive/" title="マニュアル走行と教師データの作成" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        マニュアル走行と教師データの作成
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="マニュアル走行と教師データの作成" class="md-nav__link md-nav__link--active">
       マニュアル走行と教師データの作成
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#joystick" class="md-nav__link">
+    Joystickの接続
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#donkeycar" class="md-nav__link">
+    DonkeyCarの起動
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    データの保存
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    教師データの圧縮
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zip" class="md-nav__link">
+    zipコマンドでフォルダを圧縮
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    データの転送
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -488,12 +567,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
     
     <label class="md-nav__link" for="nav-9">
       9.FaBoCar
@@ -517,7 +594,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../00.motor/" title="Motorの制御" class="md-nav__link">
+    <a href="../../9.FaBoCar/00.motor/" title="Motorの制御" class="md-nav__link">
       Motorの制御
     </a>
   </li>
@@ -529,7 +606,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../01.pwm/" title="Servoの制御" class="md-nav__link">
+    <a href="../../9.FaBoCar/01.pwm/" title="Servoの制御" class="md-nav__link">
       Servoの制御
     </a>
   </li>
@@ -539,53 +616,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        FaBo AI Car
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="FaBo AI Car" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../9.FaBoCar/02.faboai/" title="FaBo AI Car" class="md-nav__link">
       FaBo AI Car
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#fabo-ai-car_1" class="md-nav__link">
-    FaBo AI Carの使い方
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -620,8 +655,43 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#fabo-ai-car_1" class="md-nav__link">
-    FaBo AI Carの使い方
+  <a href="#joystick" class="md-nav__link">
+    Joystickの接続
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#donkeycar" class="md-nav__link">
+    DonkeyCarの起動
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    データの保存
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    教師データの圧縮
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zip" class="md-nav__link">
+    zipコマンドでフォルダを圧縮
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    データの転送
   </a>
   
 </li>
@@ -642,10 +712,97 @@
                   
                 
                 
-                <h1 id="fabo-ai-car">FaBo AI Car</h1>
-<h2 id="fabo-ai-car_1">FaBo AI Carの使い方</h2>
-<p>他の使い方は、Dockerをベースに試すことができる。</p>
-<p><a href="https://faboplatform.github.io/RobotCarAI/" target="_BLANK">https://faboplatform.github.io/RobotCarAI/</a></p>
+                <h1 id="_1">マニュアル走行と教師データの作成</h1>
+<p><img alt="" src="../img/run001.png" /></p>
+<hr>
+
+<h2 id="joystick">Joystickの接続</h2>
+<p>JoystickをDonkeyCarに接続します。Joystickの裏側の蓋を外すと、USBドングルが入っているので、DonkeyCarのRaspberry Pi3のUSBに差し込みます。</p>
+<p><img alt="" src="../img/joystick001.png" /></p>
+<p><img alt="" src="../img/joystick006.png" /></p>
+<p><img alt="" src="../img/joystick003.png" /></p>
+<div class="admonition warning">
+<p class="admonition-title">Joystickは省電力モードにすぐ入ります</p>
+<p>Joystickを操作していない時間が長いと、Joystickは省電力モードにはいります。復活させるには、<code>start</code>を押し、<code>vibration</code>ボタンで電源のOn/Offを確認します。他のボタンにはコマンドが割り振られているために押さないようにしてください。</p>
+</div>
+<hr>
+
+<h2 id="donkeycar">DonkeyCarの起動</h2>
+<p>Joystickは、すぐ省電力モードにはいり、Offになります。① StartボタンをおしてJoystickの電源がOnになっている事を確認します。② Vibrationボタンを押してバイブレーションすれば、電源はOnの状態です。</p>
+<p><img alt="" src="../img/joystick005.png" /></p>
+<p><code>~/mycar</code>フォルダに移動します。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>cd ~/mycar</span>
+</code></pre></div></td></tr></table></p>
+<p>DonkeyCarを起動します。<code>--js</code>をつけると、Joystickが有効になります。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>python manage.py drive --js</span>
+</code></pre></div></td></tr></table></p>
+<p>早速、DonkeyCarのテスト走行を行いましょう!!
+走行の終了は、<span class="keys"><kbd>CTRL</kbd><span>+</span><kbd>c</kbd></span>で、終了します。</p>
+<hr>
+
+<h2 id="_2">データの保存</h2>
+<p>データは、前進・行進している間、自動保存されます。保存先は、<code>~/mycar/dara</code>になります。フォルダが生成されるタイミングは、<code>python manage.py drive --js</code>を実行したタイミングで、毎回作成されます。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>cd ~/mycar/data</span>
+</code></pre></div></td></tr></table></p>
+<p>lsコマンドで作成されたフォルダを確認します。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>ls</span>
+</code></pre></div></td></tr></table></p>
+<p>今作成されたフォルダが下記のように表示されます(例)。このフォルダ以下にデータ・セットが保存されています。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>tub_01_19-01-26</span>
+</code></pre></div></td></tr></table></p>
+<p>DonkeyCarの終了は、<span class="keys"><kbd>CTRL</kbd><span>+</span><kbd>c</kbd></span>で終了します。</p>
+<div class="admonition warning">
+<p class="admonition-title">フォルダのできるタイミング</p>
+<p>tubフォルダができるタイミングは、<code>python manage.py drive --js</code>を実行したタイミングです。</p>
+</div>
+<hr>
+
+<h2 id="_3">教師データの圧縮</h2>
+<p>ZIPで学習データとして使いたい走行のフォルダを圧縮します。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>cd ~/mycar/data</span>
+</code></pre></div></td></tr></table></p>
+<hr>
+
+<h2 id="zip">zipコマンドでフォルダを圧縮</h2>
+<p>zipコマンドでフォルダを圧縮します。</p>
+<p>まず、過去のdatas.zipが存在する場合があるので、削除します。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>rm datas.zip</span>
+</code></pre></div></td></tr></table></p>
+<p>今作成した走行データの保存されているtubフォルダを指定します。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>zip -r datas.zip tub_自分のフォルダ名</span>
+</code></pre></div></td></tr></table></p>
+<div class="admonition info">
+<p class="admonition-title">学習に必要なデータ・セット数</p>
+<p>学習に必要なデータセット数は、5000〜2万データ・セットぐらいになります。</p>
+</div>
+<hr>
+
+<h2 id="_4">データの転送</h2>
+<p><a href="https://chrome.google.com/webstore/detail/secure-shell-app/pnhechapfaindjhompbnflcldabbghjo/related?hl=ja" target="sftp_tab">Secure Shell</a>をクリックし、<code>アプリの起動</code>を選択し、新しいWindowで、Secure shellを起動します。今度は、下記の通りSFTPを選択し、SFTPでDonkeyCarに接続します。</p>
+<p><img alt="" src="../img/sftp000.png" /></p>
+<table>
+<thead>
+<tr>
+<th align="left">ログインID</th>
+<th align="left">パスワード</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">pi</td>
+<td align="left">raspberry</td>
+</tr>
+</tbody>
+</table>
+<p>SFTPで、datas.zipのあるフォルダに移動します。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>cd ~/mycar/data</span>
+</code></pre></div></td></tr></table></p>
+<p><img alt="" src="../img/sftp002.png" /></p>
+<p>SFTPで、datas.zipをgetします。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>get datas.zip</span>
+</code></pre></div></td></tr></table></p>
+<p><img alt="" src="../img/sftp003.png" /></p>
+<p>これで、datas.zipがPCに転送されます。</p>
                 
               
               
@@ -664,7 +821,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="">
         
-          <a href="../01.pwm/" title="Servoの制御" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../02.calibration/" title="キャリブレーション" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -673,11 +830,25 @@
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                Servoの制御
+                キャリブレーション
               </div>
             </div>
           </a>
         
+        
+          <a href="../../4.%E5%AD%A6%E7%BF%92/01.train_colab/" title="Colabでの学習(GPU)" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  次
+                </span>
+                Colabでの学習(GPU)
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
         
       </nav>
     </div>

@@ -15,7 +15,7 @@
     
     
       
-        <title>FaBo AI Car - FaBo DonkeyCar Docs</title>
+        <title>WiFi設定 - FaBo DonkeyCar Docs</title>
       
     
     
@@ -52,7 +52,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#fabo-ai-car" class="md-skip">
+        <a href="#wifi" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -80,7 +80,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              FaBo AI Car
+              WiFi設定
             
           </span>
         </div>
@@ -218,10 +218,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
     <label class="md-nav__link" for="nav-4">
       2.DonkeyCarインストール
@@ -245,7 +247,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../2.DonkeyCar%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/00.tools/" title="使用ツール" class="md-nav__link">
+    <a href="../00.tools/" title="使用ツール" class="md-nav__link">
       使用ツール
     </a>
   </li>
@@ -257,7 +259,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../2.DonkeyCar%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/01.os_install/" title="DonkeyCarのインストール" class="md-nav__link">
+    <a href="../01.os_install/" title="DonkeyCarのインストール" class="md-nav__link">
       DonkeyCarのインストール
     </a>
   </li>
@@ -267,11 +269,95 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="../../2.DonkeyCar%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/02.wifi/" title="WiFi設定" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        WiFi設定
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="WiFi設定" class="md-nav__link md-nav__link--active">
       WiFi設定
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wpa_supplicantconf" class="md-nav__link">
+    wpa_supplicant.confのダウンロード
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text-editor" class="md-nav__link">
+    TEXT Editorの起動と編集
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wifi_1" class="md-nav__link">
+    WiFiスポットにパスワードなしでログインする場合の設定
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sd" class="md-nav__link">
+    SDカードにコピー
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#osx" class="md-nav__link">
+    接続先の確認(OSX)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    接続先の確認(Windows)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wpa_supplicant" class="md-nav__link">
+    wpa_supplicantの修正
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -281,7 +367,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../2.DonkeyCar%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/03.ssh/" title="SSHでRaspberry Piにログイン" class="md-nav__link">
+    <a href="../03.ssh/" title="SSHでRaspberry Piにログイン" class="md-nav__link">
       SSHでRaspberry Piにログイン
     </a>
   </li>
@@ -488,12 +574,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" checked>
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
     
     <label class="md-nav__link" for="nav-9">
       9.FaBoCar
@@ -517,7 +601,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../00.motor/" title="Motorの制御" class="md-nav__link">
+    <a href="../../9.FaBoCar/00.motor/" title="Motorの制御" class="md-nav__link">
       Motorの制御
     </a>
   </li>
@@ -529,7 +613,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../01.pwm/" title="Servoの制御" class="md-nav__link">
+    <a href="../../9.FaBoCar/01.pwm/" title="Servoの制御" class="md-nav__link">
       Servoの制御
     </a>
   </li>
@@ -539,53 +623,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-      
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        FaBo AI Car
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
-      </label>
-    
-    <a href="./" title="FaBo AI Car" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../9.FaBoCar/02.faboai/" title="FaBo AI Car" class="md-nav__link">
       FaBo AI Car
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#fabo-ai-car_1" class="md-nav__link">
-    FaBo AI Carの使い方
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
         
@@ -620,8 +662,50 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#fabo-ai-car_1" class="md-nav__link">
-    FaBo AI Carの使い方
+  <a href="#wpa_supplicantconf" class="md-nav__link">
+    wpa_supplicant.confのダウンロード
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text-editor" class="md-nav__link">
+    TEXT Editorの起動と編集
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wifi_1" class="md-nav__link">
+    WiFiスポットにパスワードなしでログインする場合の設定
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sd" class="md-nav__link">
+    SDカードにコピー
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#osx" class="md-nav__link">
+    接続先の確認(OSX)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#windows" class="md-nav__link">
+    接続先の確認(Windows)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wpa_supplicant" class="md-nav__link">
+    wpa_supplicantの修正
   </a>
   
 </li>
@@ -642,10 +726,115 @@
                   
                 
                 
-                <h1 id="fabo-ai-car">FaBo AI Car</h1>
-<h2 id="fabo-ai-car_1">FaBo AI Carの使い方</h2>
-<p>他の使い方は、Dockerをベースに試すことができる。</p>
-<p><a href="https://faboplatform.github.io/RobotCarAI/" target="_BLANK">https://faboplatform.github.io/RobotCarAI/</a></p>
+                <h1 id="wifi">WiFi設定</h1>
+<p>WiFiへの接続、SSHでログインできるようにしていきます。<br />
+焼き込みのみでは初回起動時にWiFiへの接続・SSHでのログインが出来ないため、ここで設定を行っています。</p>
+<h2 id="wpa_supplicantconf">wpa_supplicant.confのダウンロード</h2>
+<p><a href="https://faboplatform.github.io/DonkeyDocs/0.SDカードイメージを最初から作成する方法/wpa_supplicant.conf" download>wpa_supplicant.conf</a>
+をダウンロードします。</p>
+<p><img alt="" src="../img/wifi001.png" /></p>
+<h2 id="text-editor">TEXT Editorの起動と編集</h2>
+<p><a href="https://chrome.google.com/webstore/detail/text/mmfbcljfglbokpmkimbfghdkjmjhdgbg" target="text_tab">TEXT(Chorme App)</a> をクリックし、アプリを起動をクリックし、TEXT Editorを開きます。</p>
+<p><img alt="" src="../img/text001.png" /></p>
+<p><img alt="" src="../img/text002.png" /></p>
+<p><img alt="" src="../img/text003.png" /></p>
+<p>ssidに接続先のssid, pskにpasswordを記載します。</p>
+<p><img alt="" src="../img/text004.png" />
+ステルスモードのWiFiスポットにログインする場合は、scan_ssid=1も追加します。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=n>country</span><span class=o>=</span><span class=n>JP</span>
+<span class=n>ctrl_interface</span><span class=o>=</span><span class=n>DIR</span><span class=o>=/</span><span class=n>var</span><span class=o>/</span><span class=n>run</span><span class=o>/</span><span class=n>wpa_supplicant</span> <span class=k>GROUP</span><span class=o>=</span><span class=n>netdev</span>
+<span class=n>update_config</span><span class=o>=</span><span class=mi>1</span>
+
+<span class=n>network</span><span class=o>=</span><span class=err>{</span>
+    <span class=n>ssid</span><span class=o>=</span><span class=ss>&quot;your network name&quot;</span>
+    <span class=n>psk</span><span class=o>=</span><span class=ss>&quot;your password&quot;</span>
+    <span class=n>scan_ssid</span><span class=o>=</span><span class=mi>1</span>
+<span class=err>}</span>
+</code></pre></div></td></tr></table></p>
+<p><img alt="" src="../img/text005.png" /></p>
+<div class="admonition warning">
+<p class="admonition-title">5GHz</p>
+<p>Raspberry Pi3は、5GHz帯のWiFiは非対応です。2.4GHz帯のWiFiのアクセスポイントを設定するようにしてください。</p>
+</div>
+<hr>
+
+<h2 id="wifi_1">WiFiスポットにパスワードなしでログインする場合の設定</h2>
+<p>PasswordのないWiFiスポットに接続する場合は、下記例を参考にしてください。<code>key_mgmt=NONE</code>をつける事で、パスワードなしでログインできます。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
+2
+3
+4
+5
+6
+7
+8</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=n>country</span><span class=o>=</span><span class=n>JP</span>
+<span class=n>ctrl_interface</span><span class=o>=</span><span class=n>DIR</span><span class=o>=/</span><span class=n>var</span><span class=o>/</span><span class=n>run</span><span class=o>/</span><span class=n>wpa_supplicant</span> <span class=k>GROUP</span><span class=o>=</span><span class=n>netdev</span>
+<span class=n>update_config</span><span class=o>=</span><span class=mi>1</span>
+
+<span class=n>network</span><span class=o>=</span><span class=err>{</span>
+    <span class=n>ssid</span><span class=o>=</span><span class=ss>&quot;your network name&quot;</span>
+    <span class=n>key_mgmt</span><span class=o>=</span><span class=k>NONE</span>
+<span class=err>}</span>
+</code></pre></div></td></tr></table></p>
+<hr>
+
+<h2 id="sd">SDカードにコピー</h2>
+<p>DonkeyCarイメージmicro SDカードに焼き込み終わったあとに、SDカードを抜いて、再度PCに挿し直すと、PCでSDカードが認識されます。<br>
+<code>wpa_supplicant.conf</code>を編集したら、SDカードの<code>boot</code>パーティション直下にコピーしてください。<br>
+この後、SDカードをraspberry piに入れて、raspberry piの電源を入れます。<br></p>
+<p>Raspberry Piの起動時にSDカードにある<code>wpa_supplicant.conf</code>が自動的に<br>
+<code>/etc/wpa_supplicant/wpa_supplicant.conf</code>へコピーされ、指定したWiFiネットワークに接続されます。  </p>
+<hr>
+
+<h2 id="osx">接続先の確認(OSX)</h2>
+<p>DonkeyCarと同一ネットワークに接続しているOSXより、下記コマンドで接続を試みます。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>ssh pi@donkeypi.local</span>
+</code></pre></div></td></tr></table></p>
+<table>
+<thead>
+<tr>
+<th align="left">ログインID</th>
+<th align="left">パスワード</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">pi</td>
+<td align="left">raspberry</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Host名について</p>
+<p>上記方法はOSXのみで有効で、複数台使用時は、DonkeyCarのRaspberry Pi3のhost名を任意のユニークな名前に書き直す必要があります。</p>
+</div>
+<p>ifconfigでipアドレスを確認します。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>ifconfigf -a</span>
+</code></pre></div></td></tr></table></p>
+<p>で表示されるWLAN0にIPアドレスが表示されます。</p>
+<div class="admonition info">
+<p class="admonition-title">IPアドレス</p>
+<p>自分のIPアドレスをメモっておきます。</p>
+</div>
+<hr>
+
+<h2 id="windows">接続先の確認(Windows)</h2>
+<p>Raspberry Pi3をHDMIケーブルでDisplayに接続します。起動画面の最後でIPアドレスが表示されれば、ネットワークに接続成功です。</p>
+<p><img alt="" src="../img/ip001.png" /></p>
+<hr>
+
+<h2 id="wpa_supplicant">wpa_supplicantの修正</h2>
+<p>接続に失敗した場合は、Raspberry Pi3内の<code>/etc/wpa_supplicant/wpa_supplicant.conf</code> を修正することで、接続先の変更が可能です。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>sudo nano /etc/wpa_supplicant/wpa_supplicant.conf</span>
+</code></pre></div></td></tr></table></p>
                 
               
               
@@ -664,7 +853,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="">
         
-          <a href="../01.pwm/" title="Servoの制御" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../01.os_install/" title="DonkeyCarのインストール" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -673,11 +862,25 @@
                 <span class="md-footer-nav__direction">
                   前
                 </span>
-                Servoの制御
+                DonkeyCarのインストール
               </div>
             </div>
           </a>
         
+        
+          <a href="../03.ssh/" title="SSHでRaspberry Piにログイン" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  次
+                </span>
+                SSHでRaspberry Piにログイン
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
         
       </nav>
     </div>
