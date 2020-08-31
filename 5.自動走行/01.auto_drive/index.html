@@ -677,7 +677,7 @@
 <h2 id="mypiloth5raspberry-pi3">mypilot.h5をRaspberry Pi3へ移動</h2>
 <p>SFTPでRaspberry Pi3側の<code>/home/pi/mycar/models</code>フォルダにアップロードします。</p>
 <p><img alt="" src="../img/sftp000.png" /></p>
-<p>SFTPで、学習済みモデルをアップするフォルダに移動します。`~/mycar/models/</p>
+<p>SFTPで、学習済みモデルをアップするフォルダに移動します。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>cd ~/mycar/models</span>
 </code></pre></div></td></tr></table></p>
 <p><img alt="" src="../img/sftp004.png" /></p>
@@ -698,6 +698,11 @@
 <p>DonkeyCarのIPアドレスがわからない場合は、ifconfigでwlan0のIPアドレスを調べます。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>ifconfig -a</span>
 </code></pre></div></td></tr></table></p>
+<div class="admonition warning">
+<p class="admonition-title">カメラ準備が完了するまで待機<p>Webカメラの準備が完了する前にWebブラウザにアクセスすると、エラーで落ちる場合があります。その場合は自動走行のコマンドを実行後、ターミナルログをみてカメラの準備が完了してからWebブラウザにアクセスしてください。<br>
+カメラの準備が完了すると、ターミナルログにはカメラの解像度に関する情報が表示されます。</p>
+</p>
+</div>
 <hr>
 
 <h2 id="_2">学習済みモデルの呼び出し自動走行</h2>
