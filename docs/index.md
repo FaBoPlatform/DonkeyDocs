@@ -31,11 +31,13 @@ GithubのRepoに[Issues](https://github.com/FaBoPlatform/DonkeyDocs/issues)を�
 - 2020年1月14日 AI ラジコン Car Hands-On(日本大学 Nihon Technology Students Association主催)(10台)
 - 2020年2月15日 DonkeyCarもくもく会(富士通Ply主催)(8台)
 - 2020年2月21日 研究所向け新入社員研修(14台)
+- 2020年11月21日 東京未来ファクトリーで高校生向けにDonkeyCarハンズオンを実施(企画運営:株式会社角川アスキー研究所/ 主催:東京都教育委員会)(22名参加,8台)
 
 ## DonkeyCarの購入先(FaBo Store)
 - [DonkeyCar Kit](https://fabo.store/collections/donkeycar/products/donkeycar-kit-1)
 
 ## 関連記事
+- [東京未来ファクトリーを実施します！(東京都教育委員会)](https://www.kyoiku.metro.tokyo.lg.jp/school/content/factory/about_factory.html)
 - [AIカーが来てる！　自動運転でラジコンカーを走らせよう！](https://ascii.jp/elem/000/001/779/1779694/)
 - [オープンソースのAI学習カー「Donkey Car」を走らせてみた！](https://weekly.ascii.jp/elem/000/000/423/423904/)
 - [話題のAIで自動運転するドンキーカーを走らせてみた、ちびっこ対AIの白熱バトルも! 遠藤諭の「Maker Faire Tokyo 2019」レポート](https://robotstart.info/2019/08/29/donkeycar-maker-tokyo.html)
