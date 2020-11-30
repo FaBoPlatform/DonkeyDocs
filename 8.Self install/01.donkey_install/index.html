@@ -11,7 +11,7 @@
       
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.5">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.2.2">
     
     
       
@@ -19,7 +19,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.df84b5fe.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.a2408e81.min.css">
       
       
     
@@ -44,7 +44,7 @@
   </head>
   
   
-    <body dir="">
+    <body dir="ltr">
   
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
@@ -62,7 +62,7 @@
     </div>
     
       <header class="md-header" data-md-component="header">
-  <nav class="md-header-nav md-grid" aria-label="">
+  <nav class="md-header-nav md-grid" aria-label="Header">
     <a href="../.." title="FaBo DonkeyCar Docs" class="md-header-nav__button md-logo" aria-label="FaBo DonkeyCar Docs">
       
   
@@ -105,7 +105,7 @@
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="" data-md-level="0">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../.." title="FaBo DonkeyCar Docs" class="md-nav__button md-logo" aria-label="FaBo DonkeyCar Docs">
       
@@ -897,7 +897,7 @@
 <p>RaspberryPi OSの焼き込みが終わったら、sshの設定をおこないます。</p>
 <p><img alt="" src="../img/ssh001.png" /><br></p>
 <p>OSイメージをmicro SDカードに焼き込み終わったあとに、SDカードを抜いて、再度PCに挿し直すと、PCでSDカードが認識されます。PCでSDカードを認識したら、<code>boot</code>パーティション直下に空ファイルのsshファイルをコピーします。</p>
-<p><a href="https://faboplatform.github.io/DonkeyDocs/0.SDカードイメージを最初から作成する方法/ssh" download>ssh</a>
+<p><a href="https://faboplatform.github.io/DonkeyDocs/8.Self install/ssh" download>ssh</a>
 をダウンロードし、SDカードにコピーします。<code>ssh</code>ファイルの中身はただの空ファイルですが、<code>ssh</code>という名前のファイルがSDカードに存在すると、sshでのアクセスが可能になる設定になります。</p>
 <p>この方法での結果、raspi-configでsshを有効化すること同じ結果になります。<br></p>
 <div class="admonition info">
@@ -906,7 +906,7 @@
 </div>
 <h2 id="wifi">WiFiの設定</h2>
 <p>Wifiの設定も、SDカードに<code>wpa_supplicant.conf</code>という名前のファイルをコピーする事で反映させる事が可能です。</p>
-<p><a href="https://faboplatform.github.io/DonkeyDocs/0.SDカードイメージを最初から作成する方法/wpa_supplicant.conf" download>wpa_supplicant.conf</a>
+<p><a href="https://faboplatform.github.io/DonkeyDocs/8.Self install/wpa_supplicant.conf" download>wpa_supplicant.conf</a>
 をダウンロードします。ファイルを編集してSSIDとパスワードを接続先のWiFiルータの値に書き直します。</p>
 <p>wpa_supplicant.conf</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
@@ -1011,7 +1011,7 @@
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
 3</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>sudo apt-get install -y vim htop locate arp-scan screen</span>
-<span class=err>sudo apt-get install -y build-essential python3 python3-dev python3-pip python3-virtualenv python3-numpy python3-picamera python3-pandas python3-rpi.gpio i2c-tools avahi-utils joystick libopenjp2-7-dev libtiff5-dev gfortran libatlas-base-dev libopenblas-dev libhdf5-serial-dev git ntp</span>
+<span class=err>sudo apt-get install -y build-essential python3 python3-dev python3-pip python3-virtualenv python3-numpy python3-picamera python3-pandas python3-rpi.gpio i2c-tools avahi-utils joystick libopenjp2-7-dev libtiff5-dev gfortran libatlas-base-dev libopenblas-dev libhdf5-serial-dev git ntp zip</span>
 <span class=err>sudo apt-get install -y libilmbase-dev libopenexr-dev libgstreamer1.0-dev libjasper-dev libwebp-dev libatlas-base-dev libavcodec-dev libavformat-dev libswscale-dev libqtgui4 libqt4-test</span>
 </code></pre></div></td></tr></table></p>
 <h3 id="virtualenv">virtualenv環境の構築</h3>
@@ -1201,7 +1201,7 @@ PCA9685でPWMを生成する場合は、PCA9685チップのレジスタに書き
 <footer class="md-footer">
   
     <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid" aria-label="">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
           <a href="../../7.%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB%E3%82%B7%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0/02.golab/" title="Camera障害" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
@@ -1251,15 +1251,15 @@ PCA9685でPWMを生成する場合は、PCA9685チップのレジスタに書き
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.83fe6e3c.min.js"></script>
-      <script src="../../assets/javascripts/bundle.7e1cb91c.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f"}</script>
+      <script src="../../assets/javascripts/vendor.d710d30a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.5f27aba8.min.js"></script><script id="__lang" type="application/json">{"search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.config.lang": "ja", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.config.pipeline": "trimmer, stopWordFilter"}</script>
       
       <script>
         app = initialize({
           base: "../..",
           features: [],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.37585f48.min.js"
+            worker: "../../assets/javascripts/worker/search.27c6a5e6.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
