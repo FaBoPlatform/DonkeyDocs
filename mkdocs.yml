@@ -6,6 +6,7 @@ extra:
     search:
         language: 'jp'
 markdown_extensions:
+  - attr_list
   - fontawesome_markdown
   - codehilite:
       linenums: true
