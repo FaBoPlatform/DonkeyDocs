@@ -1247,10 +1247,14 @@
 <h3 id="text-editor">TEXT Editorの起動と編集</h3>
 <p><a href="https://chrome.google.com/webstore/detail/text/mmfbcljfglbokpmkimbfghdkjmjhdgbg" target="text_tab">TEXT(Chorme App)</a> をクリックし、アプリを起動をクリックし、TEXT Editorを開きます。</p>
 <p><img alt="" src="../img/text001.png" /></p>
-<p><img alt="" src="../img/text002.png" /></p>
+<p>アプリをクリックするか、アドレスバーにchrome://appsと入力します。Textというアイコンが表示されるので選択します。</p>
+<p><img alt="" src="../img/WifiConf/Chrome01.jpg" /></p>
+<p>開くをクリック。</p>
+<p><img alt="" src="../img/WifiConf/WifiConf00.png" /></p>
+<p>SDカード(boot)にあるwpa_supplicant.confを選択し、編集します。</p>
 <p><img alt="" src="../img/text003.png" /></p>
-<p>ssidに接続先のssid, pskにpasswordを記載します。</p>
-<p><img alt="" src="../img/text004.png" /></p>
+<p>ファイルを開くと以下の画面が表示されます。</p>
+<p><img alt="" src="../img/WifiConf/WifiConf01.png" /></p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1
 2
 3
@@ -1269,7 +1273,8 @@
     <span class=n>scan_ssid</span><span class=o>=</span><span class=mi>1</span>
 <span class=err>}</span>
 </code></pre></div></td></tr></table></p>
-<p><img alt="" src="../img/text005.png" /></p>
+<p>ssidに接続先のssid, pskにpasswordを記載します。</p>
+<p><img alt="" src="../img/WifiConf/WifiConf02.png" /></p>
 <p>Raspberry Piの初回起動時にSDカードにある<code>wpa_supplicant.conf</code>が自動的に<br />
 <code>/etc/wpa_supplicant/wpa_supplicant.conf</code>へコピーされ、指定したWifiネットワークに<br />
 接続されます。  </p>
@@ -1317,10 +1322,36 @@
 <hr>
 
 <h2 id="sddonekycar">SDカードをDonekyCarに挿入</h2>
-<p>SDカードをDonkeyCarのRaspPi3に挿入し、電源をOnにします。</p>
+<p>ディスプレイありモデル（DCK-R2）の場合。</p>
+<p>SDカードをDonkeyCarのRaspberry 3B+に挿入します。</p>
+<p><img alt="" src="../img/WifiConf/DCK2_WIFI_SD.jpg" /></p>
+<p>マイクロUSBプラグをRaspberry Piに刺して電源をオンにします。するとRaspberry Piの赤色LED（PWR）が点灯します。</p>
+<p><img alt="" src="../img/WifiConf/DCK_WIFI_USBP.jpg" /></p>
+<p>電源が入らない場合は、モバイルバッテリーのスイッチを１回クリックします。</p>
+<p><img alt="" src="../img/WifiConf/DCK2_BAT_SWITCH.jpg" /></p>
+<div class="admonition info">
+<p class="admonition-title">モバイルバッテリースイッチ</p>
+<p>回クリック 電源オン<br>2回クリック 電源オフ<br>長押し　モバイルバッテリーのライトオンまたはオフ</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">電源OFFの忘れ</p>
+<p>モバイルバッテリーをオフにしてもRCカーの電源はオフにはなりません！！！ご注意ください。</p>
+</div>
+<p><br></p>
+<p>モバイルバッテリーから電源出力されると残量表示が数字（パーセント）で表示されます。</p>
+<p><img alt="" src="../img/WifiConf/DCK2_BAT_DIGIT.jpg" /></p>
+<div class="admonition warning">
+<p class="admonition-title">モバイルバッテリーの残量</p>
+<p>多少のズレがございます。ご了承ください。</p>
+</div>
+<p><br>
+<br></p>
+<p>ディスプレイに情報が表示され、Wlan0:IPアドレスが確認できます。</p>
+<p><img alt="" src="../img/WifiConf/DCK2_WIFI_OLED.jpg" /></p>
 <hr>
 
 <h2 id="osx">接続先の確認(OSX)</h2>
+<p>ディスプレイなしモデル（DCK-R1）の場合。</p>
 <p>DonkeyCarと同一ネットワークに接続しているOSXより、下記コマンドで接続を試みます。</p>
 <p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre>1</pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=err>ssh pi@donkeypi.local</span>
 </code></pre></div></td></tr></table></p>
