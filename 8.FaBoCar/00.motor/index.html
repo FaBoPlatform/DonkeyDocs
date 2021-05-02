@@ -1,0 +1,972 @@
+
+<!doctype html>
+<html lang="ja" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.2">
+    
+    
+      
+        <title>Motorの制御 - FaBo DonkeyCar Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1655a90d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.7fa14f5b.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#motor" class="md-skip">
+          コンテンツにスキップ
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="ヘッダー">
+    <a href="../.." title="FaBo DonkeyCar Docs" class="md-header__button md-logo" aria-label="FaBo DonkeyCar Docs">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FaBo DonkeyCar Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Motorの制御
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      
+    </div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="ナビゲーション" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="FaBo DonkeyCar Docs" class="md-nav__button md-logo" aria-label="FaBo DonkeyCar Docs">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    FaBo DonkeyCar Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        FaBo DonkeyCar Docs
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        1.車体作成
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="1.車体作成" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          1.車体作成
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.%E8%BB%8A%E4%BD%93%E4%BD%9C%E6%88%90/00.DCK-R1/" class="md-nav__link">
+        組み立て DCK-R1
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.%E8%BB%8A%E4%BD%93%E4%BD%9C%E6%88%90/00.DCK-R2/" class="md-nav__link">
+        組み立て DCK-R2
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../1.%E8%BB%8A%E4%BD%93%E4%BD%9C%E6%88%90/00.build/" class="md-nav__link">
+        組み立て
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      <label class="md-nav__link" for="__nav_3">
+        2.DonkeyCarインストール
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="2.DonkeyCarインストール" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          2.DonkeyCarインストール
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2.DonkeyCar%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/00.tools/" class="md-nav__link">
+        使用ツール
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2.DonkeyCar%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/01.os_install/" class="md-nav__link">
+        DonkeyCarのインストール
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2.DonkeyCar%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/02.wifi/" class="md-nav__link">
+        WiFi設定
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../2.DonkeyCar%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/03.ssh/" class="md-nav__link">
+        SSHでRaspberry Piにログイン
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        3.マニュアル走行と学習データ作成
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="3.マニュアル走行と学習データ作成" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          3.マニュアル走行と学習データ作成
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3.%E3%83%9E%E3%83%8B%E3%83%A5%E3%82%A2%E3%83%AB%E8%B5%B0%E8%A1%8C%E3%81%A8%E5%AD%A6%E7%BF%92%E3%83%87%E3%83%BC%E3%82%BF%E4%BD%9C%E6%88%90/01.create_mycar/" class="md-nav__link">
+        mycarの作成
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3.%E3%83%9E%E3%83%8B%E3%83%A5%E3%82%A2%E3%83%AB%E8%B5%B0%E8%A1%8C%E3%81%A8%E5%AD%A6%E7%BF%92%E3%83%87%E3%83%BC%E3%82%BF%E4%BD%9C%E6%88%90/02.calibration/" class="md-nav__link">
+        キャリブレーション
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../3.%E3%83%9E%E3%83%8B%E3%83%A5%E3%82%A2%E3%83%AB%E8%B5%B0%E8%A1%8C%E3%81%A8%E5%AD%A6%E7%BF%92%E3%83%87%E3%83%BC%E3%82%BF%E4%BD%9C%E6%88%90/03.manual_drive/" class="md-nav__link">
+        マニュアル走行と教師データの作成
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        4.学習
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="4.学習" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          4.学習
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4.%E5%AD%A6%E7%BF%92/01.train_colab/" class="md-nav__link">
+        Colabでの学習(GPU)
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        5.自動走行
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="5.自動走行" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          5.自動走行
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../5.%E8%87%AA%E5%8B%95%E8%B5%B0%E8%A1%8C/01.auto_drive/" class="md-nav__link">
+        自動走行
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        6.トラブルシューティング
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="6.トラブルシューティング" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          6.トラブルシューティング
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../6.%E3%83%88%E3%83%A9%E3%83%96%E3%83%AB%E3%82%B7%E3%83%A5%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0/01.camera/" class="md-nav__link">
+        Camera障害
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        7.SDカードイメージ作成
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="7.SDカードイメージ作成" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          7.SDカードイメージ作成
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../7.SD%E3%82%AB%E3%83%BC%E3%83%89%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8%E4%BD%9C%E6%88%90/01.donkey_install/" class="md-nav__link">
+        SDカードイメージを最初から作成する方法
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" checked>
+      
+      <label class="md-nav__link" for="__nav_9">
+        8.FaBoCar
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="8.FaBoCar" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          8.FaBoCar
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Motorの制御
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Motorの制御
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#motor_1" class="md-nav__link">
+    Motorの制御
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01.pwm/" class="md-nav__link">
+        Servoの制御
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02.faboai/" class="md-nav__link">
+        FaBo AI Car
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#motor_1" class="md-nav__link">
+    Motorの制御
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="motor">Motorの制御</h1>
+<h2 id="motor_1">Motorの制御</h2>
+<p>I2Cのアドレスが0x64を割り振られたDRV8830を制御します。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span>
+<span class=normal>20</span>
+<span class=normal>21</span>
+<span class=normal>22</span>
+<span class=normal>23</span>
+<span class=normal>24</span>
+<span class=normal>25</span>
+<span class=normal>26</span>
+<span class=normal>27</span>
+<span class=normal>28</span>
+<span class=normal>29</span>
+<span class=normal>30</span>
+<span class=normal>31</span>
+<span class=normal>32</span>
+<span class=normal>33</span>
+<span class=normal>34</span>
+<span class=normal>35</span>
+<span class=normal>36</span>
+<span class=normal>37</span>
+<span class=normal>38</span>
+<span class=normal>39</span>
+<span class=normal>40</span>
+<span class=normal>41</span>
+<span class=normal>42</span>
+<span class=normal>43</span>
+<span class=normal>44</span>
+<span class=normal>45</span>
+<span class=normal>46</span>
+<span class=normal>47</span>
+<span class=normal>48</span>
+<span class=normal>49</span>
+<span class=normal>50</span>
+<span class=normal>51</span>
+<span class=normal>52</span>
+<span class=normal>53</span>
+<span class=normal>54</span>
+<span class=normal>55</span>
+<span class=normal>56</span>
+<span class=normal>57</span>
+<span class=normal>58</span>
+<span class=normal>59</span>
+<span class=normal>60</span>
+<span class=normal>61</span>
+<span class=normal>62</span>
+<span class=normal>63</span>
+<span class=normal>64</span>
+<span class=normal>65</span>
+<span class=normal>66</span>
+<span class=normal>67</span>
+<span class=normal>68</span>
+<span class=normal>69</span>
+<span class=normal>70</span>
+<span class=normal>71</span>
+<span class=normal>72</span>
+<span class=normal>73</span>
+<span class=normal>74</span>
+<span class=normal>75</span>
+<span class=normal>76</span>
+<span class=normal>77</span>
+<span class=normal>78</span>
+<span class=normal>79</span>
+<span class=normal>80</span>
+<span class=normal>81</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=c1># coding: utf-8</span>
+<span class=kn>import</span> <span class=nn>pkg_resources</span>
+<span class=n>SMBUS</span><span class=o>=</span><span class=s1>&#39;smbus&#39;</span>
+<span class=k>for</span> <span class=n>dist</span> <span class=ow>in</span> <span class=n>pkg_resources</span><span class=o>.</span><span class=n>working_set</span><span class=p>:</span>
+    <span class=c1>#print(dist.project_name, dist.version)</span>
+    <span class=k>if</span> <span class=n>dist</span><span class=o>.</span><span class=n>project_name</span> <span class=o>==</span> <span class=s1>&#39;smbus&#39;</span><span class=p>:</span>
+        <span class=k>break</span>
+    <span class=k>if</span> <span class=n>dist</span><span class=o>.</span><span class=n>project_name</span> <span class=o>==</span> <span class=s1>&#39;smbus2&#39;</span><span class=p>:</span>
+        <span class=n>SMBUS</span><span class=o>=</span><span class=s1>&#39;smbus2&#39;</span>
+        <span class=k>break</span>
+<span class=k>if</span> <span class=n>SMBUS</span> <span class=o>==</span> <span class=s1>&#39;smbus&#39;</span><span class=p>:</span>
+    <span class=kn>import</span> <span class=nn>smbus</span>
+<span class=k>elif</span> <span class=n>SMBUS</span> <span class=o>==</span> <span class=s1>&#39;smbus2&#39;</span><span class=p>:</span>
+    <span class=kn>import</span> <span class=nn>smbus2</span> <span class=k>as</span> <span class=nn>smbus</span>
+
+<span class=k>class</span> <span class=nc>DRV8830</span><span class=p>():</span>
+    <span class=sd>&#39;&#39;&#39;</span>
+<span class=sd>    通電し続けている限り、DRV8830に書き込んだ値のパルスを送信し続けるため、</span>
+<span class=sd>    値を一度書き込んだら値に変更があるまで放置でよい（無限ループで書き込み続ける必要はない）</span>
+<span class=sd>    &#39;&#39;&#39;</span>
+    <span class=c1>## DRV8830 Default I2C address</span>
+    <span class=n>MOTOR_ADDR_L</span> <span class=o>=</span> <span class=mh>0x64</span>
+    <span class=n>MOTOR_ADDR_R</span> <span class=o>=</span> <span class=mh>0x63</span>
+
+    <span class=c1># DRV8830 Register Addresses</span>
+    <span class=n>COMMAND0</span> <span class=o>=</span> <span class=mh>0x00</span>
+
+    <span class=c1>## Value motor.</span>
+    <span class=n>FORWARD</span> <span class=o>=</span> <span class=mh>0x01</span>
+    <span class=n>BACK</span> <span class=o>=</span> <span class=mh>0x02</span>
+    <span class=n>STOP</span> <span class=o>=</span> <span class=mh>0x00</span>
+    <span class=n>BRAKE</span> <span class=o>=</span> <span class=mh>0x03</span>
+
+    <span class=c1># I2C Clock High Time (FAST MODE)</span>
+    <span class=n>CLOCK_HIGH</span> <span class=o>=</span> <span class=mf>1.0</span><span class=o>/</span><span class=mf>0.6e-6</span> <span class=c1># 0.6 microsecond</span>
+    <span class=n>CLOCK_LOW</span> <span class=o>=</span> <span class=mf>1.0</span><span class=o>/</span><span class=mf>1.3e-6</span> <span class=c1># 1.3 microsecond</span>
+
+    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>busnum</span><span class=o>=</span><span class=mi>1</span><span class=p>,</span> <span class=n>motor_address</span><span class=o>=</span><span class=kc>None</span><span class=p>):</span>
+        <span class=k>if</span> <span class=n>motor_address</span> <span class=ow>is</span> <span class=kc>None</span><span class=p>:</span>
+            <span class=n>motor_address</span> <span class=o>=</span> <span class=bp>self</span><span class=o>.</span><span class=n>MOTOR_ADDR_L</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>bus</span> <span class=o>=</span> <span class=n>smbus</span><span class=o>.</span><span class=n>SMBus</span><span class=p>(</span><span class=n>busnum</span><span class=p>)</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>MOTOR_ADDRESS</span> <span class=o>=</span> <span class=n>motor_address</span>
+
+    <span class=k>def</span> <span class=nf>map</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>x</span><span class=p>,</span> <span class=n>in_min</span><span class=p>,</span> <span class=n>in_max</span><span class=p>,</span> <span class=n>out_min</span><span class=p>,</span> <span class=n>out_max</span><span class=p>):</span>
+        <span class=k>return</span> <span class=p>(</span><span class=n>x</span> <span class=o>-</span> <span class=n>in_min</span><span class=p>)</span> <span class=o>*</span> <span class=p>(</span><span class=n>out_max</span> <span class=o>-</span> <span class=n>out_min</span><span class=p>)</span> <span class=o>//</span> <span class=p>(</span><span class=n>in_max</span> <span class=o>-</span> <span class=n>in_min</span><span class=p>)</span> <span class=o>+</span> <span class=n>out_min</span>
+
+    <span class=k>def</span> <span class=nf>set_speed</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>speed</span><span class=p>):</span>
+        <span class=sd>&#39;&#39;&#39;</span>
+<span class=sd>        前進する値は2bitで</span>
+<span class=sd>        xxxx xx01 となる。(FORWARD = 0x01)</span>
+<span class=sd>        後進する値は2bitで</span>
+<span class=sd>        xxxx xx10 となる。(BACK = 0x02)</span>
+<span class=sd>        停止する値は2bitで</span>
+<span class=sd>        xxxx xx00 となる。(STOP = 0x00)</span>
+<span class=sd>        ブレーキする値は2bitで</span>
+<span class=sd>        xxxx xx11 となる。(BRAKE = 0x03)</span>
+
+<span class=sd>        速度として使える値は1111 11 == 0011 1111 == 63まで。</span>
+<span class=sd>        speed : -63 to 63</span>
+<span class=sd>        &#39;&#39;&#39;</span>
+        <span class=k>if</span> <span class=n>speed</span> <span class=o>==</span> <span class=mi>0</span><span class=p>:</span>
+            <span class=sd>&#39;&#39;&#39;停止&#39;&#39;&#39;</span>
+            <span class=bp>self</span><span class=o>.</span><span class=n>bus</span><span class=o>.</span><span class=n>write_byte_data</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>MOTOR_ADDRESS</span><span class=p>,</span><span class=bp>self</span><span class=o>.</span><span class=n>COMMAND0</span><span class=p>,</span><span class=bp>self</span><span class=o>.</span><span class=n>STOP</span><span class=p>)</span> <span class=c1>#モータへの電力の供給を停止(惰性で動き続ける)</span>
+
+        <span class=k>elif</span> <span class=n>speed</span> <span class=o>&gt;</span> <span class=mi>0</span> <span class=ow>and</span> <span class=n>speed</span> <span class=o>&lt;=</span><span class=mi>63</span><span class=p>:</span>
+            <span class=sd>&#39;&#39;&#39;前進&#39;&#39;&#39;</span>
+            <span class=n>direction</span> <span class=o>=</span> <span class=bp>self</span><span class=o>.</span><span class=n>FORWARD</span>
+            <span class=n>value</span> <span class=o>=</span> <span class=p>(</span><span class=n>speed</span><span class=o>&lt;&lt;</span><span class=mi>2</span><span class=p>)</span> <span class=o>+</span> <span class=n>direction</span> <span class=c1># スピード値を2ビット左シフトして下位2bitに前進ビットを設定した1Byteの送信データを作成</span>
+            <span class=bp>self</span><span class=o>.</span><span class=n>bus</span><span class=o>.</span><span class=n>write_byte_data</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>MOTOR_ADDRESS</span><span class=p>,</span><span class=bp>self</span><span class=o>.</span><span class=n>COMMAND0</span><span class=p>,</span><span class=n>value</span><span class=p>)</span> <span class=c1>#生成したデータを送信</span>
+        <span class=k>elif</span> <span class=n>speed</span> <span class=o>&lt;</span> <span class=mi>0</span> <span class=ow>and</span> <span class=n>speed</span> <span class=o>&gt;=</span> <span class=o>-</span><span class=mi>63</span><span class=p>:</span>
+            <span class=sd>&#39;&#39;&#39;後進&#39;&#39;&#39;</span>
+            <span class=n>direction</span> <span class=o>=</span> <span class=bp>self</span><span class=o>.</span><span class=n>BACK</span>
+            <span class=n>speed</span> <span class=o>=</span> <span class=n>speed</span> <span class=o>*</span> <span class=o>-</span><span class=mi>1</span>
+            <span class=n>value</span> <span class=o>=</span> <span class=p>(</span><span class=n>speed</span><span class=o>&lt;&lt;</span><span class=mi>2</span><span class=p>)</span> <span class=o>+</span> <span class=n>direction</span> <span class=c1># スピード値を2ビット左シフトして下位2bitに後進ビットを設定した1Byteの送信データを作成</span>
+            <span class=bp>self</span><span class=o>.</span><span class=n>bus</span><span class=o>.</span><span class=n>write_byte_data</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>MOTOR_ADDRESS</span><span class=p>,</span><span class=bp>self</span><span class=o>.</span><span class=n>COMMAND0</span><span class=p>,</span><span class=n>value</span><span class=p>)</span> <span class=c1>#生成したデータを送信</span>
+        <span class=k>else</span><span class=p>:</span>
+            <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;The speed </span><span class=si>{}</span><span class=s2> for FABO CAR must be in the range -63 to 63.&quot;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>speed</span><span class=p>))</span>
+
+    <span class=k>def</span> <span class=nf>brake</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
+        <span class=sd>&#39;&#39;&#39;未使用&#39;&#39;&#39;</span>
+        <span class=bp>self</span><span class=o>.</span><span class=n>bus</span><span class=o>.</span><span class=n>write_byte_data</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>MOTOR_ADDRESS</span><span class=p>,</span><span class=bp>self</span><span class=o>.</span><span class=n>COMMAND0</span><span class=p>,</span><span class=mh>0x03</span><span class=p>)</span> <span class=c1>#モータをブレーキさせる</span>
+</code></pre></div></td></tr></table></p>
+<p>DRV8830では-63〜63の間で制御可能である。</p>
+<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal> 1</span>
+<span class=normal> 2</span>
+<span class=normal> 3</span>
+<span class=normal> 4</span>
+<span class=normal> 5</span>
+<span class=normal> 6</span>
+<span class=normal> 7</span>
+<span class=normal> 8</span>
+<span class=normal> 9</span>
+<span class=normal>10</span>
+<span class=normal>11</span>
+<span class=normal>12</span>
+<span class=normal>13</span>
+<span class=normal>14</span>
+<span class=normal>15</span>
+<span class=normal>16</span>
+<span class=normal>17</span>
+<span class=normal>18</span>
+<span class=normal>19</span>
+<span class=normal>20</span>
+<span class=normal>21</span>
+<span class=normal>22</span>
+<span class=normal>23</span>
+<span class=normal>24</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=kn>from</span> <span class=nn>donkeycar.fabo.drv8830</span> <span class=kn>import</span> <span class=n>DRV8830</span>
+<span class=c1># Initialise the DRV8830 using the default address (0x64).</span>
+<span class=k>if</span> <span class=n>busnum</span> <span class=ow>is</span> <span class=ow>not</span> <span class=kc>None</span><span class=p>:</span>
+    <span class=kn>import</span> <span class=nn>pkg_resources</span>
+    <span class=n>SMBUS</span><span class=o>=</span><span class=s1>&#39;smbus&#39;</span>
+    <span class=k>for</span> <span class=n>dist</span> <span class=ow>in</span> <span class=n>pkg_resources</span><span class=o>.</span><span class=n>working_set</span><span class=p>:</span>
+    <span class=c1>#print(dist.project_name, dist.version)</span>
+        <span class=k>if</span> <span class=n>dist</span><span class=o>.</span><span class=n>project_name</span> <span class=o>==</span> <span class=s1>&#39;smbus&#39;</span><span class=p>:</span>
+            <span class=k>break</span>
+        <span class=k>if</span> <span class=n>dist</span><span class=o>.</span><span class=n>project_name</span> <span class=o>==</span> <span class=s1>&#39;smbus2&#39;</span><span class=p>:</span>
+            <span class=n>SMBUS</span><span class=o>=</span><span class=s1>&#39;smbus2&#39;</span>
+            <span class=k>break</span>
+        <span class=k>if</span> <span class=n>SMBUS</span> <span class=o>==</span> <span class=s1>&#39;smbus&#39;</span><span class=p>:</span>
+            <span class=kn>import</span> <span class=nn>smbus</span>
+        <span class=k>elif</span> <span class=n>SMBUS</span> <span class=o>==</span> <span class=s1>&#39;smbus2&#39;</span><span class=p>:</span>
+            <span class=kn>import</span> <span class=nn>smbus2</span> <span class=k>as</span> <span class=nn>smbus</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>throttle</span> <span class=o>=</span> <span class=n>DRV8830</span><span class=p>(</span><span class=n>busnum</span><span class=o>=</span><span class=n>busnum</span><span class=p>,</span> <span class=n>motor_address</span><span class=o>=</span><span class=mh>0x64</span><span class=p>)</span>
+<span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mf>0.1</span><span class=p>)</span>
+
+<span class=bp>self</span><span class=o>.</span><span class=n>throttle</span><span class=o>.</span><span class=n>set_speed</span><span class=p>(</span><span class=mi>63</span><span class=p>)</span>
+<span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>throttle</span><span class=o>.</span><span class=n>set_speed</span><span class=p>(</span><span class=o>-</span><span class=mi>63</span><span class=p>)</span>
+<span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
+<span class=bp>self</span><span class=o>.</span><span class=n>throttle</span><span class=o>.</span><span class=k>break</span><span class=p>()</span>
+</code></pre></div></td></tr></table></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="フッター">
+      
+        <a href="../../7.SD%E3%82%AB%E3%83%BC%E3%83%89%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8%E4%BD%9C%E6%88%90/01.donkey_install/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                前
+              </span>
+              SDカードイメージを最初から作成する方法
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../01.pwm/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                次
+              </span>
+              Servoの制御
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044"}, "search": "../../assets/javascripts/workers/search.f5903571.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.3981fc68.min.js"></script>
+      
+    
+  </body>
+</html>
