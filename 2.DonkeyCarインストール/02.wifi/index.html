@@ -813,7 +813,7 @@ network={
 <h2 id="mac">接続先の確認(Macの場合)</h2>
 <p><img alt="" src="../img/icon_pc.png" /></p>
 <p>DonkeyCarと同一ネットワークに接続しているMacより、Terminalを起動して、下記コマンドで接続を試みます。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>ssh pi@donkeypi.local
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">ssh pi@donkeypi.local</span>
 </code></pre></div>
 </td></tr></table>
 <table>
@@ -835,7 +835,7 @@ network={
 <p>上記方法はOSXのみで有効で、複数台使用時は、DonkeyCarのRaspberry Pi3のhost名を任意のユニークな名前に書き直す必要があります。</p>
 </div>
 <p>ifconfigでipアドレスを確認します。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>ifconfigf -a
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">ifconfigf -a</span>
 </code></pre></div>
 </td></tr></table>
 <p>で表示されるWLAN0にIPアドレスが表示されます。</p>
@@ -852,7 +852,7 @@ network={
 
 <h2 id="wpa_supplicant">wpa_supplicantの修正</h2>
 <p>接続に失敗した場合は、Raspberry Pi3内の<code>/etc/wpa_supplicant/wpa_supplicant.conf</code> を修正することで、接続先の変更が可能です。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">sudo nano /etc/wpa_supplicant/wpa_supplicant.conf</span>
 </code></pre></div>
 </td></tr></table>
                 
