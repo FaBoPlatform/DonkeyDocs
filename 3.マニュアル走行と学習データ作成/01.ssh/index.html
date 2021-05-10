@@ -14,7 +14,7 @@
     
     
       
-        <title>マニュアル走行と教師データの作成 - FaBo DonkeyCar Docs</title>
+        <title>SSHでRaspberry Piにログイン - FaBo DonkeyCar Docs</title>
       
     
     
@@ -73,7 +73,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#sshraspberry-pi" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              マニュアル走行と教師データの作成
+              SSHでRaspberry Piにログイン
             
           </span>
         </div>
@@ -274,18 +274,6 @@
   
 
           
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../2.DonkeyCar%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/03.ssh/" class="md-nav__link">
-        SSHでRaspberry Piにログイン
-      </a>
-    </li>
-  
-
-          
         </ul>
       </nav>
     </li>
@@ -321,30 +309,6 @@
             
   
   
-  
-    <li class="md-nav__item">
-      <a href="../01.create_mycar/" class="md-nav__link">
-        mycarの作成
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../02.calibration/" class="md-nav__link">
-        キャリブレーション
-      </a>
-    </li>
-  
-
-          
-            
-  
-  
     
   
   
@@ -357,12 +321,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          マニュアル走行と教師データの作成
+          SSHでRaspberry Piにログイン
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        マニュアル走行と教師データの作成
+        SSHでRaspberry Piにログイン
       </a>
       
         
@@ -380,43 +344,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#joystick" class="md-nav__link">
-    Joystickの接続
+  <a href="#sshchrome-app" class="md-nav__link">
+    SSHでログイン(Chrome appを使用する場合)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#donkeycar" class="md-nav__link">
-    DonkeyCarの起動
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    データの保存
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    教師データの圧縮
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#zip" class="md-nav__link">
-    zipコマンドでフォルダを圧縮
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    データの転送
+  <a href="#secure-shell" class="md-nav__link">
+    Secure shellでのエラーへの対処
   </a>
   
 </li>
@@ -425,6 +361,42 @@
   
 </nav>
       
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02.create_mycar/" class="md-nav__link">
+        mycarの作成
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03.calibration/" class="md-nav__link">
+        キャリブレーション
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04.manual_drive/" class="md-nav__link">
+        マニュアル走行と教師データの作成
+      </a>
     </li>
   
 
@@ -695,43 +667,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#joystick" class="md-nav__link">
-    Joystickの接続
+  <a href="#sshchrome-app" class="md-nav__link">
+    SSHでログイン(Chrome appを使用する場合)
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#donkeycar" class="md-nav__link">
-    DonkeyCarの起動
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    データの保存
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    教師データの圧縮
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#zip" class="md-nav__link">
-    zipコマンドでフォルダを圧縮
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    データの転送
+  <a href="#secure-shell" class="md-nav__link">
+    Secure shellでのエラーへの対処
   </a>
   
 </li>
@@ -749,82 +693,16 @@
               
                 
                 
-                <h1 id="_1">マニュアル走行と教師データの作成</h1>
-<p><img alt="" src="../img/run001.png" /></p>
+                <h1 id="sshraspberry-pi">SSHでRaspberry Piにログイン</h1>
+<p><img alt="" src="../img/ssh000.png" /></p>
 <hr>
 
-<h2 id="joystick">Joystickの接続</h2>
-<p>JoystickをDonkeyCarに接続します。Joystickの裏側の蓋を外すと、USBドングルが入っているので、DonkeyCarのRaspberry Pi3のUSBに差し込みます。</p>
-<p><img alt="" src="../img/joystick001.png" /></p>
-<p><img alt="" src="../img/joystick006.png" /></p>
-<p><img alt="" src="../img/joystick003.png" /></p>
-<div class="admonition warning">
-<p class="admonition-title">Joystickは省電力モードにすぐ入ります</p>
-<p>Joystickを操作していない時間が長いと、Joystickは省電力モードにはいります。復活させるには、<code>start</code>を押し、<code>vibration</code>ボタンで電源のOn/Offを確認します。他のボタンにはコマンドが割り振られているために押さないようにしてください。</p>
-</div>
+<h2 id="sshchrome-app">SSHでログイン(Chrome appを使用する場合)</h2>
 <hr>
 
-<h2 id="donkeycar">DonkeyCarの起動</h2>
-<p>Joystickは、すぐ省電力モードにはいり、Offになります。① StartボタンをおしてJoystickの電源がOnになっている事を確認します。② Vibrationボタンを押してバイブレーションすれば、電源はOnの状態です。</p>
-<p><img alt="" src="../img/joystick005.png" /></p>
-<p><code>~/mycar</code>フォルダに移動します。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>cd ~/mycar
-</code></pre></div>
-</td></tr></table>
-<p>DonkeyCarを起動します。<code>--js</code>をつけると、Joystickが有効になります。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>python manage.py drive --js
-</code></pre></div>
-</td></tr></table>
-<p>早速、DonkeyCarのテスト走行を行いましょう!!
-走行の終了は、<span class="keys"><kbd>CTRL</kbd><span>+</span><kbd>c</kbd></span>で、終了します。</p>
-<hr>
-
-<h2 id="_2">データの保存</h2>
-<p>データは、前進・行進している間、自動保存されます。保存先は、<code>~/mycar/dara</code>になります。フォルダが生成されるタイミングは、<code>python manage.py drive --js</code>を実行したタイミングで、毎回作成されます。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>cd ~/mycar/data
-</code></pre></div>
-</td></tr></table>
-<p>lsコマンドで作成されたフォルダを確認します。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>ls
-</code></pre></div>
-</td></tr></table>
-<p>今作成されたフォルダが下記のように表示されます(例)。このフォルダ以下にデータ・セットが保存されています。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>tub_01_19-01-26
-</code></pre></div>
-</td></tr></table>
-<p>DonkeyCarの終了は、<span class="keys"><kbd>CTRL</kbd><span>+</span><kbd>c</kbd></span>で終了します。</p>
-<div class="admonition warning">
-<p class="admonition-title">フォルダのできるタイミング</p>
-<p>tubフォルダができるタイミングは、<code>python manage.py drive --js</code>を実行したタイミングです。</p>
-</div>
-<hr>
-
-<h2 id="_3">教師データの圧縮</h2>
-<p>ZIPで学習データとして使いたい走行のフォルダを圧縮します。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>cd ~/mycar/data
-</code></pre></div>
-</td></tr></table>
-<hr>
-
-<h2 id="zip">zipコマンドでフォルダを圧縮</h2>
-<p>zipコマンドでフォルダを圧縮します。</p>
-<p>まず、過去のdatas.zipが存在する場合があるので、削除します。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>rm datas.zip
-</code></pre></div>
-</td></tr></table>
-<p>今作成した走行データの保存されているtubフォルダを指定します。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>zip -r datas.zip tub_自分のフォルダ名
-</code></pre></div>
-</td></tr></table>
-<div class="admonition info">
-<p class="admonition-title">学習に必要なデータ・セット数</p>
-<p>学習に必要なデータセット数は、5000〜2万データ・セットぐらいになります。</p>
-</div>
-<hr>
-
-<h2 id="_4">データの転送</h2>
-<p><a href="https://chrome.google.com/webstore/detail/secure-shell-app/pnhechapfaindjhompbnflcldabbghjo/related?hl=ja" target="sftp_tab">Secure Shell</a>をクリックし、<code>アプリの起動</code>を選択し、新しいWindowで、Secure shellを起動します。今度は、下記の通りSFTPを選択し、SFTPでDonkeyCarに接続します。</p>
-<p><img alt="" src="../img/sftp000.png" /></p>
+<p>判明したIPアドレスに対して、<a href="https://chrome.google.com/webstore/detail/secure-shell-app/pnhechapfaindjhompbnflcldabbghjo/related?hl=ja" target="ssh_tab">Secure Shell</a>をクリックし、<code>アプリを起動</code>を選択し、Secure shellでログインします。</p>
+<p><img alt="" src="../img/ssh101.png" /></p>
+<p><img alt="" src="../img/ssh002.png" /></p>
 <table>
 <thead>
 <tr>
@@ -839,17 +717,12 @@
 </tr>
 </tbody>
 </table>
-<p>SFTPで、datas.zipのあるフォルダに移動します。
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>cd ~/mycar/data
-</code></pre></div>
-</td></tr></table></p>
-<p><img alt="" src="../img/sftp002.png" /></p>
-<p>SFTPで、datas.zipをgetします。
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>get datas.zip
-</code></pre></div>
-</td></tr></table></p>
-<p><img alt="" src="../img/sftp003.png" /></p>
-<p>これで、datas.zipがPCに転送されます。</p>
+<h2 id="secure-shell">Secure shellでのエラーへの対処</h2>
+<p><img alt="" src="../img/ssh_warning01.png" /></p>
+<p>が発生する場合の対処方法</p>
+<p><img alt="" src="../img/ssh_warning02.png" /></p>
+<p><code>term_.command.removeAllKnownHosts();</code> を実行し、/.ssh/known_hostsを消します。</p>
+<p><img alt="" src="../img/ssh_warning03.png" /></p>
                 
               
               
@@ -868,7 +741,7 @@
   
     <nav class="md-footer__inner md-grid" aria-label="フッター">
       
-        <a href="../02.calibration/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../../2.DonkeyCar%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/02.wifi/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -877,19 +750,19 @@
               <span class="md-footer__direction">
                 前
               </span>
-              キャリブレーション
+              WiFi設定
             </div>
           </div>
         </a>
       
       
-        <a href="../../4.%E5%AD%A6%E7%BF%92/01.train_colab/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../02.create_mycar/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 次
               </span>
-              Colabでの学習(GPU)
+              mycarの作成
             </div>
           </div>
           <div class="md-footer__button md-icon">

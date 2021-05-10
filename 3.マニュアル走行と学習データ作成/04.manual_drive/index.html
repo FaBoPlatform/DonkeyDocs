@@ -14,7 +14,7 @@
     
     
       
-        <title>キャリブレーション - FaBo DonkeyCar Docs</title>
+        <title>マニュアル走行と教師データの作成 - FaBo DonkeyCar Docs</title>
       
     
     
@@ -103,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              キャリブレーション
+              マニュアル走行と教師データの作成
             
           </span>
         </div>
@@ -274,18 +274,6 @@
   
 
           
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../2.DonkeyCar%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/03.ssh/" class="md-nav__link">
-        SSHでRaspberry Piにログイン
-      </a>
-    </li>
-  
-
-          
         </ul>
       </nav>
     </li>
@@ -323,8 +311,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../01.create_mycar/" class="md-nav__link">
+      <a href="../01.ssh/" class="md-nav__link">
+        SSHでRaspberry Piにログイン
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02.create_mycar/" class="md-nav__link">
         mycarの作成
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03.calibration/" class="md-nav__link">
+        キャリブレーション
       </a>
     </li>
   
@@ -345,12 +357,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          キャリブレーション
+          マニュアル走行と教師データの作成
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        キャリブレーション
+        マニュアル走行と教師データの作成
       </a>
       
         
@@ -368,22 +380,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#joystick" class="md-nav__link">
+    Joystickの接続
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#donkeycar" class="md-nav__link">
+    DonkeyCarの起動
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    説明
+    データの保存
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#escchannel-0" class="md-nav__link">
-    ESCの調整(channel 0)
+  <a href="#_3" class="md-nav__link">
+    教師データの圧縮
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#-channel-1" class="md-nav__link">
-    サーボの調整(--channel 1)
+  <a href="#zip" class="md-nav__link">
+    zipコマンドでフォルダを圧縮
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    データの転送
   </a>
   
 </li>
@@ -392,18 +425,6 @@
   
 </nav>
       
-    </li>
-  
-
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../03.manual_drive/" class="md-nav__link">
-        マニュアル走行と教師データの作成
-      </a>
     </li>
   
 
@@ -674,22 +695,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#joystick" class="md-nav__link">
+    Joystickの接続
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#donkeycar" class="md-nav__link">
+    DonkeyCarの起動
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    説明
+    データの保存
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#escchannel-0" class="md-nav__link">
-    ESCの調整(channel 0)
+  <a href="#_3" class="md-nav__link">
+    教師データの圧縮
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#-channel-1" class="md-nav__link">
-    サーボの調整(--channel 1)
+  <a href="#zip" class="md-nav__link">
+    zipコマンドでフォルダを圧縮
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    データの転送
   </a>
   
 </li>
@@ -707,196 +749,107 @@
               
                 
                 
-                <h1 id="_1">キャリブレーション</h1>
-<p>DonkeyCarのスロットルとステアリング動作量の確認をします。<br>
-車両毎に若干異なるため、myconfig.pyに適切な値を設定するための項目になります。</p>
-<p><img alt="" src="../img/cal000.png" /></p>
+                <h1 id="_1">マニュアル走行と教師データの作成</h1>
+<p><img alt="" src="../img/run001.png" /></p>
 <hr>
 
-<h2 id="_2">説明</h2>
-<p>ESC、サーボの接続は、下記表の通りにおこなっています。</p>
-<table>
-<thead>
-<tr>
-<th align="left">ch</th>
-<th align="left">pwm</th>
-<th align="left">操作</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">0</td>
-<td align="left">pwm0</td>
-<td align="left">ESC, モーターの制御</td>
-</tr>
-<tr>
-<td align="left">1</td>
-<td align="left">pwm1</td>
-<td align="left">サーボの制御</td>
-</tr>
-</tbody>
-</table>
-<p>キャリブレーションのコマンドは下記のコマンドになります。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>donkey calibrate --channel チャンネル番号 --bus 1
-</code></pre></div>
-</td></tr></table>
+<h2 id="joystick">Joystickの接続</h2>
+<p>JoystickをDonkeyCarに接続します。Joystickの裏側の蓋を外すと、USBドングルが入っているので、DonkeyCarのRaspberry Pi3のUSBに差し込みます。</p>
+<p><img alt="" src="../img/joystick001.png" /></p>
+<p><img alt="" src="../img/joystick006.png" /></p>
+<p><img alt="" src="../img/joystick003.png" /></p>
 <div class="admonition warning">
-<p class="admonition-title">注意</p>
-<p>ここから先は車輪が動き始めます。車輪が空転するようにタイヤを浮かせた状態でコマンドを実行してください。</p>
+<p class="admonition-title">Joystickは省電力モードにすぐ入ります</p>
+<p>Joystickを操作していない時間が長いと、Joystickは省電力モードにはいります。復活させるには、<code>start</code>を押し、<code>vibration</code>ボタンで電源のOn/Offを確認します。他のボタンにはコマンドが割り振られているために押さないようにしてください。</p>
 </div>
 <hr>
 
-<h2 id="escchannel-0">ESCの調整(channel 0)</h2>
-<p><img alt="" src="../img/default001.png" /></p>
-<p>まず、DonkeyCar本体(ラジコン)の電源をOffにしてください。最初に、ESCの初期化処理をおこないます。初期化の値は、370です。</p>
-<p>モーターの制御は、channel 1のPWM0でおこないます。</p>
-<p>コマンド</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>donkey calibrate --channel 0 --bus 1
+<h2 id="donkeycar">DonkeyCarの起動</h2>
+<p>Joystickは、すぐ省電力モードにはいり、Offになります。① StartボタンをおしてJoystickの電源がOnになっている事を確認します。② Vibrationボタンを押してバイブレーションすれば、電源はOnの状態です。</p>
+<p><img alt="" src="../img/joystick005.png" /></p>
+<p><code>~/mycar</code>フォルダに移動します。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>cd ~/mycar
 </code></pre></div>
 </td></tr></table>
-<p>初期値の入力</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">4</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">5</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>donkey calibrate --channel 0 --bus 1
-using donkey v3.1.0 ...
-sombrero enabled
-init PCA9685 on channel 0 address 0x40 bus 1
-Enter a PWM setting to test(0-1500)370
+<p>DonkeyCarを起動します。<code>--js</code>をつけると、Joystickが有効になります。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>python manage.py drive --js
 </code></pre></div>
 </td></tr></table>
-<p>この状態で、DonkeyCarの電源（ESCに繋がっているスイッチ）を入れます。「ピィ・ピィーー」と音がなります。これで初期化設定です。</p>
-<p>初期値の370は、モーターが回らない状態、つまりニュートラル位置です。370よりも大きい値にすると前進し、370より小さい値を入れると行進します(後進時は、設定する値(例330)を一度入力したあとで、初期値である370に入力し、再度設定する値(例330)を入力する事で、ロックが解除され、後進が有効になります。例) 330-&gt;370-&gt;330)</p>
-<p>ここでは、前進の最大値の50%、後進の最大値の50%ぐらいの値を探し出します。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">4</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">5</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">6</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>donkey calibrate --channel 0 --bus 1
-using donkey v3.1.0 ...
-sombrero enabled
-init PCA9685 on channel 0 address 0x40 bus 1
-Enter a PWM setting to test(0-1500):370
-Enter a PWM setting to test(0-1500):400
+<p>早速、DonkeyCarのテスト走行を行いましょう!!
+走行の終了は、<span class="keys"><kbd>CTRL</kbd><span>+</span><kbd>c</kbd></span>で、終了します。</p>
+<hr>
+
+<h2 id="_2">データの保存</h2>
+<p>データは、前進・行進している間、自動保存されます。保存先は、<code>~/mycar/dara</code>になります。フォルダが生成されるタイミングは、<code>python manage.py drive --js</code>を実行したタイミングで、毎回作成されます。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>cd ~/mycar/data
 </code></pre></div>
 </td></tr></table>
+<p>lsコマンドで作成されたフォルダを確認します。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>ls
+</code></pre></div>
+</td></tr></table>
+<p>今作成されたフォルダが下記のように表示されます(例)。このフォルダ以下にデータ・セットが保存されています。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>tub_01_19-01-26
+</code></pre></div>
+</td></tr></table>
+<p>DonkeyCarの終了は、<span class="keys"><kbd>CTRL</kbd><span>+</span><kbd>c</kbd></span>で終了します。</p>
 <div class="admonition warning">
-<p class="admonition-title">初期値</p>
-<p>PWMで信号を発信中にRCカー本体の電源を入れると、そのPWM値が初期値として登録される。例えば、donkey calibrate --channel 0 で600を入力中に、電源をOnした場合、600が中央値になる。中央値がずれた場合は、donkey calibrate --channel 0 で、370の値を入力し、電源を入れ直すことで、中央値を370に戻すことができます。<a href="http://www.redcatracing.com/manuals/HW-WP-1040-Brushed.pdf">ESCのDatasheet(Hobbywing QuicRun 1040)</a></p>
+<p class="admonition-title">フォルダのできるタイミング</p>
+<p>tubフォルダができるタイミングは、<code>python manage.py drive --js</code>を実行したタイミングです。</p>
 </div>
-<div class="admonition warining">
-<p class="admonition-title">後進の注意点</p>
-<p>前進は、どのような状況でも操作できます。前進したのちの、後進は、一度 370の初期値をおくったあとに、後進が有効になります。　</p>
-</div>
-<p>キャリブレーションの終了は、<span class="keys"><kbd>CTRL</kbd><span>+</span><kbd>c</kbd></span>です。いったん、キャリブレーションを終了し、調整した値をconfig.pyに反映します。</p>
-<p>前後にタイヤが回る範囲を見つけ出し、qでキャリブレーションを終了し、config.pyに反映します。myconfig.pyの値の書き直しは、nanoでおこないます。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>nano ~/mycar/myconfig.py
-</code></pre></div>
-</td></tr></table>
-<p><code>myconfig.py</code>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">4</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">5</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>#THROTTLE
-THROTTLE_CHANNEL = 0
-THROTTLE_FORWARD_PWM = 480
-THROTTLE_STOPPED_PWM = 370
-THROTTLE_REVERSE_PWM = 320
-</code></pre></div>
-</td></tr></table></p>
-<div class="admonition warining">
-<p class="admonition-title">スペースは開けない</p>
-<p>THROTTLE_CHANNELの前などに、スペースはいれないでください。　</p>
-</div>
-<p>nanoの操作方法</p>
-<table>
-<thead>
-<tr>
-<th align="left">操作</th>
-<th align="left">コマンド</th>
-<th align="left">メモ</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">保存</td>
-<td align="left"><span class="keys"><kbd>CTRL</kbd><span>+</span><kbd>o</kbd></span></td>
-<td align="left">コマンド実行後、ファイルを保存するか聞いてくるので<span class="keys"><kbd>Enter</kbd></span>で保存をします。</td>
-</tr>
-<tr>
-<td align="left">終了</td>
-<td align="left"><span class="keys"><kbd>CTRL</kbd><span>+</span><kbd>x</kbd></span></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">カーソルの移動</td>
-<td align="left">十字キーで移動します</td>
-<td align="left">注意!マウスのクリックでは移動しません。</td>
-</tr>
-</tbody>
-</table>
 <hr>
 
-<h2 id="-channel-1">サーボの調整(--channel 1)</h2>
-<p>サーボの制御は、channel 1のPWM1でおこないます。</p>
-<p>コマンド
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>donkey calibrate --channel 1 --bus 1
+<h2 id="_3">教師データの圧縮</h2>
+<p>ZIPで学習データとして使いたい走行のフォルダを圧縮します。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>cd ~/mycar/data
 </code></pre></div>
-</td></tr></table></p>
-<p>一番右の値と、一番左の値を見つけ出してください。まず、中央値を発見し、左右均等に値を増やした、右の値と左の値を見つけ出します。250-500の間ぐらいが可動範囲です。</p>
-<p>見つけ出した値をmyconfig.pyに反映します。</p>
+</td></tr></table>
+<hr>
+
+<h2 id="zip">zipコマンドでフォルダを圧縮</h2>
+<p>zipコマンドでフォルダを圧縮します。</p>
+<p>まず、過去のdatas.zipが存在する場合があるので、削除します。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>rm datas.zip
+</code></pre></div>
+</td></tr></table>
+<p>今作成した走行データの保存されているtubフォルダを指定します。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>zip -r datas.zip tub_自分のフォルダ名
+</code></pre></div>
+</td></tr></table>
 <div class="admonition info">
-<p class="admonition-title">左右均等にするポイント</p>
-<p>左右の振れ幅を均等にしないとDonkeyCarはまっすぐ走りません。車輪が真ん中にあたる位置を見つけ出し、そこから同じ数だけ左右にずらすと左右均等になるはずです。</p>
+<p class="admonition-title">学習に必要なデータ・セット数</p>
+<p>学習に必要なデータセット数は、5000〜2万データ・セットぐらいになります。</p>
 </div>
-<p>値が調整できたら、qでキャリブレーションを終了し、~/mycar/myconfig.pyの値を修正します。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>nano ~/mycar/myconfig.py
-</code></pre></div>
-</td></tr></table>
-<p><code>myconfig.py</code>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">4</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>#STEERING
-STEERING_CHANNEL = 1
-STEERING_LEFT_PWM = 410
-STEERING_RIGHT_PWM = 310
-</code></pre></div>
-</td></tr></table></p>
-<div class="admonition warining">
-<p class="admonition-title">スペースは開けない</p>
-<p>STEERING_CHANNELの前などに、スペースはいれないでください。　</p>
-</div>
-<p>nanoの操作方法</p>
+<hr>
+
+<h2 id="_4">データの転送</h2>
+<p><a href="https://chrome.google.com/webstore/detail/secure-shell-app/pnhechapfaindjhompbnflcldabbghjo/related?hl=ja" target="sftp_tab">Secure Shell</a>をクリックし、<code>アプリの起動</code>を選択し、新しいWindowで、Secure shellを起動します。今度は、下記の通りSFTPを選択し、SFTPでDonkeyCarに接続します。</p>
+<p><img alt="" src="../img/sftp000.png" /></p>
 <table>
 <thead>
 <tr>
-<th align="left">操作</th>
-<th align="left">コマンド</th>
-<th align="left">メモ</th>
+<th align="left">ログインID</th>
+<th align="left">パスワード</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="left">保存</td>
-<td align="left"><span class="keys"><kbd>CTRL</kbd><span>+</span><kbd>o</kbd></span></td>
-<td align="left">コマンド実行後、ファイルを保存するか聞いてくるので<span class="keys"><kbd>Enter</kbd></span>で保存をします。</td>
-</tr>
-<tr>
-<td align="left">終了</td>
-<td align="left"><span class="keys"><kbd>CTRL</kbd><span>+</span><kbd>x</kbd></span></td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="left">カーソルの移動</td>
-<td align="left">十字キーで移動します</td>
-<td align="left">注意!マウスのクリックでは移動しません。</td>
+<td align="left">pi</td>
+<td align="left">raspberry</td>
 </tr>
 </tbody>
 </table>
+<p>SFTPで、datas.zipのあるフォルダに移動します。
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>cd ~/mycar/data
+</code></pre></div>
+</td></tr></table></p>
+<p><img alt="" src="../img/sftp002.png" /></p>
+<p>SFTPで、datas.zipをgetします。
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>get datas.zip
+</code></pre></div>
+</td></tr></table></p>
+<p><img alt="" src="../img/sftp003.png" /></p>
+<p>これで、datas.zipがPCに転送されます。</p>
                 
               
               
@@ -915,7 +868,7 @@ STEERING_RIGHT_PWM = 310
   
     <nav class="md-footer__inner md-grid" aria-label="フッター">
       
-        <a href="../01.create_mycar/" class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../03.calibration/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -924,19 +877,19 @@ STEERING_RIGHT_PWM = 310
               <span class="md-footer__direction">
                 前
               </span>
-              mycarの作成
+              キャリブレーション
             </div>
           </div>
         </a>
       
       
-        <a href="../03.manual_drive/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../../4.%E5%AD%A6%E7%BF%92/01.train_colab/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 次
               </span>
-              マニュアル走行と教師データの作成
+              Colabでの学習(GPU)
             </div>
           </div>
           <div class="md-footer__button md-icon">
