@@ -728,18 +728,14 @@
 
 <h2 id="donkeycarraspberry-pi3">学習済みモデルでDonkeyCarを動かす(Raspberry Pi3)</h2>
 <p>SSHで、Raspberry Pi側にログインし、mycarフォルダに移動します。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>cd ~/mycar
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">cd ~/mycar</span>
 </code></pre></div>
 </td></tr></table>
 <p>アップロードしたモデルを指定してDonkeyCarを指導します。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>python manage.py drive --model ./models/mypilot.h5
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">python manage.py drive --model ./models/mypilot.h5</span>
 </code></pre></div>
 </td></tr></table>
 <p>DonkeyCarに、Webサーバが立ち上がりWebConsoleが起動します。WebConsoleへのアクセスは、<code>DonkeyCarのIPアドレス:8887</code>でChromeで接続します。</p>
-<p>DonkeyCarのIPアドレスがわからない場合は、ifconfigでwlan0のIPアドレスを調べます。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>ifconfig -a
-</code></pre></div>
-</td></tr></table>
 <div class="admonition warning">
 <p class="admonition-title">カメラ準備が完了するまで待機<p>Webカメラの準備が完了する前にWebブラウザにアクセスすると、エラーで落ちる場合があります。その場合は自動走行のコマンドを実行後、ターミナルログをみてカメラの準備が完了してからWebブラウザにアクセスしてください。<br>
 カメラの準備が完了すると、ターミナルログにはカメラの解像度に関する情報が表示されます。</p>

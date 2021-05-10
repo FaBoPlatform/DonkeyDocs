@@ -435,6 +435,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    旧バージョンでの動作
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -680,6 +687,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    旧バージョンでの動作
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -717,6 +731,31 @@
 <td align="left">3.1.5</td>
 <td align="left">新バージョン</td>
 </tr>
+</tbody>
+</table>
+<p>このGoogle Colabのノートブックには、学習するためのスクリプトとコマンドが書いてあります。<br />
+手順に従いColab上でスクリプトを実行すると、DonkeyCarで集めたデータから学習結果を得られます。</p>
+<hr>
+
+<h2 id="donwload">学習済みデータをDonwload</h2>
+<p>Colabから学習結果をダウンロードします。Colabの下記コードを実行すると'mypilot.h5'が自動ダウンロードされます。(少々時間がかかります。)</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">from google.colab import files</span>
+
+<span style="color: #66d9ef">files.download(&#39;/content/mycar/models/mypilot.h5&#39;)</span>
+</code></pre></div>
+</td></tr></table>
+<h2 id="_1">旧バージョンでの動作</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Notebook</th>
+<th align="left">DonkeyCar version</th>
+<th align="left">概要</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td align="left"><a href="https://colab.research.google.com/github/FaBoPlatform/DonkeyColab/blob/master/GPU_Donkey3_1_0_Sample(TensorFlow_1_13_1).ipynb" target="_blank">Colaboratory(DonkeyCar 3.1.0, TenforFlow 1.13.1対応版)</a></td>
 <td align="left">3.1.0</td>
@@ -729,19 +768,6 @@
 </tr>
 </tbody>
 </table>
-<p>このGoogle Colabのノートブックには、学習するためのスクリプトとコマンドが書いてあります。<br />
-手順に従いColab上でスクリプトを実行すると、DonkeyCarで集めたデータから学習結果を得られます。</p>
-<hr>
-
-<h2 id="donwload">学習済みデータをDonwload</h2>
-<p>Colabから学習結果をダウンロードします。Colabの下記コードを実行すると'mypilot.h5'が自動ダウンロードされます。(少々時間がかかります。)</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>from google.colab import files
-
-files.download(&#39;/content/mycar/models/mypilot.h5&#39;)
-</code></pre></div>
-</td></tr></table>
                 
               
               
