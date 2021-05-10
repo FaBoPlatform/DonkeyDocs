@@ -309,8 +309,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#text-editor" class="md-nav__link">
-    TEXT Editorの起動と編集
+  <a href="#wpa_supplicantconf_1" class="md-nav__link">
+    wpa_supplicant.confの編集
   </a>
   
 </li>
@@ -318,13 +318,6 @@
         <li class="md-nav__item">
   <a href="#wifi_1" class="md-nav__link">
     WiFiスポットにパスワードなしでログインする場合の設定
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sd" class="md-nav__link">
-    SDカードにコピー
   </a>
   
 </li>
@@ -709,8 +702,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#text-editor" class="md-nav__link">
-    TEXT Editorの起動と編集
+  <a href="#wpa_supplicantconf_1" class="md-nav__link">
+    wpa_supplicant.confの編集
   </a>
   
 </li>
@@ -718,13 +711,6 @@
         <li class="md-nav__item">
   <a href="#wifi_1" class="md-nav__link">
     WiFiスポットにパスワードなしでログインする場合の設定
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#sd" class="md-nav__link">
-    SDカードにコピー
   </a>
   
 </li>
@@ -773,14 +759,10 @@
 <p><img alt="" src="../img/wpa_icon001.jpg" /></p>
 <p>SDカードをPCで開き、wpa_supplicant.confファイルをSDカード内にコピーします。</p>
 <p><img alt="" src="../img/wpa001.jpg" /></p>
-<h2 id="text-editor">TEXT Editorの起動と編集</h2>
-<p><a href="https://chrome.google.com/webstore/detail/text/mmfbcljfglbokpmkimbfghdkjmjhdgbg" target="text_tab">TEXT(Chorme App)</a> をクリックし、アプリを起動をクリックし、TEXT Editorを開きます。</p>
-<p><img alt="" src="../img/text001.png" /></p>
-<p><img alt="" src="../img/text002.png" /></p>
-<p><img alt="" src="../img/text003.png" /></p>
-<p>ssidに接続先のssid, pskにpasswordを記載します。</p>
-<p><img alt="" src="../img/text004.png" />
-ステルスモードのWiFiスポットにログインする場合は、scan_ssid=1も追加します。
+<h2 id="wpa_supplicantconf_1">wpa_supplicant.confの編集</h2>
+<p>wpa_supplicant.confを任意のテキストエディタで開き、ssidに接続先のssid, pskにpasswordを記載します。</p>
+<p><img alt="" src="../img/wpa002.jpg" /></p>
+<p>例) アクセスポイントのSSIDが<code>abcde0000001</code>, passwordが<code>123456789</code>の場合</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span>
@@ -794,13 +776,12 @@ ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
 
 network={
-    ssid=&quot;your network name&quot;
-    psk=&quot;your password&quot;
+    ssid=&quot;abcde0000001&quot;
+    psk=&quot;123456789&quot;
     scan_ssid=1
 }
 </code></pre></div>
-</td></tr></table></p>
-<p><img alt="" src="../img/text005.png" /></p>
+</td></tr></table>
 <div class="admonition warning">
 <p class="admonition-title">5GHz</p>
 <p>Raspberry Pi3は、5GHz帯のWiFiは非対応です。2.4GHz帯のWiFiのアクセスポイントを設定するようにしてください。</p>
@@ -808,7 +789,7 @@ network={
 <hr>
 
 <h2 id="wifi_1">WiFiスポットにパスワードなしでログインする場合の設定</h2>
-<p>PasswordのないWiFiスポットに接続する場合は、下記例を参考にしてください。<code>key_mgmt=NONE</code>をつける事で、パスワードなしでログインできます。
+<p>PasswordのないWiFiスポットに接続する場合は、下記例を参考にしてください。<code>key_mgmt=NONE</code>をつける事で、パスワードなしでログインできます。</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span>
@@ -825,17 +806,7 @@ network={
     key_mgmt=NONE
 }
 </code></pre></div>
-</td></tr></table></p>
-<hr>
-
-<h2 id="sd">SDカードにコピー</h2>
-<p>DonkeyCarイメージmicro SDカードに焼き込み終わったあとに、SDカードを抜いて、再度PCに挿し直すと、PCでSDカードが認識されます。<br>
-<code>wpa_supplicant.conf</code>を編集したら、SDカードの<code>boot</code>パーティション直下にコピーしてください。<br>
-この後、SDカードをraspberry piに入れて、raspberry piの電源を入れます。<br></p>
-<p>Raspberry Piの起動時にSDカードにある<code>wpa_supplicant.conf</code>が自動的に<br>
-<code>/etc/wpa_supplicant/wpa_supplicant.conf</code>へコピーされ、指定したWiFiネットワークに接続されます。  </p>
-<hr>
-
+</td></tr></table>
 <h2 id="mac">接続先の確認(Macの場合)</h2>
 <p>DonkeyCarと同一ネットワークに接続しているMacより、Terminalを起動して、下記コマンドで接続を試みます。</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>ssh pi@donkeypi.local
