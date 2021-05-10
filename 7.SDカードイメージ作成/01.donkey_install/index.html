@@ -23,6 +23,10 @@
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
         
+          
+          
+          <meta name="theme-color" content="#4cae4f">
+        
       
     
     
@@ -40,6 +44,12 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
     
       
     
@@ -52,7 +62,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="black">
   
     
     <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
@@ -909,39 +919,42 @@
 <p>Wifiの設定も、SDカードに<code>wpa_supplicant.conf</code>という名前のファイルをコピーする事で反映させる事が可能です。</p>
 <p><a href="https://faboplatform.github.io/DonkeyDocs/7.SDカードイメージ作成/wpa_supplicant.conf" download>wpa_supplicant.conf</a>
 をダウンロードします。ファイルを編集してSSIDとパスワードを接続先のWiFiルータの値に書き直します。</p>
-<p>wpa_supplicant.conf</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span>
-<span class=normal>2</span>
-<span class=normal>3</span>
-<span class=normal>4</span>
-<span class=normal>5</span>
-<span class=normal>6</span>
-<span class=normal>7</span>
-<span class=normal>8</span>
-<span class=normal>9</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=n>country</span><span class=o>=</span><span class=n>JP</span>
-<span class=n>ctrl_interface</span><span class=o>=</span><span class=n>DIR</span><span class=o>=/</span><span class=k>var</span><span class=o>/</span><span class=n>run</span><span class=o>/</span><span class=n>wpa_supplicant</span> <span class=n>GROUP</span><span class=o>=</span><span class=n>netdev</span>
-<span class=n>update_config</span><span class=o>=</span><span class=mi>1</span>
+<p>wpa_supplicant.conf
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">4</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">5</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">6</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">7</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">8</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">9</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>country=JP
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
 
-<span class=n>network</span><span class=o>=</span><span class=p>{</span>
-    <span class=n>ssid</span><span class=o>=</span><span class=s2>&quot;your network name&quot;</span>
-    <span class=n>psk</span><span class=o>=</span><span class=s2>&quot;your password&quot;</span>
-    <span class=n>scan_ssid</span><span class=o>=</span><span class=mi>1</span>
-<span class=p>}</span>
-</code></pre></div></td></tr></table></p>
+network={
+    ssid=&quot;your network name&quot;
+    psk=&quot;your password&quot;
+    scan_ssid=1
+}
+</code></pre></div>
+</td></tr></table></p>
 <p><img alt="" src="../img/wifi001.png" /><br></p>
 <p>SDカードの<code>boot</code>パーティション直下にコピーしてください。<br></p>
 <p>sshとwpa_supplicant.confの2ファイルをSDカードの<code>boot</code>にコピーする事で、Wifiに接続しsshで接続可能になります。</p>
 <h2 id="raspberry-pi_1">Raspberry Piのアップデート</h2>
 <p>Raspberry Piにログインしてパッケージを更新します。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span>
-<span class=normal>2</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>sudo apt-get update
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>sudo apt-get update
 sudo apt-get upgrade
-</code></pre></div></td></tr></table></p>
+</code></pre></div>
+</td></tr></table>
 <h2 id="rapberry-pi">Rapberry Piの設定</h2>
 <p><code>raspi-config</code>で、I2Cとカメラを有効化します。</p>
 <p><code>Interfacing Options -&gt; Camera -&gt; yes</code> , <code>Interfacing Options -&gt; I2C -&gt; yes</code> を選択して有効化します。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>sudo raspi-config
-</code></pre></div></td></tr></table></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>sudo raspi-config
+</code></pre></div>
+</td></tr></table>
 <p><img alt="" src="../img/raspi-conf001.png" />
 <img alt="" src="../img/raspi-conf002.png" />
 <img alt="" src="../img/raspi-conf004.png" /></p>
@@ -955,14 +968,16 @@ sudo apt-get upgrade
 </div>
 <h2 id="hdmi-hotplug">HDMI HotPlug 有効化</h2>
 <p>HDMIのHotPlugの対応を有効化します。HDMIのHotPlugに対応すると、RaspberryPi起動後にHDMIケーブルを差しても、モニターに画面を表示する事ができるようになります。</p>
-<p>config.txtを編集</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>vi /boot/config.txt
-</code></pre></div></td></tr></table></p>
-<p><code>/boot/config.txt</code></p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span>
-<span class=normal>2</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>hdmi_force_hotplug=1
+<p>config.txtを編集
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>vi /boot/config.txt
+</code></pre></div>
+</td></tr></table></p>
+<p><code>/boot/config.txt</code>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>hdmi_force_hotplug=1
 hdmi_drive=2
-</code></pre></div></td></tr></table></p>
+</code></pre></div>
+</td></tr></table></p>
 <div class="admonition warning">
 <p class="admonition-title">HDMI HotPlugを有効にしないと</p>
 <p>標準のイメージでは、電源を投入する前に、RaspberryPiにHDMIケーブルを接続し、その後、電源をOnにしないと、モニターに画面が表示されません。</p>
@@ -970,60 +985,68 @@ hdmi_drive=2
 <h2 id="vim">vimでコピー&amp;ペーストを可能にする</h2>
 <p>標準のイメージでは、vimでのコピー&amp;ペーストが対応していません。ここでは、vimrcを書き直し、コピー&amp;ペーストに対応させます。</p>
 <p>.vimrcを編集</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>vi ~/.vimrc
-</code></pre></div></td></tr></table></p>
-<p><code>/home/pi/.vimrc/</code></p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>:set clipboard+=unnamed
-</code></pre></div></td></tr></table></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>vi ~/.vimrc
+</code></pre></div>
+</td></tr></table>
+<p><code>/home/pi/.vimrc/</code>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>:set clipboard+=unnamed
+</code></pre></div>
+</td></tr></table></p>
 <h2 id="hostname">Hostnameの修正</h2>
 <p>標準のイメージでは、Macユーザは <code>ssh pi@raspberrypi.local</code> でRaspberry Piに接続できます。全員同じ名前になると、区別がつかないので、<code>hostname</code>, <code>hosts</code> の 2箇所のhost名を書き直し、独自の名前で呼び出せるようにしておきます。今回は、<code>raspberrypi</code>から<code>donkeypi</code>に書き直します。</p>
-<p>/etc/hostnameを編集</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>sudo vi /etc/hostname
-</code></pre></div></td></tr></table></p>
-<p><code>/etc/hostname</code></p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>donkeypi
-</code></pre></div></td></tr></table></p>
-<p>/etc/hostsを編集</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>sudo vi /etc/hosts
-</code></pre></div></td></tr></table></p>
-<p><code>/etc/hosts</code></p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span>
-<span class=normal>2</span>
-<span class=normal>3</span>
-<span class=normal>4</span>
-<span class=normal>5</span>
-<span class=normal>6</span>
-<span class=normal>7</span>
-<span class=normal>8</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=p>(</span><span class=n>env</span><span class=p>)</span><span class=w> </span><span class=nf>pi</span><span class=nv>@raspberrypi</span><span class=err>:</span><span class=o>~</span><span class=w> </span><span class=err>$</span><span class=w> </span><span class=n>sudo</span><span class=w> </span><span class=n>vi</span><span class=w> </span><span class=o>/</span><span class=n>etc</span><span class=o>/</span><span class=n>hosts</span><span class=w></span>
+<p>/etc/hostnameを編集
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>sudo vi /etc/hostname
+</code></pre></div>
+</td></tr></table></p>
+<p><code>/etc/hostname</code>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>donkeypi
+</code></pre></div>
+</td></tr></table></p>
+<p>/etc/hostsを編集
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>sudo vi /etc/hosts
+</code></pre></div>
+</td></tr></table></p>
+<p><code>/etc/hosts</code>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">4</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">5</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">6</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">7</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">8</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>(env) pi@raspberrypi:~ $ sudo vi /etc/hosts
 
-<span class=mf>127.0.0.1</span><span class=w>       </span><span class=n>localhost</span><span class=w></span>
-<span class=o>::</span><span class=mi>1</span><span class=w>             </span><span class=n>localhost</span><span class=w> </span><span class=n>ip6</span><span class=o>-</span><span class=n>localhost</span><span class=w> </span><span class=n>ip6</span><span class=o>-</span><span class=n>loopback</span><span class=w></span>
-<span class=nl>ff02</span><span class=p>:</span><span class=err>:</span><span class=mi>1</span><span class=w>         </span><span class=n>ip6</span><span class=o>-</span><span class=n>allnodes</span><span class=w></span>
-<span class=nl>ff02</span><span class=p>:</span><span class=err>:</span><span class=mi>2</span><span class=w>         </span><span class=n>ip6</span><span class=o>-</span><span class=n>allrouters</span><span class=w></span>
+127.0.0.1       localhost
+::1             localhost ip6-localhost ip6-loopback
+ff02::1         ip6-allnodes
+ff02::2         ip6-allrouters
 
-<span class=mf>127.0.1.1</span><span class=w>       </span><span class=n>donkeypi</span><span class=w></span>
-</code></pre></div></td></tr></table></p>
+127.0.1.1       donkeypi
+</code></pre></div>
+</td></tr></table></p>
 <div class="admonition warning">
 <p class="admonition-title">WindowsではRaspberryPiのHost名検索ができない</p>
 <p>Widnowsでは、RaspberryPiのHost名検索ができないので、注意してください。</p>
 </div>
 <h2 id="donkeycar">DonkeyCarのインストール</h2>
 <h3 id="_1">必要なパッケージ群のインストール</h3>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span>
-<span class=normal>2</span>
-<span class=normal>3</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=n>sudo</span> <span class=n>apt</span><span class=o>-</span><span class=n>get</span> <span class=n>install</span> <span class=o>-</span><span class=n>y</span> <span class=n>vim</span> <span class=n>htop</span> <span class=n>locate</span> <span class=n>arp</span><span class=o>-</span><span class=n>scan</span> <span class=n>screen</span>
-<span class=n>sudo</span> <span class=n>apt</span><span class=o>-</span><span class=n>get</span> <span class=n>install</span> <span class=o>-</span><span class=n>y</span> <span class=n>build</span><span class=o>-</span><span class=n>essential</span> <span class=n>python3</span> <span class=n>python3</span><span class=o>-</span><span class=n>dev</span> <span class=n>python3</span><span class=o>-</span><span class=n>pip</span> <span class=n>python3</span><span class=o>-</span><span class=n>virtualenv</span> <span class=n>python3</span><span class=o>-</span><span class=n>numpy</span> <span class=n>python3</span><span class=o>-</span><span class=n>picamera</span> <span class=n>python3</span><span class=o>-</span><span class=n>pandas</span> <span class=n>python3</span><span class=o>-</span><span class=n>rpi</span><span class=o>.</span><span class=n>gpio</span> <span class=n>i2c</span><span class=o>-</span><span class=n>tools</span> <span class=n>avahi</span><span class=o>-</span><span class=n>utils</span> <span class=n>joystick</span> <span class=n>libopenjp2</span><span class=o>-</span><span class=mi>7</span><span class=o>-</span><span class=n>dev</span> <span class=n>libtiff5</span><span class=o>-</span><span class=n>dev</span> <span class=n>gfortran</span> <span class=n>libatlas</span><span class=o>-</span><span class=n>base</span><span class=o>-</span><span class=n>dev</span> <span class=n>libopenblas</span><span class=o>-</span><span class=n>dev</span> <span class=n>libhdf5</span><span class=o>-</span><span class=n>serial</span><span class=o>-</span><span class=n>dev</span> <span class=n>git</span> <span class=n>ntp</span> <span class=n>zip</span>
-<span class=n>sudo</span> <span class=n>apt</span><span class=o>-</span><span class=n>get</span> <span class=n>install</span> <span class=o>-</span><span class=n>y</span> <span class=n>libilmbase</span><span class=o>-</span><span class=n>dev</span> <span class=n>libopenexr</span><span class=o>-</span><span class=n>dev</span> <span class=n>libgstreamer1</span><span class=o>.</span><span class=mi>0</span><span class=o>-</span><span class=n>dev</span> <span class=n>libjasper</span><span class=o>-</span><span class=n>dev</span> <span class=n>libwebp</span><span class=o>-</span><span class=n>dev</span> <span class=n>libatlas</span><span class=o>-</span><span class=n>base</span><span class=o>-</span><span class=n>dev</span> <span class=n>libavcodec</span><span class=o>-</span><span class=n>dev</span> <span class=n>libavformat</span><span class=o>-</span><span class=n>dev</span> <span class=n>libswscale</span><span class=o>-</span><span class=n>dev</span> <span class=n>libqtgui4</span> <span class=n>libqt4</span><span class=o>-</span><span class=n>test</span>
-</code></pre></div></td></tr></table></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>sudo apt-get install -y vim htop locate arp-scan screen
+sudo apt-get install -y build-essential python3 python3-dev python3-pip python3-virtualenv python3-numpy python3-picamera python3-pandas python3-rpi.gpio i2c-tools avahi-utils joystick libopenjp2-7-dev libtiff5-dev gfortran libatlas-base-dev libopenblas-dev libhdf5-serial-dev git ntp zip
+sudo apt-get install -y libilmbase-dev libopenexr-dev libgstreamer1.0-dev libjasper-dev libwebp-dev libatlas-base-dev libavcodec-dev libavformat-dev libswscale-dev libqtgui4 libqt4-test
+</code></pre></div>
+</td></tr></table>
 <h3 id="virtualenv">virtualenv環境の構築</h3>
 <p>python/pip環境をpython3/pip3で構築します。この仮想環境は~/env/に構築されます。</p>
 <p><code>source ~/env/bin/activate</code>コマンドで仮想環境を有効化します。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span>
-<span class=normal>2</span>
-<span class=normal>3</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>python3 -m virtualenv -p python3 ~/env --system-site-packages
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>python3 -m virtualenv -p python3 ~/env --system-site-packages
 echo &quot;source ~/env/bin/activate&quot; &gt;&gt; ~/.bashrc
 source ~/.bashrc
-</code></pre></div></td></tr></table></p>
+</code></pre></div>
+</td></tr></table>
 <p><code>~/.bashrc</code>ファイルに仮想環境を有効化する記述を追加し、ログインに仮想環境を有効化します。</p>
 <div class="admonition info">
 <p class="admonition-title">仮想環境から抜け出す場合は</p>
@@ -1036,83 +1059,88 @@ source ~/.bashrc
 <h3 id="donkeycar_1">DonkeyCarのインストール</h3>
 <p>参考: <a href="https://docs.donkeycar.com/guide/install_software/">DonkeyCar公式ページ</a></p>
 <p>最新のDonkeyCarをインストールします。<a href="https://docs.donkeycar.com/guide/install_software/">DonkeyCar公式ページ</a>も参考にしてください。<br></p>
-<p>DonkeyCarのインストール</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal> 1</span>
-<span class=normal> 2</span>
-<span class=normal> 3</span>
-<span class=normal> 4</span>
-<span class=normal> 5</span>
-<span class=normal> 6</span>
-<span class=normal> 7</span>
-<span class=normal> 8</span>
-<span class=normal> 9</span>
-<span class=normal>10</span>
-<span class=normal>11</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=n>mkdir</span><span class=w> </span><span class=o>~/</span><span class=n>projects</span><span class=w></span>
-<span class=n>cd</span><span class=w> </span><span class=o>~/</span><span class=n>projects</span><span class=w></span>
+<p>DonkeyCarのインストール
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 2</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 3</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 4</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 5</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 6</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 7</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 8</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 9</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">10</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">11</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>mkdir ~/projects
+cd ~/projects
 
-<span class=n>git</span><span class=w> </span><span class=n>clone</span><span class=w> </span><span class=nl>https</span><span class=p>:</span><span class=o>//</span><span class=n>github</span><span class=p>.</span><span class=n>com</span><span class=o>/</span><span class=n>autorope</span><span class=o>/</span><span class=n>donkeycar</span><span class=w></span>
-<span class=n>cd</span><span class=w> </span><span class=n>donkeycar</span><span class=w></span>
-<span class=n>git</span><span class=w> </span><span class=n>checkout</span><span class=w> </span><span class=n>be45ae038cb00d81c5450b9a481dbf5aaa03e688</span><span class=w></span>
-<span class=n>pip</span><span class=w> </span><span class=n>install</span><span class=w> </span><span class=o>-</span><span class=n>e</span><span class=w> </span><span class=p>.</span><span class=o>[</span><span class=n>pi</span><span class=o>]</span><span class=w></span>
-<span class=n>pip</span><span class=w> </span><span class=n>install</span><span class=w> </span><span class=n>tensorflow</span><span class=o>==</span><span class=mf>1.13.1</span><span class=w></span>
-<span class=n>pip</span><span class=w> </span><span class=n>install</span><span class=w> </span><span class=n>numpy</span><span class=w> </span><span class=o>--</span><span class=n>upgrade</span><span class=w></span>
-<span class=n>pip</span><span class=w> </span><span class=n>install</span><span class=w> </span><span class=n>opencv</span><span class=o>-</span><span class=n>python</span><span class=w></span>
-<span class=n>pip</span><span class=w> </span><span class=n>install</span><span class=w> </span><span class=n>smbus</span><span class=w></span>
-</code></pre></div></td></tr></table></p>
+git clone https://github.com/autorope/donkeycar
+cd donkeycar
+git checkout be45ae038cb00d81c5450b9a481dbf5aaa03e688
+pip install -e .[pi]
+pip install tensorflow==1.13.1
+pip install numpy --upgrade
+pip install opencv-python
+pip install smbus
+</code></pre></div>
+</td></tr></table></p>
 <div class="admonition warning">
 <p class="admonition-title">pip install opencv-pythonは3時間(RaspPi3B+)かかります</p>
 <p><code>pip install opencv-python</code>のコマンドで、OpenCV最新版をビルドしてインストールしています。この処理に3時間(RaspPi3B+)で3時間くらいかかります。インストールを急ぎたい場合は、<code>sudo apt-get install python3-opencv</code>のコマンドでインストールも可能です。</p>
 </div>
 <h3 id="opencv-4x">OpenCV 4.x関連エラー</h3>
 <p>エラーが発生しない場合は、本項目はスキップしてください。</p>
-<p>OpenCV 4.xは以下のエラーが出る場合があります。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span>
-<span class=normal>2</span>
-<span class=normal>3</span>
-<span class=normal>4</span>
-<span class=normal>5</span>
-<span class=normal>6</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=n>python</span> <span class=o>-</span><span class=n>c</span> <span class=s2>&quot;import cv2&quot;</span>
-<span class=n>Traceback</span> <span class=p>(</span><span class=n>most</span> <span class=n>recent</span> <span class=n>call</span> <span class=n>last</span><span class=p>):</span>
-  <span class=n>File</span> <span class=s2>&quot;&lt;string&gt;&quot;</span><span class=p>,</span> <span class=n>line</span> <span class=mi>1</span><span class=p>,</span> <span class=ow>in</span> <span class=o>&lt;</span><span class=n>module</span><span class=o>&gt;</span>
-  <span class=n>File</span> <span class=s2>&quot;/home/pi/env/lib/python3.7/site-packages/cv2/__init__.py&quot;</span><span class=p>,</span> <span class=n>line</span> <span class=mi>3</span><span class=p>,</span> <span class=ow>in</span> <span class=o>&lt;</span><span class=n>module</span><span class=o>&gt;</span>
-    <span class=kn>from</span> <span class=nn>.cv2</span> <span class=kn>import</span> <span class=o>*</span>
-<span class=ne>ImportError</span><span class=p>:</span> <span class=o>/</span><span class=n>home</span><span class=o>/</span><span class=n>pi</span><span class=o>/</span><span class=n>env</span><span class=o>/</span><span class=n>lib</span><span class=o>/</span><span class=n>python3</span><span class=mf>.7</span><span class=o>/</span><span class=n>site</span><span class=o>-</span><span class=n>packages</span><span class=o>/</span><span class=n>cv2</span><span class=o>/</span><span class=n>cv2</span><span class=o>.</span><span class=n>cpython</span><span class=o>-</span><span class=mi>37</span><span class=n>m</span><span class=o>-</span><span class=n>arm</span><span class=o>-</span><span class=n>linux</span><span class=o>-</span><span class=n>gnueabihf</span><span class=o>.</span><span class=n>so</span><span class=p>:</span> <span class=n>undefined</span> <span class=n>symbol</span><span class=p>:</span> <span class=n>__atomic_fetch_add_8</span>
-</code></pre></div></td></tr></table></p>
-<p>これはOpenCVの問題のようなので、問題が解決されるまで以下のように対応しておきます。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span>
-<span class=normal>2</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=n>echo</span> <span class=s2>&quot;export LD_PRELOAD=/usr/lib/arm-linux-gnueabihf/libatomic.so.1&quot;</span> <span class=o>&gt;&gt;</span> <span class=o>~/.</span><span class=n>bashrc</span>
-<span class=n>source</span> <span class=o>~/.</span><span class=n>bashrc</span>
-</code></pre></div></td></tr></table></p>
+<p>OpenCV 4.xは以下のエラーが出る場合があります。
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">4</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">5</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">6</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>python -c &quot;import cv2&quot;
+Traceback (most recent call last):
+  File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;
+  File &quot;/home/pi/env/lib/python3.7/site-packages/cv2/__init__.py&quot;, line 3, in &lt;module&gt;
+    from .cv2 import *
+ImportError: /home/pi/env/lib/python3.7/site-packages/cv2/cv2.cpython-37m-arm-linux-gnueabihf.so: undefined symbol: __atomic_fetch_add_8
+</code></pre></div>
+</td></tr></table></p>
+<p>これはOpenCVの問題のようなので、問題が解決されるまで以下のように対応しておきます。
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>echo &quot;export LD_PRELOAD=/usr/lib/arm-linux-gnueabihf/libatomic.so.1&quot; &gt;&gt; ~/.bashrc
+source ~/.bashrc
+</code></pre></div>
+</td></tr></table></p>
 <p>参考：<a href="https://github.com/piwheels/packages/issues/59">https://github.com/piwheels/packages/issues/59</a></p>
 <h2 id="donkeycar_2">DonkeyCar 設定</h2>
 <p>~/mycarでプロジェクトを作成して、自分の車両用の設定ファイルをテンプレートを作成します。</p>
-<p>createcar</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span>
-<span class=normal>2</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>donkey createcar --path ~/mycar
+<p>createcar
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>donkey createcar --path ~/mycar
 cd ~/mycar
-</code></pre></div></td></tr></table></p>
-<p>myconfig.pyの編集</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>vi myconfig.py
-</code></pre></div></td></tr></table></p>
+</code></pre></div>
+</td></tr></table></p>
+<p>myconfig.pyの編集
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>vi myconfig.py
+</code></pre></div>
+</td></tr></table></p>
 <p>ステアリングPWM(<code>STEERING_LEFT_PWM</code>,<code>STEERING_RIGHT_PWM</code>)とスロットルPWM(<code>THROTTLE_FORWARD_PWM</code>,<code>THROTTLE_STOPPED_PWM</code>,<code>THROTTLE_REVERSE_PWM</code>)はキャリブレーションを実施して適切な値を入れます。</p>
 <p><code>JOYSTICK_DEADZONE</code>はスロットルオフの時にレコーディングが止まるようにするための閾値を設定します。(0.0だとJoystck使用時はレコーディングが続く場合があるので0.05ぐらいの閾値にします。）<br></p>
-<p><code>~/mycar/myconfig.py</code></p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal> 1</span>
-<span class=normal> 2</span>
-<span class=normal> 3</span>
-<span class=normal> 4</span>
-<span class=normal> 5</span>
-<span class=normal> 6</span>
-<span class=normal> 7</span>
-<span class=normal> 8</span>
-<span class=normal> 9</span>
-<span class=normal>10</span>
-<span class=normal>11</span>
-<span class=normal>12</span>
-<span class=normal>13</span>
-<span class=normal>14</span>
-<span class=normal>15</span>
-<span class=normal>16</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>STEERING_LEFT_PWM = 460 # 左。PWMは1740
+<p><code>~/mycar/myconfig.py</code>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 2</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 3</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 4</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 5</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 6</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 7</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 8</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 9</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">10</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">11</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">12</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">13</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">14</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">15</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">16</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>STEERING_LEFT_PWM = 460 # 左。PWMは1740
 STEERING_RIGHT_PWM = 290 # 右。PWMは1100
 
 THROTTLE_FORWARD_PWM = 500 # 前進の値。PWMは2000us
@@ -1128,7 +1156,8 @@ EARLY_STOP_PATIENCE = 10
 CACHE_IMAGES = False
 
 # GYM_CONF[&quot;guid&quot;] = &quot;00000000-0000-4000-0000-000000000000&quot;
-</code></pre></div></td></tr></table></p>
+</code></pre></div>
+</td></tr></table></p>
 <div class="admonition info">
 <p class="admonition-title">PWMとは<p>PWMは、信号電圧がHIGHになっている時間と周期で決まります。一般的なRC Carの場合、周期は50-66.6Hz、HIGHの時間は1000-2000μsです。しかし統一した規格があるわけではないので、メーカー、サーボ、受信機、ESC、それぞれバラバラです。メカを選ぶ際は相性を調べる必要があります。<br>
 PCA9685でPWMを生成する場合は、PCA9685チップのレジスタに書き込む値として250-500範囲の値を使います。PCA9685はレジスタに書き込まれている値からPWM信号を出力します。<br>
@@ -1143,48 +1172,53 @@ PCA9685でPWMを生成する場合は、PCA9685チップのレジスタに書き
 <p>DonkeyCarの最新パッケージ(3.1.5)は、走行時にOLEDを表示する拡張が入りました。一方で、RaspberryPi 3A+のようにハードウェア構成が違う場合は、エラーが発生します。エラーの原因は、ネットワークインターフェースが存在しない事が原因で発生します。</p>
 </div>
 <p>FaBo DonkeyCar用に、下記パッケージをインストールします。</p>
-<p>FaBo DonkeyCarのOLEDの拡張パッケージのダウンロードと設定</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span>
-<span class=normal>2</span>
-<span class=normal>3</span>
-<span class=normal>4</span>
-<span class=normal>5</span>
-<span class=normal>6</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>cd ~/projects
+<p>FaBo DonkeyCarのOLEDの拡張パッケージのダウンロードと設定
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">4</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">5</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">6</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>cd ~/projects
 git clone https://github.com/FaBoPlatform/ip_address_display
 mkdir -p ~/fabo/bin
 cd ip_address_display
 cp oled_ip* ~/fabo/bin
 cp oled.py ~/projects/donkeycar/donkeycar/parts/
-</code></pre></div></td></tr></table></p>
+</code></pre></div>
+</td></tr></table></p>
 <p>/etc/rc.localのexit 0の前にOLEDを表示するスクリプトの実行を追加します。</p>
-<p>/etc/rc.localの編集</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>sudo vi /etc/rc.local
-</code></pre></div></td></tr></table></p>
-<p><code>/etc/rc.local</code></p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span>
-<span class=normal>2</span>
-<span class=normal>3</span>
-<span class=normal>4</span>
-<span class=normal>5</span>
-<span class=normal>6</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=n>before</span><span class=o>:</span>
-<span class=n>exit</span> <span class=mi>0</span>
+<p>/etc/rc.localの編集
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>sudo vi /etc/rc.local
+</code></pre></div>
+</td></tr></table></p>
+<p><code>/etc/rc.local</code>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">4</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">5</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">6</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>before:
+exit 0
 
-<span class=n>after</span><span class=o>:</span>
-<span class=sr>/home/$(getent passwd 1000 | cut -d: -f1)/fabo/bin/</span><span class=n>oled_ip</span><span class=o>.</span><span class=na>sh</span>
-<span class=n>exit</span> <span class=mi>0</span>
-</code></pre></div></td></tr></table></p>
-<p>rc.local有効化</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span>
-<span class=normal>2</span>
-<span class=normal>3</span>
-<span class=normal>4</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=n>sudo</span> <span class=n>systemctl</span> <span class=n>status</span> <span class=n>rc</span><span class=o>.</span><span class=n>local</span>
-<span class=n>sudo</span> <span class=n>systemctl</span> <span class=n>daemon</span><span class=o>-</span><span class=n>reload</span>
-<span class=n>sudo</span> <span class=n>systemctl</span> <span class=n>start</span> <span class=n>rc</span><span class=o>.</span><span class=n>local</span>
-<span class=n>sudo</span> <span class=n>systemctl</span> <span class=n>status</span> <span class=n>rc</span><span class=o>.</span><span class=n>local</span>
-</code></pre></div></td></tr></table></p>
-<p>再起動後</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>sudo reboot
-</code></pre></div></td></tr></table></p>
+after:
+/home/$(getent passwd 1000 | cut -d: -f1)/fabo/bin/oled_ip.sh
+exit 0
+</code></pre></div>
+</td></tr></table></p>
+<p>rc.local有効化
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">4</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>sudo systemctl status rc.local
+sudo systemctl daemon-reload
+sudo systemctl start rc.local
+sudo systemctl status rc.local
+</code></pre></div>
+</td></tr></table></p>
+<p>再起動後
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>sudo reboot
+</code></pre></div>
+</td></tr></table></p>
 <p>うまくパッケージが反映されれば、RaspberryPiのIPアドレスが表示されるようになります。</p>
                 
               
@@ -1258,6 +1292,8 @@ cp oled.py ~/projects/donkeycar/donkeycar/parts/
     
     
       <script src="../../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
       
     
   </body>

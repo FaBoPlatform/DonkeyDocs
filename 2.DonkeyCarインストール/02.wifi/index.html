@@ -23,6 +23,10 @@
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
         
+          
+          
+          <meta name="theme-color" content="#4cae4f">
+        
       
     
     
@@ -40,6 +44,12 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
     
       
     
@@ -52,7 +62,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="black">
   
     
     <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
@@ -767,25 +777,26 @@
 <p><img alt="" src="../img/text003.png" /></p>
 <p>ssidに接続先のssid, pskにpasswordを記載します。</p>
 <p><img alt="" src="../img/text004.png" />
-ステルスモードのWiFiスポットにログインする場合は、scan_ssid=1も追加します。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span>
-<span class=normal>2</span>
-<span class=normal>3</span>
-<span class=normal>4</span>
-<span class=normal>5</span>
-<span class=normal>6</span>
-<span class=normal>7</span>
-<span class=normal>8</span>
-<span class=normal>9</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=n>country</span><span class=o>=</span><span class=n>JP</span>
-<span class=n>ctrl_interface</span><span class=o>=</span><span class=n>DIR</span><span class=o>=/</span><span class=k>var</span><span class=o>/</span><span class=n>run</span><span class=o>/</span><span class=n>wpa_supplicant</span> <span class=n>GROUP</span><span class=o>=</span><span class=n>netdev</span>
-<span class=n>update_config</span><span class=o>=</span><span class=mi>1</span>
+ステルスモードのWiFiスポットにログインする場合は、scan_ssid=1も追加します。
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">4</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">5</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">6</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">7</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">8</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">9</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>country=JP
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
 
-<span class=n>network</span><span class=o>=</span><span class=p>{</span>
-    <span class=n>ssid</span><span class=o>=</span><span class=s2>&quot;your network name&quot;</span>
-    <span class=n>psk</span><span class=o>=</span><span class=s2>&quot;your password&quot;</span>
-    <span class=n>scan_ssid</span><span class=o>=</span><span class=mi>1</span>
-<span class=p>}</span>
-</code></pre></div></td></tr></table></p>
+network={
+    ssid=&quot;your network name&quot;
+    psk=&quot;your password&quot;
+    scan_ssid=1
+}
+</code></pre></div>
+</td></tr></table></p>
 <p><img alt="" src="../img/text005.png" /></p>
 <div class="admonition warning">
 <p class="admonition-title">5GHz</p>
@@ -794,23 +805,24 @@
 <hr>
 
 <h2 id="wifi_1">WiFiスポットにパスワードなしでログインする場合の設定</h2>
-<p>PasswordのないWiFiスポットに接続する場合は、下記例を参考にしてください。<code>key_mgmt=NONE</code>をつける事で、パスワードなしでログインできます。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span>
-<span class=normal>2</span>
-<span class=normal>3</span>
-<span class=normal>4</span>
-<span class=normal>5</span>
-<span class=normal>6</span>
-<span class=normal>7</span>
-<span class=normal>8</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=n>country</span><span class=o>=</span><span class=n>JP</span>
-<span class=n>ctrl_interface</span><span class=o>=</span><span class=n>DIR</span><span class=o>=/</span><span class=k>var</span><span class=o>/</span><span class=n>run</span><span class=o>/</span><span class=n>wpa_supplicant</span> <span class=n>GROUP</span><span class=o>=</span><span class=n>netdev</span>
-<span class=n>update_config</span><span class=o>=</span><span class=mi>1</span>
+<p>PasswordのないWiFiスポットに接続する場合は、下記例を参考にしてください。<code>key_mgmt=NONE</code>をつける事で、パスワードなしでログインできます。
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">4</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">5</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">6</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">7</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">8</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>country=JP
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
 
-<span class=n>network</span><span class=o>=</span><span class=p>{</span>
-    <span class=n>ssid</span><span class=o>=</span><span class=s2>&quot;your network name&quot;</span>
-    <span class=n>key_mgmt</span><span class=o>=</span><span class=n>NONE</span>
-<span class=p>}</span>
-</code></pre></div></td></tr></table></p>
+network={
+    ssid=&quot;your network name&quot;
+    key_mgmt=NONE
+}
+</code></pre></div>
+</td></tr></table></p>
 <hr>
 
 <h2 id="sd">SDカードにコピー</h2>
@@ -823,8 +835,9 @@
 
 <h2 id="mac">接続先の確認(Macの場合)</h2>
 <p>DonkeyCarと同一ネットワークに接続しているMacより、Terminalを起動して、下記コマンドで接続を試みます。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=n>ssh</span><span class=w> </span><span class=nf>pi</span><span class=nv>@donkeypi</span><span class=p>.</span><span class=k>local</span><span class=w></span>
-</code></pre></div></td></tr></table></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>ssh pi@donkeypi.local
+</code></pre></div>
+</td></tr></table>
 <table>
 <thead>
 <tr>
@@ -844,8 +857,9 @@
 <p>上記方法はOSXのみで有効で、複数台使用時は、DonkeyCarのRaspberry Pi3のhost名を任意のユニークな名前に書き直す必要があります。</p>
 </div>
 <p>ifconfigでipアドレスを確認します。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>ifconfigf -a
-</code></pre></div></td></tr></table></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>ifconfigf -a
+</code></pre></div>
+</td></tr></table>
 <p>で表示されるWLAN0にIPアドレスが表示されます。</p>
 <div class="admonition info">
 <p class="admonition-title">IPアドレス</p>
@@ -860,8 +874,9 @@
 
 <h2 id="wpa_supplicant">wpa_supplicantの修正</h2>
 <p>接続に失敗した場合は、Raspberry Pi3内の<code>/etc/wpa_supplicant/wpa_supplicant.conf</code> を修正することで、接続先の変更が可能です。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal>1</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code>sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
-</code></pre></div></td></tr></table></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
+</code></pre></div>
+</td></tr></table>
                 
               
               
@@ -934,6 +949,8 @@
     
     
       <script src="../../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
       
     
   </body>

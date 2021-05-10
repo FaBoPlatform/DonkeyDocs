@@ -23,6 +23,10 @@
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
         
+          
+          
+          <meta name="theme-color" content="#4cae4f">
+        
       
     
     
@@ -40,6 +44,12 @@
     
       <link rel="stylesheet" href="../../stylesheets/extra.css">
     
+      <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosansjp.css">
+    
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:600,800">
+    
+      <link rel="stylesheet" href="../../stylesheets/custom.css">
+    
     
       
     
@@ -52,7 +62,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="green" data-md-color-accent="black">
   
     
     <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
@@ -672,217 +682,219 @@
                 <h1 id="motor">Motorの制御</h1>
 <h2 id="motor_1">Motorの制御</h2>
 <p>I2Cのアドレスが0x64を割り振られたDRV8830を制御します。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal> 1</span>
-<span class=normal> 2</span>
-<span class=normal> 3</span>
-<span class=normal> 4</span>
-<span class=normal> 5</span>
-<span class=normal> 6</span>
-<span class=normal> 7</span>
-<span class=normal> 8</span>
-<span class=normal> 9</span>
-<span class=normal>10</span>
-<span class=normal>11</span>
-<span class=normal>12</span>
-<span class=normal>13</span>
-<span class=normal>14</span>
-<span class=normal>15</span>
-<span class=normal>16</span>
-<span class=normal>17</span>
-<span class=normal>18</span>
-<span class=normal>19</span>
-<span class=normal>20</span>
-<span class=normal>21</span>
-<span class=normal>22</span>
-<span class=normal>23</span>
-<span class=normal>24</span>
-<span class=normal>25</span>
-<span class=normal>26</span>
-<span class=normal>27</span>
-<span class=normal>28</span>
-<span class=normal>29</span>
-<span class=normal>30</span>
-<span class=normal>31</span>
-<span class=normal>32</span>
-<span class=normal>33</span>
-<span class=normal>34</span>
-<span class=normal>35</span>
-<span class=normal>36</span>
-<span class=normal>37</span>
-<span class=normal>38</span>
-<span class=normal>39</span>
-<span class=normal>40</span>
-<span class=normal>41</span>
-<span class=normal>42</span>
-<span class=normal>43</span>
-<span class=normal>44</span>
-<span class=normal>45</span>
-<span class=normal>46</span>
-<span class=normal>47</span>
-<span class=normal>48</span>
-<span class=normal>49</span>
-<span class=normal>50</span>
-<span class=normal>51</span>
-<span class=normal>52</span>
-<span class=normal>53</span>
-<span class=normal>54</span>
-<span class=normal>55</span>
-<span class=normal>56</span>
-<span class=normal>57</span>
-<span class=normal>58</span>
-<span class=normal>59</span>
-<span class=normal>60</span>
-<span class=normal>61</span>
-<span class=normal>62</span>
-<span class=normal>63</span>
-<span class=normal>64</span>
-<span class=normal>65</span>
-<span class=normal>66</span>
-<span class=normal>67</span>
-<span class=normal>68</span>
-<span class=normal>69</span>
-<span class=normal>70</span>
-<span class=normal>71</span>
-<span class=normal>72</span>
-<span class=normal>73</span>
-<span class=normal>74</span>
-<span class=normal>75</span>
-<span class=normal>76</span>
-<span class=normal>77</span>
-<span class=normal>78</span>
-<span class=normal>79</span>
-<span class=normal>80</span>
-<span class=normal>81</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=c1># coding: utf-8</span>
-<span class=kn>import</span> <span class=nn>pkg_resources</span>
-<span class=n>SMBUS</span><span class=o>=</span><span class=s1>&#39;smbus&#39;</span>
-<span class=k>for</span> <span class=n>dist</span> <span class=ow>in</span> <span class=n>pkg_resources</span><span class=o>.</span><span class=n>working_set</span><span class=p>:</span>
-    <span class=c1>#print(dist.project_name, dist.version)</span>
-    <span class=k>if</span> <span class=n>dist</span><span class=o>.</span><span class=n>project_name</span> <span class=o>==</span> <span class=s1>&#39;smbus&#39;</span><span class=p>:</span>
-        <span class=k>break</span>
-    <span class=k>if</span> <span class=n>dist</span><span class=o>.</span><span class=n>project_name</span> <span class=o>==</span> <span class=s1>&#39;smbus2&#39;</span><span class=p>:</span>
-        <span class=n>SMBUS</span><span class=o>=</span><span class=s1>&#39;smbus2&#39;</span>
-        <span class=k>break</span>
-<span class=k>if</span> <span class=n>SMBUS</span> <span class=o>==</span> <span class=s1>&#39;smbus&#39;</span><span class=p>:</span>
-    <span class=kn>import</span> <span class=nn>smbus</span>
-<span class=k>elif</span> <span class=n>SMBUS</span> <span class=o>==</span> <span class=s1>&#39;smbus2&#39;</span><span class=p>:</span>
-    <span class=kn>import</span> <span class=nn>smbus2</span> <span class=k>as</span> <span class=nn>smbus</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 2</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 3</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 4</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 5</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 6</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 7</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 8</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 9</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">10</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">11</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">12</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">13</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">14</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">15</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">16</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">17</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">18</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">19</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">20</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">21</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">22</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">23</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">24</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">25</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">26</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">27</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">28</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">29</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">30</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">31</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">32</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">33</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">34</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">35</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">36</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">37</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">38</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">39</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">40</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">41</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">42</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">43</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">44</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">45</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">46</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">47</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">48</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">49</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">50</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">51</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">52</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">53</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">54</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">55</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">56</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">57</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">58</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">59</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">60</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">61</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">62</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">63</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">64</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">65</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">66</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">67</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">68</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">69</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">70</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">71</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">72</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">73</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">74</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">75</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">76</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">77</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">78</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">79</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">80</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">81</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #75715e"># coding: utf-8</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">pkg_resources</span>
+<span style="color: #f8f8f2">SMBUS</span><span style="color: #f92672">=</span><span style="color: #e6db74">&#39;smbus&#39;</span>
+<span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">dist</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">pkg_resources</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">working_set:</span>
+    <span style="color: #75715e">#print(dist.project_name, dist.version)</span>
+    <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">dist</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">project_name</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&#39;smbus&#39;</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #66d9ef">break</span>
+    <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">dist</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">project_name</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&#39;smbus2&#39;</span><span style="color: #f8f8f2">:</span>
+        <span style="color: #f8f8f2">SMBUS</span><span style="color: #f92672">=</span><span style="color: #e6db74">&#39;smbus2&#39;</span>
+        <span style="color: #66d9ef">break</span>
+<span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">SMBUS</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&#39;smbus&#39;</span><span style="color: #f8f8f2">:</span>
+    <span style="color: #f92672">import</span> <span style="color: #f8f8f2">smbus</span>
+<span style="color: #66d9ef">elif</span> <span style="color: #f8f8f2">SMBUS</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&#39;smbus2&#39;</span><span style="color: #f8f8f2">:</span>
+    <span style="color: #f92672">import</span> <span style="color: #f8f8f2">smbus2</span> <span style="color: #66d9ef">as</span> <span style="color: #f8f8f2">smbus</span>
 
-<span class=k>class</span> <span class=nc>DRV8830</span><span class=p>():</span>
-    <span class=sd>&#39;&#39;&#39;</span>
-<span class=sd>    通電し続けている限り、DRV8830に書き込んだ値のパルスを送信し続けるため、</span>
-<span class=sd>    値を一度書き込んだら値に変更があるまで放置でよい（無限ループで書き込み続ける必要はない）</span>
-<span class=sd>    &#39;&#39;&#39;</span>
-    <span class=c1>## DRV8830 Default I2C address</span>
-    <span class=n>MOTOR_ADDR_L</span> <span class=o>=</span> <span class=mh>0x64</span>
-    <span class=n>MOTOR_ADDR_R</span> <span class=o>=</span> <span class=mh>0x63</span>
+<span style="color: #66d9ef">class</span> <span style="color: #a6e22e">DRV8830</span><span style="color: #f8f8f2">():</span>
+    <span style="color: #e6db74">&#39;&#39;&#39;</span>
+<span style="color: #e6db74">    通電し続けている限り、DRV8830に書き込んだ値のパルスを送信し続けるため、</span>
+<span style="color: #e6db74">    値を一度書き込んだら値に変更があるまで放置でよい（無限ループで書き込み続ける必要はない）</span>
+<span style="color: #e6db74">    &#39;&#39;&#39;</span>
+    <span style="color: #75715e">## DRV8830 Default I2C address</span>
+    <span style="color: #f8f8f2">MOTOR_ADDR_L</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0x64</span>
+    <span style="color: #f8f8f2">MOTOR_ADDR_R</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0x63</span>
 
-    <span class=c1># DRV8830 Register Addresses</span>
-    <span class=n>COMMAND0</span> <span class=o>=</span> <span class=mh>0x00</span>
+    <span style="color: #75715e"># DRV8830 Register Addresses</span>
+    <span style="color: #f8f8f2">COMMAND0</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0x00</span>
 
-    <span class=c1>## Value motor.</span>
-    <span class=n>FORWARD</span> <span class=o>=</span> <span class=mh>0x01</span>
-    <span class=n>BACK</span> <span class=o>=</span> <span class=mh>0x02</span>
-    <span class=n>STOP</span> <span class=o>=</span> <span class=mh>0x00</span>
-    <span class=n>BRAKE</span> <span class=o>=</span> <span class=mh>0x03</span>
+    <span style="color: #75715e">## Value motor.</span>
+    <span style="color: #f8f8f2">FORWARD</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0x01</span>
+    <span style="color: #f8f8f2">BACK</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0x02</span>
+    <span style="color: #f8f8f2">STOP</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0x00</span>
+    <span style="color: #f8f8f2">BRAKE</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0x03</span>
 
-    <span class=c1># I2C Clock High Time (FAST MODE)</span>
-    <span class=n>CLOCK_HIGH</span> <span class=o>=</span> <span class=mf>1.0</span><span class=o>/</span><span class=mf>0.6e-6</span> <span class=c1># 0.6 microsecond</span>
-    <span class=n>CLOCK_LOW</span> <span class=o>=</span> <span class=mf>1.0</span><span class=o>/</span><span class=mf>1.3e-6</span> <span class=c1># 1.3 microsecond</span>
+    <span style="color: #75715e"># I2C Clock High Time (FAST MODE)</span>
+    <span style="color: #f8f8f2">CLOCK_HIGH</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">1.0</span><span style="color: #f92672">/</span><span style="color: #ae81ff">0.6e-6</span> <span style="color: #75715e"># 0.6 microsecond</span>
+    <span style="color: #f8f8f2">CLOCK_LOW</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">1.0</span><span style="color: #f92672">/</span><span style="color: #ae81ff">1.3e-6</span> <span style="color: #75715e"># 1.3 microsecond</span>
 
-    <span class=k>def</span> <span class=fm>__init__</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>busnum</span><span class=o>=</span><span class=mi>1</span><span class=p>,</span> <span class=n>motor_address</span><span class=o>=</span><span class=kc>None</span><span class=p>):</span>
-        <span class=k>if</span> <span class=n>motor_address</span> <span class=ow>is</span> <span class=kc>None</span><span class=p>:</span>
-            <span class=n>motor_address</span> <span class=o>=</span> <span class=bp>self</span><span class=o>.</span><span class=n>MOTOR_ADDR_L</span>
-        <span class=bp>self</span><span class=o>.</span><span class=n>bus</span> <span class=o>=</span> <span class=n>smbus</span><span class=o>.</span><span class=n>SMBus</span><span class=p>(</span><span class=n>busnum</span><span class=p>)</span>
-        <span class=bp>self</span><span class=o>.</span><span class=n>MOTOR_ADDRESS</span> <span class=o>=</span> <span class=n>motor_address</span>
+    <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">__init__</span><span style="color: #f8f8f2">(self,</span> <span style="color: #f8f8f2">busnum</span><span style="color: #f92672">=</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">motor_address</span><span style="color: #f92672">=</span><span style="color: #66d9ef">None</span><span style="color: #f8f8f2">):</span>
+        <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">motor_address</span> <span style="color: #f92672">is</span> <span style="color: #66d9ef">None</span><span style="color: #f8f8f2">:</span>
+            <span style="color: #f8f8f2">motor_address</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">MOTOR_ADDR_L</span>
+        <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">bus</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">smbus</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">SMBus(busnum)</span>
+        <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">MOTOR_ADDRESS</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">motor_address</span>
 
-    <span class=k>def</span> <span class=nf>map</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>x</span><span class=p>,</span> <span class=n>in_min</span><span class=p>,</span> <span class=n>in_max</span><span class=p>,</span> <span class=n>out_min</span><span class=p>,</span> <span class=n>out_max</span><span class=p>):</span>
-        <span class=k>return</span> <span class=p>(</span><span class=n>x</span> <span class=o>-</span> <span class=n>in_min</span><span class=p>)</span> <span class=o>*</span> <span class=p>(</span><span class=n>out_max</span> <span class=o>-</span> <span class=n>out_min</span><span class=p>)</span> <span class=o>//</span> <span class=p>(</span><span class=n>in_max</span> <span class=o>-</span> <span class=n>in_min</span><span class=p>)</span> <span class=o>+</span> <span class=n>out_min</span>
+    <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">map</span><span style="color: #f8f8f2">(self,</span> <span style="color: #f8f8f2">x,</span> <span style="color: #f8f8f2">in_min,</span> <span style="color: #f8f8f2">in_max,</span> <span style="color: #f8f8f2">out_min,</span> <span style="color: #f8f8f2">out_max):</span>
+        <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">(x</span> <span style="color: #f92672">-</span> <span style="color: #f8f8f2">in_min)</span> <span style="color: #f92672">*</span> <span style="color: #f8f8f2">(out_max</span> <span style="color: #f92672">-</span> <span style="color: #f8f8f2">out_min)</span> <span style="color: #f92672">//</span> <span style="color: #f8f8f2">(in_max</span> <span style="color: #f92672">-</span> <span style="color: #f8f8f2">in_min)</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">out_min</span>
 
-    <span class=k>def</span> <span class=nf>set_speed</span><span class=p>(</span><span class=bp>self</span><span class=p>,</span> <span class=n>speed</span><span class=p>):</span>
-        <span class=sd>&#39;&#39;&#39;</span>
-<span class=sd>        前進する値は2bitで</span>
-<span class=sd>        xxxx xx01 となる。(FORWARD = 0x01)</span>
-<span class=sd>        後進する値は2bitで</span>
-<span class=sd>        xxxx xx10 となる。(BACK = 0x02)</span>
-<span class=sd>        停止する値は2bitで</span>
-<span class=sd>        xxxx xx00 となる。(STOP = 0x00)</span>
-<span class=sd>        ブレーキする値は2bitで</span>
-<span class=sd>        xxxx xx11 となる。(BRAKE = 0x03)</span>
+    <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">set_speed</span><span style="color: #f8f8f2">(self,</span> <span style="color: #f8f8f2">speed):</span>
+        <span style="color: #e6db74">&#39;&#39;&#39;</span>
+<span style="color: #e6db74">        前進する値は2bitで</span>
+<span style="color: #e6db74">        xxxx xx01 となる。(FORWARD = 0x01)</span>
+<span style="color: #e6db74">        後進する値は2bitで</span>
+<span style="color: #e6db74">        xxxx xx10 となる。(BACK = 0x02)</span>
+<span style="color: #e6db74">        停止する値は2bitで</span>
+<span style="color: #e6db74">        xxxx xx00 となる。(STOP = 0x00)</span>
+<span style="color: #e6db74">        ブレーキする値は2bitで</span>
+<span style="color: #e6db74">        xxxx xx11 となる。(BRAKE = 0x03)</span>
 
-<span class=sd>        速度として使える値は1111 11 == 0011 1111 == 63まで。</span>
-<span class=sd>        speed : -63 to 63</span>
-<span class=sd>        &#39;&#39;&#39;</span>
-        <span class=k>if</span> <span class=n>speed</span> <span class=o>==</span> <span class=mi>0</span><span class=p>:</span>
-            <span class=sd>&#39;&#39;&#39;停止&#39;&#39;&#39;</span>
-            <span class=bp>self</span><span class=o>.</span><span class=n>bus</span><span class=o>.</span><span class=n>write_byte_data</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>MOTOR_ADDRESS</span><span class=p>,</span><span class=bp>self</span><span class=o>.</span><span class=n>COMMAND0</span><span class=p>,</span><span class=bp>self</span><span class=o>.</span><span class=n>STOP</span><span class=p>)</span> <span class=c1>#モータへの電力の供給を停止(惰性で動き続ける)</span>
+<span style="color: #e6db74">        速度として使える値は1111 11 == 0011 1111 == 63まで。</span>
+<span style="color: #e6db74">        speed : -63 to 63</span>
+<span style="color: #e6db74">        &#39;&#39;&#39;</span>
+        <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">speed</span> <span style="color: #f92672">==</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">:</span>
+            <span style="color: #e6db74">&#39;&#39;&#39;停止&#39;&#39;&#39;</span>
+            <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">bus</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">write_byte_data(self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">MOTOR_ADDRESS,self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">COMMAND0,self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">STOP)</span> <span style="color: #75715e">#モータへの電力の供給を停止(惰性で動き続ける)</span>
 
-        <span class=k>elif</span> <span class=n>speed</span> <span class=o>&gt;</span> <span class=mi>0</span> <span class=ow>and</span> <span class=n>speed</span> <span class=o>&lt;=</span><span class=mi>63</span><span class=p>:</span>
-            <span class=sd>&#39;&#39;&#39;前進&#39;&#39;&#39;</span>
-            <span class=n>direction</span> <span class=o>=</span> <span class=bp>self</span><span class=o>.</span><span class=n>FORWARD</span>
-            <span class=n>value</span> <span class=o>=</span> <span class=p>(</span><span class=n>speed</span><span class=o>&lt;&lt;</span><span class=mi>2</span><span class=p>)</span> <span class=o>+</span> <span class=n>direction</span> <span class=c1># スピード値を2ビット左シフトして下位2bitに前進ビットを設定した1Byteの送信データを作成</span>
-            <span class=bp>self</span><span class=o>.</span><span class=n>bus</span><span class=o>.</span><span class=n>write_byte_data</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>MOTOR_ADDRESS</span><span class=p>,</span><span class=bp>self</span><span class=o>.</span><span class=n>COMMAND0</span><span class=p>,</span><span class=n>value</span><span class=p>)</span> <span class=c1>#生成したデータを送信</span>
-        <span class=k>elif</span> <span class=n>speed</span> <span class=o>&lt;</span> <span class=mi>0</span> <span class=ow>and</span> <span class=n>speed</span> <span class=o>&gt;=</span> <span class=o>-</span><span class=mi>63</span><span class=p>:</span>
-            <span class=sd>&#39;&#39;&#39;後進&#39;&#39;&#39;</span>
-            <span class=n>direction</span> <span class=o>=</span> <span class=bp>self</span><span class=o>.</span><span class=n>BACK</span>
-            <span class=n>speed</span> <span class=o>=</span> <span class=n>speed</span> <span class=o>*</span> <span class=o>-</span><span class=mi>1</span>
-            <span class=n>value</span> <span class=o>=</span> <span class=p>(</span><span class=n>speed</span><span class=o>&lt;&lt;</span><span class=mi>2</span><span class=p>)</span> <span class=o>+</span> <span class=n>direction</span> <span class=c1># スピード値を2ビット左シフトして下位2bitに後進ビットを設定した1Byteの送信データを作成</span>
-            <span class=bp>self</span><span class=o>.</span><span class=n>bus</span><span class=o>.</span><span class=n>write_byte_data</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>MOTOR_ADDRESS</span><span class=p>,</span><span class=bp>self</span><span class=o>.</span><span class=n>COMMAND0</span><span class=p>,</span><span class=n>value</span><span class=p>)</span> <span class=c1>#生成したデータを送信</span>
-        <span class=k>else</span><span class=p>:</span>
-            <span class=nb>print</span><span class=p>(</span><span class=s2>&quot;The speed </span><span class=si>{}</span><span class=s2> for FABO CAR must be in the range -63 to 63.&quot;</span><span class=o>.</span><span class=n>format</span><span class=p>(</span><span class=n>speed</span><span class=p>))</span>
+        <span style="color: #66d9ef">elif</span> <span style="color: #f8f8f2">speed</span> <span style="color: #f92672">&gt;</span> <span style="color: #ae81ff">0</span> <span style="color: #f92672">and</span> <span style="color: #f8f8f2">speed</span> <span style="color: #f92672">&lt;=</span><span style="color: #ae81ff">63</span><span style="color: #f8f8f2">:</span>
+            <span style="color: #e6db74">&#39;&#39;&#39;前進&#39;&#39;&#39;</span>
+            <span style="color: #f8f8f2">direction</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">FORWARD</span>
+            <span style="color: #f8f8f2">value</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">(speed</span><span style="color: #f92672">&lt;&lt;</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">)</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">direction</span> <span style="color: #75715e"># スピード値を2ビット左シフトして下位2bitに前進ビットを設定した1Byteの送信データを作成</span>
+            <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">bus</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">write_byte_data(self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">MOTOR_ADDRESS,self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">COMMAND0,value)</span> <span style="color: #75715e">#生成したデータを送信</span>
+        <span style="color: #66d9ef">elif</span> <span style="color: #f8f8f2">speed</span> <span style="color: #f92672">&lt;</span> <span style="color: #ae81ff">0</span> <span style="color: #f92672">and</span> <span style="color: #f8f8f2">speed</span> <span style="color: #f92672">&gt;=</span> <span style="color: #f92672">-</span><span style="color: #ae81ff">63</span><span style="color: #f8f8f2">:</span>
+            <span style="color: #e6db74">&#39;&#39;&#39;後進&#39;&#39;&#39;</span>
+            <span style="color: #f8f8f2">direction</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">BACK</span>
+            <span style="color: #f8f8f2">speed</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">speed</span> <span style="color: #f92672">*</span> <span style="color: #f92672">-</span><span style="color: #ae81ff">1</span>
+            <span style="color: #f8f8f2">value</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">(speed</span><span style="color: #f92672">&lt;&lt;</span><span style="color: #ae81ff">2</span><span style="color: #f8f8f2">)</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">direction</span> <span style="color: #75715e"># スピード値を2ビット左シフトして下位2bitに後進ビットを設定した1Byteの送信データを作成</span>
+            <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">bus</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">write_byte_data(self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">MOTOR_ADDRESS,self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">COMMAND0,value)</span> <span style="color: #75715e">#生成したデータを送信</span>
+        <span style="color: #66d9ef">else</span><span style="color: #f8f8f2">:</span>
+            <span style="color: #f8f8f2">print(</span><span style="color: #e6db74">&quot;The speed {} for FABO CAR must be in the range -63 to 63.&quot;</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">format(speed))</span>
 
-    <span class=k>def</span> <span class=nf>brake</span><span class=p>(</span><span class=bp>self</span><span class=p>):</span>
-        <span class=sd>&#39;&#39;&#39;未使用&#39;&#39;&#39;</span>
-        <span class=bp>self</span><span class=o>.</span><span class=n>bus</span><span class=o>.</span><span class=n>write_byte_data</span><span class=p>(</span><span class=bp>self</span><span class=o>.</span><span class=n>MOTOR_ADDRESS</span><span class=p>,</span><span class=bp>self</span><span class=o>.</span><span class=n>COMMAND0</span><span class=p>,</span><span class=mh>0x03</span><span class=p>)</span> <span class=c1>#モータをブレーキさせる</span>
-</code></pre></div></td></tr></table></p>
+    <span style="color: #66d9ef">def</span> <span style="color: #a6e22e">brake</span><span style="color: #f8f8f2">(self):</span>
+        <span style="color: #e6db74">&#39;&#39;&#39;未使用&#39;&#39;&#39;</span>
+        <span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">bus</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">write_byte_data(self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">MOTOR_ADDRESS,self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">COMMAND0,</span><span style="color: #ae81ff">0x03</span><span style="color: #f8f8f2">)</span> <span style="color: #75715e">#モータをブレーキさせる</span>
+</code></pre></div>
+</td></tr></table>
 <p>DRV8830では-63〜63の間で制御可能である。</p>
-<p> <table class=codehilitetable><tr><td class=linenos><div class=linenodiv><pre><span class=normal> 1</span>
-<span class=normal> 2</span>
-<span class=normal> 3</span>
-<span class=normal> 4</span>
-<span class=normal> 5</span>
-<span class=normal> 6</span>
-<span class=normal> 7</span>
-<span class=normal> 8</span>
-<span class=normal> 9</span>
-<span class=normal>10</span>
-<span class=normal>11</span>
-<span class=normal>12</span>
-<span class=normal>13</span>
-<span class=normal>14</span>
-<span class=normal>15</span>
-<span class=normal>16</span>
-<span class=normal>17</span>
-<span class=normal>18</span>
-<span class=normal>19</span>
-<span class=normal>20</span>
-<span class=normal>21</span>
-<span class=normal>22</span>
-<span class=normal>23</span>
-<span class=normal>24</span></pre></div></td><td class=code><div class=codehilite><pre><span></span><code><span class=kn>from</span> <span class=nn>donkeycar.fabo.drv8830</span> <span class=kn>import</span> <span class=n>DRV8830</span>
-<span class=c1># Initialise the DRV8830 using the default address (0x64).</span>
-<span class=k>if</span> <span class=n>busnum</span> <span class=ow>is</span> <span class=ow>not</span> <span class=kc>None</span><span class=p>:</span>
-    <span class=kn>import</span> <span class=nn>pkg_resources</span>
-    <span class=n>SMBUS</span><span class=o>=</span><span class=s1>&#39;smbus&#39;</span>
-    <span class=k>for</span> <span class=n>dist</span> <span class=ow>in</span> <span class=n>pkg_resources</span><span class=o>.</span><span class=n>working_set</span><span class=p>:</span>
-    <span class=c1>#print(dist.project_name, dist.version)</span>
-        <span class=k>if</span> <span class=n>dist</span><span class=o>.</span><span class=n>project_name</span> <span class=o>==</span> <span class=s1>&#39;smbus&#39;</span><span class=p>:</span>
-            <span class=k>break</span>
-        <span class=k>if</span> <span class=n>dist</span><span class=o>.</span><span class=n>project_name</span> <span class=o>==</span> <span class=s1>&#39;smbus2&#39;</span><span class=p>:</span>
-            <span class=n>SMBUS</span><span class=o>=</span><span class=s1>&#39;smbus2&#39;</span>
-            <span class=k>break</span>
-        <span class=k>if</span> <span class=n>SMBUS</span> <span class=o>==</span> <span class=s1>&#39;smbus&#39;</span><span class=p>:</span>
-            <span class=kn>import</span> <span class=nn>smbus</span>
-        <span class=k>elif</span> <span class=n>SMBUS</span> <span class=o>==</span> <span class=s1>&#39;smbus2&#39;</span><span class=p>:</span>
-            <span class=kn>import</span> <span class=nn>smbus2</span> <span class=k>as</span> <span class=nn>smbus</span>
-<span class=bp>self</span><span class=o>.</span><span class=n>throttle</span> <span class=o>=</span> <span class=n>DRV8830</span><span class=p>(</span><span class=n>busnum</span><span class=o>=</span><span class=n>busnum</span><span class=p>,</span> <span class=n>motor_address</span><span class=o>=</span><span class=mh>0x64</span><span class=p>)</span>
-<span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mf>0.1</span><span class=p>)</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 2</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 3</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 4</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 5</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 6</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 7</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 8</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;"> 9</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">10</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">11</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">12</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">13</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">14</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">15</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">16</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">17</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">18</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">19</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">20</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">21</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">22</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">23</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">24</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #f92672">from</span> <span style="color: #f8f8f2">donkeycar.fabo.drv8830</span> <span style="color: #f92672">import</span> <span style="color: #f8f8f2">DRV8830</span>
+<span style="color: #75715e"># Initialise the DRV8830 using the default address (0x64).</span>
+<span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">busnum</span> <span style="color: #f92672">is</span> <span style="color: #f92672">not</span> <span style="color: #66d9ef">None</span><span style="color: #f8f8f2">:</span>
+    <span style="color: #f92672">import</span> <span style="color: #f8f8f2">pkg_resources</span>
+    <span style="color: #f8f8f2">SMBUS</span><span style="color: #f92672">=</span><span style="color: #e6db74">&#39;smbus&#39;</span>
+    <span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">dist</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">pkg_resources</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">working_set:</span>
+    <span style="color: #75715e">#print(dist.project_name, dist.version)</span>
+        <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">dist</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">project_name</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&#39;smbus&#39;</span><span style="color: #f8f8f2">:</span>
+            <span style="color: #66d9ef">break</span>
+        <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">dist</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">project_name</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&#39;smbus2&#39;</span><span style="color: #f8f8f2">:</span>
+            <span style="color: #f8f8f2">SMBUS</span><span style="color: #f92672">=</span><span style="color: #e6db74">&#39;smbus2&#39;</span>
+            <span style="color: #66d9ef">break</span>
+        <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">SMBUS</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&#39;smbus&#39;</span><span style="color: #f8f8f2">:</span>
+            <span style="color: #f92672">import</span> <span style="color: #f8f8f2">smbus</span>
+        <span style="color: #66d9ef">elif</span> <span style="color: #f8f8f2">SMBUS</span> <span style="color: #f92672">==</span> <span style="color: #e6db74">&#39;smbus2&#39;</span><span style="color: #f8f8f2">:</span>
+            <span style="color: #f92672">import</span> <span style="color: #f8f8f2">smbus2</span> <span style="color: #66d9ef">as</span> <span style="color: #f8f8f2">smbus</span>
+<span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">throttle</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">DRV8830(busnum</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">busnum,</span> <span style="color: #f8f8f2">motor_address</span><span style="color: #f92672">=</span><span style="color: #ae81ff">0x64</span><span style="color: #f8f8f2">)</span>
+<span style="color: #f8f8f2">time</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">sleep(</span><span style="color: #ae81ff">0.1</span><span style="color: #f8f8f2">)</span>
 
-<span class=bp>self</span><span class=o>.</span><span class=n>throttle</span><span class=o>.</span><span class=n>set_speed</span><span class=p>(</span><span class=mi>63</span><span class=p>)</span>
-<span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
-<span class=bp>self</span><span class=o>.</span><span class=n>throttle</span><span class=o>.</span><span class=n>set_speed</span><span class=p>(</span><span class=o>-</span><span class=mi>63</span><span class=p>)</span>
-<span class=n>time</span><span class=o>.</span><span class=n>sleep</span><span class=p>(</span><span class=mi>1</span><span class=p>)</span>
-<span class=bp>self</span><span class=o>.</span><span class=n>throttle</span><span class=o>.</span><span class=k>break</span><span class=p>()</span>
-</code></pre></div></td></tr></table></p>
+<span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">throttle</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">set_speed(</span><span style="color: #ae81ff">63</span><span style="color: #f8f8f2">)</span>
+<span style="color: #f8f8f2">time</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">sleep(</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">)</span>
+<span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">throttle</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">set_speed(</span><span style="color: #f92672">-</span><span style="color: #ae81ff">63</span><span style="color: #f8f8f2">)</span>
+<span style="color: #f8f8f2">time</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">sleep(</span><span style="color: #ae81ff">1</span><span style="color: #f8f8f2">)</span>
+<span style="color: #f8f8f2">self</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">throttle</span><span style="color: #f92672">.</span><span style="color: #66d9ef">break</span><span style="color: #f8f8f2">()</span>
+</code></pre></div>
+</td></tr></table>
                 
               
               
@@ -955,6 +967,8 @@
     
     
       <script src="../../assets/javascripts/bundle.1d3bfcf1.min.js"></script>
+      
+        <script src="../../javascripts/extra.js"></script>
       
     
   </body>
