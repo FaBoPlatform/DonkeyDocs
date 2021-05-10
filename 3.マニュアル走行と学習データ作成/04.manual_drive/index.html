@@ -754,6 +754,20 @@
 <hr>
 
 <h2 id="joystick">Joystickの接続</h2>
+<table>
+<thead>
+<tr>
+<th align="left">作業デバイス</th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><img alt="" src="../img/icon_donkey.png" /></td>
+<td align="left"><img alt="" src="../img/icon_joystick.png" /></td>
+</tr>
+</tbody>
+</table>
 <p>JoystickをDonkeyCarに接続します。Joystickの裏側の蓋を外すと、USBドングルが入っているので、DonkeyCarのRaspberry Pi3のUSBに差し込みます。</p>
 <p><img alt="" src="../img/joystick001.png" /></p>
 <p><img alt="" src="../img/joystick006.png" /></p>
@@ -765,31 +779,45 @@
 <hr>
 
 <h2 id="donkeycar">DonkeyCarの起動</h2>
+<table>
+<thead>
+<tr>
+<th align="left">作業デバイス</th>
+<th align="left"></th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><img alt="" src="../img/icon_pc.png" /></td>
+<td align="left"><img alt="" src="../img/icon_donkey.png" /></td>
+<td align="left"><img alt="" src="../img/icon_joystick.png" /></td>
+</tr>
+</tbody>
+</table>
 <p>Joystickは、すぐ省電力モードにはいり、Offになります。① StartボタンをおしてJoystickの電源がOnになっている事を確認します。② Vibrationボタンを押してバイブレーションすれば、電源はOnの状態です。</p>
 <p><img alt="" src="../img/joystick005.png" /></p>
 <p><code>~/mycar</code>フォルダに移動します。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>cd ~/mycar
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">cd ~/mycar</span>
 </code></pre></div>
 </td></tr></table>
 <p>DonkeyCarを起動します。<code>--js</code>をつけると、Joystickが有効になります。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>python manage.py drive --js
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">python manage.py drive --js</span>
 </code></pre></div>
 </td></tr></table>
 <p>早速、DonkeyCarのテスト走行を行いましょう!!
 走行の終了は、<span class="keys"><kbd>CTRL</kbd><span>+</span><kbd>c</kbd></span>で、終了します。</p>
-<hr>
-
 <h2 id="_2">データの保存</h2>
 <p>データは、前進・行進している間、自動保存されます。保存先は、<code>~/mycar/dara</code>になります。フォルダが生成されるタイミングは、<code>python manage.py drive --js</code>を実行したタイミングで、毎回作成されます。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>cd ~/mycar/data
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">cd ~/mycar/data</span>
 </code></pre></div>
 </td></tr></table>
 <p>lsコマンドで作成されたフォルダを確認します。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>ls
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">ls</span>
 </code></pre></div>
 </td></tr></table>
 <p>今作成されたフォルダが下記のように表示されます(例)。このフォルダ以下にデータ・セットが保存されています。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>tub_01_19-01-26
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">tub_01_19-01-26</span>
 </code></pre></div>
 </td></tr></table>
 <p>DonkeyCarの終了は、<span class="keys"><kbd>CTRL</kbd><span>+</span><kbd>c</kbd></span>で終了します。</p>
@@ -801,7 +829,7 @@
 
 <h2 id="_3">教師データの圧縮</h2>
 <p>ZIPで学習データとして使いたい走行のフォルダを圧縮します。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>cd ~/mycar/data
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">cd ~/mycar/data</span>
 </code></pre></div>
 </td></tr></table>
 <hr>
@@ -809,11 +837,11 @@
 <h2 id="zip">zipコマンドでフォルダを圧縮</h2>
 <p>zipコマンドでフォルダを圧縮します。</p>
 <p>まず、過去のdatas.zipが存在する場合があるので、削除します。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>rm datas.zip
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">rm datas.zip</span>
 </code></pre></div>
 </td></tr></table>
 <p>今作成した走行データの保存されているtubフォルダを指定します。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>zip -r datas.zip tub_自分のフォルダ名
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">zip -r datas.zip tub_自分のフォルダ名</span>
 </code></pre></div>
 </td></tr></table>
 <div class="admonition info">
@@ -823,7 +851,6 @@
 <hr>
 
 <h2 id="_4">データの転送</h2>
-<p><a href="https://chrome.google.com/webstore/detail/secure-shell-app/pnhechapfaindjhompbnflcldabbghjo/related?hl=ja" target="sftp_tab">Secure Shell</a>をクリックし、<code>アプリの起動</code>を選択し、新しいWindowで、Secure shellを起動します。今度は、下記の通りSFTPを選択し、SFTPでDonkeyCarに接続します。</p>
 <p><img alt="" src="../img/sftp000.png" /></p>
 <table>
 <thead>
@@ -839,15 +866,15 @@
 </tr>
 </tbody>
 </table>
-<p>SFTPで、datas.zipのあるフォルダに移動します。
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>cd ~/mycar/data
+<p>SFTPで、datas.zipのあるフォルダに移動します。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">cd ~/mycar/data</span>
 </code></pre></div>
-</td></tr></table></p>
+</td></tr></table>
 <p><img alt="" src="../img/sftp002.png" /></p>
-<p>SFTPで、datas.zipをgetします。
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>get datas.zip
+<p>SFTPで、datas.zipをgetします。</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">get datas.zip</span>
 </code></pre></div>
-</td></tr></table></p>
+</td></tr></table>
 <p><img alt="" src="../img/sftp003.png" /></p>
 <p>これで、datas.zipがPCに転送されます。</p>
                 
