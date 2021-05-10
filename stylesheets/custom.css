@@ -1,0 +1,21 @@
+body {
+    font-family: "Noto Sans JP";
+}
+
+
+.md-typeset pre {
+  color: #f8f8f2;
+}
+.md-typeset .highlighttable {
+  margin-left:-20px;
+  margin-right: -20px;
+  border-radius: 0;
+}
+.md-typeset .highlighttable > * {
+  --md-code-bg-color: #222 !important;
+}
+.md-typeset .highlighttable .linenos .linenodiv pre span {
+  background-color: #222 !important;
+  color: #aaa !important;
+  margin: 0;
+}
