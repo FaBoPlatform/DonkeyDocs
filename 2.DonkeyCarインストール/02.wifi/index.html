@@ -323,15 +323,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mac" class="md-nav__link">
-    接続先の確認(Macの場合)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    接続先の確認(Windowsの場合)
+  <a href="#sdraspberrypi" class="md-nav__link">
+    SDカードの挿入とRaspberryPiに電源を投入
   </a>
   
 </li>
@@ -716,15 +709,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mac" class="md-nav__link">
-    接続先の確認(Macの場合)
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    接続先の確認(Windowsの場合)
+  <a href="#sdraspberrypi" class="md-nav__link">
+    SDカードの挿入とRaspberryPiに電源を投入
   </a>
   
 </li>
@@ -849,7 +835,7 @@
 <span style="color: #66d9ef">}</span>
 </code></pre></div>
 </td></tr></table>
-<h2 id="mac">接続先の確認(Macの場合)</h2>
+<h2 id="sdraspberrypi">SDカードの挿入とRaspberryPiに電源を投入</h2>
 <table>
 <thead>
 <tr>
@@ -859,63 +845,12 @@
 </thead>
 <tbody>
 <tr>
-<td align="left"><img alt="" src="../img/icon_pc.png" /></td>
 <td align="left"><img alt="" src="../img/icon_donkey.png" /></td>
+<td align="left"><img alt="" src="../img/icon_sd.png" /></td>
 </tr>
 </tbody>
 </table>
-<p>DonkeyCarと同一ネットワークに接続しているMacより、Terminalを起動して、下記コマンドで接続を試みます。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">ssh pi@donkeypi.local</span>
-</code></pre></div>
-</td></tr></table>
-<table>
-<thead>
-<tr>
-<th align="left">ログインID</th>
-<th align="left">パスワード</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">pi</td>
-<td align="left">raspberry</td>
-</tr>
-</tbody>
-</table>
-<div class="admonition info">
-<p class="admonition-title">Host名について</p>
-<p>上記方法はOSXのみで有効で、複数台使用時は、DonkeyCarのRaspberry Pi3のhost名を任意のユニークな名前に書き直す必要があります。</p>
-</div>
-<p>ifconfigでipアドレスを確認します。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">ifconfigf -a</span>
-</code></pre></div>
-</td></tr></table>
-<p>で表示されるWLAN0にIPアドレスが表示されます。</p>
-<div class="admonition info">
-<p class="admonition-title">IPアドレス</p>
-<p>自分のIPアドレスをメモっておきます。</p>
-</div>
-<hr>
-
-<h2 id="windows">接続先の確認(Windowsの場合)</h2>
-<table>
-<thead>
-<tr>
-<th align="left">作業デバイス</th>
-<th align="left"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><img alt="" src="../img/icon_display.png" /></td>
-<td align="left"><img alt="" src="../img/icon_donkey.png" /></td>
-</tr>
-</tbody>
-</table>
-<p>Raspberry Pi3をHDMIケーブルでDisplayに接続します。起動画面の最後でIPアドレスが表示されれば、ネットワークに接続成功です。</p>
-<p><img alt="" src="../img/ip001.png" /></p>
-<hr>
-
+<p>wpa_suplicant.confを追加したSDカードをRaspberryPiに差し込み、電源を投入します。RaspberryPiは、wpa_supplicantで指定されたアクセスポイントへ接続を開始します。接続に成功するとDonkeyCarに搭載している赤い基板の液晶にIPアドレスが表示されます。</p>
 <h2 id="wpa_supplicant">wpa_supplicantの修正</h2>
 <p>接続に失敗した場合は、Raspberry Pi3内の<code>/etc/wpa_supplicant/wpa_supplicant.conf</code> を修正することで、接続先の変更が可能です。</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">sudo nano /etc/wpa_supplicant/wpa_supplicant.conf</span>
