@@ -737,7 +737,8 @@
 </tbody>
 </table>
 <p>キャリブレーションのコマンドは下記のコマンドになります。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>donkey calibrate --channel チャンネル番号 --bus 1
+<p><img alt="" src="../img/icon_donkey.png" /></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">donkey calibrate --channel チャンネル番号 --bus 1</span>
 </code></pre></div>
 </td></tr></table>
 <div class="admonition warning">
@@ -751,35 +752,38 @@
 <p>まず、DonkeyCar本体(ラジコン)の電源をOffにしてください。最初に、ESCの初期化処理をおこないます。初期化の値は、370です。</p>
 <p>モーターの制御は、channel 1のPWM0でおこないます。</p>
 <p>コマンド</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>donkey calibrate --channel 0 --bus 1
+<p><img alt="" src="../img/icon_donkey.png" /></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">donkey calibrate --channel 0 --bus 1</span>
 </code></pre></div>
 </td></tr></table>
 <p>初期値の入力</p>
+<p><img alt="" src="../img/icon_donkey.png" /></p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">4</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">5</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>donkey calibrate --channel 0 --bus 1
-using donkey v3.1.0 ...
-sombrero enabled
-init PCA9685 on channel 0 address 0x40 bus 1
-Enter a PWM setting to test(0-1500)370
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">5</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">donkey calibrate --channel 0 --bus 1</span>
+<span style="color: #66d9ef">using donkey v3.1.0 ...</span>
+<span style="color: #66d9ef">sombrero enabled</span>
+<span style="color: #66d9ef">init PCA9685 on channel 0 address 0x40 bus 1</span>
+<span style="color: #66d9ef">Enter a PWM setting to test(0-1500)370</span>
 </code></pre></div>
 </td></tr></table>
 <p>この状態で、DonkeyCarの電源（ESCに繋がっているスイッチ）を入れます。「ピィ・ピィーー」と音がなります。これで初期化設定です。</p>
 <p>初期値の370は、モーターが回らない状態、つまりニュートラル位置です。370よりも大きい値にすると前進し、370より小さい値を入れると行進します(後進時は、設定する値(例330)を一度入力したあとで、初期値である370に入力し、再度設定する値(例330)を入力する事で、ロックが解除され、後進が有効になります。例) 330-&gt;370-&gt;330)</p>
 <p>ここでは、前進の最大値の50%、後進の最大値の50%ぐらいの値を探し出します。</p>
+<p><img alt="" src="../img/icon_donkey.png" /></p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">4</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">5</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">6</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>donkey calibrate --channel 0 --bus 1
-using donkey v3.1.0 ...
-sombrero enabled
-init PCA9685 on channel 0 address 0x40 bus 1
-Enter a PWM setting to test(0-1500):370
-Enter a PWM setting to test(0-1500):400
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">6</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">donkey calibrate --channel 0 --bus 1</span>
+<span style="color: #66d9ef">using donkey v3.1.0 ...</span>
+<span style="color: #66d9ef">sombrero enabled</span>
+<span style="color: #66d9ef">init PCA9685 on channel 0 address 0x40 bus 1</span>
+<span style="color: #66d9ef">Enter a PWM setting to test(0-1500):370</span>
+<span style="color: #66d9ef">Enter a PWM setting to test(0-1500):400</span>
 </code></pre></div>
 </td></tr></table>
 <div class="admonition warning">
@@ -792,7 +796,8 @@ Enter a PWM setting to test(0-1500):400
 </div>
 <p>キャリブレーションの終了は、<span class="keys"><kbd>CTRL</kbd><span>+</span><kbd>c</kbd></span>です。いったん、キャリブレーションを終了し、調整した値をconfig.pyに反映します。</p>
 <p>前後にタイヤが回る範囲を見つけ出し、qでキャリブレーションを終了し、config.pyに反映します。myconfig.pyの値の書き直しは、nanoでおこないます。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>nano ~/mycar/myconfig.py
+<p><img alt="" src="../img/icon_donkey.png" /></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">nano ~/mycar/myconfig.py</span>
 </code></pre></div>
 </td></tr></table>
 <p><code>myconfig.py</code>
@@ -842,10 +847,10 @@ THROTTLE_REVERSE_PWM = 320
 
 <h2 id="-channel-1">サーボの調整(--channel 1)</h2>
 <p>サーボの制御は、channel 1のPWM1でおこないます。</p>
-<p>コマンド
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>donkey calibrate --channel 1 --bus 1
+<p>コマンド</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">donkey calibrate --channel 1 --bus 1</span>
 </code></pre></div>
-</td></tr></table></p>
+</td></tr></table>
 <p>一番右の値と、一番左の値を見つけ出してください。まず、中央値を発見し、左右均等に値を増やした、右の値と左の値を見つけ出します。250-500の間ぐらいが可動範囲です。</p>
 <p>見つけ出した値をmyconfig.pyに反映します。</p>
 <div class="admonition info">
@@ -853,19 +858,19 @@ THROTTLE_REVERSE_PWM = 320
 <p>左右の振れ幅を均等にしないとDonkeyCarはまっすぐ走りません。車輪が真ん中にあたる位置を見つけ出し、そこから同じ数だけ左右にずらすと左右均等になるはずです。</p>
 </div>
 <p>値が調整できたら、qでキャリブレーションを終了し、~/mycar/myconfig.pyの値を修正します。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>nano ~/mycar/myconfig.py
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">nano ~/mycar/myconfig.py</span>
 </code></pre></div>
 </td></tr></table>
-<p><code>myconfig.py</code>
+<p><code>myconfig.py</code></p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">4</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>#STEERING
-STEERING_CHANNEL = 1
-STEERING_LEFT_PWM = 410
-STEERING_RIGHT_PWM = 310
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">4</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #f92672; font-weight: bold">#</span>STEERING
+<span style="color: #66d9ef">STEERING_CHANNEL = 1</span>
+<span style="color: #66d9ef">STEERING_LEFT_PWM = 410</span>
+<span style="color: #66d9ef">STEERING_RIGHT_PWM = 310</span>
 </code></pre></div>
-</td></tr></table></p>
+</td></tr></table>
 <div class="admonition warining">
 <p class="admonition-title">スペースは開けない</p>
 <p>STEERING_CHANNELの前などに、スペースはいれないでください。　</p>
