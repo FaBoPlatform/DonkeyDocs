@@ -795,15 +795,15 @@
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">6</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">7</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">8</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">9</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>country=JP
-ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-update_config=1
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">9</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #f8f8f2">country</span><span style="color: #f92672">=</span>JP
+<span style="color: #f8f8f2">ctrl_interface</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">DIR</span><span style="color: #f92672">=</span>/var/run/wpa_supplicant <span style="color: #f8f8f2">GROUP</span><span style="color: #f92672">=</span>netdev
+<span style="color: #f8f8f2">update_config</span><span style="color: #f92672">=</span><span style="color: #ae81ff">1</span>
 
-network={
-    ssid=&quot;abcde0000001&quot;
-    psk=&quot;123456789&quot;
-    scan_ssid=1
-}
+<span style="color: #f8f8f2">network</span><span style="color: #f92672">={</span>
+    <span style="color: #f8f8f2">ssid</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;abcde0000001&quot;</span>
+    <span style="color: #f8f8f2">psk</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;123456789&quot;</span>
+    <span style="color: #f8f8f2">scan_ssid</span><span style="color: #f92672">=</span><span style="color: #ae81ff">1</span>
+<span style="color: #f92672">}</span>
 </code></pre></div>
 </td></tr></table>
 <div class="admonition warning">
@@ -833,14 +833,14 @@ network={
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">5</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">6</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">7</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">8</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>country=JP
-ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-update_config=1
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">8</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #f8f8f2">country</span><span style="color: #f92672">=</span>JP
+<span style="color: #f8f8f2">ctrl_interface</span><span style="color: #f92672">=</span><span style="color: #f8f8f2">DIR</span><span style="color: #f92672">=</span>/var/run/wpa_supplicant <span style="color: #f8f8f2">GROUP</span><span style="color: #f92672">=</span>netdev
+<span style="color: #f8f8f2">update_config</span><span style="color: #f92672">=</span><span style="color: #ae81ff">1</span>
 
-network={
-    ssid=&quot;your network name&quot;
-    key_mgmt=NONE
-}
+<span style="color: #f8f8f2">network</span><span style="color: #f92672">={</span>
+    <span style="color: #f8f8f2">ssid</span><span style="color: #f92672">=</span><span style="color: #e6db74">&quot;your network name&quot;</span>
+    <span style="color: #f8f8f2">key_mgmt</span><span style="color: #f92672">=</span>NONE
+<span style="color: #f92672">}</span>
 </code></pre></div>
 </td></tr></table>
 <h2 id="mac">接続先の確認(Macの場合)</h2>
@@ -848,11 +848,13 @@ network={
 <thead>
 <tr>
 <th align="left">作業デバイス</th>
+<th align="left"></th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td align="left"><img alt="" src="../img/icon_pc.png" /></td>
+<td align="left"><img alt="" src="../img/icon_donkey.png" /></td>
 </tr>
 </tbody>
 </table>
@@ -890,6 +892,20 @@ network={
 <hr>
 
 <h2 id="windows">接続先の確認(Windowsの場合)</h2>
+<table>
+<thead>
+<tr>
+<th align="left">作業デバイス</th>
+<th align="left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><img alt="" src="../img/icon_display.png" /></td>
+<td align="left"><img alt="" src="../img/icon_donkey.png" /></td>
+</tr>
+</tbody>
+</table>
 <p>Raspberry Pi3をHDMIケーブルでDisplayに接続します。起動画面の最後でIPアドレスが表示されれば、ネットワークに接続成功です。</p>
 <p><img alt="" src="../img/ip001.png" /></p>
 <hr>
