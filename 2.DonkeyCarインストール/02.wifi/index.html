@@ -754,12 +754,14 @@
 <p>WiFiへの接続、SSHでログインできるようにしていきます。<br />
 焼き込みのみでは初回起動時にWiFiへの接続・SSHでのログインが出来ないため、ここで設定を行っています。</p>
 <h2 id="wpa_supplicantconf">wpa_supplicant.confのダウンロード</h2>
+<p><img alt="" src="../img/icon_pc.png" /></p>
 <p><a href="https://faboplatform.github.io/DonkeyDocs/2.DonkeyCarインストール/wpa_supplicant.conf" download>wpa_supplicant.conf</a>
 をダウンロードします。</p>
 <p><img alt="" src="../img/wpa_icon001.jpg" /></p>
 <p>SDカードをPCで開き、wpa_supplicant.confファイルをSDカード内にコピーします。</p>
 <p><img alt="" src="../img/wpa001.jpg" /></p>
 <h2 id="wpa_supplicantconf_1">wpa_supplicant.confの編集</h2>
+<p><img alt="" src="../img/icon_pc.png" /></p>
 <p>wpa_supplicant.confを任意のテキストエディタで開き、ssidに接続先のssid, pskにpasswordを記載します。</p>
 <p><img alt="" src="../img/wpa002.jpg" /></p>
 <p>例) アクセスポイントのSSIDが<code>abcde0000001</code>, passwordが<code>123456789</code>の場合</p>
@@ -789,6 +791,7 @@ network={
 <hr>
 
 <h2 id="wifi_1">WiFiスポットにパスワードなしでログインする場合の設定</h2>
+<p><img alt="" src="../img/icon_pc.png" /></p>
 <p>PasswordのないWiFiスポットに接続する場合は、下記例を参考にしてください。<code>key_mgmt=NONE</code>をつける事で、パスワードなしでログインできます。</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
@@ -808,6 +811,7 @@ network={
 </code></pre></div>
 </td></tr></table>
 <h2 id="mac">接続先の確認(Macの場合)</h2>
+<p><img alt="" src="../img/icon_pc.png" /></p>
 <p>DonkeyCarと同一ネットワークに接続しているMacより、Terminalを起動して、下記コマンドで接続を試みます。</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code>ssh pi@donkeypi.local
 </code></pre></div>
