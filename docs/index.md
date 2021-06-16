@@ -33,7 +33,7 @@ GithubのRepoに[Issues](https://github.com/FaBoPlatform/DonkeyDocs/issues)を�
 - 2020年2月21日 研究所向け新入社員研修(14台)
 
 ## Donkey Carの購入先(FaBo Store)
-- [DonkeyCar Kit](https://fabo.store/collections/donkeycar/products/donkeycar-kit-1)
+- [Donkey Car Kit](https://fabo.store/collections/donkeycar/products/donkeycar-kit-1)
 
 ## 関連記事
 - [AIカーが来てる！　自動運転でラジコンカーを走らせよう！](https://ascii.jp/elem/000/001/779/1779694/)
@@ -44,7 +44,7 @@ GithubのRepoに[Issues](https://github.com/FaBoPlatform/DonkeyDocs/issues)を�
 ## FaBo AI 教材
 - [JetRacer Docs](https://faboplatform.github.io/JetracerDocs/)
 - [JetBot Docs](https://faboplatform.github.io/JetbotDocs/)
-- [DonkeyCar Docs](https://faboplatform.github.io/DonkeyDocs/)
+- [Donkey Car Docs](https://faboplatform.github.io/DonkeyDocs/)
 - [EdgeAI Docs](https://faboplatform.github.io/EdgeAIDocs/)
 - [JetBook Docs](https://faboplatform.github.io/JetBook/)
 - [NSynth Docs](https://faboplatform.github.io/NSynthDocs/)
