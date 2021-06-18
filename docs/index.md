@@ -1,10 +1,10 @@
-# FaBo DonkeyCar Docs
+# FaBo Donkey Car Docs
 
 ![](./img/DonkeyCarMain.jpg)
 
-## FaBo DonkeyCar Docsについて
+## FaBo Donkey Car Docsについて
 
-DonkeyCarに関するドキュメントです。
+Donkey Carに関するドキュメントです。
 
 ## 修正依頼等
 
@@ -25,16 +25,16 @@ GithubのRepoに[Issues](https://github.com/FaBoPlatform/DonkeyDocs/issues)を�
 - 2019年6月22日 AI RCカー勉強会＠柏の葉「Donkey Carハンズオン」(14台)
 - 2019年7月17日 AIでRCカーを走らせよう!(アスキー角川主催)(11台)
 - 2019年9月8日 AIカー柏ハンズオン(10台)
-- 2019年11月4日 ABCD会津 DonkeyCarハンズオン(日本Androidの会 会津支部)(10台)
-- 2019年11月6日 DonkeyCarハンズオン&レース(会津大学主催)(10台)
+- 2019年11月4日 ABCD会津 Donkey Carハンズオン(日本Androidの会 会津支部)(10台)
+- 2019年11月6日 Donkey Carハンズオン&レース(会津大学主催)(10台)
 - 2019年11月9日 AIでRCカーを走らせよう！＠SHIBUYA QWS(AIでRCカーを走らせよう！主催)(8台)
 - 2020年1月14日 AI ラジコン Car Hands-On(日本大学 Nihon Technology Students Association主催)(10台)
-- 2020年2月15日 DonkeyCarもくもく会(富士通Ply主催)(8台)
+- 2020年2月15日 Donkey Carもくもく会(富士通Ply主催)(8台)
 - 2020年2月21日 研究所向け新入社員研修(14台)
-- 2020年11月21日 東京未来ファクトリーで高校生向けにDonkeyCarハンズオンを実施(企画運営:株式会社角川アスキー研究所/ 主催:東京都教育委員会)(22名参加,8台)
+- 2020年11月21日 東京未来ファクトリーで高校生向けにDonkey Carハンズオンを実施(企画運営:株式会社角川アスキー研究所/ 主催:東京都教育委員会)(22名参加,8台)
 
-## DonkeyCarの購入先(FaBo Store)
-- [DonkeyCar Kit](https://fabo.store/collections/donkeycar/products/donkeycar-kit-1)
+## Donkey Carの購入先(FaBo Store)
+- [Donkey Car Kit](https://fabo.store/collections/donkeycar/products/donkeycar-kit-1)
 
 ## 関連記事
 - [東京未来ファクトリーを実施します！(東京都教育委員会)](https://www.kyoiku.metro.tokyo.lg.jp/school/content/factory/about_factory.html)
@@ -46,12 +46,12 @@ GithubのRepoに[Issues](https://github.com/FaBoPlatform/DonkeyDocs/issues)を�
 ## FaBo AI 教材
 - [JetRacer Docs](https://faboplatform.github.io/JetracerDocs/)
 - [JetBot Docs](https://faboplatform.github.io/JetbotDocs/)
-- [DonkeyCar Docs](https://faboplatform.github.io/DonkeyDocs/)
+- [Donkey Car Docs](https://faboplatform.github.io/DonkeyDocs/)
 - [EdgeAI Docs](https://faboplatform.github.io/EdgeAIDocs/)
 - [JetBook Docs](https://faboplatform.github.io/JetBook/)
 - [NSynth Docs](https://faboplatform.github.io/NSynthDocs/)
 
-## FaBo教材
+## FaBo 教材
 - [Arduino Docs](https://faboplatform.github.io/ArduinoDocs/)
 - [RaspberryPi Docs](https://faboplatform.github.io/RaspberryPIDocs/)
 - [IchigoJam Docs](https://faboplatform.github.io/IchigojamDocs/)
