@@ -1,4 +1,4 @@
-site_name: FaBo DonkeyCar Docs
+site_name: FaBo Donkey Car Docs
 theme:
     name: material
     custom_dir: 'theme'
