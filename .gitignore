@@ -1,2 +1,4 @@
 site/*
+./site
+site
 .DS_Store
