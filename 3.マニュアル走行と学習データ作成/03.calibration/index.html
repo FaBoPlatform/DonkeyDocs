@@ -846,8 +846,9 @@
 </code></pre></div>
 </td></tr></table>
 <p>この状態で、DonkeyCarの電源（ESCに繋がっているスイッチ）を入れます。「ピィ・ピィーー」と音がなります。これで初期化設定です。</p>
-<p>初期値の370は、モーターが回らない状態、つまりニュートラル位置です。370よりも大きい値にすると前進し、370より小さい値を入れると行進します(後進時は、設定する値(例330)を一度入力したあとで、初期値である370に入力し、再度設定する値(例330)を入力する事で、ロックが解除され、後進が有効になります。例) 330-&gt;370-&gt;330)</p>
-<p>ここでは、前進の最大値の50%、後進の最大値の50%ぐらいの値を探し出します。</p>
+<p>初期値の370は、モーターが回らない状態、つまりニュートラル位置です。370よりも大きい値にすると前進し、370より小さい値を入れると後進します(後進時は、設定する値(例0)を一度入力したあとで、初期値である370に入力し、再度設定する値(例290)を入力する事で、ロックが解除され、後進が有効になります。例) 290-&gt;370-&gt;290)</p>
+<p>この値の適切な範囲は250から500の範囲内になります。<br />
+ここでは、前進の最大値の50%、後進の最大値の50%ぐらいの値を探し出します。</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span>
@@ -863,7 +864,7 @@
 </td></tr></table>
 <div class="admonition warning">
 <p class="admonition-title">初期値</p>
-<p>PWMで信号を発信中にRCカー本体の電源を入れると、そのPWM値が初期値として登録される。例えば、donkey calibrate --channel 0 で600を入力中に、電源をOnした場合、600が中央値になる。中央値がずれた場合は、donkey calibrate --channel 0 で、370の値を入力し、電源を入れ直すことで、中央値を370に戻すことができます。<a href="http://www.redcatracing.com/manuals/HW-WP-1040-Brushed.pdf">ESCのDatasheet(Hobbywing QuicRun 1040)</a></p>
+<p>PWMで信号を発信中にRCカー本体の電源を入れると、そのPWM値が初期値として登録されます。例えば、donkey calibrate --channel 0 で600を入力中に、電源をOnした場合、600が中央値になります。中央値がずれた場合は、donkey calibrate --channel 0 で、370の値を入力し、電源を入れ直すことで、中央値を370に戻すことができます。<a href="http://www.redcatracing.com/manuals/HW-WP-1040-Brushed.pdf">ESCのDatasheet(Hobbywing QuicRun 1040)</a></p>
 </div>
 <div class="admonition warining">
 <p class="admonition-title">後進の注意点</p>
@@ -881,14 +882,18 @@
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">4</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">5</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #f92672; font-weight: bold">#</span>THROTTLE
 <span style="color: #66d9ef">THROTTLE_CHANNEL = 0</span>
-<span style="color: #66d9ef">THROTTLE_FORWARD_PWM = 440</span>
+<span style="color: #66d9ef">THROTTLE_FORWARD_PWM = 450</span>
 <span style="color: #66d9ef">THROTTLE_STOPPED_PWM = 370</span>
-<span style="color: #66d9ef">THROTTLE_REVERSE_PWM = 330</span>
+<span style="color: #66d9ef">THROTTLE_REVERSE_PWM = 290</span>
 </code></pre></div>
 </td></tr></table>
 <div class="admonition warining">
 <p class="admonition-title">行先頭にスペースは入れない</p>
 <p>THROTTLE_CHANNELの前などに、スペースはいれないでください。　</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">高速走行したい場合</p>
+<p>myconfig.pyの項目にある# JOYSTICK_MAX_THROTTLE = 0.5をJOYSTICK_MAX_THROTTLE = 1.0に変更することで、高速走行が可能になります。</p>
 </div>
 <p>nanoの操作方法</p>
 <table>
