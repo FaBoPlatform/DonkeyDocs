@@ -246,14 +246,14 @@
       
       
         <label class="md-nav__link" for="__nav_3">
-          2.Donkey Carインストール
+          2.ネットワーク設定
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="2.Donkey Carインストール" data-md-level="1">
+      <nav class="md-nav" aria-label="2.ネットワーク設定" data-md-level="1">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
-          2.Donkey Carインストール
+          2.ネットワーク設定
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -263,7 +263,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2.Donkey%20Car%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/00.tools/" class="md-nav__link">
+      <a href="../../2.%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E8%A8%AD%E5%AE%9A/00.tools/" class="md-nav__link">
         使用ツール
       </a>
     </li>
@@ -277,21 +277,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../2.Donkey%20Car%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/01.os_install/" class="md-nav__link">
-        DonkeyCarのインストール
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../2.Donkey%20Car%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB/02.wifi/" class="md-nav__link">
+      <a href="../../2.%E3%83%8D%E3%83%83%E3%83%88%E3%83%AF%E3%83%BC%E3%82%AF%E8%A8%AD%E5%AE%9A/02.wifi/" class="md-nav__link">
         WiFi設定
       </a>
     </li>
@@ -614,14 +600,14 @@
       
       
         <label class="md-nav__link" for="__nav_8">
-          7.SDカードイメージ作成
+          7.SDカード作成
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" aria-label="7.SDカードイメージ作成" data-md-level="1">
+      <nav class="md-nav" aria-label="7.SDカード作成" data-md-level="1">
         <label class="md-nav__title" for="__nav_8">
           <span class="md-nav__icon md-icon"></span>
-          7.SDカードイメージ作成
+          7.SDカード作成
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -631,8 +617,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../../7.SD%E3%82%AB%E3%83%BC%E3%83%89%E3%82%A4%E3%83%A1%E3%83%BC%E3%82%B8%E4%BD%9C%E6%88%90/01.donkey_install/" class="md-nav__link">
-        SDカードイメージを最初から作成する方法
+      <a href="../../7.SD%E3%82%AB%E3%83%BC%E3%83%89%E4%BD%9C%E6%88%90/01.os_install/" class="md-nav__link">
+        DonkeyCarのSDカード作成
       </a>
     </li>
   
@@ -847,8 +833,7 @@
 </td></tr></table>
 <p>この状態で、DonkeyCarの電源（ESCに繋がっているスイッチ）を入れます。「ピィ・ピィーー」と音がなります。これで初期化設定です。</p>
 <p>初期値の370は、モーターが回らない状態、つまりニュートラル位置です。370よりも大きい値にすると前進し、370より小さい値を入れると後進します(後進時は、設定する値(例0)を一度入力したあとで、初期値である370に入力し、再度設定する値(例290)を入力する事で、ロックが解除され、後進が有効になります。例) 290-&gt;370-&gt;290)</p>
-<p>この値の適切な範囲は250から500の範囲内になります。<br />
-ここでは、前進の最大値の50%、後進の最大値の50%ぐらいの値を探し出します。</p>
+<p>この値の適切な範囲は250から500の範囲内になります。  </p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span>
@@ -892,8 +877,8 @@
 <p>THROTTLE_CHANNELの前などに、スペースはいれないでください。　</p>
 </div>
 <div class="admonition info">
-<p class="admonition-title">高速走行したい場合</p>
-<p>myconfig.pyの項目にある# JOYSTICK_MAX_THROTTLE = 0.5をJOYSTICK_MAX_THROTTLE = 1.0に変更することで、高速走行が可能になります。</p>
+<p class="admonition-title">走行時には半分の出力になっています<p>キャリブレーションでは勢いよくモーターがまわっても実際の走行時にはかなり遅くなります。これはmyconfig.pyのデフォルト設定で出力が半分になるように設定してあるためです。myconfig.pyの# JOYSTICK_MAX_THROTTLE = 0.5をJOYSTICK_MAX_THROTTLE = 1.0に変更することで、高速走行が可能になります。</p>
+</p>
 </div>
 <p>nanoの操作方法</p>
 <table>
