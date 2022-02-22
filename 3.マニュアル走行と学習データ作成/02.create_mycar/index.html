@@ -736,11 +736,14 @@
 <p>PCからDonkeyCarにSSHでログインした状態で下記作業をおこないます。</p>
 </div>
 <p>下記コマンドを入力し、DonkeyCarの作業フォルダを作成します。この作業で、走行に使用するファイルやスクリプトが置かれるディレクトリを作成します。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
-<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">cd ~/</span>
-<span style="color: #66d9ef">donkey createcar --path ~/mycar</span>
+<p><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
+<span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">cd</span>
+<span style="color: #66d9ef">rm -rf ~/mycar</span>
+<span style="color: #66d9ef">donkey createcar</span>
 </code></pre></div>
 </td></tr></table>
+~/mycarが新しく作成されます。</p>
                 
               
               
