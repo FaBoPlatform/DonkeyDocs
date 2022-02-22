@@ -885,10 +885,7 @@
 </table>
 <p>wpa_suplicant.confを追加したSDカードをRaspberryPiに差し込み、電源を投入します。RaspberryPiは、wpa_supplicantで指定されたアクセスポイントへ接続を開始します。接続に成功するとDonkeyCarに搭載している赤い基板の液晶にIPアドレスが表示されます。</p>
 <h2 id="wpa_supplicant">wpa_supplicantの修正</h2>
-<p>接続に失敗した場合は、Raspberry Pi3内の<code>/etc/wpa_supplicant/wpa_supplicant.conf</code> を修正することで、接続先の変更が可能です。</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span></pre></div></td><td class="code"><div class="highlight" style="background: #272822"><pre style="line-height: 125%;"><span></span><code><span style="color: #66d9ef">sudo nano /etc/wpa_supplicant/wpa_supplicant.conf</span>
-</code></pre></div>
-</td></tr></table>
+<p>接続に失敗した場合は、<code>wpa_supplicant.conf</code> を修正してSDカードに再度コピーすることで接続先の変更が可能です。</p>
                 
               
               
