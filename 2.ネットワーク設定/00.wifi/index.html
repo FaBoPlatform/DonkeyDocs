@@ -14,7 +14,7 @@
     
     
       
-        <title>WiFi設定 - FaBo Donkey Car Docs</title>
+        <title>Wi-Fi設定 - FaBo Donkey Car Docs</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#wifi" class="md-skip">
+        <a href="#wi-fi" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -107,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              WiFi設定
+              Wi-Fi設定
             
           </span>
         </div>
@@ -275,12 +275,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          WiFi設定
+          Wi-Fi設定
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        WiFi設定
+        Wi-Fi設定
       </a>
       
         
@@ -314,8 +314,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#wifi_1" class="md-nav__link">
-    WiFiスポットにパスワードなしでログインする場合の設定
+  <a href="#wi-fi_1" class="md-nav__link">
+    Wi-Fiスポットにパスワードなしでログインする場合の設定
   </a>
   
 </li>
@@ -735,8 +735,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#wifi_1" class="md-nav__link">
-    WiFiスポットにパスワードなしでログインする場合の設定
+  <a href="#wi-fi_1" class="md-nav__link">
+    Wi-Fiスポットにパスワードなしでログインする場合の設定
   </a>
   
 </li>
@@ -768,10 +768,10 @@
               
                 
                 
-                <h1 id="wifi">WiFi設定</h1>
+                <h1 id="wi-fi">Wi-Fi設定</h1>
 <p><img alt="" src="../img/wifi001.jpg" /></p>
-<p>WiFiへの接続、SSHでログインできるようにしていきます。<br />
-焼き込みのみでは初回起動時にWiFiへの接続・SSHでのログインが出来ないため、ここで設定を行っています。</p>
+<p>Wi-Fiへの接続、SSHでログインできるようにしていきます。<br />
+焼き込みのみでは初回起動時にWi-Fiへの接続・SSHでのログインが出来ないため、ここで設定を行っています。</p>
 <h2 id="wpa_supplicantconf">wpa_supplicant.confのダウンロード</h2>
 <table>
 <thead>
@@ -831,11 +831,11 @@
 </td></tr></table>
 <div class="admonition warning">
 <p class="admonition-title">5GHz</p>
-<p>Raspberry Pi3は、5GHz帯のWiFiは非対応です。2.4GHz帯のWiFiのアクセスポイントを設定するようにしてください。</p>
+<p>Raspberry Pi3は、5GHz帯のWi-Fiは非対応です。2.4GHz帯のWi-Fiのアクセスポイントを設定するようにしてください。</p>
 </div>
 <hr>
 
-<h2 id="wifi_1">WiFiスポットにパスワードなしでログインする場合の設定</h2>
+<h2 id="wi-fi_1">Wi-Fiスポットにパスワードなしでログインする場合の設定</h2>
 <table>
 <thead>
 <tr>
@@ -850,7 +850,7 @@
 </tr>
 </tbody>
 </table>
-<p>PasswordのないWiFiスポットに接続する場合は、下記例を参考にしてください。<code>key_mgmt=NONE</code>をつける事で、パスワードなしでログインできます。</p>
+<p>PasswordのないWi-Fiスポットに接続する場合は、下記例を参考にしてください。<code>key_mgmt=NONE</code>をつける事で、パスワードなしでログインできます。</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">1</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">2</span>
 <span style="color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px;">3</span>
@@ -883,7 +883,7 @@
 </tr>
 </tbody>
 </table>
-<p>wpa_suplicant.confを追加したSDカードをRaspberryPiに差し込み、電源を投入します。RaspberryPiは、wpa_supplicantで指定されたアクセスポイントへ接続を開始します。接続に成功するとDonkeyCarに搭載している赤い基板の液晶にIPアドレスが表示されます。</p>
+<p>wpa_supplicant.confを追加したSDカードをRaspberryPiに差し込み、電源を投入します。RaspberryPiは、wpa_supplicantで指定されたアクセスポイントへ接続を開始します。接続に成功するとDonkeyCarに搭載している赤い基板の液晶にIPアドレスが表示されます。</p>
 <h2 id="wpa_supplicant">wpa_supplicantの修正</h2>
 <p>接続に失敗した場合は、<code>wpa_supplicant.conf</code> を修正してSDカードに再度コピーすることで接続先の変更が可能です。</p>
                 
